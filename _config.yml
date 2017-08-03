@@ -1,0 +1,27 @@
+title: Magento Documentation Theme
+logo: DevDocs
+baseurl: ""
+permalink: pretty
+
+highlighter: pygments
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+markdown: kramdown
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - package.json
+  - vagrant.sh
+  - README.md
+  - bin
+  - node_modules
+  - vendor
+  - .git
+  - .idea

@@ -45,10 +45,18 @@
     float: left;
     margin-top: 7px;
     margin-right: 20px;
+    text-decoration: none;
   }
 
-  .devdocs-logo {
+  .site-logo {
+    color: $body-font-color;
 
+    font-size: 26px;
+    font-weight: 600;
+
+    text-decoration: none;
+    vertical-align: top;
+    line-height: 35px;
   }
 
   .menu-btn {

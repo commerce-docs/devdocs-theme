@@ -4,9 +4,9 @@
 @import 'variables';
 
 // Bootstrap components (run 'npm install' first)
-@import '../../node_modules/bootstrap/scss/mixins';
-@import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/responsive-embed';
+@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/bootstrap/scss/variables';
+@import '../node_modules/bootstrap/scss/responsive-embed';
 
 
 @import 'partials/specification';

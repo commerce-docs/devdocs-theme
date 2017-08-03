@@ -1,0 +1,21 @@
+<div class="page-info">
+
+  {% if page.pdf == true and site.pdf_link == true %}
+    <p id="pdf-link">PDF Download: <a href="{{page.pdf_url}}" target="_blank">{{page.title}}</a></p>
+  {% endif %}
+
+  {% if site.github_link == true %}
+   <div class="github-link">
+     <a class="improve-page" href="{{ site.githuburl }}{{ page.path }}" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  {% endif %}
+
+  {% if site.feedback_link == true %}
+  <div class="new-issue">
+    <a href="{{ site.githuburl }}issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
+  </div>
+  {% endif %}
+
+</div>
