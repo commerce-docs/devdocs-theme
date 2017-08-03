@@ -1,0 +1,106 @@
+.specification-header {
+  .page-heading {
+    float: left;
+    min-width: 270px;
+  }
+}
+
+.specification-index {
+
+  .title {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+
+
+.arguments {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+    margin: 0 0 10px 0;
+  }
+
+  li ul {
+    list-style: none;
+    padding: 10px 0 0 20px;
+    margin: 0;
+  }
+
+  .property-name {
+    font-weight: 600;
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    margin: 0 .5em 0 0;
+  }
+
+  .data-type {
+
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+    font-size: 13px;
+    color: $dark-gray-color;
+
+    a {
+      color: $link-color;
+    }
+  }
+
+  .property-summary {
+    margin: 0 0 0 1em;
+  }
+}
+
+.module-name {
+  font-size: 16px;
+  color: $dark-gray-color;
+  margin: -10px 0 20px 0;
+  display: block;
+}
+
+
+.interaction {
+  padding-bottom: 1em;
+}
+
+.interaction-body {
+  h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $dark-gray-color;
+  }
+}
+
+.interaction-title {
+  margin: 20px 0 10px 0;
+}
+
+.interaction-detail {
+  padding: 0 0 0 20px;
+}
+
+.show-example {
+  font-size: 13px;
+  font-weight: normal;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.property-required {
+  color: red;
+}
+
+.beta {
+  color: #8a6d3b;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid;
+  border-radius: 4px;
+}
