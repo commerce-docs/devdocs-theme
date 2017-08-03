@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["ybannykh@magento.com"]
 
   spec.summary       = %q{A heme for Magento documentation websites.}
-  spec.homepage      = "TBD"
+  spec.homepage      = "https://github.com/magento-devdocs/devdocs-theme"
   spec.license       = "MIT"
 
   spec.metadata["plugin_type"] = "theme"
