@@ -1,4 +1,5 @@
 title: Magento Documentation Theme
+description: Templates, styles and scripts for all Magento Documentation portals.
 logo: DocsTheme
 baseurl: ""
 permalink: pretty
@@ -7,6 +8,8 @@ highlighter: pygments
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 markdown: kramdown
 
+
+# This will force "default" layout for all of the pages, if not specified
 defaults:
   -
     scope:
