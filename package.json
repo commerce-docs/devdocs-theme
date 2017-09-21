@@ -7,8 +7,8 @@
     "build:css": "npm run scss && npm run autoprefixer && npm run build:html",
     "watch:css": "nodemon -e scss -x 'npm run build:css'",
     "uglify": "uglifyjs _js/*.js -o assets/js/app.js && uglifyjs assets/js/*.js -m -c -o assets/js/app.min.js",
-    "build:js": "node ./bin/build-js.js",
-    "watch:js": "nodemon --watch assets/_js -x 'npm run build:js'",
+    "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js --source-map",
+    "watch:js": "nodemon --watch _js -x 'npm run build:js'",
     "jekyll": "bundle exec jekyll build",
     "build:html": "npm run jekyll",
     "watch:html": "onchange '**/*.{html,md}' -e '_site/**/*' -d 1000 -- npm run build:html",
@@ -16,22 +16,22 @@
     "watch:all": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run watch:html' 'npm run serve'"
   },
   "devDependencies": {
-    "autoprefixer": "^6.7.5",
-    "babel-core": "^6.23.1",
-    "bootstrap": "^4.0.0-alpha.5",
-    "browser-sync": "^2.18.8",
-    "imagemin-cli": "^3.0.0",
-    "node-import": "^0.9.2",
-    "node-sass": "^4.5.0",
-    "nodemon": "^1.11.0",
-    "onchange": "^3.2.1",
-    "parallelshell": "^2.0.0",
-    "postcss-cli": "^3.0.0-beta",
-    "requirejs": "^2.3.3",
-    "uglify-js": "^2.7.5"
+    "autoprefixer": "latest",
+    "babel-core": "latest",
+    "bootstrap": "^4.0.0-beta",
+    "browser-sync": "latest",
+    "imagemin-cli": "latest",
+    "node-import": "latest",
+    "node-sass": "latest",
+    "nodemon": "latest",
+    "onchange": "latest",
+    "parallelshell": "latest",
+    "postcss-cli": "latest",
+    "requirejs": "latest",
+    "uglify-js": "latest"
   },
   "dependencies": {
-    "imagemin": "^5.2.2"
+    "imagemin": "^5.3.1"
   },
   "private": true
 }

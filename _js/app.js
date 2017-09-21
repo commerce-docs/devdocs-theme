@@ -1,5 +1,3 @@
-
-// This is what happens on document.ready
 $(function() {
 
   $(window).on('load', function(){

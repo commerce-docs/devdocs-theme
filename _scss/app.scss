@@ -4,12 +4,9 @@
 @import 'variables';
 
 // Bootstrap components (run 'npm install' first)
-@import '../node_modules/bootstrap/scss/mixins';
+@import '../node_modules/bootstrap/scss/functions';
 @import '../node_modules/bootstrap/scss/variables';
-@import '../node_modules/bootstrap/scss/responsive-embed';
-
-
-@import 'partials/specification';
+@import '../node_modules/bootstrap/scss/utilities/embed';
 
 @import 'partials/buttons';
 @import 'partials/callouts';
@@ -36,6 +33,7 @@
 @import 'partials/toc';
 @import 'partials/videos';
 @import 'partials/progress-bar';
+@import 'partials/tooltip';
 
 
 

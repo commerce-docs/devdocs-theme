@@ -76,7 +76,7 @@ $(function() {
       }
 
   });
-  
+
   // do not show toc for less than 2 headings
   if ( $toc.find('li').length <= 1 ) {
     $toc.hide();
@@ -88,6 +88,7 @@ $(function() {
     target: '.page-info',
     offset: 61
   });
+  /*
   $('.page-info .page-toc').affix({
     offset: {
       top: 40,
@@ -95,7 +96,7 @@ $(function() {
         return (this.bottom = $('#footer').outerHeight(true))
       }
     }
-  });
+  });*/
 
 
 });

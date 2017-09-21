@@ -1,8 +1,9 @@
 .page-toc {
-  background: $light-gray-color;
+
   padding: 10px 0;
   margin: 20px 0 0 0;
   font-size: 12px;
+  min-width: 200px;
 
   &.affix {
     width: 200px;
@@ -14,7 +15,7 @@
     content: "On this page";
     text-transform: uppercase;
     letter-spacing: .05em;
-    color: #7b756b;
+    color: #999;
     font-weight: bold;
     padding: 0 10px 5px 10px;
   }
@@ -31,8 +32,7 @@
   }
 
   .active > a {
-    background: $dropdown-link-hover-bg;
-    border-left: 2px solid darken($dropdown-link-hover-bg, 20%);
+    color: $brand-color;
   }
 
 
@@ -45,7 +45,8 @@
 
     &:hover {
       text-decoration: none;
-      background: $dropdown-link-hover-bg;
+      color: $brand-color;
+      //background: $dropdown-link-hover-bg;
     }
   }
 
@@ -61,10 +62,6 @@
 }
 
 
-
-h2, h3, h4, h5, h6 {
-  position: relative;
-}
 
 .anchor {
   width: 40px;

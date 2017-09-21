@@ -1,0 +1,7 @@
+<ul role="navigation" class="sidebar-nav">
+
+{% assign g = page.dir | split: '/' %}
+{% assign g = g[1] %}
+{% include layout/sidebar-nav-item.html context=g level=1 %}
+
+</ul>

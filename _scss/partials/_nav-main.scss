@@ -1,7 +1,7 @@
 
 .nav-main {
 
-  float: left;
+  flex: 1 1 auto;
   z-index: 9;
   position: relative;
   margin-top: 8px;
@@ -96,6 +96,10 @@
 
 }
 
+
+.nav-container {
+  display: flex;
+}
 
 .nav-main-mobile {
   display: none;

@@ -17,6 +17,20 @@ defaults:
     values:
       layout: "default"
 
+
+
+algolia:
+  application_id: 'E642SEDTHL'
+  index_name: 'devdocs'
+  api_key: d2d0f33ab73e291ef8d88d8b565e754c
+  lazy_update: true
+  excluded_files:
+    - vagrant
+    - common
+    - js
+    - i
+    - schemas
+
 exclude:
   - Gemfile
   - Gemfile.lock

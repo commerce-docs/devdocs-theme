@@ -1,44 +1,85 @@
+$callout-padding: 15px 20px 17px 52px;
 
 .bs-callout {
   position: relative;
   margin: 20px 0 20px 0;
-  padding: 15px;
-  background: #e4f0f5
+  padding: $callout-padding;
+  background: #F2F3F3;
+  border-radius: 2px;
+
+  &:before {
+    display: block;
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 25px;
+    top: 13px;
+    left: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  p {
+    margin-bottom: .8em;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
-.bs-callout:before {
-  display: block;
-  position: absolute;
-  content: '';
-  width: 30px;
-  height: 30px;
-  top: 12px;
-  left: 15px;
-  background-repeat: no-repeat;
-}
 
 .bs-callout-info {
-  padding-left: 60px
+  background: #E4F0F8;
+  border: 1px solid #346E92;
+
+  &:before {
+    background-image: url(../i/icons/info.svg);
+  }
 }
 
-.bs-callout-info:before {
-  background-image: url(../i/icons/info.svg);
-}
 
 .bs-callout-warning {
-  padding-left: 60px;
-  background: #fcebce
+  background: #FBEDD9;
+  border: 1px solid #C27500;
+
+  &:before {
+    background-image: url(../i/icons/warning.svg);
+  }
 }
 
-.bs-callout-warning:before {
-  background-image: url(../i/icons/warning.svg);
-}
 
 .bs-callout-tip {
-  padding-left: 60px;
-  background: #e7eecd
+  background: #DCF3E1;
+  border: 1px solid #0F7D26;
+
+  &:before {
+    background-image: url(../i/icons/tip.svg);
+  }
 }
 
-.bs-callout-tip:before {
-  background-image: url(../i/icons/tip.svg);
+
+.bs-callout-tutorial {
+
+  &:before {
+    background-image: url(../i/icons/tutorial.svg);
+  }
+}
+
+
+
+.message-banner {
+
+  text-align: center;
+  background-color: #E4F0F8;
+  color: #346E92;
+  border: solid 1px #346E92;
+  padding: 10px 0px;
+  margin-bottom: 20px;
+  font-size: 13px;
+
+  &.index {
+    font-size: 100%;
+  }
+
 }

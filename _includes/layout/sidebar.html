@@ -2,13 +2,8 @@
 <aside class="sidebar">
     <a href="#" class="toc-toggler">Table of Contents</a>
     <div class="sidebar-wrapper">
-      <ul role="navigation" class="sidebar-nav">
 
-      {% assign g = page.dir | split: '/' %}
-      {% assign g = g[1] %}
-      {% include layout/nav.html context=g level=1 %}
-
-      </ul>
+      {% include layout/sidebar-nav.html %}
 
     </div>
 </aside>

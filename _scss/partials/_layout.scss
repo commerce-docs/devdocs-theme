@@ -21,35 +21,25 @@ body {
 .main-container {
   padding: 0 0 50px 0;
   min-height: 100%;
-  clear: both; /* SRJ - fix Firefox bug */
 
-  & > .container {
-    padding-top: 20px;
-  }
+
+}
+
+
+
+.content-container {
+  display: flex;
 }
 
 .content {
   position: relative;
-  float: right;
-  width: 80%;
+  padding-left: $sidebar-width;
+  padding-top: 20px;
+  flex: 1 1 auto;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
 }
-
-.container {
-  clear: both;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-
-.container:before, .container:after {
-  display: table;
-  content: "";
-  line-height: 0;
-}
-.container:after {
-  clear: both;
-}
-
 
 
 .full-width-content {
@@ -57,18 +47,12 @@ body {
 }
 
 .content-wrap {
-
-  padding: 0 40px 0 40px;
-  margin-right: 200px;
-
-  #markdown-toc {
-    display: none;
-  }
+  padding: 0 50px 0 50px;
+  flex: 1 1 auto;
 }
 
 .page-header {
   background: $light-gray-color;
-//  padding: 0 30px;
 
   .breadcrumbs {
     padding-left: 30px;
@@ -78,6 +62,17 @@ body {
   }
 }
 
+
+
+.container:before, .container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+
+.container:after {
+  clear: both;
+}
 
 
 
@@ -98,6 +93,7 @@ body {
 
   .content-wrap {
     margin-right: 0;
+    padding: 0 30px 0 30px;
   }
 
   .main-container {
@@ -136,8 +132,10 @@ body {
 
 }
 
-
-
 .affix {
   position: fixed;
+}
+
+#markdown-toc {
+  display: none;
 }

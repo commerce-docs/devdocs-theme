@@ -8,10 +8,11 @@
 	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 	<meta name="description" content="{{ site.description }}">
 
-	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
-
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css" />
 	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/print.css" media="print"/>
+
+	{% include layout/header-styles.html %}
+
 	<link rel="canonical" href="{{ page.url | replace:'/index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
@@ -32,42 +33,13 @@
 </head>
 <body>
 
-<header class="site-header">
+	<header class="site-header">
 
-	<nav id="global-nav">
-
-			<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
-
-			<div class="container">
-
-				<a class="logo" href="{{site.baseurl}}/">
-					<img src="{{site.baseurl}}/assets/i/m-logo.svg" alt=""><img src="{{site.baseurl}}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-					<span class="site-logo">{{ site.logo }}</span>
-				</a>
-
-				{% include layout/version-switcher.html %}
-
-				{% include layout/navigation.html %}
-
-				<div class="search-btn">
-					<a class="search-trigger search-icon" href="{{site.baseurl}}/search/"></a>
-				</div>
-
-				<form class="quick-search" action="{{site.baseurl}}/search/" method="get" novalidate="novalidate">
-					<input type="search" name="q" placeholder="Search" />
-					<a href="#" class="quick-search-close">&times;</a>
-				</form>
-
-			</div>
-
-		</nav><!-- #global-nav -->
+		{% include layout/site-nav.html %}
 
 	</header>
-	<div class="nav-main-fader"></div>
-
 
 	<div id="gl-wrapper">
 
-		<!-- .main-container -->
 		<div class="main-container">
 			<a id="main-content"></a>
