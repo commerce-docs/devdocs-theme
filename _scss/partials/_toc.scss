@@ -3,12 +3,16 @@
   padding: 10px 0;
   margin: 20px 0 0 0;
   font-size: 12px;
-  min-width: 200px;
 
+  position: sticky;
+  top: $header-height;
+
+
+  /*
   &.affix {
     width: 200px;
     top: $header-height;
-  }
+  }*/
 
   &:before {
     display: block;

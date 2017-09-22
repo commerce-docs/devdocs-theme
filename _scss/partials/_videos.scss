@@ -125,6 +125,9 @@
     color: $dark-gray-color;
     line-height: 1.5;
   }
+  .sidebar ul li.active .video-duration{
+    color: rgba(255,255,255,.6);
+  }
   .sidebar ul li a {
     padding-right: 45px;
   }

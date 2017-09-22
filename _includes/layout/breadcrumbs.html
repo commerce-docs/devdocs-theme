@@ -10,7 +10,14 @@
   {% capture current_breadcrumb_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/index.html{% endcapture %}
   {% capture current_breadcrumb_md_url %}{{next_prepender}}/{{ splitted_url_parts[i] }}/{% endcapture %}
   {% capture next_prepender %}{{next_prepender}}/{{ splitted_url_parts[i] }}{% endcapture %}
-  {% for breadcrumb_page in site.pages %}
+
+  {% if page.collection %}
+    {% assign collection = site.documents %}
+  {% else %}
+    {% assign collection = site.pages %}
+  {% endif %}
+
+  {% for breadcrumb_page in collection %}
     {% if current_breadcrumb_url == breadcrumb_page.url or current_breadcrumb_md_url == breadcrumb_page.url  %}
     {% assign j = forLoopMaxInt | plus: 0 %}
     <li class="breadcrumb-item {% if i == j %}active{% endif %}">
@@ -20,6 +27,7 @@
     </li>
     {% endif %}
   {% endfor %}
+
 {% endfor %}
 
   </ol>

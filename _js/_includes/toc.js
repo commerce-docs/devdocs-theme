@@ -88,6 +88,7 @@ $(function() {
     target: '.page-info',
     offset: 61
   });
+
   /*
   $('.page-info .page-toc').affix({
     offset: {
@@ -96,7 +97,7 @@ $(function() {
         return (this.bottom = $('#footer').outerHeight(true))
       }
     }
-  });*/
-
+  });
+  */
 
 });

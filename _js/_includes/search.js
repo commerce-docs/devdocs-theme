@@ -27,11 +27,9 @@ $(function() {
 
 
 
-
   // Algola autocomplete:
-  var client = algoliasearch("E642SEDTHL", "d5a5aab3b56e21d8a0517661628b6cca");
-  var index = client.initIndex('mcom');
-  //initialize autocomplete on search input (ID selector must match)
+  var client = algoliasearch( algolia.id, algolia.key );
+  var index = client.initIndex( algolia.index );
 
   $('.quick-search input, .search-form .search-field').autocomplete(
   {

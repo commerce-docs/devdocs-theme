@@ -29,13 +29,11 @@
 <script>
 
   app({
-    appId: "{{ site.algolia.application_id }}",
-    apiKey: "{{ site.algolia.api_key }}",
-    indexName: "{{ site.algolia.index_name }}",
+    appId: algolia.id,
+    apiKey: algolia.key,
+    indexName: algolia.index,
     urlSync: true
   });
-
-
 
   function app(opts) {
     var switcher = document.getElementsByClassName('version-switcher')[0];
@@ -134,7 +132,6 @@
   }
 
 </script>
-
 
 
 

@@ -13,7 +13,7 @@ if ( $video.length ) {
         return (this.bottom = $('#footer').outerHeight(true))
       }
     }
-  })
+  });
 
   $video.on('affix.bs.affix', function () {
     $videoWrap.addClass('embed-responsive-16by9');
