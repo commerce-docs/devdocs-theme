@@ -5,9 +5,19 @@
   border-right: 1px solid $light-gray-color;
   height: 100%;
   z-index: 2;
+  overflow-y: auto;
+  background: #fff;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border: none;
+  }
 
   .sidebar-wrapper {
     padding: 10px 0 20px;
+
+    // This magic number is needed to allow visibility of the long sidebars
+    padding-bottom: 120px;
   }
 
   a:hover {
@@ -28,7 +38,7 @@
     }
 
     a, span {
-      color: $body-font-color;
+      color: darken( $accent-color, 5% );
       display: block;
       padding: 8px 15px;
       font-size: 14px;
@@ -37,8 +47,16 @@
     }
   }
 
+
+  .guide-title {
+    color: #5F6061;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 15px;
+  }
+
   h4 {
-    color: #7b756b;
+    color: #5F6061;
   }
 
   .has-children {

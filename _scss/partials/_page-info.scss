@@ -1,7 +1,12 @@
 .page-info {
   font-size: 12px;
-  min-width: 200px;
-  
+  width: $page-info-width;
+  position: absolute;
+  right: 0;
+  top:0;
+  height: 100%;
+  padding-top: 20px;
+
   #markdown-toc {
     display: block;
   }
@@ -44,6 +49,7 @@
 
 @media ( $medium-screen ) {
   .page-info {
+    position: relative;
     border-top: 1px solid $light-gray-color;
     margin: 20px 0 0 0;
     width: auto;

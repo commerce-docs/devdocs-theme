@@ -6,6 +6,8 @@
 
   {% assign url = site.baseurl | append: '' | append: node.url %}
 
+
+
   {% if node_depth == 2 %}
 
     {% assign node_root = '/' | append: node_parts[1] | append: '/' %}
@@ -18,7 +20,9 @@
 
     {% endfor %}
 
+    <li class="guide-title">{{ node.title }}</li>
     <li class="level-0 children-{{ has_children }} {% if page.url == node.url %}active{% endif %}">
+
       <a href="{{ url }}">
         {% if node.menu_title %}
           {{ node.menu_title }}

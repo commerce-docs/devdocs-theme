@@ -1,9 +1,11 @@
-#footer {
+.page-footer {
   background: $footer-background-color;
   color: $footer-color;
   padding: 20px 0;
   font-size: 13px;
   z-index: 3;
+
+
 
   a {
     color: $footer-link-color;
@@ -34,6 +36,18 @@
     text-align: center;
   }
 
+  // For two colum layout, offset the footer to support the fixed sidebar
+  .layout-default &, .layout-videos &, .layout-video &, .layout-specification &{
+    margin-left: $sidebar-width;
+  }
+
+  @media ( $medium-screen ) {
+
+    .layout-default &, .layout-videos &, .layout-video &, .layout-specification & {
+      margin-left: 0;
+    }
+
+  }
 
   @media ( $small-screen ) {
 

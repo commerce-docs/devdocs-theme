@@ -25,17 +25,16 @@ body {
 
 
 .content-container {
-  display: flex;
+
 }
 
 .content {
   position: relative;
   padding-left: $sidebar-width;
+  padding-right: $page-info-width;
   padding-top: 20px;
-  flex: 1 1 auto;
-  max-width: 1600px;
-  margin: 0 auto;
   display: flex;
+  justify-content: center;
 }
 
 
@@ -46,6 +45,8 @@ body {
 .content-wrap {
   padding: 0 10px 50px 50px;
   flex: 1 1 auto;
+  max-width: 1300px;
+  min-width: 360px;
 }
 
 .page-header {
@@ -89,6 +90,7 @@ body {
 @media ( $medium-screen) {
 
   .content-wrap {
+    width: 100%;
     margin-right: 0;
     padding: 0 30px 0 30px;
   }
