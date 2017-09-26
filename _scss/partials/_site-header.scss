@@ -37,12 +37,13 @@
     margin-top: 7px;
     margin-right: 20px;
     text-decoration: none;
+    white-space: nowrap;
   }
 
   .site-logo {
     color: $body-font-color;
 
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
 
     text-decoration: none;

@@ -7,13 +7,13 @@
     "build:css": "npm run scss && npm run autoprefixer && npm run build:html",
     "watch:css": "nodemon -e scss -x 'npm run build:css'",
     "uglify": "uglifyjs _js/*.js -o assets/js/app.js && uglifyjs assets/js/*.js -m -c -o assets/js/app.min.js",
-    "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js --source-map",
+    "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js --source-map && npm run build:html",
     "watch:js": "nodemon --watch _js -x 'npm run build:js'",
     "jekyll": "bundle exec jekyll build",
     "build:html": "npm run jekyll",
     "watch:html": "onchange '**/*.{html,md}' -e '_site/**/*' -d 1000 -- npm run build:html",
     "serve": "browser-sync start --server '_site'",
-    "watch:all": "parallelshell 'npm run watch:css' 'npm run watch:js' 'npm run watch:html' 'npm run serve'"
+    "watch:all": "npm-run-all --parallel watch:css watch:js watch:html serve"
   },
   "devDependencies": {
     "autoprefixer": "latest",
@@ -25,7 +25,7 @@
     "node-sass": "latest",
     "nodemon": "latest",
     "onchange": "latest",
-    "parallelshell": "latest",
+    "npm-run-all": "latest",
     "postcss-cli": "latest",
     "requirejs": "latest",
     "uglify-js": "latest"

@@ -26,10 +26,17 @@ $(function() {
   });
 
 
-
   // Algola autocomplete:
   var client = algoliasearch( algolia.id, algolia.key );
   var index = client.initIndex( algolia.index );
+  var ver = $('.version-switcher').data('version');
+  var searchOptions = {
+    hitsPerPage: 5
+  };
+
+  if ( typeof ver !== 'undefined' ) {
+    searchOptions.facetFilters = 'guide_version:' + ver
+  }
 
   $('.quick-search input, .search-form .search-field').autocomplete(
   {
@@ -37,27 +44,22 @@ $(function() {
     debug: false,
   }, [
     {
-      source: $.fn.autocomplete.sources.hits(index, { hitsPerPage: 5 }),
+      source: $.fn.autocomplete.sources.hits(index, searchOptions),
       //value to be displayed in input control after user's suggestion selection
       displayKey: 'title',
       //hash of templates used when rendering dataset
       templates: {
         //'suggestion' templating function used to render a single suggestion
         suggestion: function(suggestion) {
-          return '<a href="' + suggestion.url + '">' + suggestion._highlightResult.title.value + '</a>';
+          return '<a href="' + baseUrl + suggestion.url + '">' + suggestion._highlightResult.title.value + '</a>';
         }
       }
     }
   ]).on('autocomplete:selected', function ( event, suggestion, dataset ) {
     if ( typeof suggestion.url != 'undefined' ) {
-      window.location.href = suggestion.url;
+      window.location.href = baseUrl + suggestion.url;
     }
-    //console.log(suggestion);
   });
-
-
-
-
 
 
 });

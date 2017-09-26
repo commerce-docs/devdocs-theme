@@ -37,9 +37,16 @@
 
   function app(opts) {
     var switcher = document.getElementsByClassName('version-switcher')[0];
+    var searchParameters = {
+
+    };
 
     if ( switcher ) {
       var ver = String( switcher.dataset.version );
+      searchParameters.facets = ['guide_version'];
+      searchParameters.facetsRefinements = {
+        guide_version: [ ver ]
+      };
     }
 
     console.log( ver );
@@ -49,13 +56,7 @@
       apiKey: opts.apiKey,
       indexName: opts.indexName,
       urlSync: true,
-      searchParameters: {
-
-        facetsRefinements: {
-          guide_version: [ ver ],
-        },
-        facets: ['guide_version'],
-      }
+      searchParameters: searchParameters
     });
 
     search.addWidget(

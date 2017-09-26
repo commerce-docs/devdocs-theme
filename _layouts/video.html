@@ -7,21 +7,30 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-				<li class="level-1"><a href="{{ site.baseurl }}/videos/">All Videos</a></li>
-				<h4><span class="playlist-name">Playlist</span> {{ page.group }}</h4>
-				{% assign videos = (site.videos | where: 'group', page.group | where: 'layout', 'video' | sort: 'menu_order' ) %}
+				<li class="level-0"><a href="{{ site.baseurl }}/videos/">&larr; All Videos</a></li>
 
+				{% assign g = page.path | split: '/' %}
+				{% assign g = g[1] %}
+
+				{% assign playlists = site.videos | where: 'layout', 'videos' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
+				{% for playlist in playlists %}
+					<li class="playlist-name">
+						<a href="{{ playlist.url }}">{{ playlist.title }}</a>
+					</li>
+				{% endfor %}
+
+				{% assign videos = site.videos | where: 'layout', 'video' | where_exp: 'page', 'page.path contains g' | sort: 'menu_order' %}
 				{% for video in videos %}
-                <li class="level-1 {% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
-                    {% if site.baseurl == "" %}
-                    <a href="{{ video.url }}">
-                    {% else %}
-                    <a href="{{ site.baseurl }}{{ video.url }}">
-                    {% endif %}
-                        {{ video.title }}
-                        <span class="video-duration">{{ video.duration }} </span>
-                    </a>
-                </li>
+          <li class="{% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
+          {% if site.baseurl == "" %}
+            <a href="{{ video.url }}">
+          {% else %}
+            <a href="{{ site.baseurl }}{{ video.url }}">
+          {% endif %}
+              {{ video.title }}
+              <span class="video-duration">{{ video.duration }} </span>
+            </a>
+          </li>
 				{% endfor %}
 			</ul>
 
@@ -48,7 +57,7 @@
 			{{ content }}
 
 			<div class="adjaced-pages">
-				<div class="playlist-name">{{page.group}}</div>
+				<div class="playlist-name">{{ playlists[0].title }}</div>
 			{% assign prev = current | minus: 2 %}
 			{% if prev >= 0 %}
 				<div class="previous-page">

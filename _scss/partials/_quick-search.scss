@@ -24,7 +24,7 @@
   }
   */
 
-  
+
   @media ( $small-screen ) {
     padding-left: 20px;
     z-index: 12;
@@ -75,6 +75,11 @@
 }
 .algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
   width: 100%;
+  outline: 0;
+}
+.algolia-autocomplete .aa-input:focus{
+  transition: all .1s ease-in;
+  box-shadow: 0 0 1px $link-color;
 }
 .algolia-autocomplete .aa-hint {
   color: #999;

@@ -7,11 +7,11 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-				<li class="level-1 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
+				<li class="level-0 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}/videos/">All Videos</a></li>
 
-				<li class=""><span class="nav-header">Playlists</span></li>
+				<li><span class="nav-header">Playlists</span></li>
 
-				{% assign playlists = (site.videos | where: 'layout', 'video' | group_by: 'group') %}
+				{% assign playlists = site.videos | where: 'layout', 'video' | group_by: 'group' %}
 				{% for playlist in playlists %}
 					{% if playlist.name.size > 0 %}
 
@@ -19,7 +19,7 @@
 						{% assign url_parts_size = url_parts | size %}
 						{% assign rm = url_parts[2] %}
 
-						<li class="level-1 {% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}/videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
+						<li class="{% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}/videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
 					{% endif %}
 				{% endfor %}
 
@@ -34,9 +34,10 @@
 			{% include layout/page-header.html %}
 			{{ content }}
 
-			{% assign sorted_videos = (site.videos | where: 'layout', 'video' | sort: 'date') | reverse %}
+			{% assign sorted_videos = site.videos | where: 'layout', 'video' | sort: 'date' | reverse %}
+			
 			{% if page.group != nil %}
-				{% assign sorted_videos = (sorted_videos | where: 'group', page.group | sort: 'menu_order') %}
+				{% assign sorted_videos = sorted_videos | where: 'group', page.group | sort: 'menu_order' %}
 			{% endif %}
 
 			<div class="videos">

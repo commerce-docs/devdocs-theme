@@ -108,6 +108,12 @@ input[type=search] {
     border-bottom-right-radius: 0;
     line-height: 22px;
     width: 100%;
+    transition: all .1s ease-in;
+
+    &:focus {
+      box-shadow: 0 0 1px $link-color;
+    }
+
   }
 
   &:before {
@@ -124,7 +130,6 @@ input[type=search] {
 }
 
 #search-input input, #search-input input:focus {
-  transition: border-color .3s ease-in;
   outline: 0;
 }
 /* HITS */
