@@ -38,7 +38,7 @@ h2 {
   padding: 0;
 }
 
-h1+h2:first-of-type {
+.page-intro+h2 {
   margin-top: 0;
 }
 
