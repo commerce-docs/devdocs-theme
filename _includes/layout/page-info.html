@@ -2,21 +2,16 @@
 
   {% if site.github_link == true %}
   <div class="github-link">
-    <a class="improve-page" href="{{ site.githuburl }}{{ page.path }}" target="_blank">
+    <a class="improve-page" href="{{ site.github_repo }}blob/develop{{ page.path }}" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
   {% endif %}
 
   {% if site.feedback_link == true %}
-  <div class="new-issue">
-    <a href="{{ site.githuburl }}issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">
-      Give us feedback
-    </a>
-  </div>
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
+    <a href="{{ site.github_repo }}issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
   </div>
 
   {% endif %}

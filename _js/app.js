@@ -7,14 +7,6 @@ $(function() {
     }
   });
 
-  // Sticky header
-  $(document).on('scroll', function(){
-  	if( $(document).scrollTop() > 10 )
-  		$('#global-nav').addClass('sticky-nav-main');
-  	else
-  		$('#global-nav').removeClass('sticky-nav-main');
-  });
-
   animatedAnchors.init();
 
   // Magento Glossary

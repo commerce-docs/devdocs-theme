@@ -5,8 +5,6 @@
   font-size: 13px;
   z-index: 3;
 
-
-
   a, a:visited {
     color: $footer-link-color;
 
@@ -27,7 +25,7 @@
     padding: 0;
   }
 
-  li {
+  .footer-links > li {
     display: inline-block;
     margin: 0 20px 0 0 ;
   }

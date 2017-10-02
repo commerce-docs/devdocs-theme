@@ -187,15 +187,23 @@ cite {
 
 ul, ol {
   padding: 0;
-  margin: 0 0 .625em 2em;
+  margin: 0 0 1.3em 2.5em;
+
+  // decrease the margin before paragraph
+  p+& {
+    margin-top: -0.5em;
+  }
 }
+
 ul ul, ul ol, ol ol, ol ul {
   margin-bottom: 0;
 }
+
 li {
-  padding-left: 5px;
-  margin-bottom: 10px;
+  padding-left: .1em;
+  margin-bottom: .7em;
 }
+
 ul.unstyled, ol.unstyled {
   margin-left: 0;
   list-style: none;
@@ -212,7 +220,7 @@ ul.inline>li, ol.inline>li {
 
 dl {
   font-size: 1em;
-  margin-bottom: 1.25em;
+  margin-bottom: 1.3em;
 }
 
 dl dt {
@@ -226,7 +234,7 @@ dl dd {
 
 
 hr {
-  margin: 1.25em 0;
+  margin: 1.3em 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;

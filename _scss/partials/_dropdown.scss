@@ -55,6 +55,11 @@
     margin: 0;
     padding: 0;
   }
+
+}
+
+.menu-top .dropdown-menu {
+  top: -100%;
 }
 
 // Dividers (basically an `<hr>`) within the dropdown
@@ -65,32 +70,26 @@
 // Links, buttons, and more within the dropdown menu
 //
 // `<button>`-specific styles are denoted with `// For <button>s`
-.dropdown-menu .dropdown-item {
-   display: block;
-   padding: 5px 20px;
-   margin: 0;
-   clear: both;
-   font-weight: normal;
-   font-size: $font-size-base;
-   line-height: $line-height;
-   color: $dropdown-link-color;
-   text-align: inherit;
-   white-space: nowrap; // prevent links from randomly breaking onto new lines
-   background: none; // For `<button>`s
-   border: 0; // For `<button>`s
-   text-decoration: none;
+.dropdown .dropdown-menu .dropdown-item {
+  display: block;
+  padding: 5px 20px;
+  margin: 0;
+  width: 100%;
+  clear: both;
+  font-weight: normal;
+  font-size: $font-size-base;
+  line-height: $line-height;
+  color: $dropdown-link-color;
+  text-align: inherit;
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  background: none; // For `<button>`s
+  border: 0; // For `<button>`s
+  text-decoration: none;
 
-   &:hover {
-      background: $dropdown-link-hover-bg;
-      color: $dropdown-link-hover-color;
-   }
-
-/*
-  @include hover-focus {
+  &:hover {
+    background: $light-gray-color;
     color: $dropdown-link-hover-color;
-    text-decoration: none;
-    background-color: $dropdown-link-hover-bg;
- }*/
+  }
 
   // Active state
   &.active {
@@ -124,7 +123,7 @@
 }
 
 // Open state for the dropdown
-.open {
+.dropdown.show {
   // Show the menu
   > .dropdown-menu {
     display: block;
@@ -151,6 +150,9 @@
 .dropdown-menu.dropdown-menu-left {
     left: 0;
     right: auto;
+}
+.dropdown-menu.dropdown-menu-top {
+  top: -100%;
 }
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override

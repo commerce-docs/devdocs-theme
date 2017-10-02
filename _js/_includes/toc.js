@@ -3,9 +3,7 @@
 
 $(function() {
 
-  //$('#markdown-toc').clone().addClass('nav').appendTo( '.page-info' );
   $('#markdown-toc').hide();
-
 
   // Prepend link anchor to content headers
   var $toc = $('<div>',{
@@ -34,7 +32,6 @@ $(function() {
       if ( no_toc ) {
         show = false;
       }
-
 
 
       if ( show ) {
@@ -67,11 +64,10 @@ $(function() {
         var tag_name = $this.prop('tagName').toLowerCase();
 
         if ( tag_name == 'h2' || tag_name == 'h3' ) {
-          var $li = $('<li class="' + tag_name + '"><a href="#' + anchor_text + '"></a></li>');
+          var $li = $('<li class="nav-item ' + tag_name + '"><a class="nav-link" href="#' + anchor_text + '"></a></li>');
           $li.find('a').text( $this.text() );
           $toc.find('ul').append($li);
         }
-        //console.log(anchor_text);
 
       }
 
@@ -82,22 +78,10 @@ $(function() {
     $toc.hide();
   }
 
-
   // Page toc on right side sticks to the browser window
   $('body').scrollspy({
-    target: '.page-info',
-    offset: 61
+    target: '.page-toc'
   });
 
-  /*
-  $('.page-info .page-toc').affix({
-    offset: {
-      top: 40,
-      bottom: function () {
-        return (this.bottom = $('#footer').outerHeight(true))
-      }
-    }
-  });
-  */
 
 });

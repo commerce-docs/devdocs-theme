@@ -35,13 +35,14 @@
 
   }
 
-  .active > a {
-    color: $brand-color;
+  a.active {
+    color: $accent-color;
+    background: transparentize( $accent-color, .95);
   }
 
 
   a {
-    color: $accent-color;
+    color: #888;
     font-size: 12px;
     display: block;
     padding: 5px 10px;
@@ -49,7 +50,7 @@
 
     &:hover {
       text-decoration: none;
-      color: $brand-color;
+      color: $accent-color;
       //background: $dropdown-link-hover-bg;
     }
   }
