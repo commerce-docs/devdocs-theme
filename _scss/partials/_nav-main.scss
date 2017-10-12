@@ -12,15 +12,18 @@
 
     // Navigation dropdown
 
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
     li:hover > ul {
       visibility: visible;
       opacity: 1;
       left: auto;
-
     }
 
     ul {
-
       background: $dropdown-bg;
       position: absolute;
       left: -9999px;
@@ -33,7 +36,6 @@
       border: $dropdown-border-width solid $dropdown-border-color;
       box-shadow: 0 3px 6px rgba(0,0,0,.1);
       z-index: 1;
-
 
       a {
         font-size: 14px;
@@ -53,8 +55,11 @@
 
   }
 
-  li {
-    float: left;
+  & > ul {
+    display: flex;
+  }
+  & > ul > li {
+    flex: 0 0 auto;
     position: relative;
     line-height: 1;
     margin: 0;
@@ -176,24 +181,17 @@
 
 
 
-
-
-/* TDD - Alternate menu appearance
-
-.nav-main #subnav-wrap #subnav ul li a {
-  font: 1em 'Open Sans',sans-serif;
-  font-weight: 600;
-  text-transform: none;
-  padding: 11px 15px;
-  outline: 0;
-  background: none repeat scroll 0 0 #31302b;
-} */
-
-
-
-
 body.offcanvas-active {
   overflow: hidden;
+}
+
+
+@media ( $medium-to-large-screen ) {
+  .nav-main {
+    a {
+      padding: 12px 10px;
+    }
+  }
 }
 
 @media ( $medium-screen ) {
@@ -213,6 +211,10 @@ body.offcanvas-active {
     background: #fff;
     overflow: auto;
     display: none;
+
+    & > ul {
+      display: block;
+    }
 
     .offcanvas-active &.nav-main-mobile {
       display: block;

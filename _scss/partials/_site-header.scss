@@ -94,7 +94,10 @@
     }
   }
 
-  @media (max-width:1200px) {
+  @media ( $medium-to-large-screen ) {
+    .logo {
+      margin-right: 10px;
+    }
     .magento-logo {
       display: none;
     }

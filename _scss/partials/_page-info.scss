@@ -47,14 +47,14 @@
 }
 
 
-@media ( $medium-screen ) {
+@media ( $medium-to-large-screen ) {
   .page-info {
     position: relative;
     border-top: 1px solid $light-gray-color;
     margin: 20px 0 0 0;
     width: auto;
     position: relative;
-    padding: 15px 0 0 0;
+    padding: 15px 20px;
     font-size: 14px;
   }
 

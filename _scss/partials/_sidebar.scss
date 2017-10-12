@@ -1,3 +1,4 @@
+$toggle-width: 30px;
 
 .sidebar {
   position: fixed;
@@ -15,16 +16,26 @@
 
   .sidebar-wrapper {
     padding: 10px 0 20px;
-
     // This magic number is needed to allow visibility of the long sidebars
     padding-bottom: 120px;
   }
 
-  a:hover {
-    text-decoration: none;
+  .guide-title {
+    color: #5F6061;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 8px 15px;
+    margin: 0;
   }
 
+  a:hover {
+    text-decoration: none;
+    background: #eee;
+  }
+
+
   ul {
+
     list-style: none;
     margin: 0;
 
@@ -38,90 +49,129 @@
     }
 
     a, span {
-      color: darken( $accent-color, 5% );
       display: block;
       padding: 8px 15px;
       font-size: 14px;
       line-height: 1.3em;
       font-weight: normal;
+      position: relative;
     }
+
+    a {
+      color: $accent-color;
+    }
+
+    span {
+      color: #5F6061;
+      font-weight: 500;
+    }
+
+    .active {
+      & > a {
+        color: #fff;
+        background: $accent-color;
+      }
+    }
+
   }
 
 
-  .guide-title {
-    color: #5F6061;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 8px 15px;
+  ul ul a, ul ul span {
+    padding-left: 30px;
   }
 
-  h4 {
-    color: #5F6061;
+
+  .toc-toggler {
+    display: none;
+  }
+
+
+}
+
+.collapsible-navigation {
+
+  ul {
+    ul {
+      display: none;
+      padding-left: $toggle-width;
+
+      a, span {
+        padding-left: 15px;
+      }
+    }
   }
 
   .has-children {
-    margin-top: 1em;
-  }
-
-}
-
-.toc-toggler {
-  display: none;
-}
-
-
-.sidebar-nav {
-
-  a:hover {
-    background: $dropdown-link-hover-bg;
-  }
-
-  .level-1.children-true {
-    & > a {
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: .05em;
-      margin-top: .5em;
+    & > a, & > span {
+      padding-left: $toggle-width;
     }
   }
 
-}
+  .toggle {
+    background: transparent;
+    border: none;
+    display: block;
+
+    position: absolute;
+
+    outline: 0;
+
+    padding: 0;
+    margin: 0;
+
+    top:0;
+    left: 0;
+    cursor: pointer;
+
+    height: 34px;
+    width: $toggle-width;
+
+    z-index: 10;
+
+    &:hover {
+      background: #eee;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      transition: all .2s;
+      width: 0;
+      height: 0;
+      margin: auto;
+      border-style: solid;
+      border-width: 5px 0 5px 8px;
+      border-color: transparent transparent transparent $accent-color;
+
+    }
+
+  }
+
+  .item-toggle {
+    & > .toggle {
+      pointer-events: none;
+    }
+
+    & > span:hover {
+      cursor: pointer;
+      background: #eee;
+    }
+  }
+
+  .open > .toggle:after {
+    transform: rotate(90deg);
+  }
+
+  .active > .toggle {
+    &:hover {
+      background: darken($accent-color, 10%);
+    }
+    &:after {
+      border-color: transparent transparent transparent #fff;
+    }
+  }
 
 
-
-
-.sidebar ul span {
-  color: #7b756b;
-}
-
-
-.sidebar ul .nav-header {
-  text-transform: uppercase;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  margin-top: 12px;
-}
-
-.sidebar ul .nav-header > a, .sidebar ul .nav-header span {
-   font-weight: 700;
-   padding-top: 10px;
-}
-
-.sidebar ul .active > a {
-  color: #fff;
-  background: $accent-color;
-}
-
-
-
-.sidebar  .level-2 a, .sidebar .level-2 span {
-  padding-left: 25px;
-}
-
-/* Add style for TOC Header in sidebar.html include */
-.sidebar .sidebar-wrapper h4 {
-  margin: 10px 10px 5px 14px;
-  text-transform: capitalize;
 }
 
 
@@ -129,6 +179,7 @@
 @media ( $medium-screen ) {
 
   .sidebar {
+
     width: 100%;
     padding: 0;
     position: relative;
@@ -138,20 +189,29 @@
       overflow: hidden;
       transition: all .2s;
       padding: 0;
+
+      ul {
+        margin-bottom: 20px;
+
+        a, span {
+          padding: 10px 20px;
+        }
+      }
+
     }
 
   }
 
-  .sidebar ul a, .sidebar ul span {
-    padding: 10px 20px;
-  }
+  .expanded {
 
-  .sidebar-wrapper ul {
-    margin-bottom: 20px;
-  }
+    .sidebar-wrapper {
+      max-height: 9999px;
+    }
 
-  .expanded .sidebar-wrapper {
-    max-height: 9999px;
+    .toc-toggler::after {
+      transform: rotate(180deg);
+    }
+
   }
 
   .toc-toggler {
@@ -163,28 +223,27 @@
     &, &:visited {
       color: $body-font-color;
     }
+
+    &:active, &:hover {
+      text-decoration: none;
+    }
+
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      top:18px;
+      right: 18px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 8px 6px 0 6px;
+      border-color: $body-font-color transparent transparent transparent;
+      transition: all .2s;
+    }
   }
 
-  .toc-toggler:active, .toc-toggler:hover {
-    text-decoration: none;
-  }
 
-  .toc-toggler::after {
-    display: block;
-    content: '';
-    position: absolute;
-    top:18px;
-    right: 18px;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 8px 6px 0 6px;
-    border-color: $body-font-color transparent transparent transparent;
-    transition: all .2s;
-  }
 
-  .expanded .toc-toggler::after {
-    transform: rotate(180deg);
-  }
 
 }

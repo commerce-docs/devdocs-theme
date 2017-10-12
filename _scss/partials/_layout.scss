@@ -86,6 +86,13 @@ body {
 
 }
 
+@media ( $medium-to-large-screen) {
+  .content {
+    padding-right: 20px;
+    display: block;
+  }
+}
+
 // For smaller screens, remove toc from left column and show in-page-toc
 @media ( $medium-screen) {
 

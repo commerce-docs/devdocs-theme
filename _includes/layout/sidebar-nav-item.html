@@ -20,7 +20,7 @@
 
     {% endfor %}
 
-    <li class="guide-title">{{ node.title }}</li>
+    <h4 class="guide-title">{{ node.title }}</h4>
     <li class="level-0 children-{{ has_children }} {% if page.url == node.url %}active{% endif %}">
 
       <a href="{{ url }}">
