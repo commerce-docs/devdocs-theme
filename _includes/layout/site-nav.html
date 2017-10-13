@@ -4,8 +4,8 @@
 
   <div class="nav-container">
 
-    <a class="logo" href="{{site.baseurl}}/">
-      <img src="{{site.baseurl}}/assets/i/m-logo.svg" alt=""><img src="{{site.baseurl}}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+    <a class="logo" href="{{ site.baseurl }}/">
+      <img src="{{ site.baseurl }}/assets/i/m-logo.svg" alt=""><img src="{{ site.baseurl }}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
       <span class="site-logo">{{ site.logo }}</span>
     </a>
 
@@ -14,10 +14,10 @@
     {% include layout/navigation.html %}
 
     <div class="search-btn">
-      <a class="search-trigger search-icon" href="{{site.baseurl}}/search/"></a>
+      <a class="search-trigger search-icon" href="#"></a>
     </div>
 
-    <form class="quick-search" action="{{site.baseurl}}/search/" method="get" novalidate="novalidate">
+    <form class="quick-search" action="{{ site.baseurl }}/search/" method="get" novalidate="novalidate">
       <input type="search" name="q" placeholder="Search" />
       <a href="#" class="quick-search-close">&times;</a>
     </form>
