@@ -4,10 +4,15 @@
 
   <div class="nav-container">
 
-    <a class="logo" href="{{site.baseurl}}/">
-      <img src="{{site.baseurl}}/assets/i/m-logo.svg" alt=""><img src="{{site.baseurl}}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
-      <span class="site-logo">{{ site.logo }}</span>
-    </a>
+        {% if page.lang %}
+            <a class="logo" href="{{site.baseurl}}/{{page.lang}}/">
+        {% else %}
+            <a class="logo" href="{{site.baseurl}}/">
+        {% endif %}
+                <img src="{{site.baseurl}}/assets/i/m-logo.svg" alt=""><img
+                    src="{{site.baseurl}}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo"/>
+                <span class="site-logo">{{ site.logo }}</span>
+            </a>
 
     {% include layout/version-switcher.html %}
 

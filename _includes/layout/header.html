@@ -26,14 +26,32 @@
 	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
 	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
 
-	<script>
-		var baseUrl = "{{ site.baseurl }}";
-		var algolia = {
-			id : "{{ site.algolia.application_id}}",
-			index:  "{{ site.algolia.index_name}}",
-			key:  "{{ site.algolia.api_key}}"
-		};
-	</script>
+
+
+	{% if !page.lang %}
+
+		<script>
+			var baseUrl = "{{ site.baseurl }}";
+			var algolia = {
+				id : "{{ site.algolia.application_id}}",
+				index:  "{{ site.algolia.index_name}}",
+				key:  "{{ site.algolia.api_key}}"
+			};
+		</script>
+
+	{% else %}
+
+		<script>
+			var baseUrl = "{{ site.baseurl }}";
+			var algolia = {
+				id : "{{ site.algolia.application_id}}",
+				index:  "{{ site.algolia.index_name}}-{{ page.lang }}",
+				key:  "{{ site.algolia.api_key}}"
+			};
+		</script>
+
+	{% endif %}
+
 
 </head>
 <body class="layout-{{ page.layout }}">
