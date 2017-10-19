@@ -1,13 +1,8 @@
 <!-- Main Navigation -->
-<div class="nav-main">
+<nav class="nav-main" role="menubar">
   <ul>
-    <li>
-      <a href="{{ site.baseurl }}/example/">Example</a>
-    </li>
-
-    <li>
-      <a href="{{ site.baseurl }}/videos/">Videos</a>
-    </li>
-
+    {% for menu in site.data.topmenu[page.lang] %}
+    <li><a href="{{ menu[1].url }}">{{ menu[1].name }}</a></li>
+    {% endfor %}
   </ul>
-</div>
+</nav>
