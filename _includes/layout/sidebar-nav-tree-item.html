@@ -1,0 +1,14 @@
+{% assign children = include.pages | where_exp: 'page', 'page.dir contains include.page.dir' | sort: 'menu_order' %}
+{% assign children = children | where_exp: 'page', 'page.dir != include.page.dir' | sort: 'menu_order' %}
+{% assign children_size = children | size %}
+
+<li {% if include.page.url == page.url %}class="active"{% endif %}>
+  <a href="{{ site.baseurl }}{{ include.page.url }}">{% if include.page.menu_title %}{{ include.page.menu_title }}{% else %}{{ include.page.title }}{% endif %}</a>
+  {% if children_size > 0 %}
+    <ul>
+    {% for child in children %}
+      {% include layout/sidebar-nav-tree-item.html page=child pages=children %}
+    {% endfor %}
+    </ul>
+  {% endif %}
+</li>

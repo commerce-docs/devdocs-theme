@@ -1,7 +1,4 @@
-<ul role="navigation" class="sidebar-nav">
+{% assign page_path = page.path | remove: '.md' | remove: '.html' | split: '/' %}
+{% assign guide_root = '/' | append: page_path[0] %}
 
-{% assign g = page.dir | split: '/' %}
-{% assign g = g[1] %}
-{% include layout/sidebar-nav-item.html context=g level=1 %}
-
-</ul>
+{% include layout/sidebar-nav-root-item.html context=guide_root %}

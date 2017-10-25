@@ -1,0 +1,21 @@
+{% assign pages = site.pages | where_exp: 'article', 'article.dir contains include.context' | sort: 'menu_order' %}
+
+{% assign context = include.context | append: '/' %}
+{% assign guide = pages | where_exp: 'article', 'article.dir == context' | first %}
+
+<h4 class="guide-title">{{ guide.title }}</h4>
+
+<ul>
+  <li {% if guide.url == page.url %}class="active"{% endif %}>
+    <a href="{{ site.baseurl }}{{ guide.url }}">{% if guide.menu_title %}{{ guide.menu_title }}{% else %}{{ guide.title }}{% endif %}</a>
+  </li>
+  {% for node in pages %}
+    {% assign path_parts = node.dir | remove_first: include.context | split: '/' %}
+    {% assign path_depth = path_parts | size %}
+
+    {% if path_depth == 2 %}
+      {% include layout/sidebar-nav-tree-item.html page=node pages=pages %}
+    {% endif %}
+
+  {% endfor %}
+</ul>
