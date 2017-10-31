@@ -49,7 +49,6 @@
       };
     }
 
-    console.log( ver );
 
     const search = instantsearch({
       appId: opts.appId,
@@ -93,9 +92,7 @@
 
             return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">'+ item._highlightResult.text.value + '</div></div>';
           },
-          empty: function ( query ) {
-            return '<div id="no-results-message"><p>No results for the search <em>"' + query.query +'"</em>.</p></div>';
-          },
+          empty: '<div id="no-results-message"><p>No results found.</p></div>',
         },
       })
     );
