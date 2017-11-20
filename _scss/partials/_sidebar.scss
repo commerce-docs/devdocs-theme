@@ -7,6 +7,7 @@ $toggle-width: 30px;
   height: 100%;
   z-index: 2;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   background: #fff;
 
   &::-webkit-scrollbar-track {
@@ -15,24 +16,17 @@ $toggle-width: 30px;
   }
 
   .sidebar-wrapper {
-    padding: 10px 0 20px;
-    // This magic number is needed to allow visibility of the long sidebars
-    padding-bottom: 120px;
+    padding: $spacing*2 0 $spacing*4;
+    padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
   }
 
   .guide-title {
     color: #5F6061;
-    font-weight: 600;
-    font-size: 15px;
-    padding: 8px 15px;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base;
+    padding: $spacing*2 $spacing*3;
     margin: 0;
   }
-
-  a:hover {
-    text-decoration: none;
-    background: #eee;
-  }
-
 
   ul {
 
@@ -44,26 +38,35 @@ $toggle-width: 30px;
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: 14px;
+      font-size: $font-size-sm;
       line-height: 1.3em
     }
 
     a, span {
       display: block;
-      padding: 8px 15px;
-      font-size: 14px;
-      line-height: 1.3em;
-      font-weight: normal;
+      padding: $spacing*2 $spacing*3;
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+      font-weight: $font-weight-normal;
       position: relative;
     }
 
     a {
       color: $accent-color;
+      text-decoration: none;
+      transition: all $transition-duration;
+
+      &:hover {
+        background: $dropdown-link-hover-bg;
+      }
+      &:active {
+        background: darken($dropdown-link-hover-bg, 10%);
+      }
     }
 
     span {
       color: #5F6061;
-      font-weight: 500;
+      font-weight: $font-weight-medium;
     }
 
     .active {
@@ -75,16 +78,13 @@ $toggle-width: 30px;
 
   }
 
-
   ul ul a, ul ul span {
-    padding-left: 30px;
+    padding-left: $spacing*6;
   }
-
 
   .toc-toggler {
     display: none;
   }
-
 
 }
 
@@ -96,7 +96,7 @@ $toggle-width: 30px;
       padding-left: $toggle-width;
 
       a, span {
-        padding-left: 15px;
+        padding-left: $spacing*3;
       }
     }
   }
@@ -123,7 +123,7 @@ $toggle-width: 30px;
     left: 0;
     cursor: pointer;
 
-    height: 34px;
+    height: 41px;
     width: $toggle-width;
 
     z-index: 10;
@@ -135,7 +135,7 @@ $toggle-width: 30px;
     &:after {
       display: block;
       content: '';
-      transition: all .2s;
+      transition: all $transition-duration;
       width: 0;
       height: 0;
       margin: auto;
@@ -181,24 +181,46 @@ $toggle-width: 30px;
   .sidebar {
 
     width: 100%;
-    padding: 0;
+    padding: 0 0 $spacing*2 0;
     position: relative;
 
     .sidebar-wrapper {
       max-height: 0;
       overflow: hidden;
-      transition: all .2s;
+      transition: all $transition-duration;
       padding: 0;
+    }
 
-      ul {
-        margin-bottom: 20px;
+    .toc-toggler {
+      position: relative;
+      display: block;
+      background: $light-gray-color;
+      padding: $spacing*2 $spacing*4;
 
-        a, span {
-          padding: 10px 20px;
-        }
+      &, &:visited {
+        color: $body-font-color;
+      }
+
+      &:active, &:hover {
+        text-decoration: none;
+      }
+
+      &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        top:18px;
+        right: 18px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 8px 6px 0 6px;
+        border-color: $body-font-color transparent transparent transparent;
+        transition: all $transition-duration;
       }
 
     }
+
 
   }
 
@@ -213,37 +235,5 @@ $toggle-width: 30px;
     }
 
   }
-
-  .toc-toggler {
-    position: relative;
-    display: block;
-    background: $light-gray-color;
-    padding: 12px 20px;
-
-    &, &:visited {
-      color: $body-font-color;
-    }
-
-    &:active, &:hover {
-      text-decoration: none;
-    }
-
-    &:after {
-      display: block;
-      content: '';
-      position: absolute;
-      top:18px;
-      right: 18px;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 8px 6px 0 6px;
-      border-color: $body-font-color transparent transparent transparent;
-      transition: all .2s;
-    }
-  }
-
-
-
 
 }

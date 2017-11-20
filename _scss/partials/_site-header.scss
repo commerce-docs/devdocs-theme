@@ -1,54 +1,33 @@
 
+// Top bar
 .site-nav {
   position: fixed;
   top: 0;
   width: 100%;
   height: $header-height;
   background: $light-gray-color;
-  transition: box-shadow .1s;
+  transition: box-shadow $transition-duration;
   box-shadow: 0 1px 2px transparent;
   transform: translateZ(0); // to force nav rendering to GPU
-  z-index: 999;
-
-  &:after {
-    content: '';
-    display: block;
-    clear: both;
-  }
-
+  z-index: $zindex-appbar;
 }
 
 
 .site-header {
 
+  // To push the content of the page to allow fixed top bar
   padding-top: $header-height;
 
   .nav-container {
     position: relative;
-    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing*4;
   }
 
-  .logo {
-    position: relative;
-    z-index: 11;
-    width: auto;
-    height: 40px;
-    float: left;
-    margin-top: 7px;
-    margin-right: 20px;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .site-logo {
-    color: $body-font-color;
-
-    font-size: 24px;
-    font-weight: 600;
-
-    text-decoration: none;
-    vertical-align: top;
-    line-height: 35px;
+  .nav-main-wrap {
+    flex: 1 0 0;
+    padding: 0 $spacing*2;
   }
 
   .menu-btn {
@@ -80,7 +59,6 @@
   .search-btn {
     width: $header-height;
     height: $header-height;
-    float: right;
     position: relative;
     z-index: 3;
 
@@ -94,15 +72,6 @@
     }
   }
 
-  @media ( $medium-to-large-screen ) {
-    .logo {
-      margin-right: 10px;
-    }
-    .magento-logo {
-      display: none;
-    }
-  }
-
   @media ( $medium-screen ) {
 
     .site-nav {
@@ -113,10 +82,6 @@
       display: block;
     }
 
-    .logo {
-      margin-top:10px;
-    }
-
     .search-btn {
       margin: 0;
       position: absolute;
@@ -124,6 +89,76 @@
       right: $header-height;
     }
 
+    .nav-main-wrap {
+      position: fixed;
+      display: none;
+      overflow: auto;
+      width: 100%;
+      height: calc(100vh - 55px);
+      padding-bottom: $header-height;
+
+      max-width: 400px;
+      z-index: 3000;
+      -webkit-overflow-scrolling: touch;
+      background: $dropdown-bg;
+      transition: all $transition-duration;
+
+      top: $header-height;
+      right: 0;
+
+      z-index: $zindex-appbar - 1;
+
+    }
+
   } // medium-screen
 
+}
+
+
+.logo {
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  margin-right: $spacing*4;
+  min-height: $header-height;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  // Name of the website
+  .site-logo {
+    color: $body-font-color;
+    position: relative;
+    top: -2px;
+
+    font-size: 23px;
+    line-height: 1;
+    font-weight: $font-weight-bold;
+
+    padding: 0 $spacing;
+    text-decoration: none;
+
+  }
+
+  // Remove 'Magento' from logo on tablet
+  @media ( $medium-to-large-screen ) {
+    .magento-logo {
+      display: none;
+    }
+  }
+
+}
+
+.offcanvas-active .nav-main-wrap  {
+  display: block;
+}
+
+
+// Disable scrollbar when menu is open
+body.offcanvas-active {
+  overflow: hidden;
 }

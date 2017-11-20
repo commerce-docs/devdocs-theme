@@ -11,12 +11,13 @@ $(function() {
     $('body').removeClass('offcanvas-active search-active');
   });
 
+
   // Duplicate main nav and version-switcher for responsive website
-  $('.nav-main').clone().addClass('nav-main-mobile').appendTo('body');
-  $('.version-switcher').clone().addClass('version-switcher-mobile').appendTo('.nav-main-mobile');
+  //$('.nav-main').clone().addClass('nav-main-mobile').appendTo('body');
+  //$('.version-switcher').clone().addClass('version-switcher-mobile').appendTo('.nav-main-mobile');
 
   // Responsive item expand/collapse
-  $('.nav-main a').each(function () {
+  /*$('.nav-main a').each(function () {
     var $this = $(this);
     var $children = $this.closest('li').find('ul');
 
@@ -27,7 +28,7 @@ $(function() {
         $(this).closest('li').toggleClass('expanded');
       });
     }
-  });
+  });*/
 
 
   // Responsive table of contents
