@@ -59,7 +59,29 @@ $(function() {
     if ( typeof suggestion.url != 'undefined' ) {
       window.location.href = baseUrl + suggestion.url;
     }
+  }).on('keypress', function (event) {
+    if(event.which == 13) {
+      var value = escapeHTML(event.target.value);
+      if (value) {
+        window.location = $('form.quick-search').attr('action') + '?q=' + value;
+      }
+    };
   });
 
 
 });
+
+
+var ESC_MAP = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+};
+
+function escapeHTML(s, forAttribute) {
+    return s.replace(forAttribute ? /[&<>'"]/g : /[&<>]/g, function(c) {
+        return ESC_MAP[c];
+    });
+}
