@@ -138,6 +138,7 @@ $toggle-width: 30px;
   .toggle {
     background: transparent;
     border: none;
+    border-radius: 0;
     display: block;
 
     position: absolute;
@@ -158,7 +159,7 @@ $toggle-width: 30px;
     z-index: 10;
 
     &:hover {
-      background: #eee;
+      background: $dropdown-link-hover-bg;
     }
 
     /*
@@ -166,6 +167,12 @@ $toggle-width: 30px;
       outline: 1px dotted #212121;
       outline: 5px auto -webkit-focus-ring-color;
     }*/
+
+    &:focus {
+      &:after {
+        border-color: darken($accent-color,10%) transparent transparent transparent;
+      }
+    }
 
     &:after {
       display: block;
@@ -188,7 +195,7 @@ $toggle-width: 30px;
 
     & > span:hover {
       cursor: pointer;
-      background: #eee;
+      background: $dropdown-link-hover-bg;
     }
   }
 
@@ -216,6 +223,11 @@ $toggle-width: 30px;
     top: -2.2em;
     color: #999;
     z-index: 2;
+
+    &:active, &:focus, &:hover {
+      outline: none;
+      color: $body-font-color;
+    }
   }
 
 

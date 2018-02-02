@@ -90,15 +90,14 @@
             var submenuId = 'collapsible-menu-' + n;
             var toggle = $('<button />')
               .addClass( settings.toggleClass)
-              .attr('aria-controls', submenuId);
+              .attr('aria-controls', submenuId).
+							insertBefore( $( submenu ) );
 
             // Assign attributes
             $( submenu ).attr('id', submenuId)
               .attr('role', 'group');
 
-            $( item )
-                .addClass( settings.hasChildrenClass )
-                .prepend( toggle );
+            $( item ).addClass( settings.hasChildrenClass );
 
               //Assign events
             toggle.on('click',

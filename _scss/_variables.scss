@@ -73,8 +73,8 @@ $dropdown-border-width: 1px;
 $dropdown-divider-bg: #e5e5e5;
 
 $dropdown-link-color: $body-font-color;
-$dropdown-link-hover-color: darken($body-font-color, 5%);
-$dropdown-link-hover-bg: #eee;
+$dropdown-link-hover-color: $body-font-color;
+$dropdown-link-hover-bg: #f2f3f3;
 
 $dropdown-link-active-color: $link-color;
 $dropdown-link-active-bg: $link-color;
