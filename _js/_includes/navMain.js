@@ -1,68 +1,49 @@
-// ** Menu **
+/*!
+ * Main Navigation
+ * author: ybannykh@magento.com
+*/
+;( function( $, window, document, undefined ) {
+	'use strict';
 
-$.fn.mainNavigation = function(settings) {
-
-	return this.each( function( settings ) {
-
-		settings = jQuery.extend({
+	var pluginName = 'mainNavigation',
+		defaults = {
 			menuActiveClass: 'active',
 			menuDelay: 40,
 			offcanvasClass: 'offcanvas-active',
 			sectionSelector: '.nav-section',
 			popupSelector: '.nav-popup',
 			topLevelItemsSelector: '.nav-main-item',
-		}, settings);
-
-
-		var nav = $(this);
-		var topLevelItems = $(this).find( settings.topLevelItemsSelector );
-
-
-		var setupNavigation = function () {
-
-			$(document).on('touchstart', function( event ) {
-
-				if ( !$(event.target).closest( topLevelItems ).length ) {
-					hidePopup( topLevelItems );
-					console.log('outside');
-				}
-			});
-
-			topLevelItems
-				.on('mouseenter focusin', handleMenuMouseEnter)
-				.on('mouseleave', handleMenuMouseLeave );
-
-			/*
-			topLevelItems.children('a').on('click' ,function (e) {
-				e.preventDefault();
-			});*/
-
-			// Focusing out of the nav should close the last opened popup
-			nav.on('focusout', function (){
-				setTimeout( function () {
-					if (	nav.find(':focus').length == 0 ) {
-						hidePopup( topLevelItems.filter( '.' + settings.menuActiveClass ) );
-						nav.find( settings.popupSelector ).css({ left: 'auto ' });
-					}
-				}, 40);
-			});
-
-
 		};
 
-		// mouseover, focusin:
-		var handleMenuMouseEnter = function (e) {
-			e.stopPropagation();
-			e.preventDefault();
+	// The actual plugin constructor
+	function Plugin ( element, options ) {
+		var plugin = this;
+		this.element = element;
+		this.$element = $(element);
+		this.options = $.extend( {}, defaults, options );
+		this._defaults = defaults;
+		this._name = pluginName;
+
+		this.handleMenuMouseEnter = function ( event ) {
+			event.stopPropagation();
+			event.preventDefault();
+
 			var currentItem = $(this),
-					popup = currentItem.find( settings.popupSelector );
-			//console.log('enter');
+					popup = currentItem.find( plugin.options.popupSelector );
 
 			// Center the flyout menu on desktop/tablet landscape
-			if ( !$('body').hasClass( settings.offcanvasClass ) && popup.find( settings.sectionSelector ).length ) {
+			if ( !$('body').hasClass( plugin.options.offcanvasClass ) && popup.find( plugin.options.sectionSelector ).length ) {
 				var windowWidth = $(window).width(),
-						subItemWidth = popup.width();
-				popup.offset({ left: ( windowWidth - subItemWidth )/2 });
+						popupWidth = popup.width();
+
+				// Adjust the popup position relative to the menu item
+				var popupPosition = ( windowWidth - popupWidth ) / 2;
+				if ( popupPosition < currentItem.offset().left ) {
+					popup.offset({ left: popupPosition });
+				} else {
+					popup.offset({ left: 'auto' });
+				}
+
 			} else {
 				popup.css({ left: 'auto' });
 			}
@@ -70,54 +51,90 @@ $.fn.mainNavigation = function(settings) {
 			// Delay the appearance of the popup menu
 			clearTimeout( window.navTimer );
 			window.navTimer = window.setTimeout( function () {
-				showPopup( currentItem );
-			}, settings.menuDelay );
+				plugin.showPopup( currentItem );
+			}, plugin.options.menuDelay );
 
 		}
 
 
-		// mouseover, focusout
-		var handleMenuMouseLeave = function (e) {
-			e.stopPropagation();
-			e.preventDefault();
-			//console.log('leave');
+		this.handleMenuMouseLeave = function ( event ) {
+			event.stopPropagation();
+			event.preventDefault();
 			var currentItem = $(this);
 
-			hidePopup( currentItem );
-
+			plugin.hidePopup( currentItem );
 			clearTimeout( window.navTimer );
 		}
 
-		var handleLastLinkFocusOut = function (e) {
-			//console.log( $(this) );
-			hidePopup ( $(this).closest( settings.popupSelector ) );
+		this.handleMenuFocusOut = function ( event ) {
+			var menuItem = $(this);
+			setTimeout( function () {
+				if (	menuItem.find(':focus').length == 0 ) {
+					plugin.hidePopup( menuItem );
+					menuItem.find( plugin.options.popupSelector ).css({ left: 'auto ' });
+				}
+			}, plugin.options.menuDelay);
 		}
 
 		// These functions handle the popup appearance
-		var showPopup = function ( menuItem ) {
-			var popup = menuItem.find( settings.popupSelector );
+		this.showPopup = function ( menuItem ) {
+			var popup = menuItem.find( plugin.options.popupSelector );
 
-			hidePopup( topLevelItems.not( menuItem ) );
+			plugin.hidePopup( plugin.topLevelItems.not( menuItem ) );
 
-			menuItem.addClass( settings.menuActiveClass );
+			menuItem.addClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'false');
 			popup.find('a').attr('tabindex', 0);
 		}
 
-		var hidePopup = function ( menuItem ) {
-			var popup = menuItem.find( settings.popupSelector );
-			menuItem.removeClass( settings.menuActiveClass );
+		this.hidePopup = function ( menuItem ) {
+			var popup = menuItem.find( plugin.options.popupSelector );
+			menuItem.removeClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'true');
 			popup.find('a').attr('tabindex', -1);
 		}
 
+		this.init();
+	}
 
-		setupNavigation();
-		return this;
 
-	});
+	Plugin.prototype.init = function () {
+		var plugin = this;
+		plugin.topLevelItems = plugin.$element.find( plugin.options.topLevelItemsSelector );
 
-};
+		// Assign Events
+		$(document).on('touchstart', function( event ) {
+			if ( !$(event.target).closest( plugin.topLevelItems ).length ) {
+				plugin.hidePopup( plugin.topLevelItems );
+			}
+		});
 
-var navMain = $('.site-header .nav-main');
-navMain.mainNavigation();
+		plugin.topLevelItems
+			.on('mouseenter focusin', plugin.handleMenuMouseEnter)
+			.on('mouseleave', plugin.handleMenuMouseLeave )
+			.on('focusout', plugin.handleMenuFocusOut);
+
+		plugin.$element.on('focusout', function () {
+			setTimeout( function () {
+				if (	plugin.$element.find(':focus').length == 0 ) {
+					plugin.hidePopup( plugin.topLevelItems.filter( '.' + plugin.options.menuActiveClass ) );
+					plugin.$element.find( plugin.options.popupSelector ).css({ left: 'auto ' });
+				}
+			}, plugin.options.menuDelay);
+		});
+
+	}
+
+
+	// A really lightweight plugin wrapper around the constructor,
+	// preventing against multiple instantiations
+	$.fn[ pluginName ] = function( options ) {
+		return this.each( function() {
+			if ( !$.data( this, "plugin_" + pluginName ) ) {
+				$.data( this, "plugin_" +
+					pluginName, new Plugin( this, options ) );
+			}
+		} );
+	};
+
+})( jQuery, window, document );
