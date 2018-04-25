@@ -142,19 +142,15 @@
   }
 
   .sidebar ul .playlist-name {
-    padding: 0;
-
-
     a {
-      font-weight: 700;
-      font-size: 15px;
-      color: #5F6061;
-      padding-top: 0;
+      font-weight: $font-weight-bold;
     }
   }
 }
 
-
+.video-player {
+  margin-bottom: 2em;
+}
 
 .video-player.affix {
   position: fixed;
@@ -162,6 +158,7 @@
   left: 20px;
   width: 20%;
   z-index: 9999;
+  margin: 0;
 
   box-shadow: 0 5px 16px rgba(0,0,0,.4);
 }

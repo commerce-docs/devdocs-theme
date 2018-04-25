@@ -107,3 +107,10 @@ h1 code, h2 code, h3 code, h4 code, h5 code {
   border-radius: 3px;
   margin: 0 0 20px;
 }
+
+
+.language-bash pre.highlight:before {
+  display: inline;
+  content: '$';
+  margin-right: 5px;
+}

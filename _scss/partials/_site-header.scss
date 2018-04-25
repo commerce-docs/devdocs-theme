@@ -39,7 +39,7 @@
     overflow: hidden;
     display: none;
     z-index: 50;
-    border-left: 1px solid $beige-color;
+    border-left: 1px solid $border-color;
   }
 
   .menu-icon {
@@ -75,7 +75,7 @@
   @media ( $medium-screen ) {
 
     .site-nav {
-      outline: 1px solid $beige-color;
+      outline: 1px solid $border-color;
     }
 
     .menu-btn {

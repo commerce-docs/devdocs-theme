@@ -35,7 +35,7 @@
   }
 
   // For two colum layout, offset the footer to support the fixed sidebar
-  .layout-default &, .layout-videos &, .layout-video &, .layout-specification &{
+  .layout-default &, .layout-videos &, .layout-video &, .layout-specification &, .layout-tutorial & {
     margin-left: $sidebar-width;
   }
 

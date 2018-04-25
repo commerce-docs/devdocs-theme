@@ -1,0 +1,23 @@
+.ee-only {
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  padding: .3em .8em;
+  border: 1px solid #fac49f;
+  letter-spacing: .04em;
+
+  &:before {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 1;
+    content: '';
+    background: url(../i/icons/ee-only.svg) no-repeat center;
+    margin: 0 .5em 0 0;
+    vertical-align: baseline;
+  }
+
+  .page-intro & {
+    margin: .7em 0 0 0;
+  }
+}

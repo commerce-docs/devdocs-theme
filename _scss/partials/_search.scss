@@ -87,9 +87,9 @@ input[type=search] {
 
 }
 
-.algolia__result-highlight {
-  //background: yellow;
-  font-weight: 700;
+.ais-Highlight {
+  font-style: normal;
+  background: #FFF8D7;
 }
 
 
@@ -296,8 +296,7 @@ a.clear-all:hover {
 }
 
 .ais-refinement-list--item {
-  margin: 0 0 20px 0;
-  font-size: 16px;
+  margin: 0 0 1em 0;
 }
 
 .ais-refinement-list--count {
