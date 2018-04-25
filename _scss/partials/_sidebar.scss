@@ -3,7 +3,7 @@ $toggle-width: 30px;
 .sidebar {
   position: fixed;
   width: $sidebar-width;
-  border-right: 1px solid $light-gray-color;
+  border-right: 1px solid $border-color;
   height: 100%;
   z-index: 2;
   overflow-y: auto;
@@ -21,40 +21,56 @@ $toggle-width: 30px;
   }
 
   .guide-title {
-    color: #5F6061;
+    position: relative;
+    color: $body-font-color;
     font-weight: $font-weight-medium;
-    font-size: $font-size-base;
-    padding: $spacing*2 $spacing*3;
+    font-size: 18px;
+    padding: $spacing*2 $spacing*3 $spacing*4 $spacing*3;
+    border-bottom: 1px solid $border-color;
+
     margin: 0;
+    z-index: 1;
   }
 
-  ul {
 
+  // Styling the menu
+
+  ul {
     list-style: none;
     margin: 0;
+    padding: 0;
 
     li {
       position: relative;
       list-style: none;
       margin: 0;
       padding: 0;
-      font-size: $font-size-sm;
-      line-height: 1.3em
+      font-size: 15px;
+      line-height: 1.3;
+      border-bottom: 1px solid $border-color;
+    }
+
+    ul li {
+      border-bottom: none;
     }
 
     a, span {
       display: block;
-      padding: $spacing*2 $spacing*3;
-      font-size: $font-size-sm;
-      line-height: $line-height-base;
-      font-weight: $font-weight-normal;
+      padding: $spacing*3 $spacing*3;
       position: relative;
+      font-weight: $font-weight-medium;
+    }
+
+    ul a {
+      font-weight: normal;
     }
 
     a {
-      color: $accent-color;
+      //color: $accent-color;
+      color: $body-font-color;
+
       text-decoration: none;
-      transition: all $transition-duration;
+      transition: background $transition-duration;
 
       &:hover {
         background: $dropdown-link-hover-bg;
@@ -64,9 +80,9 @@ $toggle-width: 30px;
       }
     }
 
+    // Group titles
     span {
-      color: #5F6061;
-      font-weight: $font-weight-medium;
+      color: #737676;
     }
 
     .active {
@@ -78,8 +94,19 @@ $toggle-width: 30px;
 
   }
 
-  ul ul a, ul ul span {
+  // All second level links in menu are teal
+  ul ul a {
+    color: $accent-color;
+  }
+
+  // Third level
+  ul ul ul a, ul ul ul span {
     padding-left: $spacing*6;
+  }
+
+  // Fourth level
+  ul ul ul ul a, ul ul ul ul span {
+    padding-left: $spacing*8;
   }
 
   .toc-toggler {
@@ -88,61 +115,75 @@ $toggle-width: 30px;
 
 }
 
+
+
+
+
 .collapsible-navigation {
+
+  position: relative;
 
   ul {
     ul {
       display: none;
-      padding-left: $toggle-width;
-
-      a, span {
-        padding-left: $spacing*3;
-      }
     }
   }
 
   .has-children {
     & > a, & > span {
-      padding-left: $toggle-width;
+      padding-right: $toggle-width;
     }
   }
 
   .toggle {
     background: transparent;
     border: none;
+    border-radius: 0;
     display: block;
 
     position: absolute;
 
     outline: 0;
+    opacity: .9;
 
     padding: 0;
     margin: 0;
 
     top:0;
-    left: 0;
+    right: 0;
     cursor: pointer;
 
-    height: 41px;
+    height: 49px;
     width: $toggle-width;
 
     z-index: 10;
 
     &:hover {
-      background: #eee;
+      background: $dropdown-link-hover-bg;
+    }
+
+    /*
+    &:focus {
+      outline: 1px dotted #212121;
+      outline: 5px auto -webkit-focus-ring-color;
+    }*/
+
+    &:focus {
+      &:after {
+        border-color: darken($accent-color,10%) transparent transparent transparent;
+      }
     }
 
     &:after {
       display: block;
       content: '';
-      transition: all $transition-duration;
+    //  transition: all $transition-duration;
       width: 0;
       height: 0;
       margin: auto;
       border-style: solid;
-      border-width: 5px 0 5px 8px;
-      border-color: transparent transparent transparent $accent-color;
-
+      border-width: 8px 5px 0 5px;
+      border-color: $accent-color transparent transparent transparent;
     }
 
   }
@@ -154,12 +195,12 @@ $toggle-width: 30px;
 
     & > span:hover {
       cursor: pointer;
-      background: #eee;
+      background: $dropdown-link-hover-bg;
     }
   }
 
   .open > .toggle:after {
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
 
   .active > .toggle {
@@ -167,7 +208,25 @@ $toggle-width: 30px;
       background: darken($accent-color, 10%);
     }
     &:after {
-      border-color: transparent transparent transparent #fff;
+      border-color: #fff transparent transparent transparent;
+    }
+  }
+
+
+  .expand-all {
+    background: transparent;
+    font-size: $font-size-xsm;
+    letter-spacing: .02em;
+    border: none;
+    position: absolute;
+    right: 0;
+    top: -2.2em;
+    color: #999;
+    z-index: 2;
+
+    &:active, &:focus, &:hover {
+      outline: none;
+      color: $body-font-color;
     }
   }
 
@@ -223,6 +282,7 @@ $toggle-width: 30px;
 
 
   }
+
 
   .expanded {
 

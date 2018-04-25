@@ -35,6 +35,7 @@
 			init: function() {
         this.items = $( this.element ).find( this.settings.itemSelector );
         this.initMenuItems( this.items );
+				this.addExpandAllToggle();
 			},
 
       initMenuItems: function( items ) {
@@ -69,6 +70,7 @@
 
           // check if item is clickable, if not, make it
           if ( item.find('> a').length === 0 ) {
+
             item
               .addClass(settings.itemToggleClass)
               .find('> span')
@@ -88,15 +90,14 @@
             var submenuId = 'collapsible-menu-' + n;
             var toggle = $('<button />')
               .addClass( settings.toggleClass)
-              .attr('aria-controls', submenuId);
+              .attr('aria-controls', submenuId).
+							insertBefore( $( submenu ) );
 
             // Assign attributes
             $( submenu ).attr('id', submenuId)
               .attr('role', 'group');
 
-            $( item )
-                .addClass( settings.hasChildrenClass )
-                .prepend( toggle );
+            $( item ).addClass( settings.hasChildrenClass );
 
               //Assign events
             toggle.on('click',
@@ -163,9 +164,43 @@
         }
 
         submenu.slideUp( speed );
-      }
+      },
 
-		} );
+
+			addExpandAllToggle: function () {
+				this.expandAllToggle = $('<button class="expand-all">Expand</button>');
+				this.expanded = false;
+				this.expandAllToggle.on('click',
+					{
+						plugin: this
+					},
+					this.handleExpandAllClick );
+
+				$(this.element).prepend( this.expandAllToggle );
+			},
+
+			handleExpandAllClick: function (event) {
+				var plugin = event.data.plugin;
+
+				if ( plugin.expanded ) {
+					plugin.expandAllToggle.text('Expand');
+					plugin.items.each( function () {
+						var $item = $(this);
+						plugin.closeSubmenu($item, undefined, 0);
+					})
+				} else {
+					plugin.expandAllToggle.text('Collapse');
+					plugin.items.each( function () {
+						var $item = $(this);
+						plugin.openSubmenu($item, undefined, 0);
+					})
+				}
+
+				plugin.expanded = !plugin.expanded;
+
+			},
+
+		});
 
 
 		// A really lightweight plugin wrapper around the constructor,
