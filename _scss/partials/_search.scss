@@ -73,15 +73,21 @@ input[type=search] {
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
+  flex-wrap: wrap;
 
   article {
     flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 70%;
     padding-right: 30px;
+    max-width: 100%;
   }
 
   aside {
     min-width: 200px;
     flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 30%;
     padding: 20px;
   }
 
@@ -160,11 +166,7 @@ input[type=search] {
 }
 
 
-#tags {
-  position: sticky;
-  top: 80px;
 
-}
 
 /* PAGINATION */
 #pagination {
@@ -285,6 +287,11 @@ a.clear-all:hover {
   border-color: #999;
 }
 
+
+#tags {
+//  position: sticky;
+//  top: 80px;
+}
 
 .ais-refinement-list {
 
