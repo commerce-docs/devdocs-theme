@@ -5,9 +5,9 @@
     "url": "git+https://github.com/magento-devdocs/devdocs-theme.git"
   },
   "scripts": {
-    "scss": "node-sass -o assets/css _scss --output-style=compressed",
+    "scss": "node-sass --source-map=0 -o assets/css _scss --output-style=compressed",
     "autoprefixer": "postcss -u autoprefixer -r assets/css/*.css",
-    "uglify": "uglifyjs _js/*.js -o assets/js/app.js && uglifyjs assets/js/*.js -m -c -o assets/js/app.min.js",
+    "uglify": "uglifyjs _js/*.js -o assets/js/app.js && uglifyjs assets/js/*.js -m -c -o assets/js/app.min.js --source-map=0",
     "jekyll": "bundle exec jekyll build",
     "serve": "browser-sync start --server '_site' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
     "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
