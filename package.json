@@ -1,37 +1,33 @@
 {
   "name": "Devdocs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magento-devdocs/devdocs-theme.git"
+  },
   "scripts": {
-    "scss": "node-sass --output-style compressed -o assets/css _scss",
-    "autoprefixer": "postcss -u autoprefixer -r assets/css/*",
-    "images": "imagemin images/*/* --out-dir assets/images",
-    "build:css": "npm run scss && npm run autoprefixer && npm run build:html",
-    "watch:css": "nodemon -e scss -x 'npm run build:css'",
+    "scss": "node-sass -o assets/css _scss --output-style=compressed",
+    "autoprefixer": "postcss -u autoprefixer -r assets/css/*.css",
     "uglify": "uglifyjs _js/*.js -o assets/js/app.js && uglifyjs assets/js/*.js -m -c -o assets/js/app.min.js",
-    "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js --source-map && npm run build:html",
-    "watch:js": "nodemon --watch _js -x 'npm run build:js'",
     "jekyll": "bundle exec jekyll build",
+    "serve": "browser-sync start --server '_site' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
+    "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
+    "build:css": "npm run scss && npm run autoprefixer",
     "build:html": "npm run jekyll",
-    "watch:html": "onchange '**/*.{html,md}' -e '_site/**/*' -d 1000 -- npm run build:html",
-    "serve": "browser-sync start --server '_site'",
-    "watch:all": "npm-run-all --parallel watch:css watch:js watch:html serve"
+    "watch:html": "nodemon -e md,html --ignore _site/ -x 'npm run build:html'",
+    "watch:css": "nodemon -e scss -x 'npm run build:css && cp -r assets/css/ _site/assets/css/'",
+    "watch:js": "nodemon --watch _js -x 'npm run build:js  && cp -r assets/js/ _site/assets/js/'",
+    "watch:all": "npm-run-all --parallel watch:html watch:js watch:css serve"
   },
   "devDependencies": {
     "autoprefixer": "latest",
-    "babel-core": "latest",
-    "bootstrap": "^4.0.0-beta",
+    "postcss-cli": "latest",
+    "bootstrap": "latest",
     "browser-sync": "latest",
-    "imagemin-cli": "latest",
-    "node-import": "latest",
     "node-sass": "latest",
     "nodemon": "latest",
-    "onchange": "latest",
     "npm-run-all": "latest",
-    "postcss-cli": "latest",
-    "requirejs": "latest",
     "uglify-js": "latest"
   },
-  "dependencies": {
-    "imagemin": "^5.3.1"
-  },
+  "dependencies": {},
   "private": true
 }
