@@ -7,7 +7,17 @@
   position: sticky;
   top: $header-height;
   max-height: calc(100vh - #{$header-height});
+  scroll-behavior: smooth;
+  overflow-x: hidden;
   overflow-y: auto;
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &:before {
     display: block;
@@ -21,6 +31,7 @@
 
   ul {
     margin: 0;
+    position: relative;
   }
 
   li {

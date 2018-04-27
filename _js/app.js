@@ -12,7 +12,6 @@ $(function() {
   // Magento Glossary
   magento.glossary.init('https://magento.github.io/glossary/data/content-glossary.xml',function(term){return term.types.includes('glossary');},magento.glossary.tooltip.init);
 
-
   // jquery modal settings
   $.modal.defaults = {
     closeExisting: true,
