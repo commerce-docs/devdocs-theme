@@ -36,7 +36,7 @@
   }
 
   .active {
-    a {
+    a, span {
       color: $dark-gray-color;
       cursor: default;
       text-decoration: none;
