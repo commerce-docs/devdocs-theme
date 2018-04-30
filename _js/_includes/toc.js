@@ -86,27 +86,26 @@ $(function() {
 
   // This event fires on activation of the toc item
   $(window).on('activate.bs.scrollspy', function (event) {
-    var tocHeight = Math.floor( $toc.height() ),
-        tocNavHeight = Math.floor( $toc.find('.nav').height() );
+    if ( $toc.length ) {
+      var tocHeight = Math.floor( $toc.height() ),
+          tocNavHeight = Math.floor( $toc.find('.nav').height() );
 
-    // For long TOCs, scroll the toc as page scrolls
-    if (tocNavHeight > tocHeight ) {
-      var $item = $toc.find('.active').parent(),
-          itemTop = Math.floor( $item[0].offsetTop ),
+      // For long TOCs, scroll the toc as page scrolls
+      if (tocNavHeight > tocHeight ) {
+        var $item = $toc.find('.active').parent(),
+            itemTop = Math.floor( $item[0].offsetTop );
 
-      // Determine how much of the TOC is currently scrolled
-      var percentage = Math.floor( ( (itemTop) / ( tocNavHeight - 25) ) * 100 );
-      var scroll = ( (percentage * tocNavHeight) / 100 ) - (percentage * tocHeight) / 100;
+        // Determine how much of the TOC is currently scrolled
+        var percentage = Math.floor( ( (itemTop) / ( tocNavHeight - 25) ) * 100 );
+        var scroll = ( (percentage * tocNavHeight) / 100 ) - (percentage * tocHeight) / 100;
 
-      if ($item.is(':last-child')) {
-        scroll = tocNavHeight;
+        if ($item.is(':last-child')) {
+          scroll = tocNavHeight;
+        }
+
+        $toc.scrollTop( scroll );
       }
-
-      $toc.scrollTop( scroll );
     }
-
-
   });
-
 
 });
