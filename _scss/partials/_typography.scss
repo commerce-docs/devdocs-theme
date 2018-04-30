@@ -1,7 +1,7 @@
 body {
   color: $body-font-color;
   font-family: $body-font-family;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -20,7 +20,7 @@ h1 {
   line-height: 1.2;
   letter-spacing: 0.01em;
   margin: 0 0 20px 0;
-  font-weight: 300;
+  font-weight: $font-weight-light;
 }
 
 h1.page-subtitle {
@@ -45,7 +45,7 @@ h2 {
 h3 {
   font-size: 1.375em;
   line-height: 1.3;
-  font-weight: 700;
+  font-weight: $font-weight-bold;
   letter-spacing: 0;
   margin: 1.5em 0 0.5em 0;
   padding: 0;
@@ -54,7 +54,7 @@ h3 {
 h4 {
   font-size: 1em;
   line-height: 1.3;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   margin: 1.5em 0 0.5em 0;
 }
 
@@ -64,7 +64,7 @@ h5,.h5 {
 
 h6 {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   letter-spacing: 0.04em;
   margin: 0;
   text-transform: uppercase;
@@ -125,15 +125,6 @@ a:active {
   &:hover:after {
     filter: hue-rotate(160deg);
   }
-
-  //Don't put icon after contributor avatars
-  &.avatar {
-    &:after {
-        display: none;
-    }
-  }
-
-
 
 }
 

@@ -1,46 +1,43 @@
 .breadcrumbs {
-  font-size: 13px;
-  padding-bottom: 5px;
+  padding-bottom: .5em;
 
   ol {
-    display: inline-block;
+    display: flex;
+    flex-wrap: wrap;
     margin: 0;
     padding: 0;
   }
 
   li.breadcrumb-item {
     list-style: none;
-    display: inline-block;
     margin: 0;
     padding: 0;
   }
 
   a, span {
-    font-size: 13px;
+    font-size: $font-size-sm;
     display: inline;
   }
 
   a {
-    color: $link-color;
-    display: inline-block;
+    color: $accent-color;
     text-decoration: none;
 
     &:hover {
-      opacity: 1;
       text-decoration: underline;
     }
 
     &:after {
       display: inline-block;
-      content: ' › ';
-      padding: 0 5px;
+      content: '\203A';
+      padding: 0 .5em;
     }
 
   }
 
   .active {
     a {
-      color: #999;
+      color: $dark-gray-color;
       cursor: default;
       text-decoration: none;
 
