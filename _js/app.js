@@ -7,7 +7,7 @@ $(function() {
     }
   });
 
-  animatedAnchors.init();
+
 
   // Magento Glossary
   magento.glossary.init('https://magento.github.io/glossary/data/content-glossary.xml',function(term){return term.types.includes('glossary');},magento.glossary.tooltip.init);
@@ -35,6 +35,13 @@ $(function() {
 
   var navSide = $('.collapsible-navigation');
   navSide.collapsibleNavigation();
+
+  // Initialize and generate toc
+  var pageInfo = $('.page-info');
+  pageInfo.tableOfContents();
+
+
+  animatedAnchors.init();
 
 });
 // END document ready
