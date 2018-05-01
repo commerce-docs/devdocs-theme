@@ -159,6 +159,7 @@
   width: 20%;
   z-index: 9999;
   margin: 0;
+  min-width: 250px;
 
   box-shadow: 0 5px 16px rgba(0,0,0,.4);
 }
@@ -216,6 +217,15 @@
   }
 }
 
+.video-player-wrap {
+  margin-bottom: 2em;
+}
+
+.video-player-wrap.embed-responsive-16by9::before{
+  padding-top: 56.25%;
+  display: block;
+  content: "";
+}
 
 .page-meta {
   &:after {

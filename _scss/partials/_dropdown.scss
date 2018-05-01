@@ -5,6 +5,8 @@
 }
 
 .dropdown .dropdown-toggle {
+  width: 100%;
+  text-align: left;
   text-transform: none;
   padding-left: $spacing*2;
   padding-right: $spacing*4;

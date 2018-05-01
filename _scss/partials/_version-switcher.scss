@@ -5,47 +5,23 @@
   margin-top: 14px;
   margin-right: 20px;
 
-
   .btn {
     white-space: nowrap;
     background: transparent;
     border: 1px solid darken( $light-gray-color, 15% );
   }
 
-  &.version-switcher-mobile {
-    display: none;
-  }
-
   @media ( $medium-screen ) {
-    display: none;
 
-    &.version-switcher-mobile {
-      display: block;
-    }
-
+    z-index: 999;
     float: none;
-    margin: 20px;
+    margin: 15px;
 
     .dropdown-menu {
     	max-width: 100%;
     	min-width: 100%;
-    	position: relative;
-    	box-shadow: none;
-    	border: none;
     	left: 0;
     	right: auto;
-    	background: transparent;
-
-    	.dropdown-item {
-    		font-size: 14px;
-    		background: transparent;
-
-    	}
-    	li {
-    		background: none;
-    		margin: 0;
-    		padding: 0;
-    	}
   	}
 
   }
