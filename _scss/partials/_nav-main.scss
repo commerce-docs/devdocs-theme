@@ -85,77 +85,17 @@
 
   }// mobile view
 
-}//.nav-main
 
-/*
-.nav-close {
-  display: none;
-}
+  @media ( $medium-to-large-screen ) {
 
-.nav-close:active, .nav-close:focus {
-  text-decoration: none;
-  border: none;
-}*/
-
-
-    /*
-// Mobile view
-@media ( $medium-screen ) {
-
-  .nav-main {
-
-    ul ul {
-      visibility: visible;
-      position: relative;
-      left: 0;
-      top: 0;
-      opacity: 1;
-      width: 100%;
-      max-height: 0;
-      padding: 0;
-      margin: 0;
-      border: none;
-      overflow: hidden;
-      transition: max-height $transition-duration;
-      box-shadow: none;
-
+    // First level items
+    & > li > a, & > li > span {
+      font-size: .9rem;
     }
-
-
-    .children-toggle {
-      position: absolute;
-      display: block;
-      width: $header-height;
-      height: 57px;
-      border: none;
-      background: none;
-      top:0;
-      right: 0;
-      z-index: 1;
-
-      &:after {
-        width: 0;
-        height: 0;
-        margin: 0 auto;
-        position: relative;
-        top: 22px;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
-        border-color: #333 transparent transparent transparent;
-        display: block;
-        content: '';
-        transition: all $transition-duration;
-      }
-    }
-
-    .expanded .children-toggle:after {
-      transform: rotate(180deg);
-    }
-
   }
 
-}
-*/
+}//.nav-main
+
 
 .nav-main-fader {
   background: rgba(0,0,0,0);
