@@ -4,67 +4,54 @@
 * https://davidwalsh.name/detecting-google-analytics
 */
 
+function setHandlers(selector, config) {
+    $(selector).on('click', function (e) {
+        if (! window.ga || ! window.ga.create) {
+            return true;
+        }
+
+        var $this = $(this),
+            url = $this.attr('href'),
+            isTargetBlank = $this.attr('target') === '_blank';
+
+        if (!isTargetBlank) {
+            e.preventDefault();
+        }
+
+        config = $.extend({}, config, {
+            eventAction: 'click',
+            transport: 'beacon',
+            hitCallback: function(){
+                if (!isTargetBlank) {
+                    document.location = url;
+                }
+            }
+        });
+
+        ga('send', 'event', config);
+    });
+}
+
 /**
-  Track onbound links click (for GitHub links)
-*/
-$('.improve-page').on('click', function (e) {
-  if (! window.ga || ! window.ga.create) { return true; }
-  var $this = $(this),
-      url = $this.attr('href'),
-      isTargetBlank = $this.attr('target') === '_blank';
-
-  if (!isTargetBlank) {
-      e.preventDefault();
-  }
-
-  ga('send', 'event', {
+ Track onbound links click (for GitHub links)
+ */
+setHandlers('.improve-page', {
     eventCategory: 'Outbound Link',
-    eventAction: 'click',
-    eventLabel: 'Edit this page on GitHub',
-    //eventValue: 1,
-    transport: 'beacon',
-    hitCallback: function(){
-      if (!isTargetBlank) {
-        document.location = url;
-      }
-    }
-  });
+    eventLabel: 'Edit this page on GitHub'
 });
 
 /**
-  Track "Give us Feedback" link click
-*/
-$('.new-issue a').on('click', function (e) {
-  if (! window.ga || ! window.ga.create) { return true; }
-  e.preventDefault();
-  var $this = $(this),
-      url = $this.attr('href');
-
-  ga('send', 'event', {
+ Track "Give us Feedback" link click
+ */
+setHandlers('.new-issue a', {
     eventCategory: 'Outbound Link',
-    eventAction: 'click',
-    eventLabel: 'Give us feedback',
-    //eventValue: 1,
-    transport: 'beacon',
-    hitCallback: function(){document.location = url;}
-  });
+    eventLabel: 'Give us feedback'
 });
 
 /**
-  Track "Become Contributor" home page button
-*/
-$('.home-contributors .btn-primary').on('click', function (e) {
-  if (! window.ga || ! window.ga.create) { return true; }
-  e.preventDefault();
-  var $this = $(this),
-      url = $this.attr('href');
-
-  ga('send', 'event', {
+ Track "Become Contributor" home page button
+ */
+setHandlers('.home-contributors .btn-primary', {
     eventCategory: 'Internal Link',
-    eventAction: 'click',
-    eventLabel: 'Become Contributor on home page',
-    //eventValue: 1,
-    transport: 'beacon',
-    hitCallback: function(){document.location = url;}
-  });
+    eventLabel: 'Become Contributor on home page'
 });
