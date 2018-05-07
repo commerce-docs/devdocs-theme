@@ -9,9 +9,13 @@
 */
 $('.improve-page').on('click', function (e) {
   if (! window.ga || ! window.ga.create) { return true; }
-  e.preventDefault();
   var $this = $(this),
-      url = $this.attr('href');
+      url = $this.attr('href'),
+      isTargetBlank = $this.attr('target') === '_blank';
+
+  if (!isTargetBlank) {
+      e.preventDefault();
+  }
 
   ga('send', 'event', {
     eventCategory: 'Outbound Link',
@@ -19,9 +23,13 @@ $('.improve-page').on('click', function (e) {
     eventLabel: 'Edit this page on GitHub',
     //eventValue: 1,
     transport: 'beacon',
-    hitCallback: function(){document.location = url;}
+    hitCallback: function(){
+      if (!isTargetBlank) {
+        document.location = url;
+      }
+    }
   });
-})
+});
 
 /**
   Track "Give us Feedback" link click
