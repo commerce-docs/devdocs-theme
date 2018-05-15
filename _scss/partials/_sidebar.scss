@@ -16,7 +16,7 @@ $toggle-width: 30px;
   }
 
   .sidebar-wrapper {
-    padding: $spacing*2 0 $spacing*4;
+    padding: 0 0 $spacing*4;
     padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
   }
 
@@ -25,7 +25,7 @@ $toggle-width: 30px;
     color: $body-font-color;
     font-weight: $font-weight-medium;
     font-size: 18px;
-    padding: $spacing*2 $spacing*3 $spacing*4 $spacing*3;
+    padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
     border-bottom: 1px solid $border-color;
 
     margin: 0;
@@ -107,6 +107,12 @@ $toggle-width: 30px;
   // Fourth level
   ul ul ul ul a, ul ul ul ul span {
     padding-left: $spacing*8;
+  }
+
+
+  // First level lists could use some spacing
+  .sidebar-wrapper > ul {
+    margin-bottom: $spacing*3;
   }
 
   .toc-toggler {
