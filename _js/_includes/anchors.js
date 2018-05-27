@@ -2,7 +2,7 @@
 var animatedAnchors = {
   init: function ( settings ) {
     animatedAnchors.config = {
-      items: $('.main-container a'),
+      items: $('.main-container a[href^="#"]'),
       root:  $('html, body'),
       speed:  500,
       headerHeight: 60
