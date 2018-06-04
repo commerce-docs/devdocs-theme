@@ -20,12 +20,12 @@
   },
   "devDependencies": {
     "autoprefixer": "latest",
-    "postcss-cli": "latest",
     "bootstrap": "latest",
-    "browser-sync": "latest",
+    "browser-sync": "^2.24.4",
     "node-sass": "latest",
-    "nodemon": "latest",
+    "nodemon": "^1.17.5",
     "npm-run-all": "latest",
+    "postcss-cli": "latest",
     "uglify-js": "latest"
   },
   "dependencies": {},
