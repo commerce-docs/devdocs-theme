@@ -36,11 +36,10 @@
     transition: all $transition-duration;
     user-select: none;
 
-    .current & {
-      color: $brand-color;
-      background: #fff;
-    }
+  }
 
+  & > .current > a, & > .current > span  {
+    color: $brand-color;
   }
 
   & > li > span {

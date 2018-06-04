@@ -10,7 +10,7 @@
 
   {% if site.github_link == true %}
   <div class="github-link">
-    <a class="improve-page" href="{{ site.github_repo }}blob/develop/{{ page.path }}" target="_blank">
+    <a class="improve-page" href="{{ site.github_files }}{{ page.path }}" target="_blank">
       Edit this page on GitHub
     </a>
   </div>
@@ -18,7 +18,9 @@
 
   {% if site.feedback_link == true %}
   <div class="new-issue">
-    <a href="{{ site.github_repo }}issues/new?title=&body=Feedback on page: {{ page.url }}" target="_blank">Give us feedback</a>
+    <a href="{{ site.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank">
+      Give us feedback
+    </a>
   </div>
   {% endif %}
 

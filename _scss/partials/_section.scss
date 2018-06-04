@@ -1,0 +1,13 @@
+.section {
+  padding: $section-padding;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  position: relative;
+
+  @media ($large-screen) {
+    max-width: $container-width-large;
+  }
+}
