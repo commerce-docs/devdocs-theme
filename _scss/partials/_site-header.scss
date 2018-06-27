@@ -131,15 +131,24 @@
 
   // Name of the website
   .site-logo {
-    color: $body-font-color;
+
     position: relative;
-    top: -2px;
+    align-self: flex-start;
+    top: 6px;
 
-    font-size: 23px;
-    line-height: 1;
-    font-weight: $font-weight-bold;
+    color: $body-font-color;
+    border-left: 2px solid #4e4e4e;
 
-    padding: 0 $spacing;
+    font-size: 22px;
+    height: 43px;
+    line-height: 38px;
+    letter-spacing: .01em;
+
+    font-weight: $font-weight-normal;
+
+    padding: 0 0 0 $spacing*2;
+    margin: 0 0 0 $spacing*2;
+
     text-decoration: none;
 
   }
@@ -148,6 +157,20 @@
   @media ( $medium-to-large-screen ) {
     .magento-logo {
       display: none;
+    }
+    .site-logo {
+      height: 36px;
+      line-height: 36px;
+    }
+  }
+
+  @media ( $medium-screen ) {
+    .magento-logo {
+      display: block;
+    }
+    .site-logo {
+      height: 43px;
+      line-height: 38px;
     }
   }
 
