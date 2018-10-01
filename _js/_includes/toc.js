@@ -18,7 +18,7 @@
       itemActiveClass: 'active',
       noTocClass: 'no_toc',
       topOffset: 65,
-      minimumCount: 2,
+      minimumCount: 1,
 		};
 
 		// The actual plugin constructor
