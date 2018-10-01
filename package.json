@@ -16,7 +16,8 @@
     "watch:html": "nodemon -e md,html --ignore _site/ -x 'npm run build:html'",
     "watch:css": "nodemon -e scss -x 'npm run build:css && cp -r assets/css/ _site/assets/css/'",
     "watch:js": "nodemon --watch _js -x 'npm run build:js  && cp -r assets/js/ _site/assets/js/'",
-    "watch:all": "npm-run-all --parallel watch:html watch:js watch:css serve"
+    "watch:all": "npm-run-all --parallel watch:html watch:js watch:css serve",
+    "start": "npm run watch:all"
   },
   "devDependencies": {
     "autoprefixer": "latest",
