@@ -5,7 +5,11 @@
   align-items: center;
   flex-wrap: wrap;
   background: $light-gray-color;
+
+  margin: 0;
   padding: 0 30px;
+
+  list-style: none;
 
   .tab {
     margin: 0;
@@ -15,10 +19,9 @@
 
   a {
     text-decoration: none;
-    display:block;
+    display: block;
     line-height: 47px;
     color: $body-font-color;
-    font-weight: 600;
     padding: 0 30px;
 
     &:hover {

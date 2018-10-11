@@ -24,7 +24,7 @@
     content: "On this page";
     text-transform: uppercase;
     letter-spacing: .05em;
-    color: $dark-gray-color;
+    color: $secondary-text-color;
     font-weight: $font-weight-bold;
     padding: 0 10px 5px 10px;
   }
@@ -42,7 +42,7 @@
   }
 
   a {
-    color: $dark-gray-color;
+    color: $secondary-text-color;;
     font-size: $font-size-xsm;
     display: block;
     padding: 5px 10px;
