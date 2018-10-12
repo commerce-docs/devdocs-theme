@@ -9,6 +9,7 @@
 		defaults = {
 			menuActiveClass: 'active',
 			menuDelay: 40,
+			mobileTreshold: 1024,
 			offcanvasClass: 'offcanvas-active',
 			sectionSelector: '.nav-section',
 			popupSelector: '.nav-popup',
@@ -21,32 +22,17 @@
 		this.element = element;
 		this.$element = $(element);
 		this.options = $.extend( {}, defaults, options );
+		this.$popups = this.$element.find( this.options.popupSelector )
 		this._defaults = defaults;
 		this._name = pluginName;
+		this._desktopMode = false;
 
-		this.handleMenuMouseEnter = function ( event ) {
+		this.handleMenuItemMouseEnter = function ( event ) {
 			event.stopPropagation();
 			event.preventDefault();
 
 			var currentItem = $(this),
 					popup = currentItem.find( plugin.options.popupSelector );
-
-			// Center the flyout menu on desktop/tablet landscape
-			if ( !$('body').hasClass( plugin.options.offcanvasClass ) && popup.find( plugin.options.sectionSelector ).length ) {
-				var windowWidth = $(window).width(),
-						popupWidth = popup.width();
-
-				// Adjust the popup position relative to the menu item
-				var popupPosition = ( windowWidth - popupWidth ) / 2;
-				if ( popupPosition < currentItem.offset().left ) {
-					popup.offset({ left: popupPosition });
-				} else {
-					popup.offset({ left: 'auto' });
-				}
-
-			} else {
-				popup.css({ left: 'auto' });
-			}
 
 			// Delay the appearance of the popup menu
 			clearTimeout( window.navTimer );
@@ -56,75 +42,158 @@
 
 		}
 
-
-		this.handleMenuMouseLeave = function ( event ) {
+		this.handleMenuItemMouseLeave = function ( event ) {
 			event.stopPropagation();
 			event.preventDefault();
 			var currentItem = $(this);
 
-			plugin.hidePopup( currentItem );
 			clearTimeout( window.navTimer );
+			window.navTimer = window.setTimeout( function () {
+				plugin.hidePopup( currentItem );
+			}, plugin.options.menuDelay );
 		}
 
-		this.handleMenuFocusOut = function ( event ) {
+		this.handleMenuItemFocusOut = function ( event ) {
 			var menuItem = $(this);
-			setTimeout( function () {
-				if (	menuItem.find(':focus').length == 0 ) {
-					plugin.hidePopup( menuItem );
-					menuItem.find( plugin.options.popupSelector ).css({ left: 'auto ' });
-				}
-			}, plugin.options.menuDelay);
+			plugin.hidePopup( menuItem );
+		}
+
+		this.handleMenuItemFocusIn = function ( event ) {
+			var menuItem = $(this);
+			plugin.showPopup( menuItem );
 		}
 
 		// These functions handle the popup appearance
 		this.showPopup = function ( menuItem ) {
 			var popup = menuItem.find( plugin.options.popupSelector );
-
 			plugin.hidePopup( plugin.topLevelItems.not( menuItem ) );
+
+			// Center the flyout menu on desktop mode if popup has sections
+			if ( plugin._desktopMode && popup.find( plugin.options.sectionSelector ).length ) {
+				var windowWidth = $(window).width(),
+						popupWidth = popup.width();
+				// Adjust the popup position relative to the menu item
+				var popupPosition = ( windowWidth - popupWidth ) / 2;
+				if ( popupPosition < menuItem.offset().left ) {
+					popup.offset({ left: popupPosition });
+				}
+			}
 
 			menuItem.addClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'false');
-			popup.find('a').attr('tabindex', 0);
 		}
 
 		this.hidePopup = function ( menuItem ) {
 			var popup = menuItem.find( plugin.options.popupSelector );
 			menuItem.removeClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'true');
-			popup.find('a').attr('tabindex', -1);
+		}
+
+		this.handleLabelClick = function ( event ) {
+			var label = $(this),
+					menuItem = label.closest( plugin.options.topLevelItemsSelector ),
+					popup = menuItem.find( plugin.options.popupSelector );
+
+			popup.focus();
+		}
+
+		// Determine if the browser is in mobile view or not
+		this.handleWindowResize = function () {
+			if ( $(window).width() >= plugin.options.mobileTreshold ) {
+				if ( !plugin._desktopMode ) {
+					plugin.desktopViewOn();
+				}
+			} else {
+				if ( plugin._desktopMode ) {
+					plugin.desktopViewOff();
+				}
+			}
+		}
+
+		this.handleClickOutside = function (event) {
+			if ( !$(event.target).closest( plugin.topLevelItems ).length ) {
+				plugin.hidePopup( plugin.topLevelItems );
+			}
+		}
+
+		// Switch to the Desktop view
+		this.desktopViewOn = function () {
+			plugin._desktopMode = true;
+
+			plugin.topLevelItems
+				.on('mouseenter', plugin.handleMenuItemMouseEnter)
+				.on('mouseleave', plugin.handleMenuItemMouseLeave)
+				.on('focusin', plugin.handleMenuItemFocusIn)
+				.on('focusout', plugin.handleMenuItemFocusOut);
+
+			$(document).on('touchstart', plugin.handleClickOutside);
+
+			plugin.$popups.each(function () {
+				var popup = $(this);
+
+				popup
+					.attr('aria-hidden', true);
+			});
+
+		}
+
+		// Switch to the Mobile view
+		this.desktopViewOff = function () {
+			plugin._desktopMode = false;
+
+			plugin.topLevelItems
+				.off('mouseenter', plugin.handleMenuItemMouseEnter)
+				.off('mouseleave', plugin.handleMenuItemMouseLeave)
+				.off('focusin', plugin.handleMenuItemFocusIn)
+				.off('focusout', plugin.handleMenuItemFocusOut);
+
+			// Hide popups if clicked outside of the popup
+			$(document).off('touchstart', plugin.handleClickOutside);
+
+			plugin.$popups.each(function () {
+				var popup = $(this);
+
+				popup.closest( plugin.options.topLevelItemsSelector ).
+					attr('aria-haspopup', false);
+
+				popup
+					.css('left', 'auto')
+					.attr('aria-hidden', false);
+			});
+
 		}
 
 		this.init();
 	}
-
 
 	Plugin.prototype.init = function () {
 		var plugin = this;
 		plugin.topLevelItems = plugin.$element.find( plugin.options.topLevelItemsSelector );
 
 		// Assign Events
-		$(document).on('touchstart', function( event ) {
-			if ( !$(event.target).closest( plugin.topLevelItems ).length ) {
-				plugin.hidePopup( plugin.topLevelItems );
-			}
-		});
+		$(window).on('resize', plugin.handleWindowResize);
+		plugin.handleWindowResize();
 
-		plugin.topLevelItems
-			.on('mouseenter focusin', plugin.handleMenuMouseEnter)
-			.on('mouseleave', plugin.handleMenuMouseLeave )
-			.on('focusout', plugin.handleMenuFocusOut);
+		// Assign attributes to popups
+		var popupN = 0;
+		plugin.$popups.each(function () {
+			popupN++;
+			var popup = $(this),
+				popupId = 'main-nav-popup-' + popupN,
+				popupLabel = 'main-nav-popupLabel-' + popupN,
+				label = $(this).closest( plugin.options.topLevelItemsSelector ).find('> a, > span');
 
-		plugin.$element.on('focusout', function () {
-			setTimeout( function () {
-				if (	plugin.$element.find(':focus').length == 0 ) {
-					plugin.hidePopup( plugin.topLevelItems.filter( '.' + plugin.options.menuActiveClass ) );
-					plugin.$element.find( plugin.options.popupSelector ).css({ left: 'auto ' });
-				}
-			}, plugin.options.menuDelay);
-		});
+			label
+				.attr('id', popupLabel)
+				.on('click', plugin.handleLabelClick );
+
+			popup
+				.attr('tabindex', -1)
+				.attr('role', 'menu')
+				.attr('aria-labelledby', popupLabel);
+		})
 
 	}
-
 
 	// A really lightweight plugin wrapper around the constructor,
 	// preventing against multiple instantiations

@@ -35,9 +35,39 @@
 
 			init: function() {
         this.items = $( this.element ).find( this.options.itemSelector );
+				$( this.element ).find('> ul').attr('role','menu');
         this.initMenuItems( this.items );
+
+				// Add Expand toggle button if menu has submenus
 				if ( this.items.hasClass(this.options.hasChildrenClass) ) {
 					this.addExpandAllToggle();
+				}
+
+				// Scroll the sidebar to the active element
+				var activeItem = this.items.filter( '.' + this.options.itemActiveClass).first();
+				if ( activeItem.length ) {
+					var itemTop = activeItem.offset().top,
+							itemBottom = itemTop + activeItem.height(),
+							headerHeight = $('.site-nav').height(),
+							windowHeight = $(window).height() - headerHeight;
+
+					// Active item is below the viewport
+					if ( windowHeight < itemBottom ) {
+
+						var parentSection = activeItem.parents(this.options.itemSelector),
+								parentSectionTop = 0;
+
+						if ( parentSection.length ) {
+							parentSectionTop = parentSection.offset().top;
+						}
+
+						if ( windowHeight < parentSectionTop && itemBottom - parentSectionTop < windowHeight ) {
+							$('.sidebar').scrollTop( parentSectionTop - headerHeight );
+						} else {
+							$('.sidebar').scrollTop( itemTop - headerHeight );
+						}
+
+					}
 				}
 			},
 
@@ -50,25 +80,19 @@
         items.each ( function () {
 
           var item = $(this);
-          item.attr('role', 'treeitem');
+					item.attr('role', 'menuitem');
 
           var submenu = item.find( options.submenuSelector );
 
+
           // If this item is active, traverse the tree up and open each parent
           if ( item.hasClass ( options.itemActiveClass ) ) {
+
             var parents = item.parents( options.itemSelector );
             plugin.openSubmenu( item, undefined, 0 );
             parents.each( function () {
               plugin.openSubmenu( $(this), undefined, 0 );
             });
-          }
-
-          if ( !item.attr('aria-expanded') ) {
-            item.attr('aria-expanded', false);
-          } else {
-            if ( item.attr('aria-expanded') === 'true' ) {
-              plugin.openSubmenu( item, undefined, 0 );
-            }
           }
 
           // check if item is clickable, if not, make it
@@ -90,15 +114,24 @@
           if ( submenu.length ) {
 
             n++;
-            var submenuId = 'collapsible-menu-' + n;
+            var submenuId = 'collapsible-menu-' + n,
+								submenuLabel = 'collapsible-menu-label-' + n;
+
+						item.find('> a, > span').attr('id', submenuLabel);
+
             var toggle = $('<button />')
               .addClass( options.toggleClass)
-              .attr('aria-controls', submenuId).
-							insertBefore( $( submenu ) );
+							.attr('aria-labelledby', submenuLabel)
+              .attr('aria-controls', submenuId)
+							.attr('aria-expanded', false)
+							.insertBefore( $( submenu ) );
 
             // Assign attributes
-            $( submenu ).attr('id', submenuId)
-              .attr('role', 'group');
+            $( submenu )
+							.attr('id', submenuId)
+              .attr('role', 'menu')
+							.attr('aria-labelledby', submenuLabel)
+							.attr('tabindex', '-1');
 
             $( item ).addClass( options.hasChildrenClass );
 
@@ -122,14 +155,18 @@
         event.preventDefault();
         event.stopPropagation();
 
-        var item = event.data.item,
+        var toggle = $(this),
+					item = event.data.item,
           submenu = event.data.submenu,
           plugin = event.data.plugin;
 
-        if ( item.attr('aria-expanded') === 'true' ) {
+        if ( item.hasClass( plugin.options.openClass ) ) {
+					toggle.attr('aria-expanded', false);
           plugin.closeSubmenu( item, submenu );
         } else {
+					toggle.attr('aria-expanded', true);
           plugin.openSubmenu( item, submenu );
+					//submenu.focus();
         }
 
 			},
@@ -137,8 +174,7 @@
       openSubmenu: function ( item, submenu, speed ) {
 
         item.removeClass( this.options.closedClass ).
-          addClass(this.options.openClass).
-          attr('aria-expanded', 'true');
+          addClass(this.options.openClass);
 
         if( typeof submenu === "undefined" ) {
           submenu = item.find( this.options.submenuSelector );
@@ -148,15 +184,20 @@
           speed = this.options.speed;
         }
 
-        submenu.slideDown( speed );
+				item.
+					attr('aria-expanded', true);
+
+        submenu
+					.slideDown( speed )
+					.attr('aria-hidden', false)
+					.attr('aria-expanded', true);
 
       },
 
       closeSubmenu: function ( item, submenu, speed ) {
 
         item.removeClass( this.options.openClass ).
-          addClass(this.options.closedClass).
-          attr('aria-expanded', 'false');
+          addClass(this.options.closedClass);
 
         if( typeof submenu === "undefined" ) {
           submenu = item.find( this.options.submenuSelector );
@@ -166,7 +207,13 @@
           speed = this.options.speed;
         }
 
-        submenu.slideUp( speed );
+				item.
+					attr('aria-expanded', false);
+
+        submenu
+					.slideUp( speed )
+					.attr('aria-hidden', true)
+					.attr('aria-expanded', false);
       },
 
 

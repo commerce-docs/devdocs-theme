@@ -87,17 +87,22 @@ $toggle-width: 30px;
 
     .active {
       & > a {
-        color: #fff;
-        background: $accent-color;
+        background: lighten( $accent-color, 53% );
       }
     }
 
   }
 
   // All second level links in menu are teal
-  ul ul a {
-    color: $accent-color;
+  ul ul a, ul ul span {
+  //  color: $accent-color;
+    font-size: $font-size-sm;
   }
+
+  ul ul a, ul ul span {
+    padding: $spacing*2 $spacing*3;
+  }
+
 
   // Third level
   ul ul ul a, ul ul ul span {
@@ -135,6 +140,14 @@ $toggle-width: 30px;
     }
   }
 
+  ul ul .toggle {
+    height: 38px;
+    &:after {
+      border-width: 6px 4px 0 4px;
+    //  border-color: #999 transparent transparent transparent;
+    }
+  }
+
   .has-children {
     & > a, & > span {
       padding-right: $toggle-width;
@@ -149,7 +162,6 @@ $toggle-width: 30px;
 
     position: absolute;
 
-    outline: 0;
     opacity: .9;
 
     padding: 0;
@@ -168,11 +180,6 @@ $toggle-width: 30px;
       background: $dropdown-link-hover-bg;
     }
 
-    /*
-    &:focus {
-      outline: 1px dotted #212121;
-      outline: 5px auto -webkit-focus-ring-color;
-    }*/
 
     &:focus {
       &:after {
@@ -227,11 +234,10 @@ $toggle-width: 30px;
     position: absolute;
     right: 0;
     top: -2.2em;
-    color: #999;
+    color: $secondary-text-color;
     z-index: 2;
 
     &:active, &:focus, &:hover {
-      outline: none;
       color: $body-font-color;
     }
   }
