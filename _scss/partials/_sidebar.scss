@@ -1,4 +1,5 @@
 $toggle-width: 30px;
+$active-item-background: lighten( $accent-color, 53% );
 
 .sidebar {
   position: fixed;
@@ -66,7 +67,6 @@ $toggle-width: 30px;
     }
 
     a {
-      //color: $accent-color;
       color: $body-font-color;
 
       text-decoration: none;
@@ -87,22 +87,20 @@ $toggle-width: 30px;
 
     .active {
       & > a {
-        background: lighten( $accent-color, 53% );
+        background: $active-item-background;
       }
     }
 
   }
 
-  // All second level links in menu are teal
+  // second level links
   ul ul a, ul ul span {
-  //  color: $accent-color;
     font-size: $font-size-sm;
   }
 
   ul ul a, ul ul span {
     padding: $spacing*2 $spacing*3;
   }
-
 
   // Third level
   ul ul ul a, ul ul ul span {
@@ -144,7 +142,6 @@ $toggle-width: 30px;
     height: 38px;
     &:after {
       border-width: 6px 4px 0 4px;
-    //  border-color: #999 transparent transparent transparent;
     }
   }
 
@@ -180,13 +177,6 @@ $toggle-width: 30px;
       background: $dropdown-link-hover-bg;
     }
 
-
-    &:focus {
-      &:after {
-        border-color: darken($accent-color,10%) transparent transparent transparent;
-      }
-    }
-
     &:after {
       display: block;
       content: '';
@@ -218,7 +208,7 @@ $toggle-width: 30px;
 
   .active > .toggle {
     &:hover {
-      background: darken($accent-color, 10%);
+      background: darken( $active-item-background, 5% );
     }
   }
 
