@@ -220,9 +220,6 @@ $toggle-width: 30px;
     &:hover {
       background: darken($accent-color, 10%);
     }
-    &:after {
-      border-color: #fff transparent transparent transparent;
-    }
   }
 
 
