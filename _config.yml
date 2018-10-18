@@ -3,10 +3,14 @@ description: Templates, styles and scripts for all Magento Documentation portals
 logo: DocsTheme
 baseurl: ""
 permalink: pretty
-
-highlighter: rouge
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  syntax_highlighter_opts:
+    css_class: 'highlighter'
+
 environment: develop
 
 collections:

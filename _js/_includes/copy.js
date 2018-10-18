@@ -5,13 +5,12 @@ $(function() {
   var $highlightBtn = $('<div class="btn btn-copy">Copy</div>');
   var $noCopyBtn = $('<div class="btn btn-no-copy">Not for copy</div>');
   // Get all pre tags
-  var $preTags = $('pre');
-
+  var $preTags = $('.highlight');
 
   // Iterate each pre tag
   $preTags.each( function () {
     var $this = $(this),
-        noCopy = $this.hasClass('no-copy');
+        noCopy = $this.parents().hasClass('no-copy');
 
     var $preWrap = $this.wrap('<div class="pre-wrap"></div>').parent();
 
@@ -31,7 +30,6 @@ $(function() {
 
       // Attach clipboard events
       clipboard.on('success', function(e) {
-        //console.log(e);
         e.trigger.innerText = 'Copied';
         var timerId = setTimeout( function () { e.trigger.innerText='Copy'; }, 3000);
       });
@@ -43,5 +41,4 @@ $(function() {
     }
 
   });
-
 });

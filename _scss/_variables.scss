@@ -4,7 +4,7 @@ $code-font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
 $font-size-base: 1rem;
 $font-size-lg:   1.25rem;
 $font-size-sm:   .875rem;
-$font-size-xsm:   .7rem;
+$font-size-xsm:  .7rem;
 
 $font-weight-light: 300;
 $font-weight-normal: normal;
@@ -26,16 +26,15 @@ $header-height: $spacing*11;
 
 
 // Breakpoints
+
 $small-screen: 'max-width: 768px';
 $medium-screen: 'max-width: 1023px';
 $medium-to-large-screen: 'max-width: 1200px';
 $large-screen: 'min-width: 1500px';
 
 
-
-
-
 // Colors
+
 $brand-color: #F26322;
 $body-font-color: #2b2b2c;
 $accent-color: #26A2AA;
@@ -49,7 +48,6 @@ $footer-color: #A6ABB0;
 $footer-link-color: #D8D9DA;
 $footer-background-color: #31302B;
 
-
 $link-color: #0C69C8;
 $link-hover-color: #cc0000;
 $link-active-color: #EC632E;
@@ -58,16 +56,13 @@ $link-visited-color: #609;
 $border-color: #d2d2d2;
 
 
-// buttons
+// Buttons
+
 $btn-color: $body-font-color;
 $btn-bg-color: #ccc;
 
 $btn-primary-color: #fff;
 $btn-primary-bg-color: $brand-color;
-
-
-
-
 
 
 // Dropdown

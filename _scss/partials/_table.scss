@@ -12,7 +12,7 @@ table {
 
 
 th {
-  font-size: 16px;
+
   background: $light-gray-color;
   text-align: left;
   padding: 15px 14px;
@@ -23,7 +23,7 @@ th {
 
 
 tr td {
-  font-size: 14px;
+  font-size: $font-size-sm;
   padding: 13px 14px;
   vertical-align: top;
   border-bottom: 1px solid #ccc;
@@ -32,9 +32,7 @@ tr td {
 
 }
 
-td code, td pre {
-  font-size: 13px;
-}
+
 
 .table-condensed {
 

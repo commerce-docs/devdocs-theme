@@ -2,38 +2,38 @@ code, pre {
   font-family: $code-font-family;
 }
 
+// Inline code
 code {
   font-size: 95%;
   color: lighten($body-font-color, 20%);
   word-wrap: break-word;
 }
 
-pre {
-  display: block;
-  padding: $spacing*2;
-  margin: 0 0 $spacing*2;
-
-  word-break: break-all;
-  word-wrap: break-word;
-  white-space: pre;
-	overflow: auto;
-}
-
-.pre-scrollable {
-	max-height: 340px;
-  overflow-y: scroll;
-}
-
-
-pre code {
-	white-space: pre;
-	word-wrap: normal;
+// Code format in headers
+h1 code, h2 code, h3 code, h4 code, h5 code {
+  white-space: nowrap;
 }
 
 a code {
   color: inherit;
 }
 
+// Bloks of code
+pre {
+  display: block;
+  padding: $spacing*2;
+  margin: 0 0 $spacing*2;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  overflow: auto;
+  
+  code {
+    font-size: $font-size-sm;
+    white-space: pre;
+    word-wrap: normal;
+  }
+}
 
 // Copy button
 .pre-wrap {
@@ -61,15 +61,15 @@ a code {
   }
 
   .btn-copy {
-    color: #fff;
-    background: $brand-color;
+    color: $btn-primary-color;
+    background: $btn-primary-bg-color;
     &:hover {
-      color: #fff;
-      background: darken($brand-color, 10%);
+      color: $btn-primary-color;
+      background: darken($btn-primary-bg-color, 10%);
     }
     &:active {
-      color: #fff;
-      background: darken($brand-color, 20%);
+      color: $btn-primary-color;
+      background: darken($btn-primary-bg-color, 20%);
     }
   }
 
@@ -83,32 +83,39 @@ a code {
   }
 }
 
-
-// Code format in headers
-h1 code, h2 code, h3 code, h4 code, h5 code {
-  padding: 0;
-  color: $body-font-color;
-  background-color: transparent;
-  border: 0px solid transparent;
-  white-space: nowrap;
-  font-size: 1em;
-}
-
-
-// syntax highlighting
-.highlight {
-  position: relative;
-  border-radius: 3px;
-  margin: 0 0 20px;
-
-  code {
-    font-size: 14px;
-  }
-}
-
-
-.language-bash pre.highlight:before {
+// Add $ to the bash code examples
+.language-bash code:before {
   display: inline;
   content: '$';
-  margin-right: 5px;
+  margin-right: $spacing;
+  user-select: none;
+}
+
+// Line numbers
+.rouge-table {
+  margin: 0;
+  max-width: 100%;
+
+  td {
+    padding: 0;
+    border: none;
+  }
+
+  pre {
+    padding: 0;
+  }
+  
+  // Column with line numbers
+  .gl {
+    width: 35px;
+  }
+
+  .lineno {
+    overflow: hidden;
+    width: 100%;
+    text-align: right;
+    opacity: .4;
+    padding: 0 $spacing*2 0 0;
+    user-select: none;
+  }
 }
