@@ -48,8 +48,10 @@
 				if ( activeItem.length ) {
 					var itemTop = activeItem.offset().top,
 							itemBottom = itemTop + activeItem.height(),
-							headerHeight = $('.site-nav').height(),
-							windowHeight = $(window).height() - headerHeight;
+							sidebarTop = $('.sidebar').offset().top,
+							windowHeight = $(window).height() - sidebarTop;
+						
+					console.log(sidebarTop)
 
 					// Active item is below the viewport
 					if ( windowHeight < itemBottom ) {
@@ -62,9 +64,9 @@
 						}
 
 						if ( windowHeight < parentSectionTop && itemBottom - parentSectionTop < windowHeight ) {
-							$('.sidebar').scrollTop( parentSectionTop - headerHeight );
+							$('.sidebar').scrollTop( parentSectionTop - sidebarTop );
 						} else {
-							$('.sidebar').scrollTop( itemTop - headerHeight );
+							$('.sidebar').scrollTop( itemTop - sidebarTop );
 						}
 
 					}
