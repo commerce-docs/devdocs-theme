@@ -1,0 +1,23 @@
+---
+layout: null
+---
+{
+  "short_name": "{{ site.logo }}",
+  "name": "{{ site.title }}",
+  "icons": [
+    {
+      "src": "{{ site.baseurl }}/assets/i/app-icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "{{ site.baseurl }}/assets/i/app-icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "{{ site.url }}{{ site.baseurl }}/",
+  "background_color": "#F1F1F1",
+  "display": "standalone",
+  "theme_color": "#F1F1F1"
+}
