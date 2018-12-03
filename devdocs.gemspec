@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.name          = "devdocs"
   spec.version       = "0.0.1"
   spec.authors       = ["Eugene Bannykh"]
-  spec.email         = ["ybannykh@magento.com"]
+  spec.email         = ["ybannykh@adobe.com"]
 
   spec.summary       = %q{A theme for Magento documentation websites.}
   spec.homepage      = "https://github.com/magento-devdocs/devdocs-theme"

@@ -6,8 +6,10 @@ const cacheName = `cache-${version}`;
 
 // A list of local resources we always want to be cached.
 const cacheURLs = [
-  'index.html',
-  './', // Alias for index.html
+  '{{ site.baseurl }}/index.html',
+  '{{ site.baseurl }}/', // Alias for index.html
+  '{{ site.baseurl }}/assets/css/app.css',
+  '{{ site.baseurl }}/assets/js/app.js'
 ];
 
 self.addEventListener('install', event => {

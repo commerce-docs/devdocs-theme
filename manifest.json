@@ -16,7 +16,7 @@ layout: null
       "sizes": "512x512"
     }
   ],
-  "start_url": "{{ site.url }}{{ site.baseurl }}/",
+  "start_url": "{{ site.baseurl }}/",
   "background_color": "#F1F1F1",
   "display": "standalone",
   "theme_color": "#F1F1F1"
