@@ -12,9 +12,8 @@ Gem::Specification.new do |spec|
 
   spec.metadata["plugin_type"] = "theme"
 
-  filepath_patterns = Regexp.union(%r{manifest.json},
+  filepath_patterns = Regexp.union(%r{^manifest.json},
                                    %r{service-worker.js},
-                                   %r{^assets/},
                                    %r{^_includes/},
                                    %r{^_layouts/},
                                    %r{README.md})
