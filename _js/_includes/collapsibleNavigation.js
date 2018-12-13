@@ -51,8 +51,6 @@
 							sidebarTop = $('.sidebar').offset().top,
 							windowHeight = $(window).height() - sidebarTop;
 						
-					console.log(sidebarTop)
-
 					// Active item is below the viewport
 					if ( windowHeight < itemBottom ) {
 
