@@ -8,7 +8,6 @@
 	var pluginName = 'mainNavigation',
 		defaults = {
 			menuActiveClass: 'active',
-			menuDelay: 40,
 			mobileTreshold: 1024,
 			offcanvasClass: 'offcanvas-active',
 			sectionSelector: '.nav-section',
@@ -30,16 +29,9 @@
 		this.handleMenuItemMouseEnter = function ( event ) {
 			event.stopPropagation();
 			event.preventDefault();
+			var currentItem = $(this);
 
-			var currentItem = $(this),
-					popup = currentItem.find( plugin.options.popupSelector );
-
-			// Delay the appearance of the popup menu
-			clearTimeout( window.navTimer );
-			window.navTimer = window.setTimeout( function () {
-				plugin.showPopup( currentItem );
-			}, plugin.options.menuDelay );
-
+			plugin.showPopup( currentItem );
 		}
 
 		this.handleMenuItemMouseLeave = function ( event ) {
@@ -47,10 +39,7 @@
 			event.preventDefault();
 			var currentItem = $(this);
 
-			clearTimeout( window.navTimer );
-			window.navTimer = window.setTimeout( function () {
-				plugin.hidePopup( currentItem );
-			}, plugin.options.menuDelay );
+			plugin.hidePopup( currentItem );
 		}
 
 		this.handleMenuItemFocusOut = function ( event ) {

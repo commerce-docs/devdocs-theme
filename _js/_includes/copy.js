@@ -34,7 +34,7 @@ $(function() {
         var timerId = setTimeout( function () { e.trigger.innerText='Copy'; }, 3000);
       });
       clipboard.on('error', function(e) {
-        //console.log(e);
+        
       });
       $this.data('clipboard', clipboard);
 
