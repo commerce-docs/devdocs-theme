@@ -75,6 +75,11 @@ This is the example of an ordered list in our documentation.
 * Another unordered list item
 * Yet another list item
 
+### With Icons
+
+* {:.new} This list item is a new feature
+* {:.fix} This is a bugfix
+
 ## Images
 
 ![Alt text](http://via.placeholder.com/1000x500)
