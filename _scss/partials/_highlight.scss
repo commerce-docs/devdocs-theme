@@ -15,18 +15,7 @@ blue      #116bab  reserved keywords
 cyan      #098279  strings, numbers
 green     #859900  operators, other keywords
 */
-.highlight pre {
-  margin: 0;
-}
-.highlight {
-  line-height: 1.4;
-  position: relative;
-  background-color: #FBFBFB; 
-  border: 1px solid rgba(0,0,0,.03);
-  border-radius: 3px;
-  color: $body-font-color; 
-  margin: 0 0 20px;
-}
+
 .highlight .c { color: #93a1a1 } /* Comment */
 .highlight .err { color: #444 } /* Error */
 .highlight .g { color: #444 } /* Generic */

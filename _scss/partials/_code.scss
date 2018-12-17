@@ -21,12 +21,12 @@ a code {
 // Bloks of code
 pre {
   display: block;
-  padding: $spacing*2;
-  margin: 0 0 $spacing*2;
   word-break: break-all;
   word-wrap: break-word;
   white-space: pre;
   overflow: auto;
+  margin: 0;
+  padding: 0;
   
   code {
     font-size: $font-size-sm;
@@ -91,6 +91,42 @@ pre {
   user-select: none;
 }
 
+// Code block with highlight
+
+.highlight {
+  line-height: 1.4;
+  position: relative;
+  background-color: #FBFBFB; 
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 3px;
+  color: $body-font-color; 
+  margin: 0 0 $spacing * 4;
+}
+
+
+.highlighter-rouge {
+  pre {
+    padding: 0;
+  }
+
+  &.language-bash {
+    
+    code:before {
+      display: none;
+    }
+
+    .rouge-code {
+      position: relative;  
+      pre:before {
+        display: inline;
+        content: '$';
+        margin-right: $spacing;
+        user-select: none;
+      }
+    }
+  }
+}
+
 // Line numbers
 .rouge-table {
   margin: 0;
@@ -100,22 +136,25 @@ pre {
     padding: 0;
     border: none;
   }
-
-  pre {
-    padding: 0;
-  }
   
+  .rouge-code, .code {
+    pre {
+      padding: $spacing * 2;
+    }
+  }
+
   // Column with line numbers
   .gl {
     width: 35px;
+    border-right: 1px solid rgba(0,0,0,.06);
   }
 
   .lineno {
     overflow: hidden;
     width: 100%;
-    text-align: right;
+    text-align: center;
     opacity: .4;
-    padding: 0 $spacing*2 0 0;
+    padding: $spacing*2 0;
     user-select: none;
   }
 }

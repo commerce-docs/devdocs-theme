@@ -10,6 +10,10 @@ highlighter: rouge
 kramdown:
   syntax_highlighter_opts:
     css_class: 'highlighter'
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
 
 environment: develop
 
