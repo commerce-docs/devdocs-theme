@@ -39,6 +39,7 @@ Bash:
 
 ```bash
 cd ~/sites/
+ls
 ```
 
 ### Liquid `highlight` syntax:
