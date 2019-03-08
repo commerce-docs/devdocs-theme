@@ -1,0 +1,38 @@
+
+.columns {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+// Make the item in column to be 100% height of the column
+.column > * {
+  height: 100%;
+}
+
+.large-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.large-3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+@media ($large-screen) {
+  .columns {
+    grid-gap: 30px;
+  }
+}
+
+@media ($medium-screen) {
+  .large-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media ($small-screen) {
+  .columns {
+    grid-template-columns: 1fr;
+  }
+}

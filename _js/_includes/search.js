@@ -31,7 +31,7 @@ $(function() {
   var index = client.initIndex( algolia.index );
   var ver = $('.version-switcher').data('version');
   var searchOptions = {
-    hitsPerPage: 5
+    hitsPerPage: 10
   };
 
   if ( typeof ver !== 'undefined' ) {

@@ -125,7 +125,9 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
     code:before {
       display: none;
     }
-
+    .rouge-gutter.gl {
+      display: none;
+    }
     .rouge-code {
       position: relative;  
       pre:before {
