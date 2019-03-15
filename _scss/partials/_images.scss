@@ -1,5 +1,5 @@
-img.large {
-  max-width: 50%;
+img.zoom {
+  max-width: 60%;
   display: block;
 }
 
@@ -7,18 +7,17 @@ img.large {
 .zoom-wrap {
   position: relative;
   display: block;
+  max-width: 60%;
   cursor: zoom-in;
   transition: all .2s;
   box-shadow: 0 0 1px rgba(0,0,0,.2);
   
-  &.large {
-    max-width: 50%;
-  }
-
   img {
     max-width: 100%;
   }
 
+
+  // Icon
   &::after {
     content: "";
     border-radius: 100px;
@@ -44,10 +43,50 @@ img.large {
 }
 
 
+@media ($medium-screen) {
+  img.zoom {
+    max-width: 75%;
+  }
+
+  .zoom-wrap {
+    max-width: 75%;
+    img.zoom {
+      max-width: 100%;
+    }
+  }
+
+  .blocker {
+    padding: 0;
+  }
+}
+
+@media ($small-screen) {
+  img.zoom {
+    max-width: 100%;
+  }
+
+  .zoom-wrap {
+    max-width: 100%;
+  }
+
+  .blocker {
+    padding: 0;
+  }
+}
+
+// For touch-only devices, always show the zoom icon
+@media (pointer: coarse) { 
+  .zoom-wrap::after {
+    opacity: 1;
+  } 
+}
+
+
 // Style the modal
 #image-zoom-modal {
   max-width: max-content;
   display: none;
+  cursor: zoom-out;
 
   @media ($medium-screen) {
     width: 100%;
