@@ -8,6 +8,7 @@
 	var pluginName = 'mainNavigation',
 		defaults = {
 			menuActiveClass: 'active',
+			menuCurrentClass: 'current',
 			mobileTreshold: 1024,
 			offcanvasClass: 'offcanvas-active',
 			sectionSelector: '.nav-section',

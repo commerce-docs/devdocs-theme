@@ -37,7 +37,9 @@
 
 			init: function() {
         var plugin = this;
-        var headers = $( plugin.options.contentSelector ).find( plugin.options.itemSelector );
+        var headers = $( plugin.options.contentSelector )
+          .find( plugin.options.itemSelector )
+          .not( '.' + plugin.options.noTocClass);
 
         // Generate TOC only if there's enouhg data
         if ( headers.length > plugin.options.minimumCount ) {
@@ -76,7 +78,6 @@
         headers.each( function () {
           var $header = $(this),
               id = $header.attr('id'),
-              no_toc = $header.hasClass( plugin.options.noTocClass ),
               isInsideCollapsible = $header.parents('.collapsible').length,
               isCollapsibleTitle = $header.hasClass('collapsible-title'),
               anchor_text = '',
@@ -88,11 +89,6 @@
             if ( isCollapsibleTitle) {
               show = true;
             }
-          }
-
-          // Skip if has a class
-          if ( no_toc ) {
-            show = false;
           }
 
           if ( show ) {

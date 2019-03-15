@@ -1,12 +1,12 @@
 /*!
  * Zoom Images
  * author: ybannykh@adobe.com
- * 
+ *
  * Depends on jQuery Modal plugin.
- * 
+ *
  * Makes images marked with the "itemSelector" clickable.
  * Opens the jQuery modal with the fullsize image.
- * 
+ *
  */
 
 (function($, window, document, undefined) {
@@ -14,7 +14,7 @@
 
   var pluginName = "zoom",
     defaults = {
-      itemSelector: "img.large",
+      itemSelector: "img.zoom",
       wrapperClassName: "zoom-wrap",
       modalID: "image-zoom-modal"
     };
@@ -22,7 +22,6 @@
   // The actual plugin constructor
   function Plugin(element, options) {
     this.element = element;
-
     this.options = $.extend({}, defaults, options);
     this._defaults = defaults;
     this._name = pluginName;
@@ -40,21 +39,29 @@
         return false;
       }
 
-      // Create modal
-      var modalDiv = $(
+      // Store elements
+      plugin.modal = $(
         '<div id="' +
           plugin.options.modalID +
           '" role="dialog" aria-modal="true" aria-hidden="true"><img alt="" /></div>'
       ).appendTo($("body"));
+      plugin.modalImage = plugin.modal.find("img");
+      plugin.modalTriggerEl = null;
 
-      var modalImage = modalDiv.find("img");
-      modalImage.on("click", function() {
-        plugin.hideModal(plugin);
-      });
-
-      // Assign plugin elements
-      plugin.modal = modalDiv;
-      plugin.modalImage = modalImage;
+      // Assign Events
+      plugin.modal
+        .on($.modal.OPEN, function(event, modal) {
+          console.log(modal);
+          modal.$blocker.attr('tabindex',0);
+          modal.$blocker.focus();
+        })
+        .on($.modal.AFTER_CLOSE, function(event, modal) {
+          console.log(modal);
+          plugin.modalTriggerEl.focus();
+        })
+        .on("click", function() {
+          plugin.hideModal(plugin);
+        });
 
       // Iterate over all images and assign events
       plugin.items.map(function(index, item) {
@@ -68,10 +75,13 @@
               '" />'
           )
             .addClass(plugin.options.wrapperClassName)
-            .addClass($(this).attr("class"))
             .attr("href", $(item).attr("src"));
 
-          $wrapper.on("click", { plugin: plugin, src: src }, plugin.hanldeImageClick);
+          $wrapper.on(
+            "click",
+            { plugin: plugin, src: src },
+            plugin.hanldeImageClick
+          );
 
           $(item).wrap($wrapper);
         }
@@ -83,18 +93,22 @@
 
       var src = event.data.src;
       var plugin = event.data.plugin;
-      
+
       // Command or Ctrl click opens image in the new tab
       if (event.metaKey || event.ctrlKey) {
         return window.open(src, "_blank");
       }
 
-      plugin.showModal(src, plugin);
+      // Store the trigger element
+      plugin.modalTriggerEl = event.currentTarget;
+      // Assign src of the modal image
+      plugin.modalImage.attr("src", src);
+      // Finally, show the modal
+      plugin.showModal(plugin);
     },
 
-    showModal: function(src, plugin) {
-      plugin.modalImage.attr("src", src);
-      plugin.modal.attr("aria-hidden", false).modal();
+    showModal: function(plugin) {
+      plugin.modal.attr("aria-hidden", false).modal({showClose:false});
     },
 
     hideModal: function(plugin) {
