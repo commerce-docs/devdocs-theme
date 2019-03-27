@@ -80,8 +80,26 @@ This is the example of an ordered list in our documentation.
 * {:.new} This list item is a new feature
 * {:.fix} This is a bugfix
 
+### Definition Lists
+
+Term
+
+: Description of the term
+
+Another Term
+
+: Terms's description
+
+`code_term`
+
+: Terms's description
+
 ## Images
 
 ![Alt text](http://via.placeholder.com/1000x500)
 
 _This is image caption_
+
+### Image with zoom
+
+![Alt text](http://via.placeholder.com/1000x500){: .zoom }
