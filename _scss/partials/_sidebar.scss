@@ -247,11 +247,14 @@ $active-item-background: lighten( $accent-color, 53% );
       overflow: hidden;
       transition: all $transition-duration;
       padding: 0;
+      visibility: hidden;
     }
 
     .toc-toggler {
       position: relative;
       display: block;
+      border: none;
+      width: 100%;
       background: $light-gray-color;
       padding: $spacing*2 $spacing*4;
 
@@ -287,6 +290,7 @@ $active-item-background: lighten( $accent-color, 53% );
 
     .sidebar-wrapper {
       max-height: 9999px;
+      visibility: visible;
     }
 
     .toc-toggler::after {

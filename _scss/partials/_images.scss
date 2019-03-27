@@ -4,7 +4,8 @@ img.zoom {
 }
 
 // Wrapper
-.zoom-wrap {
+// Extra specific selector is needed to evercome the external link indicator styles
+.content .content-wrap a.zoom-wrap {
   position: relative;
   display: block;
   max-width: 60%;
@@ -15,7 +16,6 @@ img.zoom {
   img {
     max-width: 100%;
   }
-
 
   // Icon
   &::after {
@@ -90,21 +90,5 @@ img.zoom {
 
   @media ($medium-screen) {
     width: 100%;
-  }
-
-  .close-modal {
-    color: #fff;
-    position: fixed;
-    font-size: 40px;
-    line-height: 50px;
-    right: 20px;
-    width: 56px;
-    height: 56px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background: #555;
-
-    @media ($medium-screen) {
-      right: 0;
-    }
   }
 }
