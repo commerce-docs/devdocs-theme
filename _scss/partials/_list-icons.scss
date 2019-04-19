@@ -1,7 +1,9 @@
 // Custom list icons
 // Assign class name to the list item like this: * {:.fix} This is fixed
 
-li.new, li.fix {
+li.new, 
+li.fix, 
+li.bug {
   list-style: none;
   position: relative;
 
@@ -22,4 +24,8 @@ li.new::before {
 
 li.fix::before {
   background: url(../i/icons/fix.svg);
+}
+
+li.bug::before {
+  background: url(../i/icons/bug.svg);
 }
