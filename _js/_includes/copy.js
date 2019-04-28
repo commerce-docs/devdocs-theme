@@ -22,7 +22,7 @@ $(function() {
       $highlightBtn.clone().appendTo($preWrap);
 
       // Create clipboard object
-      var clipboard = new Clipboard( $preWrap.find('.btn-copy')[ 0 ] , {
+      var clipboard = new ClipboardJS( $preWrap.find('.btn-copy')[ 0 ] , {
         target: function(trigger) {
           return trigger.previousElementSibling;
         }

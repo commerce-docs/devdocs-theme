@@ -14,6 +14,11 @@ $(function() {
   // Responsive table of contents
   $('.toc-toggler').on('click', function (e) {
     e.preventDefault();
+    
+    // Toggle aria expanded attribute for accessibility 
+    $(this).attr('aria-expanded', function(i, attr){
+      return attr == 'true' ? 'false' : 'true'
+    });
     $(this).parent().toggleClass('expanded');
   });
 

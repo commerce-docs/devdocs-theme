@@ -252,6 +252,9 @@ $active-item-background: lighten( $accent-color, 53% );
     .toc-toggler {
       position: relative;
       display: block;
+      width: 100%;
+      border: none;
+      text-align: left;
       background: $light-gray-color;
       padding: $spacing*2 $spacing*4;
 
