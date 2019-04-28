@@ -3,11 +3,6 @@
 @import 'reset';
 @import 'variables';
 
-// Bootstrap components (run 'npm install' first)
-@import '../node_modules/bootstrap/scss/functions';
-@import '../node_modules/bootstrap/scss/variables';
-@import '../node_modules/bootstrap/scss/utilities/embed';
-
 @import 'partials/buttons';
 @import 'partials/callouts';
 @import 'partials/code';
@@ -42,6 +37,7 @@
 @import 'partials/column';
 @import 'partials/images';
 @import 'partials/adjaced-pages';
+@import 'partials/embed';
 
 .hide {
   display: none;
