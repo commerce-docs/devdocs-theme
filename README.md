@@ -23,17 +23,15 @@ Then run `npm run watch:all`.
 
 ## Using theme locally
 
-To work with the theme locally and test how it works with DevDocs or any project that uses the theme, you'll want to specify this theme as local gem:
-
+1. To work with the theme locally and test how it works with DevDocs or any project that uses the theme, you'll want to specify this theme as local gem:
 ```
 bundle config local.devdocs /path/to/theme/git/repository
 ```
-
-Now you can build your project locally, and it will look for the latest theme gem in your filesystem instead of GitHub. Just make sure that your project requires the same branch as your local theme branch:
-
+2. Now you can build your project locally, and it will look for the latest theme gem in your filesystem instead of GitHub. Just make sure that your project requires the same branch as your local theme branch:
 ```
 gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', :branch => "your_branch_name"
 ```
+3. Do a `bundle install` in your project to get the latest theme from local filesystem.
 
 ## How to contribute
 
