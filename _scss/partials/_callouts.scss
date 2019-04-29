@@ -1,16 +1,20 @@
 $callout-padding: 15px 20px 17px 52px;
 
-.bs-callout {
+.bs-callout,
+.bs-callout-info,
+.bs-callout-warning,
+.bs-callout-tip,
+.bs-callout-tutorial {
   position: relative;
   margin: 20px 0 20px 0;
   padding: $callout-padding;
-  background: #F2F3F3;
+  background: #f2f3f3;
   border-radius: 2px;
 
   &:before {
     display: block;
     position: absolute;
-    content: '';
+    content: "";
     width: 25px;
     height: 25px;
     top: 13px;
@@ -20,7 +24,7 @@ $callout-padding: 15px 20px 17px 52px;
   }
 
   p {
-    margin-bottom: .8em;
+    margin-bottom: 0.8em;
   }
 
   p:last-child {
@@ -28,52 +32,44 @@ $callout-padding: 15px 20px 17px 52px;
   }
 }
 
-
 .bs-callout-info {
   background: #eef6fb;
-  border: 1px solid #346E92;
+  border: 1px solid #346e92;
 
   &:before {
     background-image: url(../i/icons/info.svg);
   }
 }
 
-
 .bs-callout-warning {
-  background: #FBEDD9;
-  border: 1px solid #C27500;
+  background: #fbedd9;
+  border: 1px solid #c27500;
 
   &:before {
     background-image: url(../i/icons/warning.svg);
   }
 }
 
-
 .bs-callout-tip {
-  background: #DCF3E1;
-  border: 1px solid #0F7D26;
+  background: #dcf3e1;
+  border: 1px solid #0f7d26;
 
   &:before {
     background-image: url(../i/icons/tip.svg);
   }
 }
 
-
 .bs-callout-tutorial {
-
   &:before {
     background-image: url(../i/icons/tutorial.svg);
   }
 }
 
-
-
 .message-banner {
-
   text-align: center;
   background-color: #eef6fb;
-  color: #346E92;
-  border: solid 1px #346E92;
+  color: #346e92;
+  border: solid 1px #346e92;
   padding: 10px 0px;
   margin: 0;
   font-size: 13px;
@@ -81,5 +77,4 @@ $callout-padding: 15px 20px 17px 52px;
   &.index {
     font-size: 100%;
   }
-
 }
