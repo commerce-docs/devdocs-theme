@@ -12,5 +12,10 @@
 
 {% include layout/footer-scripts.html %}
 
+{% if site.environment != "public" %}
+<script src="{{ site.baseurl }}/assets/js/page-survey.min.js"></script>
+<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/page-survey.css" />
+{% endif %}
+
 </body>
 </html>
