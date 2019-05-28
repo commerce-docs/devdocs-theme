@@ -232,6 +232,10 @@ window.onload = function() {
         container.appendChild(refinementsContainer);
         container.appendChild(paginationContainer);
 
+        if (i) {
+          container.style.display = 'none';
+        }
+
         searchIndices[i].hitsContainer = hitsContainer;
         searchIndices[i].statsContainer = statsContainer;
         searchIndices[i].paginationContainer = paginationContainer;
