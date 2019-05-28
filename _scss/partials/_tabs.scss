@@ -1,21 +1,19 @@
-.tabs-container {
+.tabs {
+  
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  background: $light-gray-color;
 
   margin: 0;
-  padding: 0 30px;
+  padding: 0 8px;
+
+  border-bottom: 2px solid;
+  border-bottom-color: rgb(234, 234, 234);
 
   list-style: none;
 
-  .tab {
-    margin: 0;
-    min-width: 100px;
-    text-align: center;
-  }
 
   a {
     text-decoration: none;
@@ -30,7 +28,8 @@
     }
   }
 
-  .active {
+  .is-selected {
+    cursor: default;
     a {
       background: #fff;
       color: $brand-color;
@@ -46,3 +45,55 @@
   }
 
 }
+
+.tab-item {
+
+  color: rgb(110, 110, 110);
+
+  position: relative;
+  margin: 0;
+  margin-right: 24px;
+  height: 46px;
+  line-height: 46px;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.tab-item:hover {
+  color: #333;
+}
+
+
+
+.tab-item.is-selected {
+  cursor: default;
+  color: #333;
+
+  .tab-item-label { 
+    cursor: default;
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    position: absolute;
+    height: 2px;
+    bottom: -2px;
+    border-radius: 4px;
+    left: 0;
+    right: 0;
+    background: rgb(44, 44, 44);
+  }
+
+}
+
+
+
+
+.tab-item-label {
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
