@@ -1,26 +1,47 @@
 .search-results-header {
-  background: #F1F1F1;
-  padding: 20px;
+  background: #f1f1f1;
+  padding: 20px 24px;
 }
- 
+
+.search-results-header #search-input {
+  max-width: 956px;
+}
 
 .search-results-container {
-  max-width: 900px;
+  max-width: 980px;
   margin: 0 auto;
+  padding: 0 16px;
 }
 
 .search-results {
   display: grid;
-  grid-template-areas: 
-    "header sidebar"  
+  grid-template-areas:
+    "header sidebar"
     "main sidebar"
     "pagination pagination";
+
+  grid-template-columns: minmax(0, 1fr) 240px;;
   grid-gap: 20px;
   margin: 20px 0 0 0;
+  padding: 0 8px;
+}
+
+@media (max-width: 768px) {
+  .search-results {
+    grid-template-areas:
+      "header"
+      "main"
+      "pagination"
+      "sidebar";
+      grid-template-columns: 100%;
+  }
+
+ 
 }
 
 .search-results-main {
   grid-area: main;
+  padding-right: 16px;
 }
 
 .search-results-stats {
@@ -31,19 +52,16 @@
 }
 
 .search-results-refinements {
-  grid-area: sidebar
+  grid-area: sidebar;
 }
 
 .ais-Hits mark {
-  background: #FFF8D7;
+  background: #fff8d7;
 }
 
-
-
-
-
-
-
+.ais-SearchBox-form {
+  margin: 0;
+}
 
 /* ----- Hits */
 
@@ -67,16 +85,14 @@
 }
 .hit-content {
   padding: 3px 0 0 0;
-  max-width: 700px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
 }
 .hit-stars {
   font-size: 17px;
   margin: 4px 0;
   color: #868686;
 }
-
-
-
 
 /* ----- Pagination  */
 
@@ -118,14 +134,14 @@
 
 .ais-Pagination-item--selected .ais-Pagination-link {
   color: #fff;
-  background: #26A2AA;
+  background: #26a2aa;
 }
 .ais-Pagination-item--selected .ais-Pagination-link:hover {
   cursor: default;
 }
 
 .ais-Pagination-item--disabled {
-  opacity: .2;
+  opacity: 0.2;
 }
 .ais-Pagination-item--disabled .ais-Pagination-link:hover {
   cursor: default;
@@ -138,11 +154,10 @@
   line-height: 1em;
 }
 
-.ais-Pagination-item--firstPage, 
+.ais-Pagination-item--firstPage,
 .ais-Pagination-item--lastPage {
   display: none;
 }
-
 
 .ais-Stats {
   margin: 0 0 10px 0;
@@ -150,32 +165,26 @@
   font-size: 13px;
 }
 
-
 /* NO RESULTS */
-.no-results #pagination, .no-results #sort-by, .no-results #stats, .no-results #facets {
+.no-results .search-results-pagination,
+.no-results .search-results-stats,
+.no-results .search-results-refinements {
   display: none;
 }
-#no-results-message {
+
+.no-results-message {
   text-align: center;
 }
-#no-results-message p {
+.no-results-message p {
   font-size: 28px;
 }
-
-
-
-
 
 // ----- Panel
 
 .ais-Panel-header {
   font-weight: bold;
-  margin: 30px 0 20px 0;
+  margin: 30px 0 10px 0;
 }
-
-
-
-
 
 // ----- Refinements
 
@@ -198,7 +207,6 @@
   float: right;
   font-size: 11px;
 }
-
 
 .ais-RefinementList-showMore--disabled {
   display: none;

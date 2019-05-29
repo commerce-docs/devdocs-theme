@@ -96,10 +96,12 @@ input[type=search] {
 }
 
 .ais-SearchBox-reset {
-  position: absolute;
-  right: 10px;
-  top: 0;
-  transform: translateY(50%);
   border: none;
   background: none;
+
+  // Conter the button vertically:
+  position: absolute;
+  right: 10px;
+  top: 50%; 
+  transform: translateY(-50%);
 }

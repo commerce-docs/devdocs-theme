@@ -7,7 +7,7 @@ window.onload = function() {
 
   function searchApp(opts) {
     var defaults = {
-      hitsPerPage: 10,
+      hitsPerPage: 20,
       refinementListLimit: 40,
       hiddenClassName: "hide",
       resultsClassName: "search-results",
@@ -51,6 +51,7 @@ window.onload = function() {
       // Nav container
       var navList = document.createElement("div");
       navList.className = defaults.navListClassName;
+      navList.setAttribute("role", "tablist");
 
       // Build each item
       navItems = indices.map(function(item, index) {
@@ -59,12 +60,16 @@ window.onload = function() {
           !index ? defaults.navItemClassNameSelected : null // first item is selected
         ].join(" ");
 
-        var navItem = document.createElement("div");
+        var navItem = document.createElement("button");
 
         navItem.className = className;
-        navItem.tabIndex = 0;
+        navItem.id = item.name + "-tab";
+        navItem.setAttribute("role", "tab");
+        navItem.setAttribute("aria-controls", item.name);
+        navItem.setAttribute("aria-selected", !index ? true : false);
+
         navItem.innerHTML =
-          '<label class="tab-item-label">' + item.label + "</label>";
+          '<span class="tab-item-label">' + item.label + "</span>";
         navItem.onclick = function(event) {
           handleIndexClick(event, item.name);
         };
@@ -89,6 +94,7 @@ window.onload = function() {
 
       // Remove the active class
       for (i = 0; i < navItems.length; i++) {
+        navItems[i].setAttribute("aria-selected", false);
         navItems[i].className = navItems[i].className.replace(
           " " + defaults.navItemClassNameSelected,
           ""
@@ -97,7 +103,10 @@ window.onload = function() {
 
       // Show the current tab, and add an "active" class to the button that opened the tab
       document.getElementById(indexName).style.display = "grid";
+
+      event.currentTarget.blur();
       event.currentTarget.className += " " + defaults.navItemClassNameSelected;
+      event.currentTarget.setAttribute("aria-selected", true);
     };
 
     var initSearchIndex = function(indexConfig, searchClient, searchFunction) {
@@ -160,7 +169,8 @@ window.onload = function() {
                 "</div></div>"
               );
             },
-            empty: '<div id="no-results-message"><p>No results found.</p></div>'
+            empty:
+              '<div class="no-results-message"><p>No results found.</p></div>'
           }
         })
       );
@@ -182,6 +192,7 @@ window.onload = function() {
 
       // Refinements
       if (searchIndex.refinements && searchIndex.refinements instanceof Array) {
+        // Iterate through array of attribute names and generate the panels
         for (var i = 0; i < searchIndex.refinements.length; i++) {
           var refinement = searchIndex.refinements[i];
           var container = document.createElement("div");
@@ -199,8 +210,8 @@ window.onload = function() {
               attribute: refinement.attribute,
               limit: defaults.refinementListLimit,
               showMoreLimit: defaults.refinementListLimit + 50,
-              sortBy: ['name:asc'],
-              operator: 'or',
+              sortBy: ["name:asc"],
+              operator: "or",
               showMore: true
             })
           );
@@ -215,6 +226,7 @@ window.onload = function() {
       for (var i = 0; i < searchIndices.length; i++) {
         var container = document.createElement("div");
         container.classList.add(defaults.resultsClassName);
+        container.setAttribute("role", "tabpanel");
 
         container.id = searchIndices[i].indexName;
 
@@ -233,7 +245,7 @@ window.onload = function() {
         container.appendChild(paginationContainer);
 
         if (i) {
-          container.style.display = 'none';
+          container.style.display = "none";
         }
 
         searchIndices[i].hitsContainer = hitsContainer;
