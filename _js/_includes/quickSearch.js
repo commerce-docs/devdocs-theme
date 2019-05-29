@@ -2,7 +2,6 @@
 // Uses algolia.js and autocomplete.jquery.js
 
 $(function() {
-  
   var $quickSearchInput = $(".quick-search input");
 
   // Algola autocomplete:
@@ -24,15 +23,18 @@ $(function() {
       ),
       templates: {
         suggestion: function(suggestion) {
+          var url = suggestion.url;
+
+          if (!url) {
+            return false;
+          }
+
           var baseUrl = item.baseUrl ? item.baseUrl : "";
-          return (
-            '<a href="' +
-            baseUrl +
-            suggestion.url +
-            '">' +
-            suggestion._highlightResult.title.value +
-            "</a>"
-          );
+          var title = suggestion._highlightResult.title
+            ? suggestion._highlightResult.title.value
+            : baseUrl + suggestion.url;
+
+          return '<a href="' + baseUrl + url + '">' + title + "</a>";
         },
         header: '<div class="suggestion-category">' + item.label + "</div>"
       }
@@ -44,7 +46,7 @@ $(function() {
       {
         minLength: 3,
         hint: true,
-        debug: false,
+        debug: false
       },
       searchObjects
     )
@@ -56,14 +58,16 @@ $(function() {
     .on("keypress", function(event) {
       // Pressing "return" will navigate to a search results page
       if (event.which == 13) {
-        var value = $.fn.autocomplete.escapeHighlightedString(event.target.value);
+        var value = $.fn.autocomplete.escapeHighlightedString(
+          event.target.value
+        );
         //return;
         if (value) {
           window.location =
             $("form.quick-search").attr("action") + "?query=" + value;
         }
       }
-  });
+    });
 
   // Pressign ESC key closes the quick-search
   $(document).keyup(function(e) {

@@ -22,13 +22,33 @@ window.onload = function() {
     };
 
     var navItems = [];
-    var searchClient = algoliasearch(opts.appId, opts.apiKey);
+    var algoliaClient = algoliasearch(opts.appId, opts.apiKey);
+    var searchClient = {
+      search: function(requests) {
+        if (requests.every(isEmptyQuery)) {
+          return Promise.resolve({
+            results: requests.map(function() {
+              return {
+                hits: [],
+                nbHits: 0,
+                processingTimeMS: 0
+              };
+            })
+          });
+        }
+        return algoliaClient.search(requests);
+      }
+    };
     var mainIndex;
     var searchIndices = [];
     var subIndices = [];
 
+    var isEmptyQuery = function(request) {
+      return !request.params.query;
+    };
+
     // Inisialize all the search indices
-    function init() {
+    var init = function() {
       // Sub indices
       for (var i = 1; i < indices.length; i++) {
         var subIndex = initSearchIndex(indices[i], searchClient);
@@ -41,7 +61,7 @@ window.onload = function() {
           subIndices[i].helper.setQuery(helper.state.query).search();
         }
         helper.search();
-      });
+      },true);
 
       searchIndices = [mainIndex].concat(subIndices);
     }
@@ -67,6 +87,7 @@ window.onload = function() {
         navItem.setAttribute("role", "tab");
         navItem.setAttribute("aria-controls", item.name);
         navItem.setAttribute("aria-selected", !index ? true : false);
+        //navItem.setAttribute("tabindex", !index ? 0 : -1);
 
         navItem.innerHTML =
           '<span class="tab-item-label">' + item.label + "</span>";
@@ -95,6 +116,7 @@ window.onload = function() {
       // Remove the active class
       for (i = 0; i < navItems.length; i++) {
         navItems[i].setAttribute("aria-selected", false);
+        //navItems[i].setAttribute("tabindex", -1);
         navItems[i].className = navItems[i].className.replace(
           " " + defaults.navItemClassNameSelected,
           ""
@@ -106,10 +128,11 @@ window.onload = function() {
 
       event.currentTarget.blur();
       event.currentTarget.className += " " + defaults.navItemClassNameSelected;
+      //event.currentTarget.setAttribute("tabindex", 0);
       event.currentTarget.setAttribute("aria-selected", true);
     };
 
-    var initSearchIndex = function(indexConfig, searchClient, searchFunction) {
+    var initSearchIndex = function(indexConfig, searchClient, searchFunction, routing) {
       var searchIndex = instantsearch({
         indexName: indexConfig.name,
         searchClient: searchClient,
@@ -118,7 +141,7 @@ window.onload = function() {
           hitsPerPage: defaults.hitsPerPage,
           facetFilters: indexConfig.facets
         },
-        routing: true
+        routing: routing
       });
 
       searchIndex.baseUrl = indexConfig.baseUrl;
@@ -209,10 +232,8 @@ window.onload = function() {
               container: container,
               attribute: refinement.attribute,
               limit: defaults.refinementListLimit,
-              showMoreLimit: defaults.refinementListLimit + 50,
               sortBy: ["name:asc"],
-              operator: "or",
-              showMore: true
+              operator: "or"
             })
           );
         }
@@ -227,6 +248,10 @@ window.onload = function() {
         var container = document.createElement("div");
         container.classList.add(defaults.resultsClassName);
         container.setAttribute("role", "tabpanel");
+        container.setAttribute(
+          "aria-labelledby",
+          searchIndices[i].indexName + "-tab"
+        );
 
         container.id = searchIndices[i].indexName;
 
