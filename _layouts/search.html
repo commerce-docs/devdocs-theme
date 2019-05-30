@@ -41,12 +41,8 @@
 
     if ( switcher ) {
       var ver = String( switcher.dataset.version );
-      searchParameters.facets = ['guide_version'];
-      searchParameters.facetsRefinements = {
-        guide_version: [ ver ]
-      };
+      searchParameters.facetFilters = [["guide_version: " + ver, "versionless: true"]];
     }
-
 
     const search = instantsearch({
       appId: opts.appId,
