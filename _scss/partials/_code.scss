@@ -163,6 +163,7 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
   .lineno {
     overflow: hidden;
     width: 100%;
+    min-width: 35px;
     text-align: center;
     opacity: .4;
     padding: $spacing*2 0;
