@@ -35,7 +35,7 @@ $(function() {
   };
 
   if ( typeof ver !== 'undefined' ) {
-    searchOptions.facetFilters = 'guide_version:' + ver
+    searchOptions.facetFilters = ['guide_version: ' + ver, 'versionless: true'];
   }
 
   $('.quick-search input, .search-form .search-field').autocomplete(
