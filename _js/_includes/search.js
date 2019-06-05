@@ -29,13 +29,12 @@ $(function() {
   // Algola autocomplete:
   var client = algoliasearch( algolia.id, algolia.key );
   var index = client.initIndex( algolia.index );
-  var ver = $('.version-switcher').data('version');
   var searchOptions = {
     hitsPerPage: 5
   };
 
-  if ( typeof ver !== 'undefined' ) {
-    searchOptions.facetFilters = ['guide_version: ' + ver, 'versionless: true'];
+  if ( algolia.facetFilters ) {
+    searchOptions.facetFilters = algolia.facetFilters;
   }
 
   $('.quick-search input, .search-form .search-field').autocomplete(
@@ -51,7 +50,17 @@ $(function() {
       templates: {
         //'suggestion' templating function used to render a single suggestion
         suggestion: function(suggestion) {
-          return '<a href="' + baseUrl + suggestion.url + '">' + suggestion._highlightResult.title.value + '</a>';
+          var url = suggestion.url;
+
+          if (!url) {
+            return false;
+          }
+ 
+          var title = suggestion._highlightResult.title
+            ? suggestion._highlightResult.title.value
+            : url;
+
+          return '<a href="' + url + '">' + title + "</a>";
         }
       }
     }
