@@ -34,14 +34,11 @@
   });
 
   function app(opts) {
-    var switcher = document.getElementsByClassName('version-switcher')[0];
-    var searchParameters = {
+    
+    var searchParameters = {};
 
-    };
-
-    if ( switcher ) {
-      var ver = String( switcher.dataset.version );
-      searchParameters.facetFilters = [["guide_version: " + ver, "versionless: true"]];
+    if ( algolia.facetFilters ) {
+      searchParameters.facetFilters = algolia.facetFilters;
     }
 
     const search = instantsearch({
