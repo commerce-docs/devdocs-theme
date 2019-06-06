@@ -60,7 +60,9 @@ $(function() {
             ? suggestion._highlightResult.title.value
             : url;
 
-          return '<a href="' + url + '">' + title + "</a>";
+          var suggestionUrl = baseUrl ? baseUrl + url : url;
+         
+          return '<a href="' + suggestionUrl + '">' + title +'</a>';
         }
       }
     }
