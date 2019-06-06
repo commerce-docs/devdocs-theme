@@ -34,19 +34,12 @@
   });
 
   function app(opts) {
-    var switcher = document.getElementsByClassName('version-switcher')[0];
-    var searchParameters = {
+    
+    var searchParameters = {};
 
-    };
-
-    if ( switcher ) {
-      var ver = String( switcher.dataset.version );
-      searchParameters.facets = ['guide_version'];
-      searchParameters.facetsRefinements = {
-        guide_version: [ ver ]
-      };
+    if ( algolia.facetFilters ) {
+      searchParameters.facetFilters = algolia.facetFilters;
     }
-
 
     const search = instantsearch({
       appId: opts.appId,

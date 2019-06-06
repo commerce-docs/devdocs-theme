@@ -165,9 +165,30 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
   .lineno {
     overflow: hidden;
     width: 100%;
+    min-width: 35px;
     text-align: center;
     opacity: .4;
     padding: $spacing*2 0;
     user-select: none;
+  }
+}
+
+// Hide line numbers for all code blocks
+.rouge-table .gl {
+  display: none;
+}
+
+// Show line numbers for specific languages
+.language-json,
+.language-php,
+.language-html,
+.language-xml,
+.language-js,
+.language-javascript,
+.language-yaml {
+  .rouge-table {
+    .gl {
+      display: table-cell;
+    }
   }
 }
