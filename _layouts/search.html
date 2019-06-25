@@ -87,7 +87,7 @@
               var link = '<a href="' + baseUrl + url + '">' + title +'</a>';
             }
 
-            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + url +'</div><div class="hit-content">' + content + '</div></div>';
+            return '<div class="hit"><h2 class="hit-name">'+ link + '</h2><div class="hit-url">'+ document.location.origin + baseUrl + url +'</div><div class="hit-content">' + content + '</div></div>';
           },
           empty: '<div id="no-results-message"><p>No results found.</p></div>',
         },
