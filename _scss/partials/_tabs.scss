@@ -126,3 +126,11 @@
   user-select: none;
 }
 
+
+.tab-item[disabled] .tab-item-label {
+  cursor: default;
+}
+
+.tab-item[disabled] {
+  color: #BCBCBC;
+}

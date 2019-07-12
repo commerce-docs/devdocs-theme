@@ -11,6 +11,7 @@ window.onload = function() {
       refinementListLimit: 40,
       hiddenClassName: "hide",
       resultsClassName: "search-results",
+      noResultsClassName: "no-results",
       hitsClassName: "search-results-main",
       statsClassName: "search-results-stats",
       paginationClassName: "search-results-pagination",
@@ -157,6 +158,20 @@ window.onload = function() {
           container: searchIndex.hitsContainer,
           hitsPerPage: defaults.hitsPerPage,
           escapeHTML: true,
+          transformItems: function(items) {
+            // Disable index tab item if no items found
+            var navItem = document.getElementById(searchIndex.indexName + '-tab');
+            if (navItem) {
+              if (!items.length) {
+                navItem.disabled = true;
+                document.getElementById(searchIndex.indexName).classList.add(defaults.noResultsClassName);
+              } else {
+                navItem.disabled = false;
+                document.getElementById(searchIndex.indexName).classList.remove(defaults.noResultsClassName);
+              }
+            }
+            return items;
+          },
           templates: {
             item: function(item) {
               var title_highlighted = item._highlightResult.title;
