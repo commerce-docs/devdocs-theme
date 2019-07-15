@@ -1,5 +1,5 @@
 {
-  "name": "Devdocs",
+  "name": "devdocs-theme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/magento-devdocs/devdocs-theme.git"
@@ -18,14 +18,16 @@
     "watch:all": "npm-run-all --parallel watch:html watch:js watch:css serve",
     "start": "npm run watch:all"
   },
-  "dependencies": {
-    "autoprefixer": "^9.5.1",
-    "browser-sync": "^2.26.5",
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "browser-sync": "^2.26.7",
     "node-sass": "^4.12.0",
     "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.2",
-    "uglify-js": "^3.5.15"
+    "postcss-cli": "^6.1.3",
+    "uglify-js": "^3.6.0",
+    "lodash": ">=4.17.13"
   },
+  "dependencies": {},
   "private": true
 }
