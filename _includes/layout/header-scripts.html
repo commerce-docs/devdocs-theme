@@ -3,15 +3,14 @@
   var algolia = {
     id : "{{ site.algolia.application_id}}",
     index:  "{{ site.algolia.index_name}}",
-    key:  "{{ site.algolia.api_key}}",
-    facetFilters: [["guide_version: 2.3", "versionless: true"]]
+    key:  "{{ site.algolia.api_key}}"
   };
 
   var indices = [
     {
       label: "DevDocs",
       name: "devdocs",
-      facets: [["guide_version: 2.3", "versionless: true"]],
+      facetFilters: [["guide_version: 2.3", "versionless: true"]],
       refinements: [
         {
           label: "Functional areas",

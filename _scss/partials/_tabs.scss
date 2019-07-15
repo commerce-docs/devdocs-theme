@@ -1,10 +1,9 @@
 .tabs {
-  
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 
   margin: 0;
   padding: 0 8px;
@@ -14,41 +13,18 @@
 
   list-style: none;
 
-
   a {
     text-decoration: none;
-    display: block;
-    line-height: 47px;
-    color: $body-font-color;
-    padding: 0 30px;
-
-    &:hover {
-      color: #454646;
-      background: darken($light-gray-color, 10%);
-    }
-  }
-
-  .is-selected {
-    cursor: default;
-    a {
-      background: #fff;
-      color: $brand-color;
-
-      &:hover {
-        background: #fff;
-      }
-    }
-  }
-
-  @media ( $small-screen) {
-    width: 100%;
+    color: rgb(110, 110, 110);;
   }
 
 }
 
 .tab-item {
-
   color: rgb(110, 110, 110);
+  display: block;
+
+  background: none;
   border: none;
 
   position: relative;
@@ -63,7 +39,6 @@
   cursor: pointer;
   outline: none;
 }
-
 
 .tab-item:hover {
   color: #333;
@@ -92,9 +67,7 @@
   border-color: transparent;
 }
 
-
-
-
+// Currently selected item
 .tab-item.is-selected {
   cursor: default;
   color: #333;
@@ -116,8 +89,6 @@
   }
 
 }
-
-
 
 
 .tab-item-label {

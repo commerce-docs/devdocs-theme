@@ -1,4 +1,6 @@
 window.onload = function() {
+
+  // Initialize the search with parameters
   searchApp({
     appId: algolia.id,
     apiKey: algolia.key,
@@ -6,6 +8,9 @@ window.onload = function() {
   });
 
   function searchApp(opts) {
+
+    if ( typeof(indices) === 'undefined' ) return false;
+
     var defaults = {
       hitsPerPage: 20,
       refinementListLimit: 40,
@@ -140,7 +145,7 @@ window.onload = function() {
         searchFunction: searchFunction,
         searchParameters: {
           hitsPerPage: defaults.hitsPerPage,
-          facetFilters: indexConfig.facets
+          facetFilters: indexConfig.facetFilters
         },
         routing: routing
       });
@@ -208,19 +213,22 @@ window.onload = function() {
               );
             },
             empty:
-              '<div class="no-results-message"><p>No results found.</p></div>'
+              '<div class="no-results-message"><h2>No results found</h2><p>Try different keywords or check spelling.</p></div>'
           }
         })
       );
 
-      // Stats
+      // Stats widget
       searchIndex.addWidget(
         instantsearch.widgets.stats({
-          container: searchIndex.statsContainer
+          container: searchIndex.statsContainer,
+          templates: {
+            text: '{{#hasNoResults}}No results{{/hasNoResults}}{{#hasOneResult}}1 result{{/hasOneResult}}{{#hasManyResults}}{{#helpers.formatNumber}}{{nbHits}}{{/helpers.formatNumber}} results{{/hasManyResults}} found',
+          },
         })
       );
 
-      // Pagination
+      // Pagination widget
       searchIndex.addWidget(
         instantsearch.widgets.pagination({
           container: searchIndex.paginationContainer,
@@ -228,7 +236,7 @@ window.onload = function() {
         })
       );
 
-      // Refinements
+      // Refinements widget
       if (searchIndex.refinements && searchIndex.refinements instanceof Array) {
         // Iterate through array of attribute names and generate the panels
         for (var i = 0; i < searchIndex.refinements.length; i++) {
@@ -260,6 +268,8 @@ window.onload = function() {
 
       // Create containers for each index
       for (var i = 0; i < searchIndices.length; i++) {
+
+        // Create main container for index
         var container = document.createElement("div");
         container.classList.add(defaults.resultsClassName);
         container.setAttribute("role", "tabpanel");
@@ -269,7 +279,8 @@ window.onload = function() {
         );
 
         container.id = searchIndices[i].indexName;
-
+        
+        // Create additional containers for the index
         var statsContainer = document.createElement("div");
         var hitsContainer = document.createElement("div");
         var refinementsContainer = document.createElement("div");
@@ -283,11 +294,13 @@ window.onload = function() {
         container.appendChild(hitsContainer);
         container.appendChild(refinementsContainer);
         container.appendChild(paginationContainer);
-
+        
+        // Hide all but the first containers 
         if (i) {
           container.style.display = "none";
         }
 
+        // Store references to containers in the index object
         searchIndices[i].hitsContainer = hitsContainer;
         searchIndices[i].statsContainer = statsContainer;
         searchIndices[i].paginationContainer = paginationContainer;
