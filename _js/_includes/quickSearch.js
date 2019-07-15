@@ -9,12 +9,9 @@ $(function() {
 
   var searchObjects = indices.map(function(item) {
     var searchOptions = {
-      hitsPerPage: 5
+      hitsPerPage: 5,
+      facetFilters: (item.facetFilters) ? item.facetFilters : null
     };
-
-    if (item.facets) {
-      searchOptions.facetFilters = item.facets;
-    }
 
     return {
       source: $.fn.autocomplete.sources.hits(
@@ -69,22 +66,24 @@ $(function() {
       }
     });
 
-  // Pressign ESC key closes the quick-search
-  $(document).keyup(function(e) {
-    if (e.which == 27) {
+  // Pressing ESC key closes the quick-search
+  $(document).keyup(function(event) {
+    if (event.which == 27) {
       $("body").removeClass("search-active");
       $quickSearchInput.blur();
     }
   });
 
-  $(".search-trigger").on("click", function(e) {
-    e.preventDefault();
+  // Clicking seach icon focuses the input
+  $(".search-trigger").on("click", function(event) {
+    event.preventDefault();
     $("body").toggleClass("search-active");
     $quickSearchInput.trigger("focus");
   });
 
-  $(".quick-search-close").on("click", function(e) {
-    e.preventDefault();
+  // Clicking close icon
+  $(".quick-search-close").on("click", function(event) {
+    event.preventDefault();
     $("body").removeClass("search-active");
     $quickSearchInput.blur();
   });
