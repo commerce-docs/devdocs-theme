@@ -15,6 +15,7 @@ window.onload = function() {
       hitsPerPage: 20,
       refinementListLimit: 40,
       hiddenClassName: "hide",
+      searchInputId: "#search-input",
       resultsClassName: "search-results",
       noResultsClassName: "no-results",
       hitsClassName: "search-results-main",
@@ -27,31 +28,36 @@ window.onload = function() {
       navItemClassNameSelected: "is-selected"
     };
 
+    // Variables to store all the data
+    var mainIndex;
+    var searchIndices = [];
+    var subIndices = [];
     var navItems = [];
+
     var algoliaClient = algoliasearch(opts.appId, opts.apiKey);
+    // Create a custom Search Client to handle empty queries:
     var searchClient = {
       search: function(requests) {
-        if (requests.every(isEmptyQuery)) {
+        
+        if (requests.every(isEmptyQuery)) { 
           return Promise.resolve({
             results: requests.map(function() {
               return {
                 hits: [],
                 nbHits: 0,
-                processingTimeMS: 0
+                processingTimeMS: 0,
+                facets: []
               };
-            })
+            }) 
           });
         }
+        
         return algoliaClient.search(requests);
       }
     };
-    var mainIndex;
-    var searchIndices = [];
-    var subIndices = [];
-
     var isEmptyQuery = function(request) {
       return !request.params.query;
-    };
+    }; 
 
     // Inisialize all the search indices
     var init = function() {
@@ -93,7 +99,6 @@ window.onload = function() {
         navItem.setAttribute("role", "tab");
         navItem.setAttribute("aria-controls", item.name);
         navItem.setAttribute("aria-selected", !index ? true : false);
-        //navItem.setAttribute("tabindex", !index ? 0 : -1);
 
         navItem.innerHTML =
           '<span class="tab-item-label">' + item.label + "</span>";
@@ -111,31 +116,25 @@ window.onload = function() {
 
     var handleIndexClick = function(event, indexName) {
       // Get all the tab content items and hide them
-      var tabcontent = document.getElementsByClassName(
-        defaults.resultsClassName
-      );
-
+      var tabcontent = document.getElementsByClassName(defaults.resultsClassName);
+      
+      // First hide all the tab content
       for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
+        tabcontent[i].classList.add(defaults.hiddenClassName);
       }
 
       // Remove the active class
       for (i = 0; i < navItems.length; i++) {
         navItems[i].setAttribute("aria-selected", false);
-        //navItems[i].setAttribute("tabindex", -1);
-        navItems[i].className = navItems[i].className.replace(
-          " " + defaults.navItemClassNameSelected,
-          ""
-        );
+        navItems[i].classList.remove(defaults.navItemClassNameSelected);
       }
 
       // Show the current tab, and add an "active" class to the button that opened the tab
-      document.getElementById(indexName).style.display = "grid";
+      document.getElementById(indexName).classList.remove(defaults.hiddenClassName);
 
       event.currentTarget.blur();
-      event.currentTarget.className += " " + defaults.navItemClassNameSelected;
-      //event.currentTarget.setAttribute("tabindex", 0);
       event.currentTarget.setAttribute("aria-selected", true);
+      event.currentTarget.classList.add(defaults.navItemClassNameSelected);
     };
 
     var initSearchIndex = function(indexConfig, searchClient, searchFunction, routing) {
@@ -232,7 +231,7 @@ window.onload = function() {
       searchIndex.addWidget(
         instantsearch.widgets.pagination({
           container: searchIndex.paginationContainer,
-          scrollTo: "#search-input"
+          scrollTo: defaults.searchInputId
         })
       );
 
@@ -249,7 +248,7 @@ window.onload = function() {
               header: refinement.label
             }
           })(instantsearch.widgets.refinementList);
-
+          
           searchIndex.addWidget(
             refinementListWithPanel({
               container: container,
@@ -297,7 +296,7 @@ window.onload = function() {
         
         // Hide all but the first containers 
         if (i) {
-          container.style.display = "none";
+          container.classList.add(defaults.hiddenClassName);
         }
 
         // Store references to containers in the index object
@@ -312,7 +311,7 @@ window.onload = function() {
       // Search Box
       mainIndex.addWidget(
         instantsearch.widgets.searchBox({
-          container: "#search-input",
+          container: defaults.searchInputId,
           placeholder: "Search",
           showSubmit: false,
           showLoadingIndicator: false

@@ -28,6 +28,9 @@
   margin: 20px 0 0 0;
   padding: 0 16px 0 24px;
 }
+.search-results.hide {
+  display: none;
+}
 
 .indices-list {
   padding: 0 16px;
@@ -102,7 +105,7 @@ a:hover mark {
 }
 .hit-url {
   font-size: 12px;
-  color: #0a9537;
+  color: #107154;
   margin: 5px 0;
   overflow: hidden;
 }
@@ -228,7 +231,7 @@ a:hover mark {
 }
 
 .ais-RefinementList-count {
-  color: #999;
+  color: #666;
   float: right;
   font-size: 11px;
 }
