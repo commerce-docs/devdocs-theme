@@ -7,11 +7,6 @@ $(function() {
     }
   });
 
-
-
-  // Magento Glossary
-  magento.glossary.init('https://magento.github.io/glossary/data/content-glossary.xml',function(term){return term.types.includes('glossary');},magento.glossary.tooltip.init);
-
   // jquery modal settings
   $.modal.defaults = {
     closeExisting: true,
@@ -28,7 +23,6 @@ $(function() {
     fadeDelay: 1.0        // Point during the overlay's fade-in that the modal begins to fade in (.5 = 50%, 1.5 = 150%, etc.)
   };
 
-
   // Initialize navigations
   var navMain = $('.site-header .nav-main');
   navMain.mainNavigation();
@@ -40,7 +34,7 @@ $(function() {
   var pageInfo = $('.page-info');
   pageInfo.tableOfContents();
 
-
+  // Initialize smooth scrolling for anchor links
   animatedAnchors.init();
 
 });
