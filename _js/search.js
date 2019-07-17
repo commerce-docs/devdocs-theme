@@ -33,6 +33,7 @@ window.onload = function() {
     var searchIndices = [];
     var subIndices = [];
     var navItems = [];
+    var query = '';
 
     var algoliaClient = algoliasearch(opts.appId, opts.apiKey);
     // Create a custom Search Client to handle empty queries:
@@ -69,9 +70,15 @@ window.onload = function() {
 
       // Main index. Passing the searchFunction with the list of subIndices to sync the searches
       mainIndex = initSearchIndex(indices[0], searchClient, function(helper) {
+        // Store query to use later for tracking
+        query = helper.state.query;
+
+        // Search each sub index
         for (var i = 0; i < subIndices.length; i++) {
           subIndices[i].helper.setQuery(helper.state.query).search();
         }
+
+        // Search main index
         helper.search();
       },true);
 
@@ -197,8 +204,11 @@ window.onload = function() {
               if (typeof item._highlightResult.content !== "undefined") {
                 content = item._highlightResult.content.value;
               }
+              
+              // Generate tracker part of the URL
+              var tracker = '?utm_source=' + encodeURIComponent(algolia.index) + '&utm_medium=search_page&utm_campaign=federated_search&utm_term=' + encodeURIComponent(query);
 
-              var link = '<a href="' + baseUrl + url + '">' + title + "</a>";
+              var link = '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
 
               return (
                 '<div class="hit"><h2 class="hit-name">' +

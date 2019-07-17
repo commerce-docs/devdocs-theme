@@ -14,6 +14,7 @@ $(function() {
 
     // Initialize the Algola search autocomplete
     var client = algoliasearch(algolia.id, algolia.key);
+    var quickSearchQuery = '';
 
     // Set up the search objects for each index
     var searchObjects = indices.map(function(item) {
@@ -40,7 +41,10 @@ $(function() {
               ? suggestion._highlightResult.title.value
               : baseUrl + suggestion.url;
 
-            return '<a href="' + baseUrl + url + '">' + title + "</a>";
+            // Generate tracker part of the URL
+            var tracker = '?utm_source=' + encodeURIComponent(algolia.index) + '&utm_medium=quick_search&utm_campaign=federated_search&utm_term=' + encodeURIComponent(quickSearchQuery);
+
+            return '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
           },
           header: '<div class="suggestion-category">' + item.label + "</div>"
         }
@@ -63,11 +67,15 @@ $(function() {
         }
       })
       .on("keypress", function(event) {
+        var value = $.fn.autocomplete.escapeHighlightedString(
+          event.target.value
+        );
+
+        // Store query for later use in tracking
+        quickSearchQuery = value;
+
         // Pressing "return" will navigate to a search results page
         if (event.which == 13) {
-          var value = $.fn.autocomplete.escapeHighlightedString(
-            event.target.value
-          );
           //return;
           if (value) {
             window.location =
