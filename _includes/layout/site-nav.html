@@ -1,7 +1,7 @@
 <nav class="site-nav">
 
   <div class="menu-btn">
-    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main"></button>
+    <button id="menu-btn" class="menu-trigger menu-icon" aria-haspopup="true" aria-controls="nav-main" aria-label="Menu"></button>
   </div>
 
   <div class="nav-container">
@@ -21,8 +21,8 @@
       <button class="search-trigger search-icon" aria-label="Search"></button>
     </div>
 
-    <form class="quick-search" action="{{ site.baseurl }}{% link search.md %}" method="get" novalidate="novalidate">
-      <input type="search" name="q" placeholder="Search" />
+    <form class="quick-search" action="{{ site.baseurl }}/search/" method="get" novalidate="novalidate">
+      <input type="search" name="query" placeholder="Search" />
       <button class="quick-search-close" aria-label="Close search">&times;</button>
     </form>
 

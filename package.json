@@ -1,5 +1,5 @@
 {
-  "name": "Devdocs",
+  "name": "devdocs-theme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/magento-devdocs/devdocs-theme.git"
@@ -7,10 +7,9 @@
   "scripts": {
     "scss": "node-sass --source-map=0 --omit-source-map-url -o assets/css _scss --output-style=compressed",
     "autoprefixer": "postcss -u autoprefixer -r assets/css/*.css --map=0",
-    "uglify": "uglifyjs _js/*.js -o assets/js/app.js && uglifyjs assets/js/*.js -m -c -o assets/js/app.min.js --source-map=0",
     "jekyll": "bundle exec jekyll build",
     "serve": "browser-sync start --server '_site' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
-    "build:js": "uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
+    "build:js": "uglifyjs _js/search.js -o assets/js/search.min.js && uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
     "build:css": "npm run scss && npm run autoprefixer",
     "build:html": "npm run jekyll",
     "watch:html": "nodemon -e md,html --ignore _site/ -x 'npm run build:html'",
@@ -20,13 +19,14 @@
     "start": "npm run watch:all"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
-    "browser-sync": "^2.26.5",
+    "autoprefixer": "^9.6.0",
+    "browser-sync": "^2.26.7",
     "node-sass": "^4.12.0",
-    "nodemon": "^1.18.11",
+    "nodemon": "^1.19.1",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^6.1.2",
-    "uglify-js": "^3.5.6"
+    "postcss-cli": "^6.1.3",
+    "uglify-js": "^3.6.0",
+    "lodash": ">=4.17.13"
   },
   "dependencies": {},
   "private": true

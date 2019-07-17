@@ -1,0 +1,27 @@
+input[type="checkbox"] {
+  margin: 0 10px 0 0;
+  width: 14px;
+  height: 14px;
+  
+  -webkit-appearance: none;
+  position: relative;
+
+  border-radius: 2px;
+  border: 2px solid #959595;
+  background: #fff;
+
+  &:checked {
+    
+    border-color: #2680EB;
+    background: #2680EB;
+
+    &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background-image: url("data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjEwIiB2aWV3Qm94PSIwIDAgMTAgMTAiIHdpZHRoPSIxMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJtMCAwaDEwdjEwaC0xMHoiIGZpbGw9IiNmMGYiIG9wYWNpdHk9IjAiLz48cGF0aCBkPSJtMy43ODggOWExIDEgMCAwIDEgLS43ODgtLjM4NWwtMi4yODgtM2ExIDEgMCAxIDEgMS41NzYtMS4yM2wxLjUgMS45OTEgMy45MjQtNC45OTFhMSAxIDAgMSAxIDEuNTc2IDEuMjNsLTQuNzEyIDZhMSAxIDAgMCAxIC0uNzg4LjM4NXoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=");
+    }
+  }
+}
