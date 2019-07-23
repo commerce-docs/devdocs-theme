@@ -206,7 +206,7 @@ window.onload = function() {
               }
               
               // Generate tracker part of the URL
-              var tracker = '?utm_source=' + encodeURIComponent(algolia.index) + '&utm_medium=search_page&utm_campaign=federated_search&utm_term=' + encodeURIComponent(query);
+              var tracker = '?itm_source=' + encodeURIComponent(algolia.index) + '&itm_medium=search_page&itm_campaign=federated_search&itm_term=' + encodeURIComponent(query);
 
               var link = '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
 

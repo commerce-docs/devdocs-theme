@@ -42,7 +42,7 @@ $(function() {
               : baseUrl + suggestion.url;
 
             // Generate tracker part of the URL
-            var tracker = '?utm_source=' + encodeURIComponent(algolia.index) + '&utm_medium=quick_search&utm_campaign=federated_search&utm_term=' + encodeURIComponent(quickSearchQuery);
+            var tracker = '?itm_source=' + encodeURIComponent(algolia.index) + '&itm_medium=quick_search&itm_campaign=federated_search&itm_term=' + encodeURIComponent(quickSearchQuery);
 
             return '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
           },
