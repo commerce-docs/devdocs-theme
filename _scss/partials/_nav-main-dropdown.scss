@@ -21,6 +21,10 @@ $nav-main-section-width: 300px;
     -webkit-user-drag: none;
   }
 
+  .nav-main & > a:hover {
+    background: $dropdown-bg;
+  }
+
   & > span {
     -webkit-tap-highlight-color: transparent;
   }

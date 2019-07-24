@@ -37,5 +37,8 @@ $(function() {
   // Initialize smooth scrolling for anchor links
   animatedAnchors.init();
 
+  // Initialize the image zoom
+  $('.content').zoom();
+
 });
 // END document ready

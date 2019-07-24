@@ -1,0 +1,43 @@
+
+a.card {
+  width: 100%;
+  display: block;
+  color: $body-font-color;
+
+  background: $light-gray-color;
+  border-bottom: 5px solid $brand-color;
+
+  padding: 25px 30px;
+
+  transition: all .2s;
+
+  & a {
+    color: $body-font-color;
+  }
+
+  &:hover {
+    color: $body-font-color;
+    text-decoration: none;
+    box-shadow: 3px 3px 8px rgba(0,0,0,.2);
+    transform: translateY(-3px) translateX(-3px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  
+  h2, h3 {
+    font-weight: 500;
+    margin-top: 0;
+  }
+
+  .anchor {
+    display: none;
+  }
+
+}

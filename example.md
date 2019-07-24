@@ -31,6 +31,9 @@ This is a tip callout. These can be used to provide useful tips or interesting f
 {: .bs-callout-tutorial }
 This is a tutorial callout. Use it to provide links to a tutorials.
 
+<div class="bs-callout-tutorial">
+  <p>This is a tutorial callout. These can be used to provide links to a tutorials or interesting fact on a topic.</p>
+</div>
 
 {% collapsible This is the collapsible title %}
   Markdown content goes in this area.
@@ -95,3 +98,7 @@ Another definition term
 ![Alt text](http://via.placeholder.com/1000x500)
 
 _This is image caption_
+
+### Image with zoom
+
+![Alt text](http://via.placeholder.com/1000x500){: .zoom }

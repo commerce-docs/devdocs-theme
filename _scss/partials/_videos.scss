@@ -165,58 +165,6 @@
 }
 
 
-.adjaced-pages {
-  background: $light-gray-color;
-  padding: 0;
-  margin: 40px 0 0 0;
-
-  .playlist-name {
-    color: $dark-gray-color;
-    font-size: $font-size-sm;
-    font-weight: 700;
-    padding: 10px 20px 10px 20px;
-    border-bottom: 1px solid darken( $light-gray-color, 5%);
-  }
-
-  &:after {
-    display: block;
-    clear: both;
-    content: '';
-  }
-
-  .previous-page {
-    float: left;
-    width: 50%;
-    a {
-      border-right: 1px solid darken( $light-gray-color, 5%);
-    }
-  }
-  .next-page {
-    text-align: right;
-    float: right;
-    width: 50%;
-    a {
-      border-left: 1px solid darken( $light-gray-color, 5%);
-      margin-left: -1px;
-    }
-  }
-  .arrow {
-    font-size: $font-size-sm;
-    display: block;
-    color: $dark-gray-color;
-    text-decoration: none;
-  }
-  a {
-    padding: 10px 20px;
-    display: block;
-    transition: all .2s;
-  }
-  a:hover {
-    background: darken( $light-gray-color, 3%);
-    text-decoration: none;
-  }
-}
-
 .video-player-wrap {
   margin-bottom: 2em;
 }

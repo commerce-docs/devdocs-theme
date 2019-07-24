@@ -1,0 +1,94 @@
+img.zoom {
+  max-width: 60%;
+  display: block;
+}
+
+// Wrapper
+// Extra specific selector is needed to evercome the external link indicator styles
+.content .content-wrap a.zoom-wrap {
+  position: relative;
+  display: block;
+  max-width: 60%;
+  cursor: zoom-in;
+  transition: all .2s;
+  box-shadow: 0 0 1px rgba(0,0,0,.2);
+  
+  img {
+    max-width: 100%;
+  }
+
+  // Icon
+  &::after {
+    content: "";
+    border-radius: 100px;
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    background: rgba(0, 0, 0, 0.4) url(../i/icons/zoom.svg) no-repeat center;
+    opacity: 0;
+    transition: all .2s;
+  }
+
+  &:hover {
+    box-shadow: 0 0 2px rgba(0,0,0,.3);
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+ 
+}
+
+
+@media ($medium-screen) {
+  img.zoom {
+    max-width: 75%;
+  }
+
+  .zoom-wrap {
+    max-width: 75%;
+    img.zoom {
+      max-width: 100%;
+    }
+  }
+
+  .blocker {
+    padding: 0;
+  }
+}
+
+@media ($small-screen) {
+  img.zoom {
+    max-width: 100%;
+  }
+
+  .zoom-wrap {
+    max-width: 100%;
+  }
+
+  .blocker {
+    padding: 0;
+  }
+}
+
+// For touch-only devices, always show the zoom icon
+@media (pointer: coarse) { 
+  .zoom-wrap::after {
+    opacity: 1;
+  } 
+}
+
+
+// Style the modal
+#image-zoom-modal {
+  max-width: max-content;
+  display: none;
+  cursor: zoom-out;
+
+  @media ($medium-screen) {
+    width: 100%;
+  }
+}

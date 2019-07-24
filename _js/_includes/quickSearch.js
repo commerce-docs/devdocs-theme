@@ -28,6 +28,8 @@ $(function() {
           client.initIndex(item.name),
           searchOptions
         ),
+        name: item.name,
+        baseUrl: item.baseUrl,
         templates: {
           suggestion: function(suggestion) {
             var url = suggestion.url;
@@ -42,7 +44,7 @@ $(function() {
               : baseUrl + suggestion.url;
 
             // Generate tracker part of the URL
-            var tracker = '?itm_source=' + encodeURIComponent(algolia.index) + '&itm_medium=quick_search&itm_campaign=federated_search&itm_term=' + encodeURIComponent(quickSearchQuery);
+            var tracker = getUrlParameters(quickSearchQuery);
 
             return '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
           },
@@ -50,6 +52,10 @@ $(function() {
         }
       };
     });
+
+    var getUrlParameters = function (query) {
+      return '?itm_source=' + encodeURIComponent(algolia.index) + '&itm_medium=quick_search&itm_campaign=federated_search&itm_term=' + encodeURIComponent(query);
+    }
 
     // Assign autocomplete to input field
     $(".quick-search input, .search-form .search-field")
@@ -61,9 +67,21 @@ $(function() {
         },
         searchObjects
       )
-      .on("autocomplete:selected", function(event, suggestion, dataset) {
-        if (typeof suggestion.url != "undefined") {
-          window.location.href = suggestion.url;
+      .on("autocomplete:selected", function(event, suggestion, dataset, context) {
+        // Do nothing on click, as the browser will already do it
+        if (context.selectionMethod === 'click') {
+          return;
+        }
+        
+        if ( typeof suggestion.url != "undefined" ) {
+          var suggestionIndex = searchObjects.find( function(searchObject) {
+            return searchObject.name === dataset;
+          });
+          
+          if ( typeof suggestionIndex.baseUrl != 'undefined' ) {
+            var tracker = getUrlParameters(quickSearchQuery);
+            window.location.href = suggestionIndex.baseUrl + suggestion.url + tracker;
+          }
         }
       })
       .on("keypress", function(event) {

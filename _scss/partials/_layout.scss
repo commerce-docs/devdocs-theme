@@ -45,7 +45,7 @@ body {
 .content-wrap {
   padding: 0 10px 50px 50px;
   flex: 1 1 auto;
-  max-width: 1300px;
+  max-width: $container-width-large;
   min-width: 360px;
 }
 
