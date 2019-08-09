@@ -210,12 +210,18 @@ window.onload = function() {
 
               var link = '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
 
+              var hitUrl = baseUrl + url;
+              // Test if hitUrl is relative, and display the absolute URL
+              var re = new RegExp("^(http|https)://", "i");
+              if ( !re.test(baseUrl) ) {
+                hitUrl = window.location.protocol + '//' + window.location.hostname + ( window.location.port? ':' + window.location.port : '' ) + hitUrl;
+              }
+
               return (
                 '<div class="hit"><h2 class="hit-name">' +
                 link +
-                '</h2><div class="hit-url">' +
-                baseUrl +
-                url +
+                '</h2><div class="hit-url">' + 
+                hitUrl +
                 '</div><div class="hit-content">' +
                 content +
                 "</div></div>"
