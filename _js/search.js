@@ -199,10 +199,12 @@ window.onload = function() {
               } else {
                 title = url;
               }
-
+              console.log(item);
               // Check if we have the description of the hit
               if (typeof item._highlightResult.content !== "undefined") {
                 content = item._highlightResult.content.value;
+              } else if ( typeof item.body_safe !== "undefined" ) {
+                content = item.body_safe.substring(0, 256) + " ...";
               }
               
               // Generate tracker part of the URL
