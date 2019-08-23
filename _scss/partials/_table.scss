@@ -1,28 +1,55 @@
 table {
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
-  margin: 2em 0 2em 0;
+  //border-spacing: 0;
+  //margin: 2em 0 2em 0;
+  @extend .spectrum-Table;
 }
 
 table.fixed {
   table-layout: fixed;
 }
 
-th {
-  background: $light-gray-color;
-  text-align: left;
-  padding: 15px 14px;
-  vertical-align: bottom;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
+tbody {
+  @extend .spectrum-Table-body;
 }
 
-tr td {
-  font-size: $font-size-sm;
-  padding: 13px 14px;
-  vertical-align: top;
-  border-bottom: 1px solid #ccc;
-  word-wrap: break-word;
-  vertical-align: initial;
+th {
+  @extend .spectrum-Table-headCell;
 }
+
+tbody tr {
+  @extend .spectrum-Table-row;
+}
+
+td {
+  @extend .spectrum-Table-cell;
+}
+
+.content p {
+  @extend .spectrum-Body3;
+}
+
+.content a {
+  @extend .spectrum-Link;
+}
+
+/*
+
+table:not(.spectrum-Table--quiet) tbody {
+  border-width: 1px;
+  border-radius: 4px;
+}
+table:not(.spectrum-Table--quiet) tbody tr:first-child td:first-child {
+  border-top-left-radius: 4px;
+}
+table:not(.spectrum-Table--quiet) tbody tr:first-child td:last-child {
+  border-top-right-radius: 4px;
+}
+table:not(.spectrum-Table--quiet) tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 4px;
+}
+table:not(.spectrum-Table--quiet) tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 4px;
+}
+*/

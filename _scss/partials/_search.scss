@@ -2,63 +2,29 @@
 
 // search box on home page
 
-input[type=search] {
-  -webkit-appearance: none;
-}
-
 .search-form {
-
+  width: 100%;
   position: relative;
-  max-width: 590px;
+  max-width: 550px;
   margin: 0 auto;
   text-align: left;
-
-  .search-icon {
-    width: 50px;
-    height: 47px;
-    pointer-events: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url('../i/icons/search.svg');
-    z-index: 3;
-  }
-
-  .search-field {
-    -webkit-appearance: none;
-    font-size: 16px;
-    padding: 12px;
-    line-height: 22px;
-    display: inline-block;
-    height: 100%;
-    padding-left: 50px;
-    border-radius: 2px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-
-  }
-
-  .search-submit {
-    height: 49px;
-    font-size: 16px;
-    line-height: 0;
-    border-radius: 3px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
-
-  @media ( $small-screen ) {
-    .search-field {
-      border-radius: 2px;
-    }
-    .input-group-btn {
-      display: none;
-    }
-  }
-
 }
 
+.algolia-autocomplete {
+  width: 100%;
+}
 
+.search-form .spectrum-Search-input {
+  font-size: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  height: auto;
+}
+
+.search-form .spectrum-Search-icon {
+  top: 12px;
+}
+.search-form .spectrum-ClearButton {
+  display: none;
+  top: 6px;
+}

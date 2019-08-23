@@ -3,7 +3,13 @@
 @import 'reset';
 @import 'variables';
 
-@import 'partials/buttons';
+@import './node_modules/@adobe/spectrum-css/dist/spectrum-core';
+@import './node_modules/@adobe/spectrum-css/dist/spectrum-core-diff';
+
+@import './node_modules/@adobe/spectrum-css/dist/spectrum-light';
+
+
+//@import 'partials/buttons';
 @import 'partials/callouts';
 @import 'partials/code';
 @import 'partials/collapsible';
@@ -20,10 +26,10 @@
 @import 'partials/page-info';
 @import 'partials/search';
 @import 'partials/quick-search';
-@import 'partials/sidebar';
+//@import 'partials/sidebar';
 @import 'partials/site-header';
 @import 'partials/table';
-@import 'partials/typography';
+//@import 'partials/typography';
 @import 'partials/version-switcher';
 @import 'partials/tabs';
 @import 'partials/toc';

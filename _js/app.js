@@ -40,5 +40,7 @@ $(function() {
   // Initialize the image zoom
   $('.content').zoom();
 
+  loadIcons('/assets/i/spectrum-css-icons.svg');
+
 });
 // END document ready

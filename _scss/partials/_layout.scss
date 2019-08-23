@@ -150,3 +150,41 @@ body {
 #markdown-toc {
   display: none;
 }
+
+
+
+.sidebar {
+  position: fixed;
+  width: $sidebar-width;
+  height: 100%;
+  z-index: 2;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border: none;
+  }
+
+  .sidebar-wrapper {
+    padding: 0 0 $spacing*4;
+    padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
+  }
+
+  .guide-title {
+    position: relative;
+    color: $body-font-color;
+    font-weight: $font-weight-medium;
+    font-size: 18px;
+    padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
+
+    margin: 0;
+    z-index: 1;
+  }
+
+  .toc-toggler {
+    display: none;
+  }
+
+}
