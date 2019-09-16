@@ -33,6 +33,10 @@ $(function() {
         templates: {
           suggestion: function(suggestion) {
             var url = suggestion.url;
+            // This is a zendesk item, need to assign URL
+            if ( typeof suggestion.body_safe !== "undefined" ) { 
+              url = '/articles/' + suggestion.id;
+            }
 
             if (!url) {
               return false;
@@ -40,8 +44,8 @@ $(function() {
 
             var baseUrl = item.baseUrl ? item.baseUrl : "";
             var title = suggestion._highlightResult.title
-              ? suggestion._highlightResult.title.value
-              : baseUrl + suggestion.url;
+            ? suggestion._highlightResult.title.value
+            : baseUrl + suggestion.url;
 
             // Generate tracker part of the URL
             var tracker = getUrlParameters(quickSearchQuery);

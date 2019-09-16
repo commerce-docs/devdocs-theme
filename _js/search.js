@@ -203,8 +203,10 @@ window.onload = function() {
               // Check if we have the description of the hit
               if (typeof item._highlightResult.content !== "undefined") {
                 content = item._highlightResult.content.value;
-              } else if ( typeof item.body_safe !== "undefined" ) {
+              } else if ( typeof item.body_safe !== "undefined" ) { 
+                // This is a zendesk item, need to assign content and URL
                 content = item.body_safe.substring(0, 256) + " ...";
+                url = '/articles/' + item.id;
               }
               
               // Generate tracker part of the URL
