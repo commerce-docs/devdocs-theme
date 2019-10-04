@@ -17,10 +17,11 @@ The purpose of this page is to provide you with a pre-formatted template and use
 
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
+## Callouts
+
 {: .bs-callout-info }
 This is a note callout. You can use these to provide important information on a topic.
 You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 compliant</a> structure when building a module.
-
 
 {: .bs-callout-warning }
 This is a warning callout. This is can be used to convey important information to the reader.
@@ -31,9 +32,8 @@ This is a tip callout. These can be used to provide useful tips or interesting f
 {: .bs-callout-tutorial }
 This is a tutorial callout. Use it to provide links to a tutorials.
 
-<div class="bs-callout-tutorial">
-  <p>This is a tutorial callout. These can be used to provide links to a tutorials or interesting fact on a topic.</p>
-</div>
+
+## Collapsibles
 
 {% collapsible This is the collapsible title %}
   Markdown content goes in this area.
@@ -42,15 +42,6 @@ This is a tutorial callout. Use it to provide links to a tutorials.
 {% collapsibleh2 This is the collapsible H2 title %}
   Markdown content goes in this area.
 {% endcollapsibleh2 %}
-
-{% highlight html %}
-<div class="container">
-  <h4 class="title">Title</h4>
-  <div class="content">
-    <p>Paragraph content.</p>
-  </div>
-</div>
-{% endhighlight %}
 
 
 ## Table
@@ -92,6 +83,19 @@ Definition term
 
 Another definition term
 : Another definition Description
+
+### Procedures
+
+Blah blah about projects and such and blah.
+ 
+{:.procedure}
+To upgrade a project:
+ 
+1. Update composer.
+1. Update metapackage.
+1. Modify configuration.
+1. Add, commit, and push changes.
+
 
 ## Images
 
