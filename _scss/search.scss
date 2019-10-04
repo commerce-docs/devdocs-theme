@@ -120,6 +120,23 @@ a:hover mark {
   color: #868686;
 }
 
+.vote {
+  color: #999;
+  margin: 0 15px 0 0;
+}
+
+// Icon for vote count
+.vote::before {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin: -3px 5px 0 0;
+  background: url("../i/icons/thumb-up.svg");
+  background-size: contain;
+}
+
 /* ----- Pagination  */
 
 .ais-Pagination {

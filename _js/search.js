@@ -205,6 +205,7 @@ window.onload = function() {
                 content = item._highlightResult.content.value;
               } else if ( typeof item.body_safe !== "undefined" ) { 
                 // This is a zendesk item, need to assign content and URL
+               
                 content = item.body_safe.substring(0, 256) + " ...";
                 url = '/articles/' + item.id;
               }
@@ -223,9 +224,9 @@ window.onload = function() {
 
               return (
                 '<div class="hit"><h2 class="hit-name">' +
-                link +
+                link + 
                 '</h2><div class="hit-url">' + 
-                hitUrl +
+                ( ( item.vote_sum > 0 ) ? '<span class="vote">' + item.vote_sum + '</span>' : "" ) + hitUrl +
                 '</div><div class="hit-content">' +
                 content +
                 "</div></div>"
