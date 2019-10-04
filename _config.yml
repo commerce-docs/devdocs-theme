@@ -4,6 +4,7 @@ logo: DocsTheme
 baseurl: ""
 permalink: pretty
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+version: 4
 
 markdown: kramdown
 highlighter: rouge
