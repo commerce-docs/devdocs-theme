@@ -2,9 +2,7 @@
 var animatedAnchors = {
   init: function ( settings ) {
     animatedAnchors.config = {
-      items: $('.main-container a[href^="#"]'),
-      root:  $('html, body'),
-      speed:  500,
+      items: $('.main-container a[href^="#"], .main-container .anchor'),
       headerHeight: 60
     };
     $.extend( animatedAnchors.config, settings );
@@ -23,11 +21,12 @@ var animatedAnchors = {
         
     if ( $target.length ) {
       event.preventDefault();
-      animatedAnchors.config.root.stop().animate({
-        scrollTop: $target.offset().top - animatedAnchors.config.headerHeight
-      }, animatedAnchors.config.speed );
-    }
+      var y = $target[0].getBoundingClientRect().top + window.pageYOffset - animatedAnchors.config.headerHeight;
+      
+      history.pushState({}, '', '#' + hash);
+      window.scrollTo({top: y, behavior: 'smooth'});
 
+    }
   }
 
 };

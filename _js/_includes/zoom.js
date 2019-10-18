@@ -51,12 +51,12 @@
       // Assign Events
       plugin.modal
         .on($.modal.OPEN, function(event, modal) {
-          console.log(modal);
+          //console.log(modal);
           modal.$blocker.attr('tabindex',0);
           modal.$blocker.focus();
         })
         .on($.modal.AFTER_CLOSE, function(event, modal) {
-          console.log(modal);
+          //console.log(modal);
           plugin.modalTriggerEl.focus();
         })
         .on("click", function() {
