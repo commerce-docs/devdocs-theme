@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "devdocs"
-  spec.version       = "4"
+  spec.version       = "5"
   spec.authors       = ["Eugene Bannykh"]
   spec.email         = ["ybannykh@adobe.com"]
 
