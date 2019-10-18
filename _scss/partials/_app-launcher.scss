@@ -1,0 +1,47 @@
+
+.app-launcher-trigger {
+  border: none;
+  background: none;
+  width: 45px;
+  height: $header-height;
+  position: relative;
+}
+
+.app-launcher-trigger::before {
+  content: '';
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
+  background: center url(../i/icons/apps.svg);
+  background-size: contain;
+  z-index: 2;
+}
+
+
+.app-launcher .tabs {
+  padding-left: 15px;
+  justify-content: center;
+}
+
+.app-launcher .tab-conent {
+  padding: 1em 0;
+}
+
+.app-launcher .dropdown-menu {
+  width: 280px;
+  margin-right: -50px;
+}
+
+.app-launcher .dropdown.show .app-launcher-trigger::after {
+  background: #EAEAEA;
+  display: block;
+  content: '';
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  z-index: 1;
+  top: 12px;
+  border-radius: 4px;
+}
