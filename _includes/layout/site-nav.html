@@ -21,7 +21,7 @@
       <button class="search-trigger search-icon" aria-label="Search"></button>
     </div>
 
-    <form class="quick-search" action="{{ site.baseurl }}{% link search.md %}" method="get" novalidate="novalidate">
+    <form class="quick-search" action="{% link search.md %}" method="get" novalidate="novalidate">
       <input type="search" name="query" placeholder="Search" />
       <button class="quick-search-close" aria-label="Close search">&times;</button>
     </form>

@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "devdocs"
-  spec.version       = "5"
+  spec.version       = "6"
   spec.authors       = ["Eugene Bannykh"]
   spec.email         = ["ybannykh@adobe.com"]
 
@@ -14,6 +14,6 @@ Gem::Specification.new do |spec|
 
   spec.files         = Dir["assets/**/*", "_includes/**/*", "_layouts/**/*", "manifest.json", "README.md"]
 
-  spec.add_runtime_dependency "jekyll", ">= 3.3"
+  spec.add_runtime_dependency "jekyll", ">= 4.0"
   spec.add_development_dependency "bundler", ">= 1.12"
 end
