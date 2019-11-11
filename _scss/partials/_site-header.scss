@@ -81,7 +81,7 @@
     }
   }
 
-  @media ( $medium-screen ) {
+  @media ( $medium-to-large-screen ) {
 
     .menu-btn {
       display: block;
@@ -165,16 +165,9 @@
       height: 36px;
       line-height: 36px;
     }
-  }
 
-  @media ( $medium-screen ) {
-   
-    .site-logo {
-      height: 43px;
-      line-height: 38px;
-    }
+    
   }
-
 }
 
 .nav-actions {
