@@ -5,6 +5,7 @@
 /.asset-cache/
 /Gemfile.lock
 /.jekyll-metadata
+/.jekyll-cache
 .idea
 xsdvi.log
 /node_modules/
