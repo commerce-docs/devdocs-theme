@@ -70,6 +70,7 @@
 
 // Dividers (basically an `<hr>`) within the dropdown
 .dropdown-divider {
+  border-bottom: 1px solid #eee;
 
 }
 
@@ -78,7 +79,7 @@
 // `<button>`-specific styles are denoted with `// For <button>s`
 .dropdown .dropdown-menu .dropdown-item {
   display: block;
-  padding: $spacing*2 $spacing*3 ;
+  padding: $spacing*2 $spacing*3;
   margin: 0;
   width: 100%;
   clear: both;
@@ -172,12 +173,14 @@
 }
 
 // Dropdown section headers
-.dropdown-header {
+.dropdown-menu li.dropdown-header {
   display: block;
-  padding: $spacing $spacing*4;
-  font-size: $font-size-sm;
+  padding: $spacing*2 $spacing*3;
+  font-size: x-small;
   line-height: $line-height;
-  color: $dropdown-header-color;
+  color: #999;
+  letter-spacing: .1em;
+  text-transform: uppercase;
   white-space: nowrap; // as with > li > a
 }
 

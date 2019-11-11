@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" enable-background="new 0 0 300 300"><g fill="#333"><path d="m.003 55.22h299.99v39.993h-299.99z"/><path d="m.003 129.63h299.99v39.992h-299.99z"/><path d="m.003 204.79h299.99v39.994h-299.99z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" data-name="S_ShowMenu_18_N@2x" height="36" id="S_ShowMenu_18_N_2x" viewBox="0 0 36 36" width="36">
+  <defs>
+    <style>
+      .fill {
+        fill: #6E6E6E;
+      }
+    </style>
+  </defs>
+  <rect class="fill" height="4" rx="1" ry="1" width="28" x="4" y="16" />
+  <rect class="fill" height="4" rx="1" ry="1" width="28" x="4" y="6" />
+  <rect class="fill" height="4" rx="1" ry="1" width="28" x="4" y="26" />
+  </svg>

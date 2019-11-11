@@ -40,5 +40,11 @@ $(function() {
   // Initialize the image zoom
   $('.content').zoom();
 
+
+  // Focus on the first dropdown item on showing the dropdown
+  $('.app-switcher .dropdown').on('show.bs.dropdown', function (event) {
+    window.setTimeout(function() {  $('.app-switcher a').filter(':first').focus(); }, 50);
+  });
+
 });
 // END document ready

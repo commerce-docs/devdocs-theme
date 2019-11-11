@@ -258,11 +258,12 @@ a:hover mark {
     content: '';
     position: absolute;
     pointer-events: none;
-    top: 13px;
+    top: 17px;
     left: 15px;
-    width: 24px;
-    height: 24px;
-    background-image: url(../i/icons/search.svg)
+    width: 18px;
+    height: 18px;
+    background-image: url(../i/icons/search.svg);
+    background-size: contain;
   }
 }
 
