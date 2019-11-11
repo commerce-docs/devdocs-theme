@@ -33,7 +33,7 @@ defaults:
       lang: "en"
   -
     scope:
-      path: ""
+      path: "video"
       type: videos
     values:
       layout: video
@@ -62,3 +62,33 @@ exclude:
   - vendor
   - .git
   - .idea
+
+app_switcher:
+  mode: Merchant
+  apps: 
+    - label: Developer
+      children:
+
+      - label: Commerce Developer Documentation
+        url: https://devdocs.magento.com/
+
+      - label: PWA Studio
+        url: http://pwastudio.io/
+
+      - label: Order Management
+        url: https://omsdocs.magento.com/en/
+
+    - label: Merchant
+      children:
+
+      - label: Commerce User Guide
+        url: https://docs.magento.com/m2/ee/user_guide/
+
+      - label: Order Management
+        url: https://omsdocs.magento.com/en/userguides/
+
+      - label: Business Intelligence
+        url: https://docs.magento.com/mbi/
+
+      - label: Marketplace
+        url: https://docs.magento.com/marketplace/user_guide/getting-started.html
