@@ -1,48 +1,17 @@
 
-<div class="app-launcher">
-
+<div class="app-switcher">
   <div class="dropdown">
-    <button class="app-launcher-trigger" aria-haspopup="true" aria-expanded="false" aria-label="Apps"></button>
-    
-    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown">
-      
-      <div class="tabs" role="tablist">
-        <button class="tab-item is-selected" id="developer-tab" role="tab" aria-controls="developer-tab-content" aria-selected="true">
-          <span class="tab-item-label">Developer</span>
-        </button>
-        <button class="tab-item " id="user-tab" role="tab" aria-controls="user-tab-content" aria-selected="false">
-          <span class="tab-item-label">Merchant</span>
-        </button>
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menubar">
+      <div class="app-switcher-content">
+      {% for group in site.app_switcher.apps %}
+      <div class="app-switcher-group">
+        <h3 class="app-swither-group-title">{{ group.label }}</h3>
+        {% for item in group.children %}
+        <li role="menuitem"><a class="dropdown-item" href="{{ item.url }}?itm_source={{ site.algolia.index_name }}&itm_medium=top_nav&itm_campaign=app_switcher&itm_term={{ item.label }}">{{ item.label }}</a></li>
+        {% endfor %}
       </div>
-
-      <div id="developer-tab-content" class="tab-conent developer">
-
-        <li class="dropdown-header">Documentation</li>
-        <li><a class="dropdown-item" href="https://devdocs.magento.com/">Magento Developer Documentation</a></li>
-        <li><a class="dropdown-item" href="https://devdocs.magento.com/">PWA Studio</a></li>
-        <li><a class="dropdown-item" href="https://omsdocs.magento.com/en/">Order Management</a></li>
-        <li><hr /></li>
-        <li class="dropdown-header">Resources</li>
-        <li><a class="dropdown-item" href="https://magento.com/security/">Security Center</a></li>
-        <li><a class="dropdown-item" href="http://u.magento.com/developers/">Developer Training</a></li>
-        <li><a class="dropdown-item" href="https://u.magento.com/certification/">Magento Certification</a></li>
-  
-      </div>
-
-      <div id="user-tab-content" class="tab-conent user hide">
-          <li class="dropdown-header">User Guides</li>
-          <li><a class="dropdown-item" href="https://docs.magento.com/m2/ee/user_guide/">Magento User Guide</a></li>
-          <li><a class="dropdown-item" href="https://omsdocs.magento.com/en/userguides/">Order Management</a></li>
-          <li><a class="dropdown-item" href="https://docs.magento.com/marketplace/user_guide/getting-started.html">Marketplace</a></li>
-          <li><a class="dropdown-item" href="https://docs.magento.com/marketplace/user_guide/getting-started.html">Business Intelligence</a></li>
-
-          <li><hr /></li>
-          <li class="dropdown-header">Resources</li>
-          <li><a class="dropdown-item" href="https://support.magento.com/hc/en-us/">Help Center</a></li>
-          <li><a class="dropdown-item" href="https://community.magento.com/">Magento Forums</a></li>
-          <li><a class="dropdown-item" href="https://glossary.magento.com/">Glossary</a></li>
-  
-
+      {% endfor %}
       </div>
     </ul>
   </div>

@@ -41,36 +41,10 @@ $(function() {
   $('.content').zoom();
 
 
-  $('.app-launcher-trigger').on('click', function (event) {
-    $('.app-launcher .dropdown').toggleClass('show');
-    $('.app-launcher .dropdown a:first').focus();
+  // Focus on the first dropdown item on showing the dropdown
+  $('.app-switcher .dropdown').on('show.bs.dropdown', function (event) {
+    window.setTimeout(function() {  $('.app-switcher a').filter(':first').focus(); }, 50);
   });
-
-  $(document).on('click', function (event) {
-    var contains = $.contains($('.app-launcher')[0], event.target);
-    console.log(contains)
-    if ( ! contains ) {
-      $('.app-launcher .dropdown').removeClass('show');
-    }
-  })
-
-  $('.app-launcher .tab-item').on('click', function (e) {
-    e.preventDefault();
-    e.stopPropagation();
-
-    $(this).siblings().removeClass('is-selected');
-   
-    $(this).addClass('is-selected');
-    $('.app-launcher .tab-conent').hide();
-
-    console.log(  $(this).attr('aria-controls') );
-
-    $('#' + $(this).attr('aria-controls') ).show();
-    $('#' + $(this).attr('aria-controls') ).find('a:first').focus();
-    
-  }); 
-  
-
 
 });
 // END document ready
