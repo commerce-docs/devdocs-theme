@@ -157,16 +157,14 @@
   }
 
   // Remove 'Magento' from logo on tablet
-  @media ( $medium-to-large-screen ) {
+  @media ( max-width: 1380px ) {
     .magento-logo {
       display: none;
     }
     .site-logo {
       height: 36px;
       line-height: 36px;
-    }
-
-    
+    } 
   }
 }
 
