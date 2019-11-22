@@ -87,7 +87,7 @@ app_switcher:
         url: https://omsdocs.magento.com/en/userguides/
 
       - label: Business Intelligence
-        url: https://support.magento.com/hc/en-us/categories/360000378193-Magento-Business-Intelligence-MBI-
+        url: https://docs.magento.com/mbi/
 
       - label: Marketplace
         url: https://docs.magento.com/marketplace/user_guide/getting-started.html
