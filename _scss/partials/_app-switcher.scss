@@ -23,17 +23,32 @@
   background: #EAEAEA;
   display: block;
   content: '';
-  width: 30px;
-  height: 30px;
+  width: 31px;
+  height: 31px;
   position: absolute;
   z-index: 1;
-  top: calc(50% - 15px);
+  top: calc(50% - 16px);
+  left: calc(50% - 16px);
   border-radius: 4px;
 }
 
 .app-switcher .dropdown-menu {
   min-width: 600px;
   margin-right: -50px;
+}
+
+
+.app-switcher .dropdown-menu li {
+  margin: 0 3px 3px 0;
+}
+
+
+.app-switcher .dropdown-item {
+  border-radius: 3px;
+}
+
+.app-switcher .dropdown-item.active {
+  background: #F3F3F3;
 }
 
 .app-switcher-content {
