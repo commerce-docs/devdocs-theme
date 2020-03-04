@@ -88,6 +88,3 @@ app_switcher:
 
       - label: Business Intelligence
         url: https://docs.magento.com/mbi/
-
-      - label: Marketplace
-        url: https://docs.magento.com/marketplace/user_guide/getting-started.html
