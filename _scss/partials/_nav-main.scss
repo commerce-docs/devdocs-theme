@@ -86,7 +86,7 @@
   }// mobile view
 
 
-  @media ( $medium-to-large-screen ) {
+  @media ( max-width: 1380px ) {
 
     // First level items
     & > li > a, & > li > span {

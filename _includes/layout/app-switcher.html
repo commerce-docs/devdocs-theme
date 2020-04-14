@@ -1,0 +1,18 @@
+
+<div class="app-switcher">
+  <div class="dropdown">
+    <button id="app-switcher-trigger" class="app-switcher-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Documentation sites"></button>
+    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="app-switcher-trigger" role="menu">
+      <div class="app-switcher-content">
+      {% for group in site.app_switcher.apps %}
+      <div class="app-switcher-group">
+        <h3 class="app-swither-group-title">{{ group.label }}</h3>
+        {% for item in group.children %}
+        <li role="menuitem"><a class="dropdown-item" href="{{ item.url }}?itm_source={{ site.algolia.index_name }}&itm_medium=top_nav&itm_campaign=app_switcher&itm_term={{ item.label }}">{{ item.label }}</a></li>
+        {% endfor %}
+      </div>
+      {% endfor %}
+      </div>
+    </ul>
+  </div>
+</div>

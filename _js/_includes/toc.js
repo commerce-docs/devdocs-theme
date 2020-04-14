@@ -40,6 +40,7 @@
         var headers = $( plugin.options.contentSelector )
           .find( plugin.options.itemSelector )
           .not( '.' + plugin.options.noTocClass);
+        var pageUrl = '//' + location.host + location.pathname;
 
         // Generate TOC only if there's enouhg data
         if ( headers.length > plugin.options.minimumCount ) {
@@ -61,11 +62,17 @@
         }
 
         // Add an anchor icon to headers
+
+        // We want the page title to have anchor icon as well:
+        headers.push($('.page-heading'));
+        
         headers.each(function () {
           var $header = $(this),
               id = $header.attr('id');
 
-          var anchorLink = '<a class="anchor" href="#'+ id +'"></a>';
+          var url = pageUrl + ( id ? '#' + id : '' );
+
+          var anchorLink = '<a class="anchor" href="'+ url +'"></a>';
           $header.prepend( anchorLink );
         });
 
@@ -110,7 +117,6 @@
             }
 
             var tag_name = $header.prop('tagName').toLowerCase();
-            var itemClass = plugin.options.itemClass + ' ' + tag_name;
 
             headersHtml += '<li class="'+ tag_name +'"><a href="#' + anchor_text + '" class="nav-link">' + $header.text() + '</a></li>'
           }

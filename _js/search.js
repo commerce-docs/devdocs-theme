@@ -1,3 +1,5 @@
+// TODO : refactor to use window.addEventListener
+
 window.onload = function() {
 
   // Initialize the search with parameters
