@@ -1,33 +1,31 @@
 <!-- Main Navigation -->
-<ul class="nav-main" role="menubar">
+<ul class="nav-main spectrum-Tabs spectrum-Tabs--horizontal" role="menubar">
 
-  <li role="menuitem">
-    <a href="{{ site.baseurl }}/example/">Example</a>
+  <li class="spectrum-Tabs-item" role="menuitem">
+    <a class="spectrum-Tabs-itemLabel" href="{{ site.baseurl }}/example/">Example</a>
   </li>
 
-  <li role="menuitem">
-    <a href="{{ site.baseurl }}/videos/">Videos</a>
+  <li class="spectrum-Tabs-item is-selected" role="menuitem">
+    <a class="spectrum-Tabs-itemLabel" href="{{ site.baseurl }}/videos/">Videos</a>
   </li>
 
-  <li class="nav-main-separator"></li>
+  <li class="spectrum-Tabs-item nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" data-proofer-ignore tabindex="-1">Setup</span>
 
-  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <span data-proofer-ignore tabindex="-1">Setup</span>
-
-    <div class="nav-popup" role="menu" aria-hidden="true">
-      <ul>
-          <li><a href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
+    <div class="nav-popup spectrum-Popover" role="menu" aria-hidden="true">
+      <ul class="spectrum-Menu">
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}install-gde/bk-install-guide.html">Installation Guide</a></li>
           {% if page.guide_version == "2.2" %}
-          <li><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
           {% elsif page.guide_version == "2.1" %}
-          <li><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
           {% elsif page.guide_version == "2.0" %}
-          <li><a href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
           {% endif %}
-          <li><a href="{{page.baseurl}}config-guide/bk-config-guide.html">Configuration Guide</a></li>
-          <li><a href="{{page.baseurl}}migration/bk-migration-guide.html">Migration Guide</a></li>
-          <li><a href="{{page.baseurl}}cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
-          <li><a href="{{site.baseurl}}magento-release-information.html">Release Information</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}cloud/bk-cloud.html">Magento Commerce (Cloud) Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{site.baseurl}}magento-release-information.html">Release Information</a></li>
       </ul>
     </div>
 
@@ -35,44 +33,44 @@
 
 
 
-  <li class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <span href="#" data-proofer-ignore tabindex="-1">Development</span>
+  <li class="spectrum-Tabs-item nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
+    <span class="spectrum-Tabs-itemLabel" href="#" data-proofer-ignore tabindex="-1">Development</span>
 
-    <div class="nav-popup" role="menu" aria-hidden="true">
+    <div class="nav-popup spectrum-Popover" role="menu" aria-hidden="true">
 
       <div class="nav-section">
-        <div class="nav-section-title">Backend</div>
-        <ul>
-          <li><a href="{{page.baseurl}}architecture/bk-architecture.html">Architecture Guide</a></li>
-          <li><a href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
-          <li><a href="{{page.baseurl}}ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
-          <li><a href="{{page.baseurl}}mrg/intro.html">Module Reference Guide</a></li>
-          <li><a href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a></li>
-          <li><a href="{{page.baseurl}}contributor-guide/contributing.html">Contributor Guide</a></li>
+        <div class="spectrum-Menu-sectionHeading">Backend</div>
+        <ul class="spectrum-Menu">
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}mrg/intro.html">Module Reference Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}contributor-guide/contributing.html">Contributor Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
-        <div class="nav-section-title">Frontend</div>
-        <ul>
-          <li class=""><a href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+        <div class="spectrum-Menu-sectionHeading">Frontend</div>
+        <ul class="spectrum-Menu">
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
           {% if page.guide_version == "2.1" %}
-          <li><a href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
           {% elsif page.guide_version == "2.0" %}
-          <li><a href="{{page.baseurl}}ui-components/ui-component.html">UI Components</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}ui-components/ui-component.html">UI Components</a></li>
           {% endif %}
-          <li><a href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
-          <li><a href="{{page.baseurl}}pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
-          <li><a href="{{page.baseurl}}design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
         </ul>
       </div>
 
       <div class="nav-section">
-        <div class="nav-section-title"><abbr>API</abbr></div>
-        <ul>
-          <li><a href="{{page.baseurl}}get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
-          <li><a href="{{page.baseurl}}rest/bk-rest.html">REST API Reference</a></li>
-          <li><a href="{{page.baseurl}}soap/bk-soap.html">SOAP API Reference</a></li>
+        <div class="spectrum-Menu-sectionHeading"><abbr>API</abbr></div>
+        <ul class="spectrum-Menu">
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}rest/bk-rest.html">REST API Reference</a></li>
+          <li class="spectrum-Menu-item"><a class="spectrum-Menu-itemLabel" href="{{page.baseurl}}soap/bk-soap.html">SOAP API Reference</a></li>
         </ul>
       </div>
     </div>

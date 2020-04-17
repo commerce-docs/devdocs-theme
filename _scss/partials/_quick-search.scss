@@ -1,103 +1,63 @@
 .quick-search {
   display: none;
-  margin: 0;
-  padding: 0;
+  padding: 6px 20px 0 20px;
   width: 100%;
   position: absolute;
   height: $header-height;
   top: 0;
   right: 0;
+  left: 0;
   z-index: 9999;
-
-  background: $light-gray-color;
-  padding-right: 80px;
-
-  // TODO: get rid of the magic numbers here:
-  padding-left: 320px;
-  /*
-  @media (max-width:1200px) {
-    padding-left: 240px;
-  }
-
-  @media ( $large-screen ) {
-    padding-left: 380px;
-  }
-  */
-
-
-  @media ( $small-screen ) {
-    padding-left: 20px;
-    z-index: 12;
-  }
-
-  input {
-    display: block;
-    background: #fff;
-    padding: 0 20px;
-    width: 100%;
-    height: 100%;
-    border: none;
-    font-size: 16px;
-    border-radius: 0;
-
-    &:focus {
-      outline: none;
-    }
-  }
 
   .search-active & {
     display: flex;
   }
-
-
-  .quick-search-close {
-    display: block;
-    padding: 0;
-    position: absolute;
-    text-align: center;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: $header-height;
-    background: $light-gray-color;
-    border: none;
-    color: $body-font-color;
-    text-decoration: none;
-    font-size: 32px;
-    line-height: $header-height;
-  }
 }
+
+.quick-search .search-form {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 488px;
+}
+
 .search-active .site-header .menu-btn {
   z-index: 1;
 }
 
+.search-active .site-header .nav-actions {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+// Hide other header elements when search is active
+.search-active .site-header .nav-main-wrap, 
+.search-active .search-btn,
+.search-active .app-switcher,
+.search-active .menu-btn {
+  visibility: hidden;
+}
 
 .algolia-autocomplete {
   flex: 1 0 auto;
 }
-
 
 .suggestions-footer {
   text-align: center;
   padding: 8px;
 }
 
+.algolia-autocomplete .aa-input,
+.algolia-autocomplete .aa-hint {
+}
 
-.algolia-autocomplete .aa-input, .algolia-autocomplete .aa-hint {
-  width: 100%;
-  outline: 0;
-}
-.algolia-autocomplete .aa-input:focus{
-  transition: all .1s ease-in;
-  box-shadow: 0 0 1px $link-color;
-}
 .algolia-autocomplete .aa-hint {
   color: #999;
 }
 .algolia-autocomplete .aa-dropdown-menu {
   width: 100%;
   background-color: #fff;
-  border: 1px solid #9B9B9B;
+  border: 1px solid #9b9b9b;
   margin-top: 2px;
   border-radius: 2px;
   overflow-y: auto;
@@ -118,16 +78,15 @@
   font-weight: 600;
   color: #888;
   padding: 5px 15px;
-  border-top: 1px solid #D2D2D2;
+  border-top: 1px solid #d2d2d2;
 }
-
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion a:hover {
   color: $body-font-color;
   background: $dropdown-link-hover-bg;
 }
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-  background: $dropdown-link-hover-bg;;
+  background: $dropdown-link-hover-bg;
 }
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
   font-weight: bold;

@@ -1,14 +1,14 @@
 <form
   class="spectrum-Search search-form"
   action="{{ site.baseurl }}{% link search.md %}"
-  method="get"
 >
   <input
     type="search"
     placeholder="Looking for something specific?"
     name="query"
     value=""
-    class="spectrum-Textfield spectrum-Search-input search-field"
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
   />
   <svg
     class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
@@ -17,7 +17,7 @@
   >
     <use xlink:href="#spectrum-css-icon-Magnifier" />
   </svg>
-  <button type="reset" class="spectrum-ClearButton">
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
     <svg
       class="spectrum-Icon spectrum-UIIcon-CrossSmall"
       focusable="false"

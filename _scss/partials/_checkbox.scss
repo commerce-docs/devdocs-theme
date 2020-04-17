@@ -7,13 +7,13 @@ input[type="checkbox"] {
   position: relative;
 
   border-radius: 2px;
-  border: 2px solid #959595;
-  background: #fff;
+  border: 2px solid var(--spectrum-checkbox-box-border-color-selected, var(--spectrum-global-color-gray-700));
+  background: var(--spectrum-checkbox-box-background-color, var(--spectrum-global-color-gray-75));
 
   &:checked {
     
-    border-color: #2680EB;
-    background: #2680EB;
+    border-color: var(--spectrum-checkbox-box-border-color-selected, var(--spectrum-global-color-gray-700));
+    background: var(--spectrum-checkbox-box-border-color-selected, var(--spectrum-global-color-gray-700));
 
     &:after {
       content: '';

@@ -7,8 +7,8 @@
     </div>
 
     <a class="logo" data-proofer-ignore href="{{ site.baseurl }}/">
-      <img src="{{ site.baseurl }}/assets/i/m-logo.svg" alt="">
-      <img src="{{ site.baseurl }}/assets/i/magento-logo.svg" alt="Magento" class="magento-logo" />
+      <img class="logo-image" src="{{ site.baseurl }}/assets/i/adobe-a.svg" alt="Adobe">
+      <span class="logo-text">Magento</span>
       <span class="site-logo">{{ site.logo }}</span>
     </a>
 
@@ -21,13 +21,16 @@
         {% include layout/app-switcher.html %}
 
         <div class="search-btn">
-          <button class="search-trigger search-icon" aria-label="Search"></button>
+          <button class="search-trigger" aria-label="Search">
+            <svg class="spectrum-Icon" focusable="false" aria-hidden="true" aria-label="Edit">
+              <use xlink:href="#spectrum-css-icon-Magnifier" />
+            </svg>
+          </button>
         </div>
-    
-        <form class="quick-search" action="{% link search.md %}" method="get" novalidate="novalidate">
-          <input type="search" name="query" placeholder="Search" />
-          <button class="quick-search-close" aria-label="Close search">&times;</button>
-        </form>
+
+        <div class="quick-search">
+          {% include layout/search-form.html %}
+        </div>
 
     </div>
 

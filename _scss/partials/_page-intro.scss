@@ -1,0 +1,18 @@
+.page-intro {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.page-intro h1 {
+  flex: 1 0 auto;
+  max-width: 100%;
+}
+
+.page-intro .github-links {
+  flex: 1 0 50px;
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+}

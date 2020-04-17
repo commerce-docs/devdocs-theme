@@ -77,13 +77,6 @@
   background: none;
 }
 
-a:visited mark {
-  color: $link-visited-color;
-}
-a:hover mark {
-  color: $link-hover-color;
-}
-
 .ais-SearchBox-form {
   margin: 0;
 }
@@ -101,7 +94,8 @@ a:hover mark {
 }
 .hit-name {
   margin: 0;
-  font-size: 18px;
+  font-size: var(--spectrum-global-dimension-font-size-300);
+  font-weight: $font-weight-normal;
 }
 .hit-url {
   font-size: 12px;

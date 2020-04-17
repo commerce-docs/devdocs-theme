@@ -14,8 +14,10 @@
       titleText: 'On this page',
       contentSelector: '.content-wrap',
       containerClass: 'page-toc',
-      itemClass: 'nav-item',
-      itemActiveClass: 'active',
+      menuClass: 'nav spectrum-Menu is-selectable',
+      itemClass: 'spectrum-Menu-item nav-item',
+      itemLabelClass: 'spectrum-Menu-itemLabel nav-link',
+      itemActiveClass: 'is-selected',
       noTocClass: 'no_toc',
       topOffset: 65,
       minimumCount: 1,
@@ -118,12 +120,12 @@
 
             var tag_name = $header.prop('tagName').toLowerCase();
 
-            headersHtml += '<li class="'+ tag_name +'"><a href="#' + anchor_text + '" class="nav-link">' + $header.text() + '</a></li>'
+            headersHtml += '<li class="'+  plugin.options.itemClass + ' ' + tag_name +'"><a href="#' + anchor_text + '" class="' +  plugin.options.itemLabelClass + '">' + $header.text() + '</a></li>'
           }
 
         });
 
-        return '<div class="'+ plugin.options.containerClass +'"><ul class="nav">' + headersHtml + '</ul></div>';
+        return '<div class="'+ plugin.options.containerClass +'"><ul class="'+ plugin.options.menuClass + '">' + headersHtml + '</ul></div>';
 
       },
 
@@ -133,7 +135,7 @@
 
         if ( plugin.$toc ) {
           var tocHeight = Math.floor( plugin.$toc.height() ),
-              tocNavHeight = Math.floor( plugin.$toc.find('.nav').height() );
+              tocNavHeight = Math.floor( plugin.$toc.find('ul').height() );
 
           // For long TOCs, scroll the toc as page scrolls
           if (tocNavHeight > tocHeight ) {

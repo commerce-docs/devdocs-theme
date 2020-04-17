@@ -5,7 +5,7 @@
 
 <h4 class="guide-title">{{ guide.title }}</h4>
 
-<ul class="spectrum-SideNav spectrum-SideNav--multiLevel">
+<ul class="spectrum-SideNav collapsible-navigation spectrum-SideNav--multiLevel">
   <li class="spectrum-SideNav-item {% if guide.url == page.url %}is-selected{% endif %}">
     <a class="spectrum-SideNav-itemLink" href="{{ site.baseurl }}{{ guide.url }}">{% if guide.menu_title %}{{ guide.menu_title }}{% else %}{{ guide.title }}{% endif %}</a>
   </li>

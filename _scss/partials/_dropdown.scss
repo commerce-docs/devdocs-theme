@@ -43,25 +43,6 @@
   left: 0;
   z-index: $zindex-dropdown;
   display: none; // none by default, but block on "open" of the menu
-  float: left;
-  min-width: 140px;
-  padding: $spacing 0;
-  margin: 1px 0 0 0; // override default ul
-  font-size: $font-size-base;
-  color: $body-font-color;
-  text-align: left;
-  list-style: none;
-  background-color: $dropdown-bg;
-  background-clip: padding-box;
-  border: $dropdown-border-width solid $dropdown-border-color;
-  border-radius: $border-radius;
-  box-shadow: 0 3px 6px rgba(0,0,0,.1);
-
-  li {
-    margin: 0;
-    padding: 0;
-  }
-
 }
 
 .menu-top .dropdown-menu {
@@ -71,7 +52,6 @@
 // Dividers (basically an `<hr>`) within the dropdown
 .dropdown-divider {
   border-bottom: 1px solid #eee;
-
 }
 
 // Links, buttons, and more within the dropdown menu
@@ -130,15 +110,11 @@
 }
 
 // Open state for the dropdown
-.dropdown.show {
+.dropdown.is-open {
   // Show the menu
   > .dropdown-menu {
     display: block;
   }
-
-  .dropdown-toggle:after {
-     transform: rotate(180deg);
- }
 
   // Remove the outline when :focus is triggered
   > a {
@@ -155,8 +131,8 @@
   left: auto; // Reset the default from `.dropdown-menu`
 }
 .dropdown-menu.dropdown-menu-left {
-    left: 0;
-    right: auto;
+  left: 0;
+  right: auto;
 }
 .dropdown-menu.dropdown-menu-top {
   top: -100%;

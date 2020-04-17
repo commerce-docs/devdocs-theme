@@ -3,7 +3,6 @@ html,body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: $light-gray-color; // this is needed for spring scrolling to not show the white border
 }
 
 body {
@@ -20,12 +19,6 @@ body {
 
 .main-container {
   min-height: 100%;
-}
-
-
-
-.content-container {
-
 }
 
 .content {
@@ -152,7 +145,7 @@ body {
 }
 
 
-
+/* TODO: remove this
 .sidebar {
   position: fixed;
   width: $sidebar-width;
@@ -172,19 +165,8 @@ body {
     padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
   }
 
-  .guide-title {
-    position: relative;
-    color: $body-font-color;
-    font-weight: $font-weight-medium;
-    font-size: 18px;
-    padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
-
-    margin: 0;
-    z-index: 1;
-  }
-
   .toc-toggler {
     display: none;
   }
 
-}
+}*/

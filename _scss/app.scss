@@ -3,14 +3,32 @@
 @import 'reset';
 @import 'variables';
 
-@import './node_modules/@adobe/spectrum-css/dist/spectrum-core';
-@import './node_modules/@adobe/spectrum-css/dist/spectrum-core-diff';
+// Core Spectrum
+@import './node_modules/@spectrum-css/vars/dist/spectrum-global';
+@import './node_modules/@spectrum-css/vars/dist/spectrum-medium';
+@import './node_modules/@spectrum-css/vars/dist/spectrum-lightest'; 
 
-@import './node_modules/@adobe/spectrum-css/dist/spectrum-light';
+// Spectrum components
+@import './node_modules/@spectrum-css/alert/dist/index-vars';
+@import './node_modules/@spectrum-css/button/dist/index-vars';
+@import './node_modules/@spectrum-css/checkbox/dist/index-vars';
+@import './node_modules/@spectrum-css/dropdown/dist/index-vars';
+@import './node_modules/@spectrum-css/icon/dist/index-vars';
+@import './node_modules/@spectrum-css/link/dist/index-vars';
+@import './node_modules/@spectrum-css/menu/dist/index-vars';
+@import './node_modules/@spectrum-css/page/dist/index-vars';
+@import './node_modules/@spectrum-css/popover/dist/index-vars';
+@import './node_modules/@spectrum-css/search/dist/index-vars';
+@import './node_modules/@spectrum-css/sidenav/dist/index-vars';
+@import './node_modules/@spectrum-css/table/dist/index-vars';
+@import './node_modules/@spectrum-css/tabs/dist/index-vars';
+@import './node_modules/@spectrum-css/textfield/dist/index-vars';
+@import './node_modules/@spectrum-css/typography/dist/index-vars';
 
 
+// Custom components
 //@import 'partials/buttons';
-@import 'partials/callouts';
+@import 'partials/alert';
 @import 'partials/code';
 @import 'partials/collapsible';
 @import 'partials/dropdown';
@@ -20,16 +38,17 @@
 @import 'partials/home';
 @import 'partials/layout';
 @import 'partials/section';
+@import 'partials/menu';
 @import 'partials/modal';
 @import 'partials/nav-main';
 @import 'partials/nav-main-dropdown';
 @import 'partials/page-info';
-@import 'partials/search';
+@import 'partials/search-form';
 @import 'partials/quick-search';
-//@import 'partials/sidebar';
+@import 'partials/sidebar';
 @import 'partials/site-header';
 @import 'partials/table';
-//@import 'partials/typography';
+@import 'partials/typography';
 @import 'partials/version-switcher';
 @import 'partials/tabs';
 @import 'partials/toc';
@@ -45,6 +64,7 @@
 @import 'partials/adjaced-pages';
 @import 'partials/embed';
 @import 'partials/app-switcher';
+@import 'partials/page-intro';
 
 // Form Components
 @import 'partials/checkbox';

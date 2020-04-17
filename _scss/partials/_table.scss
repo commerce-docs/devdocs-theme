@@ -1,9 +1,11 @@
+
+
 table {
   width: 100%;
   border-collapse: collapse;
   //border-spacing: 0;
   //margin: 2em 0 2em 0;
-  @extend .spectrum-Table;
+  @extend .spectrum-Table !optional;
 }
 
 table.fixed {
@@ -11,28 +13,21 @@ table.fixed {
 }
 
 tbody {
-  @extend .spectrum-Table-body;
+  @extend .spectrum-Table-body !optional;
 }
 
 th {
-  @extend .spectrum-Table-headCell;
+  @extend .spectrum-Table-headCell !optional;
 }
 
 tbody tr {
-  @extend .spectrum-Table-row;
+  @extend .spectrum-Table-row !optional;
 }
 
 td {
-  @extend .spectrum-Table-cell;
+  @extend .spectrum-Table-cell !optional;
 }
 
-.content p {
-  @extend .spectrum-Body3;
-}
-
-.content a {
-  @extend .spectrum-Link;
-}
 
 /*
 

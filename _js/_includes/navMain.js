@@ -7,7 +7,7 @@
 
 	var pluginName = 'mainNavigation',
 		defaults = {
-			menuActiveClass: 'active',
+			menuActiveClass: 'is-open',
 			menuCurrentClass: 'current',
 			mobileTreshold: 1024,
 			offcanvasClass: 'offcanvas-active',
@@ -70,12 +70,14 @@
 			}
 
 			menuItem.addClass( plugin.options.menuActiveClass );
+			popup.addClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'false');
 		}
 
 		this.hidePopup = function ( menuItem ) {
 			var popup = menuItem.find( plugin.options.popupSelector );
 			menuItem.removeClass( plugin.options.menuActiveClass );
+			popup.removeClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'true');
 		}
 

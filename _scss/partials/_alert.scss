@@ -1,5 +1,9 @@
 $callout-padding: 15px 20px 17px 52px;
 
+.spectrum-Alert-header {
+  display: block;
+}
+
 .bs-callout,
 .bs-callout-info,
 .bs-callout-warning,
@@ -7,18 +11,19 @@ $callout-padding: 15px 20px 17px 52px;
 .bs-callout-tutorial {
   position: relative;
   margin: 20px 0 20px 0;
-  padding: $callout-padding;
-  background: #f2f3f3;
-  border-radius: 2px;
+  padding-right: 50px;
+  width: 100%;
+
+  @extend .spectrum-Alert;
 
   &:before {
     display: block;
     position: absolute;
     content: "";
-    width: 25px;
-    height: 25px;
-    top: 13px;
-    left: 15px;
+    width: 18px;
+    height: 18px;
+    top: 20px;
+    right: 20px;
     background-repeat: no-repeat;
     background-size: contain;
   }
@@ -33,17 +38,15 @@ $callout-padding: 15px 20px 17px 52px;
 }
 
 .bs-callout-info {
-  background: #eef6fb;
-  border: 1px solid #346e92;
+  @extend .spectrum-Alert--info;
 
   &:before {
-    background-image: url(../i/icons/info.svg);
+    background-image: url(../i/icons/help.svg);
   }
 }
 
 .bs-callout-warning {
-  background: #fbedd9;
-  border: 1px solid #c27500;
+  @extend .spectrum-Alert--warning;
 
   &:before {
     background-image: url(../i/icons/warning.svg);
@@ -51,11 +54,11 @@ $callout-padding: 15px 20px 17px 52px;
 }
 
 .bs-callout-tip {
-  background: #dcf3e1;
-  border: 1px solid #0f7d26;
+  
+  @extend .spectrum-Alert--success;
 
   &:before {
-    background-image: url(../i/icons/tip.svg);
+    background-image: url(../i/icons/checkmark.svg);
   }
 }
 

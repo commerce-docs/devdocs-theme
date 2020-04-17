@@ -58,7 +58,7 @@ $(function() {
     }
 
     // Assign autocomplete to input field
-    $(".quick-search input, .search-form .search-field")
+    $(".search-form .search-field")
       .autocomplete(
         {
           minLength: 3,
@@ -97,7 +97,7 @@ $(function() {
           //return;
           if (value) {
             window.location =
-              $("form.quick-search").attr("action") + "?query=" + value;
+              $(".search-form").attr("action") + "?query=" + value;
           }
         }
       });
@@ -118,7 +118,7 @@ $(function() {
     });
 
     // Clicking close icon
-    $(".quick-search-close").on("click", function(event) {
+    $(".search-clear").on("click", function(event) {
       event.preventDefault();
       $("body").removeClass("search-active");
       $quickSearchInput.blur();
