@@ -6,9 +6,7 @@ $toggle-width: 32px;
   height: 100vh;
   
   z-index: 2;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  background: var(--spectrum-global-color-gray-200);
+  background: $light-gray-color;
 
   // Move sidebar up to provide the background for the logo
   
@@ -22,8 +20,11 @@ $toggle-width: 32px;
   }
 
   .sidebar-wrapper {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: $spacing $spacing*2;
-    padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
+    //padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
   }
 
   .guide-title {
@@ -41,15 +42,13 @@ $toggle-width: 32px;
     list-style: none;
     margin: 0;
     padding: 0;
+    outline: none;
 
     li {
       position: relative;
       list-style: none;
-    }
-
-    a, span {
-      display: block;
-      position: relative;
+      padding: 0 0 0 20px;
+      
     }
 
     a {
@@ -58,21 +57,24 @@ $toggle-width: 32px;
 
     // Group titles
     span {
+      display: block;
       color: #737676;
     }
 
   }
-  
+
+  ul ul {
+    display: none;
+  }
+
+  ul ul li {
+    padding: 0 0 0 10px;
+  }
 
   /*
   // second level links
-  ul ul a, ul ul span {
-    font-size: $font-size-sm;
-  }
+ 
 
-  ul ul a, ul ul span {
-    padding: $spacing*2 $spacing*3;
-  }
 
   // Third level
   ul ul ul a, ul ul ul span {
@@ -103,20 +105,21 @@ $toggle-width: 32px;
 
   position: relative;
 
+  /*
   .has-children {
-
     // Accomodate space for the toggle
     & > a, & > span {
       padding-right: $toggle-width;
     }
-
-  }
+  }*/
 
   .toggle {
     background: transparent;
-    border: none;
-    border-radius: 0;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 3px;
     display: block;
+    opacity: .7;
 
     position: absolute;
 
@@ -124,7 +127,7 @@ $toggle-width: 32px;
     margin: 0;
 
     top:0;
-    right: 0;
+    left: 0;
     cursor: pointer;
 
     height: $toggle-width;
@@ -138,8 +141,12 @@ $toggle-width: 32px;
       width: 20px;
       height: 20px;
       margin: auto;
-      background-image: url('../i/icons/chevron-left.svg');
+      background: url('../i/icons/chevron-right.svg') no-repeat center;
       transition: all $transition-duration;
+    }
+
+    &:focus {
+      border: 2px solid var(--spectrum-textfield-border-color-key-focus, var(--spectrum-alias-border-color-focus));
     }
 
   }
@@ -154,13 +161,21 @@ $toggle-width: 32px;
     }
   }
 
+  // Indent for the button
+  /*
+  .spectrum-SideNav-itemLink::before {
+    content: '';
+    width: 20px;
+    display: inline-flex;
+  }*/
+
   .open > .toggle:after {
-    transform: rotate(-90deg);
+    transform: rotate(90deg);
   }
 
 
   .expand-all {
-    display: none;
+    display: block;
     background: transparent;
     font-size: $font-size-xsm;
     letter-spacing: .02em;
@@ -175,7 +190,6 @@ $toggle-width: 32px;
       color: $body-font-color;
     }
   }
-
 
 }
 
@@ -205,7 +219,7 @@ $toggle-width: 32px;
       border: none;
       text-align: left;
       background: $light-gray-color;
-      padding: $spacing*2 $spacing*4;
+      padding: 10px 20px 10px 40px;
 
       &, &:visited {
         color: $body-font-color;
@@ -219,12 +233,13 @@ $toggle-width: 32px;
         display: block;
         content: '';
         position: absolute;
-        top:18px;
-        right: 18px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
+        top:10px;
+        left: 14px;
+        width: 18px;
+        height: 18px;
+        background: url('../i/icons/chevron-right.svg') no-repeat center;
+        opacity: .6;
+        
         border-color: $body-font-color transparent transparent transparent;
         transition: all $transition-duration;
       }
@@ -243,7 +258,7 @@ $toggle-width: 32px;
     }
 
     .toc-toggler::after {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
 
   }

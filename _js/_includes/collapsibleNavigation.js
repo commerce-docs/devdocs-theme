@@ -9,8 +9,9 @@
 
 	var pluginName = 'collapsibleNavigation',
 		defaults = {
-      itemSelector: 'li',
-      itemActiveClass: 'active',
+			itemSelector: 'li',
+			sidebarSelector: '.sidebar-wrapper',
+      itemActiveClass: 'is-selected',
       submenuSelector: '> ul',
       hasChildrenClass: 'has-children',
 			toggleClass: 'toggle',
@@ -34,21 +35,23 @@
 		$.extend( Plugin.prototype, {
 
 			init: function() {
+				var plugin = this;
         this.items = $( this.element ).find( this.options.itemSelector );
 				$( this.element ).find('> ul').attr('role','menu');
-        this.initMenuItems( this.items );
-
+				this.initMenuItems( this.items );
+				
+				
 				// Add Expand toggle button if menu has submenus
 				if ( this.items.hasClass(this.options.hasChildrenClass) ) {
 					this.addExpandAllToggle();
 				}
-
+				
 				// Scroll the sidebar to the active element
 				var activeItem = this.items.filter( '.' + this.options.itemActiveClass).first();
 				if ( activeItem.length ) {
 					var itemTop = activeItem.offset().top,
 							itemBottom = itemTop + activeItem.height(),
-							sidebarTop = $('.sidebar').offset().top,
+							sidebarTop = $(plugin.options.sidebarSelector).offset().top,
 							windowHeight = $(window).height() - sidebarTop;
 						
 					// Active item is below the viewport
@@ -60,11 +63,11 @@
 						if ( parentSection.length ) {
 							parentSectionTop = parentSection.offset().top;
 						}
-
+						
 						if ( windowHeight < parentSectionTop && itemBottom - parentSectionTop < windowHeight ) {
-							$('.sidebar').scrollTop( parentSectionTop - sidebarTop );
+							$(plugin.options.sidebarSelector).scrollTop( parentSectionTop - sidebarTop );
 						} else {
-							$('.sidebar').scrollTop( itemTop - sidebarTop );
+							$(plugin.options.sidebarSelector).scrollTop( itemTop - sidebarTop );
 						}
 
 					}

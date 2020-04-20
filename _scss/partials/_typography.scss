@@ -16,12 +16,12 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   @extend .spectrum-Heading2;
-  margin: 2em 0 1em 0;
+  margin: 2em 0 .7em 0;
 }
 
 h3 {
   @extend .spectrum-Heading3;
-  margin: 2em 0 1em 0;
+  margin: 2em 0 .7em 0;
 }
 
 h4 {
@@ -124,11 +124,9 @@ cite {
 
 
 
-
-
 ul, ol {
   padding: 0;
-  margin: 0 0 1.3em 2.5em;
+  margin: 0 0 1.3em 2em;
 
   // decrease the margin before paragraph
   p+& {
@@ -149,10 +147,12 @@ ul.unstyled, ol.unstyled {
   margin-left: 0;
   list-style: none;
 }
+
 ul.inline, ol.inline {
   margin-left: 0;
   list-style: none;
 }
+
 ul.inline>li, ol.inline>li {
   display: inline-block;
   padding-left: .31em; //5px
@@ -194,15 +194,11 @@ abbr.initialism {
   text-transform: uppercase;
 }
 
-
-
 blockquote cite {
   display: block;
   font-style: italic;
   margin: 0.5em 0 0 0;
 }
-
-
 
 blockquote {
   padding: 0 0 0 1.25em;
@@ -215,23 +211,20 @@ blockquote small {
   display: block;
   color: #999999;
 }
+
 blockquote small:before {
   content: '\2014 \00A0'
 }
 
-
 q:before, q:after, blockquote:before, blockquote:after {
   content: ""
 }
+
 address {
   display: block;
   margin-bottom: 1.25em;
   font-style: normal;
 }
-
-
-
-
 
 
 
@@ -245,18 +238,7 @@ p.q {
 }
 
 
-
-@media ( $small-screen ) {
-  h1 {
-    font-size: 1.875em;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
-}
-
 /* Status Colors - Used in Component Status Page */
-
 .status{
   padding: 2px;
 
@@ -285,6 +267,15 @@ h1.page-subtitle {
 
 .page-intro+h2 {
   margin-top: 0;
+}
+
+@media ( $small-screen ) {
+  h1 {
+    font-size: 1.875em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
 }
 
 

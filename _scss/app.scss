@@ -11,6 +11,7 @@
 // Spectrum components
 @import './node_modules/@spectrum-css/alert/dist/index-vars';
 @import './node_modules/@spectrum-css/button/dist/index-vars';
+@import './node_modules/@spectrum-css/buttongroup/dist/index-vars';
 @import './node_modules/@spectrum-css/checkbox/dist/index-vars';
 @import './node_modules/@spectrum-css/dropdown/dist/index-vars';
 @import './node_modules/@spectrum-css/icon/dist/index-vars';
@@ -34,6 +35,7 @@
 @import 'partials/dropdown';
 @import 'partials/footer';
 @import 'partials/form';
+@import 'partials/github-links';
 @import 'partials/highlight';
 @import 'partials/home';
 @import 'partials/layout';

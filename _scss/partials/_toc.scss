@@ -12,6 +12,7 @@
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
+  opacity: .7;
 
 
   &::-webkit-scrollbar {
@@ -29,10 +30,12 @@
     position: relative;
   }
 
-  li {
-    list-style: none;
+  .nav-item {
+    font-size: 12px;
     margin: 0;
-    font-size: var(--spectrum-selectlist-option-text-size, var(--spectrum-alias-font-size-default));
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-height: 16px;
   }
 
   .active {

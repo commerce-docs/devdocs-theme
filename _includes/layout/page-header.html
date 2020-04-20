@@ -2,24 +2,6 @@
 <section class="page-intro">
 	<h1 class="spectrum-Heading1 spectrum-Heading--XXL">{{ page.title }}</h1>
 
-	<div class="github-links">
-		{% if site.github_link == true %}
-		<div class="github-link">
-			<a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="{{ site.github_files }}{{ page.path }}" target="_blank">
-				<img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/edit.svg" alt="" />
-				<span class="spectrum-ActionButton-label">Edit on GitHub</span> 
-			</a>
-		</div>
-		{% endif %}
-
-		{% if site.feedback_link == true %}
-		<div class="new-issue">
-			<a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="{{ site.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank">
-				<img class="spectrum-Icon spectrum-Icon--sizeS"  src="{{ site.baseurl }}/assets/i/icons/bug.svg" alt="" />
-				<span class="spectrum-ActionButton-label">Log an Issue</span>
-			</a>
-		</div>
-		{% endif %}
-	</div>
+	{%- include layout/github-links.html -%}
 
 </section>

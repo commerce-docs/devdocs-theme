@@ -19,7 +19,7 @@ $nav-main-section-width: 300px;
 
   &.is-open > a,
   &.is-open > span {
-    transition-delay: 0.1s; // small delay needed to synchronise JS appearance event
+    transition-delay: 0.05s; // small delay needed to synchronise JS appearance event
   }
 
   // no-js fallback
@@ -30,7 +30,7 @@ $nav-main-section-width: 300px;
       visibility: visible;
       opacity: 1;
       left: auto;
-      transition-delay: 0.1s;
+      transition-delay: 0.05s;
     }
   }
 
@@ -86,5 +86,32 @@ $nav-main-section-width: 300px;
     display: block;
     box-shadow: none;
     border: none;
+
+  }
+}
+
+
+@media ($medium-screen) {
+
+
+  .nav-main {
+    padding: 0 20px 0 54px;
+    display: block;
+  }
+
+  .nav-popup {
+    transform: none;
+  }
+
+  .nav-main .nav-main-item {
+    margin: 0 !important;
+    height: auto;
+  }
+
+  .nav-main>li.is-selected::after {
+    width: 2px;
+    height: 46px;
+    top: 0;
+    left: -20px;
   }
 }

@@ -120,6 +120,10 @@
 
 			$(document).on('touchstart', plugin.handleClickOutside);
 
+			$('.nav-main').addClass('desktop-view');
+			$('.nav-main').removeClass('spectrum-Tabs--vertical').addClass('spectrum-Tabs--horizontal');
+			$('.nav-popup').addClass('spectrum-Popover');
+
 			plugin.$popups.each(function () {
 				var popup = $(this);
 
@@ -132,6 +136,10 @@
 		// Switch to the Mobile view
 		this.desktopViewOff = function () {
 			plugin._desktopMode = false;
+
+			$('.nav-main').addClass('mobile-view');
+			$('.nav-main').removeClass('spectrum-Tabs--horizontal').addClass('spectrum-Tabs--vertical');
+			$('.nav-popup').removeClass('spectrum-Popover');
 
 			plugin.topLevelItems
 				.off('mouseenter', plugin.handleMenuItemMouseEnter)
