@@ -2,6 +2,7 @@
 
 .search-results-header {
   padding: 20px 0;
+  background: $light-gray-color;
   border-bottom: 1px solid var(--spectrum-rule-small-background-color, var(--spectrum-global-color-gray-300));
 }
 
@@ -23,7 +24,7 @@
     "main sidebar"
     "pagination pagination";
 
-  grid-template-columns: minmax(0, 1fr) 240px;;
+  grid-template-columns: minmax(0, 1fr) 220px;;
   grid-gap: 20px;
   margin: 20px 0 0 0;
   padding: 0 16px 0 24px;
@@ -106,6 +107,7 @@
 }
 .hit-content {
   padding: 3px 0 0 0;
+  font-size: var(--spectrum-global-dimension-font-size-200);
   overflow-x: hidden;
   text-overflow: ellipsis;
 }
@@ -260,7 +262,7 @@
 .ais-SearchBox-reset {
   border: none;
   background: none;
-  
+
   // Conter the button vertically:
   position: absolute;
   right: 10px;
