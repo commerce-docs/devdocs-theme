@@ -24,7 +24,7 @@ $toggle-width: 32px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding: $spacing $spacing*2;
-    //padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
+    padding-bottom: 48px; // magic number is needed to allow visibility of the long sidebars
   }
 
   .guide-title {
@@ -47,28 +47,34 @@ $toggle-width: 32px;
     li {
       position: relative;
       list-style: none;
-      padding: 0 0 0 20px;
-      
     }
 
-    a {
+    // indents
+    a, span {
       text-decoration: none;
+      padding-left: 30px;
+    }
+
+    ul li a,
+    ul li span {
+      padding-left: 43px !important;
+    }
+
+    ul li li a,
+    ul li li span {
+      padding-left: 56px !important;
     }
 
     // Group titles
     span {
       display: block;
-      color: #737676;
+      color: #777777;
     }
 
   }
 
   ul ul {
     display: none;
-  }
-
-  ul ul li {
-    padding: 0 0 0 10px;
   }
 
   /*
@@ -112,7 +118,12 @@ $toggle-width: 32px;
       padding-right: $toggle-width;
     }
   }*/
-
+  li li .toggle {
+    left: 13px;
+  }
+  li li li .toggle {
+    left: 26px;
+  }
   .toggle {
     background: transparent;
     border: 2px solid transparent;

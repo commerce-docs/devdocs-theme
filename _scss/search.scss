@@ -1,8 +1,8 @@
 @import 'variables';
 
 .search-results-header {
-  background: $light-gray-color;
   padding: 20px 0;
+  border-bottom: 1px solid var(--spectrum-rule-small-background-color, var(--spectrum-global-color-gray-300));
 }
 
 .search-results-header-inner {
@@ -78,6 +78,7 @@
 }
 
 .ais-SearchBox-form {
+  width: 100%;
   margin: 0;
 }
 
@@ -98,7 +99,7 @@
   font-weight: $font-weight-normal;
 }
 .hit-url {
-  font-size: 12px;
+  font-size: var(--spectrum-global-dimension-font-size-75);
   color: #107154;
   margin: 5px 0;
   overflow: hidden;
@@ -109,7 +110,7 @@
   text-overflow: ellipsis;
 }
 .hit-stars {
-  font-size: 17px;
+  font-size: var(--spectrum-global-dimension-font-size-200);
   margin: 4px 0;
   color: #868686;
 }
@@ -154,7 +155,7 @@
 
 .ais-Pagination-item--selected .ais-Pagination-link {
   color: #fff;
-  background: #26a2aa;
+  background: $accent-color;
 }
 .ais-Pagination-item--selected .ais-Pagination-link:hover {
   cursor: default;
@@ -204,7 +205,6 @@
 }
 
 .ais-Panel-header {
-  font-weight: bold;
   margin: 0 0 10px 0;
 }
 
@@ -239,20 +239,16 @@
   position: relative;
 
   input {
-    font-size: 18px;
-    padding: 15px;
-    padding-left: 50px;
-    line-height: 22px;
     width: 100%;
-    transition: all .1s ease-in;
+    padding-left: 40px;
   }
 
-  &:before {
+  &::after {
     display: block;
     content: '';
     position: absolute;
     pointer-events: none;
-    top: 17px;
+    top: 6px;
     left: 15px;
     width: 18px;
     height: 18px;
@@ -264,7 +260,7 @@
 .ais-SearchBox-reset {
   border: none;
   background: none;
-
+  
   // Conter the button vertically:
   position: absolute;
   right: 10px;

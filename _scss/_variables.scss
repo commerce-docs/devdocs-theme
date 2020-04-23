@@ -40,7 +40,7 @@ $body-font-color: #2b2b2c;
 $accent-color: var(--spectrum-link-text-color, var(--spectrum-global-color-blue-600));
 $secondary-text-color: #767676; // Accessible on the white background
 
-$light-gray-color: rgb(250,250,250);;
+$light-gray-color: #f5f5f5;
 $dark-gray-color: #888;
 $beige-color: #CAC3B4;
 
@@ -55,7 +55,7 @@ $link-visited-color: #609;
 
 $border-color: #d2d2d2;
 
-$code-background-color: #f9f9f9;
+$code-background-color: rgb(250, 250, 250);
 
 
 // Buttons
@@ -64,7 +64,7 @@ $btn-color: $body-font-color;
 $btn-bg-color: #ccc;
 
 $btn-primary-color: #fff;
-$btn-primary-bg-color: $brand-color;
+$btn-primary-bg-color: rgb(20, 115, 230);
 
 
 // Dropdown

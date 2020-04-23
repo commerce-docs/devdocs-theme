@@ -34,13 +34,6 @@ $nav-main-section-width: 300px;
     }
   }
 
-  @media ($medium-screen) {
-    &.active > a,
-    &.active > span {
-      border-color: transparent;
-      background: transparent;
-    }
-  }
 }
 
 // Popover (second Level of the navigation)

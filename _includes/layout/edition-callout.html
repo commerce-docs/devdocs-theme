@@ -1,0 +1,20 @@
+{% if page.ee_only == true %}
+<div class="bs-callout spectrum-Alert edition-callout">
+  <h4 class="spectrum-Alert-header">{{site.data.var.ee}} only</h4>
+  <div class="spectrum-Alert-content">The content on this page is for {{site.data.var.ee}} only. <a href="https://docs.magento.com">Learn more</a></div>
+</div>
+{% endif %}
+
+{% if page.b2b_only == true %}
+<div class="bs-callout spectrum-Alert edition-callout">
+  <h4 class="spectrum-Alert-header">{{site.data.var.b2b}} only</h4>
+  <div class="spectrum-Alert-content">The content on this page is for {{site.data.var.b2b}} only. <a href="https://docs.magento.com">Learn more</a></div>
+</div>
+{% endif %}
+
+{% if page.ce_only == true %}
+<div class="bs-callout spectrum-Alert edition-callout">
+  <h4 class="spectrum-Alert-header">{{site.data.var.ce}} only</h4>
+  <div class="spectrum-Alert-content">The content on this page is for {{site.data.var.ce}} only. <a href="https://docs.magento.com">Learn more</a></div>
+</div>
+{% endif %} 

@@ -2,8 +2,8 @@
 // Requires clipboard.min.js
 $(function() {
   // Create buttons
-  var $highlightBtn = $('<div class="btn btn-copy">Copy</div>');
-  var $noCopyBtn = $('<div class="btn btn-no-copy">Not for copy</div>');
+  var $highlightBtn = $('<button class="spectrum-ActionButton spectrum-ActionButton--quiet btn-copy"><span class="spectrum-ActionButton-label">Copy<span></button>');
+  var $noCopyBtn = $('<button class="spectrum-ActionButton spectrum-ActionButton--quiet btn-no-copy" disabled><span class="spectrum-ActionButton-label">Not for copy</span></button>');
   // Get all pre tags
   var $preTags = $('.highlight');
 

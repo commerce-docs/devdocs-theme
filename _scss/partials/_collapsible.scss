@@ -3,6 +3,8 @@
  */
 
 .collapsible {
+  
+  margin: 0 0 1.3em;
 
   .collapsible-title {
     cursor: pointer;
@@ -18,12 +20,11 @@
       display: inline-block;
       vertical-align: middle;
       margin: 0 10px 0 0;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 4px 0 4px 6px;
-      border-color: transparent transparent transparent $link-color;
+      width: 18px;
+      height: 18px;
       transition: all .3s;
+      background: url('../i/icons/chevron-right.svg') no-repeat center;
+      opacity: .6;
     }
   }
 
@@ -42,9 +43,11 @@
   }
 
 }
+
 .collapsible-h2 {
   margin: 15px 0 10px 0;
 }
+
 .collapsible-h3 {
   margin: 15px 0 10px 0;
 }

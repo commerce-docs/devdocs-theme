@@ -126,7 +126,6 @@
   padding: 0 0 0 20px;
 
   font-size: 16px;
-  line-height: 38px;
 
   &:hover {
     text-decoration: none;
@@ -165,17 +164,6 @@
     border-left: 1px solid #4d4d4d;
   }
 
-  // Remove 'Magento' from logo on tablet
-  @media (max-width: 1380px) {
-    .logo-text {
-      display: none;
-    }
-    .site-logo {
-      height: 36px;
-      line-height: 36px;
-    }
-  }
-
   @media ($medium-screen) {
     padding-left: 10px;
   }
@@ -189,3 +177,20 @@
 body.offcanvas-active {
   overflow: hidden;
 }
+
+
+// Full width layouts get different treatment
+.layout-home .nav-container, 
+.layout-full-width .nav-container,
+.layout-redoc .nav-container,
+.layout-search .nav-container {
+  background: #fff;
+  border-bottom: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick)) solid;
+  border-bottom-color: var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200));
+
+  .spectrum-Tabs {
+    border-bottom-color: transparent !important;
+    border-bottom: none;
+  }
+}
+

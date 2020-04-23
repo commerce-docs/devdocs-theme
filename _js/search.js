@@ -25,8 +25,9 @@ window.onload = function() {
       paginationClassName: "search-results-pagination",
       refinementsClassName: "search-results-refinements",
       navContainerId: "index-navigation",
-      navListClassName: "tabs",
-      navItemClassName: "tab-item",
+      navListClassName: "spectrum-Tabs spectrum-Tabs--horizontal",
+      navItemClassName: "spectrum-Tabs-item",
+      navItemLabelClassName: "spectrum-Tabs-itemLabel",
       navItemClassNameSelected: "is-selected"
     };
 
@@ -35,6 +36,7 @@ window.onload = function() {
     var searchIndices = [];
     var subIndices = [];
     var navItems = [];
+    var selectionIndicator = document.createElement('div');
     var query = '';
 
     var algoliaClient = algoliasearch(opts.appId, opts.apiKey);
@@ -91,6 +93,7 @@ window.onload = function() {
     var buildNav = function() {
       // Nav container
       var navList = document.createElement("div");
+      selectionIndicator.classList.add('spectrum-Tabs-selectionIndicator');
       navList.className = defaults.navListClassName;
       navList.setAttribute("role", "tablist");
 
@@ -101,16 +104,17 @@ window.onload = function() {
           !index ? defaults.navItemClassNameSelected : null // first item is selected
         ].join(" ");
 
-        var navItem = document.createElement("button");
+        var navItem = document.createElement("div");
 
         navItem.className = className;
         navItem.id = item.name + "-tab";
         navItem.setAttribute("role", "tab");
+        navItem.setAttribute("tabindex", "0");
         navItem.setAttribute("aria-controls", item.name);
         navItem.setAttribute("aria-selected", !index ? true : false);
 
         navItem.innerHTML =
-          '<span class="tab-item-label">' + item.label + "</span>";
+          '<span class="' + defaults.navItemLabelClassName + '">' + item.label + "</span>";
         navItem.onclick = function(event) {
           handleIndexClick(event, item.name);
         };
@@ -119,8 +123,19 @@ window.onload = function() {
         return navItem;
       });
 
+      navList.appendChild(selectionIndicator);
+
       // Output the HTML
       document.getElementById(defaults.navContainerId).appendChild(navList);
+
+      moveSelectionIndicator(navItems[0]);
+    };
+
+    var moveSelectionIndicator = function (currentItem) {
+      // Move the selection indicator 
+      selectionIndicator.style.transform = 'translateX(' + currentItem.offsetLeft + 'px)';
+      selectionIndicator.style.width = currentItem.offsetWidth + 'px';
+
     };
 
     var handleIndexClick = function(event, indexName) {
@@ -140,6 +155,8 @@ window.onload = function() {
 
       // Show the current tab, and add an "active" class to the button that opened the tab
       document.getElementById(indexName).classList.remove(defaults.hiddenClassName);
+
+      moveSelectionIndicator(event.currentTarget);
 
       event.currentTarget.blur();
       event.currentTarget.setAttribute("aria-selected", true);
@@ -264,6 +281,11 @@ window.onload = function() {
           var refinementListWithPanel = instantsearch.widgets.panel({
             templates: {
               header: refinement.label
+            },
+            cssClasses: {
+              header: [
+                'spectrum-Detail'
+              ]
             }
           })(instantsearch.widgets.refinementList);
           
@@ -332,7 +354,20 @@ window.onload = function() {
           container: defaults.searchInputId,
           placeholder: "Search",
           showSubmit: false,
-          showLoadingIndicator: false
+          autofocus: true,
+          showLoadingIndicator: false,
+          cssClasses: {
+            form: [
+              'spectrum-Search'
+            ],
+            input: [
+              'spectrum-Textfield-input',
+              'spectrum-Search-input'
+            ],
+            reset: [
+              ''
+            ]
+          }
         })
       );
 

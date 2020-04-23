@@ -42,8 +42,8 @@
 
   & > .nav-main-separator {
     border-left: 1px solid #ccc;
-    height: $spacing*2;
-    margin: 0 $spacing*2;
+    height: 16px;
+    margin: 0 $spacing*4 !important;
   }
 
 

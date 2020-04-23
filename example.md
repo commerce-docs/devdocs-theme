@@ -1,6 +1,7 @@
 ---
 title: Guide Home Page
 menu_title: Overview
+ee_only: true
 last_modified_at: 2020-03-03
 contributor_name: GitHub
 contributor_link: https://www.gitgub.com/
