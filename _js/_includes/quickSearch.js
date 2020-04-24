@@ -48,7 +48,7 @@ $(function() {
 
             return '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
           },
-          header: '<div class="suggestion-category">' + item.label + "</div>"
+          header: '<div class="suggestion-category spectrum-Detail">' + item.label + "</div>"
         }
       };
     });
