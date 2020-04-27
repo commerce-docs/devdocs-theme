@@ -24,7 +24,9 @@
 @import './node_modules/@spectrum-css/sidenav/dist/index-vars';
 @import './node_modules/@spectrum-css/table/dist/index-vars';
 @import './node_modules/@spectrum-css/tabs/dist/index-vars';
+@import './node_modules/@spectrum-css/tags/dist/index-vars';
 @import './node_modules/@spectrum-css/textfield/dist/index-vars';
+@import './node_modules/@spectrum-css/tooltip/dist/index-vars';
 @import './node_modules/@spectrum-css/typography/dist/index-vars';
 
 
@@ -53,13 +55,13 @@
 @import 'partials/table';
 @import 'partials/typography';
 @import 'partials/version-switcher';
-@import 'partials/tabs';
+//@import 'partials/tabs';
 @import 'partials/toc';
 @import 'partials/videos';
 @import 'partials/progress-bar';
 @import 'partials/tooltip';
 @import 'partials/popover';
-@import 'partials/ee-only';
+@import 'partials/edition-marker';
 @import 'partials/list-icons';
 @import 'partials/card';
 @import 'partials/column';

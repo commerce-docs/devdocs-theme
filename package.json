@@ -9,7 +9,7 @@
     "autoprefixer": "postcss -u autoprefixer -r assets/css/*.css --map=0",
     "jekyll": "bundle exec jekyll build",
     "serve": "browser-sync start --server '_site' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
-    "build:js": "uglifyjs _js/search.js -o assets/js/search.min.js && uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
+    "build:js": "uglifyjs _js/editions.js -o assets/js/editions.min.js && uglifyjs _js/page-updated.js -o assets/js/page-updated.min.js && uglifyjs _js/search.js -o assets/js/search.min.js && uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
     "build:css": "npm run scss && npm run autoprefixer",
     "build:html": "npm run jekyll",
     "watch:html": "nodemon -e md,html --ignore _site/ -x 'npm run build:html'",
@@ -45,7 +45,9 @@
     "@spectrum-css/sidenav": "^3.0.0-beta.1",
     "@spectrum-css/table": "^3.0.0-beta.1",
     "@spectrum-css/tabs": "^3.0.0-beta.1",
+    "@spectrum-css/tags": "^3.0.0-beta.1",
     "@spectrum-css/textfield": "^3.0.0-beta.2",
+    "@spectrum-css/tooltip": "^3.0.0-beta.1",
     "@spectrum-css/typography": "^2.1.2",
     "@spectrum-css/vars": "^2.2.0"
   },

@@ -347,7 +347,7 @@ window.onload = function() {
 
         document.getElementById("hits").appendChild(container);
       }
-
+      
       // Search Box
       mainIndex.addWidget(
         instantsearch.widgets.searchBox({
