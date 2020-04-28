@@ -45,7 +45,7 @@ $(function() {
     window.setTimeout(function() {  $('.app-switcher a').filter(':first').focus(); }, 50);
   });
 
-  loadIcons('/assets/i/spectrum-css-icons.svg');
+  loadIcons(baseUrl + '/assets/i/spectrum-css-icons.svg');
 
 });
 // END document ready

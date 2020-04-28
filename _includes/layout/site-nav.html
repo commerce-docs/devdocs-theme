@@ -12,14 +12,13 @@
       <span class="site-logo">{{ site.logo }}</span>
     </a>
 
-    {% include layout/version-switcher.html %}
-
     <div id="nav-main" class="nav-main-wrap" aria-labelledby="menu-btn">
       {% include layout/navigation.html %}
     </div>
 
     <div class="nav-actions">
         
+        {% include layout/version-switcher.html %}
 
         {% include layout/app-switcher.html %}
 

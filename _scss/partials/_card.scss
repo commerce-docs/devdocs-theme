@@ -4,8 +4,9 @@ a.card {
   display: block;
   color: $body-font-color;
 
-  background: $light-gray-color;
-  border-bottom: 5px solid $brand-color;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #eee;
 
   padding: 25px 30px;
 

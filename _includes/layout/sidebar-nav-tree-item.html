@@ -4,7 +4,7 @@
 
 {% if include.page.title %}
 <li class="spectrum-SideNav-item {% if include.page.url == page.url %}is-selected{% endif %}">
-  <a class="spectrum-SideNav-itemLink" href="{{ site.baseurl }}{{ include.page.url }}">{% if include.page.menu_title %}{{ include.page.menu_title }}{% else %}{{ include.page.title }}{% endif %}</a>
+  <a class="spectrum-SideNav-itemLink ee-only" href="{{ site.baseurl }}{{ include.page.url }}">{% if include.page.menu_title %}{{ include.page.menu_title }}{% else %}{{ include.page.title }}{% endif %}</a>
   {% if children_size > 0 %}
     <ul class="spectrum-SideNav">
     {% for child in children %}
