@@ -69,15 +69,18 @@ $callout-padding: 15px 20px 17px 52px;
 }
 
 .message-banner {
-  text-align: center;
-  background-color: #eef6fb;
-  color: #346e92;
-  border: solid 1px #346e92;
-  padding: 10px 0px;
-  margin: 0;
-  font-size: 13px;
+  @extend .bs-callout-warning;
 
   &.index {
     font-size: 100%;
   }
+}
+
+.page-intro .message-banner,
+.page-intro .bs-callout
+.page-intro .bs-callout-info,
+.page-intro .bs-callout-warning,
+.page-intro .bs-callout-tutorial,
+.page-intro .bs-callout-tip, {
+  flex-basis: 100%;
 }

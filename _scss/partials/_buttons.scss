@@ -187,46 +187,6 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
 
 }
 
-
-
-
-.btn.copper {
-  color: #fff;
-  background: #ef672f;
-  box-shadow: inset 0 0 0 0 #c14800;
-  transition-duration: 0.7s;
-  -webkit-transition: 0.7s
-}
-
-.btn.copper:hover {
-  box-shadow: inset 0 100px 0 0 #c14800;
-  transition-duration: 0.4s;
-  -webkit-transition: 0.4s
-}
-
-.btn.outline {
-  color: #fff;
-  background: transparent;
-  border: 3px solid #fff;
-  box-shadow: inset 0 0 0 0 #fff
-}
-
-.btn.outline:hover {
-  color: #31302b;
-  box-shadow: inset 0 100px 0 0 #fff
-}
-
-.btn.charcoal {
-  color: #fff;
-  background: #31302b;
-  box-shadow: inset 0 0 0 0 #fff;
-  transition-duration: 0.7s;
-  -webkit-transition: 0.7s
-}
-
-.btn.charcoal:hover {
-  color: #31302b;
-  box-shadow: inset 0 100px 0 0 #fff;
-  transition-duration: 0.4s;
-  -webkit-transition: 0.4s
+a.spectrum-Button {
+  text-decoration: none;
 }

@@ -73,9 +73,7 @@ $toggle-width: 32px;
 
   }
 
-  ul ul {
-    display: none;
-  }
+ 
 
   /*
   // second level links
@@ -111,13 +109,10 @@ $toggle-width: 32px;
 
   position: relative;
 
-  /*
-  .has-children {
-    // Accomodate space for the toggle
-    & > a, & > span {
-      padding-right: $toggle-width;
-    }
-  }*/
+  ul ul {
+    display: none;
+  }
+
   li li .toggle {
     left: 13px;
   }

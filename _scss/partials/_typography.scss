@@ -252,14 +252,15 @@ p.q {
 }
 
 
-
-h1.page-subtitle {
-  font-size: 2em;
-  color: #6E6E70;
-  margin: 8px 0 0 0;
+.page-subtitle {
+  @extend .spectrum-Heading2--quiet;
+  margin: -.5em 0 0 0;
 }
 
-.page-intro+h2 {
+// Reset the first heading on the page to have no margin
+main h2:first-child,
+main h3:first-child,
+main h4:first-child {
   margin-top: 0;
 }
 
