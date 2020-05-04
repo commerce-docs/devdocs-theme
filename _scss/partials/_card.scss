@@ -21,7 +21,8 @@ a.card {
     color: $body-font-color;
     text-decoration: none;
     box-shadow: 3px 3px 8px rgba(0,0,0,.2);
-    transform: translateY(-3px) translateX(-3px);
+    border-color: #ccc;
+    //transform: translateY(-3px) translateX(-3px);
   }
 
   &:active {
