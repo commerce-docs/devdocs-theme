@@ -13,6 +13,7 @@ $callout-padding: 15px 20px 17px 52px;
   margin: 20px 0 20px 0;
   padding-right: 50px;
   width: 100%;
+  min-width: auto;
 
   @extend .spectrum-Alert;
 

@@ -22,6 +22,19 @@ $nav-main-section-width: 300px;
     transition-delay: 0.05s; // small delay needed to synchronise JS appearance event
   }
 
+  // Increase the width of the hover area by 40px to help with the dropdown
+  &.is-open > a::after,
+  &.is-open > span::after {
+    content: '';
+    height: 100%;
+    background: transparent;
+    display: block;
+    position: absolute;
+    width: calc(100% + 40px);
+    left: -20px;
+    top: 0;
+  }
+
   // no-js fallback
   .no-js &:hover,
   .no-js &:focus,
