@@ -54,23 +54,13 @@ pre {
     font-size: 12px;
     user-select: none;
     position: absolute;
+    padding: 5px;
     top: 0;
     right: 0;
-    border-top-left-radius: 0;
-    border-bottom-right-radius: 0;
   }
 
   .btn-copy {
-    color: $btn-primary-color;
-    background: $btn-primary-bg-color;
-    &:hover {
-      color: $btn-primary-color;
-      background: darken($btn-primary-bg-color, 10%);
-    }
-    &:active {
-      color: $btn-primary-color;
-      background: darken($btn-primary-bg-color, 20%);
-    }
+    cursor: pointer;
   }
 
   .btn-no-copy {
@@ -96,11 +86,12 @@ pre {
 .highlight {
   line-height: 20px;
   position: relative;
-  background-color: $code-background-color; 
-//  border: 1px solid $border-color;
-  border-radius: 3px;
+  background-color: $code-background-color;
+  border-radius: 4px;
   color: $body-font-color; 
   margin: 0 0 $spacing * 4;
+  overflow: auto;
+  max-height: 700px;
 }
 
 // TODO: Get rid of this hack
@@ -144,10 +135,24 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
 .rouge-table {
   margin: 0;
   max-width: 100%;
+  border: none;
+
+  tbody {
+    background: transparent;
+  }
 
   td {
     padding: 0;
+    border: none !important;
+  }
+
+  tr {
     border: none;
+  }
+
+  tr:hover {
+    background: none;
+    cursor: default;
   }
   
   .rouge-code, .code {
@@ -159,7 +164,6 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
   // Column with line numbers
   .gl {
     width: 35px;
-    //border-right: 1px solid rgba(0,0,0,.06);
   }
 
   .lineno {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ page.lang }}" dir="ltr">
+<html lang="{{ page.lang }}" dir="ltr" class="spectrum spectrum--medium spectrum--lightest">
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,8 +8,9 @@
 	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 	<meta name="description" content="{{ site.description }}">
 
-	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css?ver=7" />
-	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/print.css?ver=7" media="print"/>
+	<link rel="stylesheet" href="https://use.typekit.net/iaw1apr.css">
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/app.css" />
+	<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/print.css" media="print"/>
 
 	{% include layout/header-styles.html %}
 	{% include layout/header-scripts.html %}
@@ -27,13 +28,16 @@
 
 </head>
 <body class="layout-{{ page.layout }}">
-{% include layout/after-body.html %}
 
 	<header class="site-header">
+
 		{% include layout/site-nav.html %}
+
 	</header>
 
 	<div class="global-wrapper">
+
 		{% include layout/after-site-header.html %}
+
 		<div class="main-container">
 			<a id="main-content"></a>

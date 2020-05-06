@@ -1,4 +1,11 @@
 .layout-home {
+
+  background: $light-gray-color;
+
+  .global-wrapper {
+    background: transparent;
+  }
+
   .main-container {
     padding-bottom: 30px;
   }
@@ -6,66 +13,110 @@
   .section {
     max-width: $container-width-large;
     margin: 0 auto;
-  } 
+  }
 }
 
-
 .home-intro {
-  padding: 30px 0 20px 0;
+  padding: 40px 0 30px 0;
   text-align: center;
-  background: $light-gray-color;
+  background: #333 url("../i/home-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #fff;
+  
 
-  .search-form {
-    margin-top: 20px;
-    .input-group {
-      width: 100%;
+  h1 {
+    color: #fff;
+    text-shadow: 2px 2px 8px #000;
+  }
+
+  .lead {
+    margin: 1em 0 2em 0;
+    text-shadow: 2px 2px 8px #000;
+  }
+}
+
+.home-intro .search-form {
+  width: 100%;
+  max-width: 615px;
+
+  .search-field {
+    font-size: var(--spectrum-global-dimension-font-size-200);
+    padding-bottom: var(--spectrum-global-dimension-size-150);
+    padding-top: var(--spectrum-global-dimension-size-150);
+    padding-left: 50px;
+    height: var(--spectrum-global-dimension-size-550);
+  }
+
+  .spectrum-Search-icon {
+    left: 15px;
+    top: 13px;
+  }
+
+  .spectrum-SearchClearButton {
+    display: none;
+    right: 10px;
+    top: 5px;
+  }
+}
+
+.home-intro .container {
+  max-width: 1024px;
+}
+
+.home-features {
+
+  padding: 20px 0;
+  
+  .container {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-gap: 20px;
+    max-width: 1300px;
+
+    &::before {
+      display: none;
     }
   }
 
-}
-
-
-.home-features {
-  text-align: center;
-  max-width: 1300px;
-  margin: 0 auto;
-
   .feature {
-    vertical-align: top;
-    display: inline-block;
-    width: 32%;
-    padding: 20px 0 0;
+    padding: 20px 30px 20px;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    background: #fff;
   }
 
   .title {
-    font-size: 18px;
-    line-height: 1.2;
-    font-weight: 600;
-    text-align: center;
-    margin: 0;
-    padding: 0 0 10px 0;
+    font-size: 20px;
+    margin: 0 0 .5em 0;
+    padding: 0 0 .3em 0;
+    border-bottom: var(--spectrum-card-footer-border-top-size, var(--spectrum-global-dimension-size-10)) solid;
+    border-color: var(--spectrum-card-border-color, var(--spectrum-global-color-gray-200));
   }
 
-  ul,li {
+  ul,
+  li {
     list-style: none;
-    margin: 0 0 5px 0;
+    font-size: 16px;
+    margin: 0 0 .7em 0;
     padding: 0;
   }
 
-  @media ( $small-screen ) {
-
-    .feature {
-      width: 100%;
+  @media ($medium-screen) {
+    .container {
+      grid-template-columns: 50% 50%;
     }
   }
 
-
+  @media ($small-screen) {
+    .container {
+      grid-template-columns: 100%;
+    }
+  }
 }
 
-
-
 .home-videos {
-
   padding: 70px 0 0;
   text-align: center;
 
@@ -73,5 +124,4 @@
     margin: 0 auto;
     max-width: 50em;
   }
-
 }

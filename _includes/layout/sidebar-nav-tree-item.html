@@ -3,10 +3,10 @@
 {% assign children_size = children | size %}
 
 {% if include.page.title %}
-<li {% if include.page.url == page.url %}class="active"{% endif %}>
-  <a href="{{ site.baseurl }}{{ include.page.url }}">{% if include.page.menu_title %}{{ include.page.menu_title }}{% else %}{{ include.page.title }}{% endif %}</a>
+<li class="spectrum-SideNav-item {% if include.page.url == page.url %}is-selected{% endif %}">
+  <a class="spectrum-SideNav-itemLink ee-only" href="{{ site.baseurl }}{{ include.page.url }}">{% if include.page.menu_title %}{{ include.page.menu_title }}{% else %}{{ include.page.title }}{% endif %}</a>
   {% if children_size > 0 %}
-    <ul>
+    <ul class="spectrum-SideNav">
     {% for child in children %}
       {% include layout/sidebar-nav-tree-item.html page=child pages=children %}
     {% endfor %}

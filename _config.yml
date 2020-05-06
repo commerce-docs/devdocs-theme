@@ -1,10 +1,10 @@
 title: Magento Documentation Theme
 description: Templates, styles and scripts for all Magento Documentation portals.
-logo: DocsTheme
+logo: Docs Theme
 baseurl: ""
 permalink: pretty
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
-version: 4
+version: 8
 
 markdown: kramdown
 highlighter: rouge
@@ -23,6 +23,9 @@ collections:
     output: true
     permalink: "/videos/:path/"
 
+github_link: true
+feedback_link: true
+
 # This will force "default" layout for all of the pages, if not specified
 defaults:
   -
@@ -31,6 +34,11 @@ defaults:
     values:
       layout: "default"
       lang: "en"
+      github_link: true
+      feedback_link: true
+      github_files: https://github.com/magento-devdocs/devdocs-theme/blob/
+      github_repo: https://github.com/magento-devdocs/devdocs-theme/
+      
   -
     scope:
       path: "video"

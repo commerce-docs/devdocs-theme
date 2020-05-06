@@ -1,28 +1,31 @@
+
 table {
   width: 100%;
   border-collapse: collapse;
-  border-spacing: 0;
   margin: 2em 0 2em 0;
+  @extend .spectrum-Table !optional;
+}
+
+.content table p, .content table li, .content table dl {
+  font-size: inherit;
 }
 
 table.fixed {
   table-layout: fixed;
 }
 
-th {
-  background: $light-gray-color;
-  text-align: left;
-  padding: 15px 14px;
-  vertical-align: bottom;
-  font-weight: bold;
-  border-bottom: 1px solid #ccc;
+tbody {
+  @extend .spectrum-Table-body !optional;
 }
 
-tr td {
-  font-size: $font-size-sm;
-  padding: 13px 14px;
-  vertical-align: top;
-  border-bottom: 1px solid #ccc;
-  word-wrap: break-word;
-  vertical-align: initial;
+th {
+  @extend .spectrum-Table-headCell !optional;
+}
+
+tbody tr {
+  @extend .spectrum-Table-row !optional;
+}
+
+td {
+  @extend .spectrum-Table-cell !optional;
 }

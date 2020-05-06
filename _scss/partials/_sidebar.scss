@@ -1,34 +1,36 @@
-$toggle-width: 30px;
-$active-item-background: lighten( $accent-color, 53% );
+$toggle-width: 32px;
 
 .sidebar {
   position: fixed;
   width: $sidebar-width;
-  border-right: 1px solid $border-color;
-  height: 100%;
+  height: 100vh;
+  
   z-index: 2;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  background: #fff;
+  background: $light-gray-color;
 
+  // Move sidebar up to provide the background for the logo
+  
+  top: 0;
+  padding-top: $header-height;
+
+  // Make sure that the sidebar scrollbar looks nice
   &::-webkit-scrollbar-track {
     background: transparent;
     border: none;
   }
 
   .sidebar-wrapper {
-    padding: 0 0 $spacing*4;
-    padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: $spacing $spacing*2;
+    padding-bottom: 48px; // magic number is needed to allow visibility of the long sidebars
   }
 
   .guide-title {
     position: relative;
-    color: $body-font-color;
-    font-weight: $font-weight-medium;
-    font-size: 18px;
+    @extend .spectrum-Heading4;
     padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
-    border-bottom: 1px solid $border-color;
-
     margin: 0;
     z-index: 1;
   }
@@ -40,67 +42,43 @@ $active-item-background: lighten( $accent-color, 53% );
     list-style: none;
     margin: 0;
     padding: 0;
+    outline: none;
 
     li {
       position: relative;
       list-style: none;
-      margin: 0;
-      padding: 0;
-      font-size: 15px;
-      line-height: 1.3;
-      border-bottom: 1px solid $border-color;
     }
 
-    ul li {
-      border-bottom: none;
-    }
-
+    // indents
     a, span {
-      display: block;
-      padding: $spacing*3 $spacing*3;
-      position: relative;
-      font-weight: $font-weight-medium;
-    }
-
-    ul a {
-      font-weight: normal;
-    }
-
-    a {
-      color: $body-font-color;
-
       text-decoration: none;
-      transition: background $transition-duration;
+      padding-left: 30px;
+    }
 
-      &:hover {
-        background: $dropdown-link-hover-bg;
-      }
-      &:active {
-        background: darken($dropdown-link-hover-bg, 10%);
-      }
+    ul li a,
+    ul li span {
+      padding-left: 43px !important;
+    }
+
+    ul li li a,
+    ul li li span {
+      padding-left: 56px !important;
     }
 
     // Group titles
     span {
-      color: #737676;
-    }
-
-    .active {
-      & > a {
-        background: $active-item-background;
-      }
+      display: block;
+      color: #777777;
     }
 
   }
 
+ 
+
+  /*
   // second level links
-  ul ul a, ul ul span {
-    font-size: $font-size-sm;
-  }
+ 
 
-  ul ul a, ul ul span {
-    padding: $spacing*2 $spacing*3;
-  }
 
   // Third level
   ul ul ul a, ul ul ul span {
@@ -117,6 +95,7 @@ $active-item-background: lighten( $accent-color, 53% );
   .sidebar-wrapper > ul {
     margin-bottom: $spacing*3;
   }
+  */
 
   .toc-toggler {
     display: none;
@@ -126,67 +105,54 @@ $active-item-background: lighten( $accent-color, 53% );
 
 
 
-
-
 .collapsible-navigation {
 
   position: relative;
 
-  ul {
-    ul {
-      display: none;
-    }
+  ul ul {
+    display: none;
   }
 
-  ul ul .toggle {
-    height: 38px;
-    &:after {
-      border-width: 6px 4px 0 4px;
-    }
+  li li .toggle {
+    left: 13px;
   }
-
-  .has-children {
-    & > a, & > span {
-      padding-right: $toggle-width;
-    }
+  li li li .toggle {
+    left: 26px;
   }
-
   .toggle {
     background: transparent;
-    border: none;
-    border-radius: 0;
+    border: 2px solid transparent;
+    outline: none;
+    border-radius: 3px;
     display: block;
+    opacity: .7;
 
     position: absolute;
-
-    opacity: .9;
 
     padding: 0;
     margin: 0;
 
     top:0;
-    right: 0;
+    left: 0;
     cursor: pointer;
 
-    height: 49px;
+    height: $toggle-width;
     width: $toggle-width;
 
     z-index: 10;
 
-    &:hover {
-      background: $dropdown-link-hover-bg;
-    }
-
     &:after {
       display: block;
       content: '';
-    //  transition: all $transition-duration;
-      width: 0;
-      height: 0;
+      width: 20px;
+      height: 20px;
       margin: auto;
-      border-style: solid;
-      border-width: 8px 5px 0 5px;
-      border-color: $accent-color transparent transparent transparent;
+      background: url('../i/icons/chevron-right.svg') no-repeat center;
+      transition: all $transition-duration;
+    }
+
+    &:focus {
+      border: 2px solid var(--spectrum-textfield-border-color-key-focus, var(--spectrum-alias-border-color-focus));
     }
 
   }
@@ -198,22 +164,24 @@ $active-item-background: lighten( $accent-color, 53% );
 
     & > span:hover {
       cursor: pointer;
-      background: $dropdown-link-hover-bg;
     }
   }
+
+  // Indent for the button
+  /*
+  .spectrum-SideNav-itemLink::before {
+    content: '';
+    width: 20px;
+    display: inline-flex;
+  }*/
 
   .open > .toggle:after {
-    transform: rotate(180deg);
-  }
-
-  .active > .toggle {
-    &:hover {
-      background: darken( $active-item-background, 5% );
-    }
+    transform: rotate(90deg);
   }
 
 
   .expand-all {
+    display: block;
     background: transparent;
     font-size: $font-size-xsm;
     letter-spacing: .02em;
@@ -229,7 +197,6 @@ $active-item-background: lighten( $accent-color, 53% );
     }
   }
 
-
 }
 
 
@@ -239,7 +206,8 @@ $active-item-background: lighten( $accent-color, 53% );
   .sidebar {
 
     width: 100%;
-    padding: 0 0 $spacing*2 0;
+    height: auto;
+    padding: 0;
     position: relative;
 
     .sidebar-wrapper {
@@ -257,7 +225,7 @@ $active-item-background: lighten( $accent-color, 53% );
       border: none;
       text-align: left;
       background: $light-gray-color;
-      padding: $spacing*2 $spacing*4;
+      padding: 10px 20px 10px 40px;
 
       &, &:visited {
         color: $body-font-color;
@@ -271,12 +239,13 @@ $active-item-background: lighten( $accent-color, 53% );
         display: block;
         content: '';
         position: absolute;
-        top:18px;
-        right: 18px;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 8px 6px 0 6px;
+        top:10px;
+        left: 14px;
+        width: 18px;
+        height: 18px;
+        background: url('../i/icons/chevron-right.svg') no-repeat center;
+        opacity: .6;
+        
         border-color: $body-font-color transparent transparent transparent;
         transition: all $transition-duration;
       }
@@ -295,7 +264,7 @@ $active-item-background: lighten( $accent-color, 53% );
     }
 
     .toc-toggler::after {
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
 
   }

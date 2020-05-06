@@ -1,8 +1,7 @@
 .page-toc {
 
-  padding: .5em 0;
-  margin: 2em 0 0 0;
-  font-size: $font-size-xsm;
+  padding: 0.5em 0 0 0;
+  margin: 1.5em 0 0 0;
 
   position: sticky;
   top: $header-height;
@@ -13,6 +12,7 @@
   overflow: -moz-scrollbars-none;
   -ms-overflow-style: none;
   -webkit-overflow-scrolling: touch;
+  opacity: .7;
 
 
   &::-webkit-scrollbar {
@@ -22,11 +22,7 @@
   &:before {
     display: block;
     content: "On this page";
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    color: $secondary-text-color;
-    font-weight: $font-weight-bold;
-    padding: 0 10px 5px 10px;
+    @extend .spectrum-Menu-sectionHeading;
   }
 
   ul {
@@ -34,38 +30,24 @@
     position: relative;
   }
 
-  li {
-    line-height: 1.4;
-    list-style: none;
+  .nav-item {
+    font-size: 12px;
     margin: 0;
-    padding: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    min-height: 16px;
   }
 
-  a {
-    color: $secondary-text-color;;
-    font-size: $font-size-xsm;
-    display: block;
-    padding: 5px 10px;
-    border-left: 2px solid transparent;
-
-    &:hover {
-      text-decoration: none;
-      color: $accent-color;
-      //background: $dropdown-link-hover-bg;
-    }
-
-    &.active {
-      color: $accent-color;
-      background: transparentize( $accent-color, .95);
-    }
-
+  .active {
+    color: var(--spectrum-link-text-color, var(--spectrum-global-color-blue-600));
   }
 
+  // Indent for the second level of toc
   .h3 a {
-    padding-left: 16px;
+    padding-left: $spacing * 2;
   }
 
-
+  // Hide TOC on smaller screens
   @media ( $medium-to-large-screen ) {
     display: none;
   }

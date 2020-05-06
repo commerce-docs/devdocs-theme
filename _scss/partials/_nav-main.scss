@@ -1,67 +1,49 @@
 // Base nav main
 .nav-main {
 
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
   position: relative;
-
-  margin: 0;
-  padding: 0;
-
   z-index: 9;
+  padding: 0 0 0 50px;
+  background: #fff;
 
   // Reset
   a, a:visited, a:hover  {
     color: $body-font-color;
-    display: block;
     text-decoration: none;
   }
 
   li {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-bottom: 0;
   }
 
   // First level items
   & > li > a, & > li > span {
-    display: block;
-    font-size: $font-size-base;
-    font-weight: $font-weight-medium;
-    line-height: $header-height;
-    padding: 0 $spacing*3;
     position: relative;
-    transition: all $transition-duration;
     user-select: none;
     white-space: nowrap;
-
-  }
-
-  & > .current > a, & > .current > span  {
-    color: $brand-color;
+    font-size: var(--spectrum-body-4-text-size, var(--spectrum-global-dimension-font-size-200));
   }
 
   & > li > span {
     cursor: default;
   }
 
-  & > li > a {
-
-    &:hover {
-      background: rgba(0,0,0,.1);
-    }
-    &:active {
-      background: rgba(0,0,0,.2);
-    }
-
+  & > li.is-selected::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick));
+    background: var(--spectrum-tabs-selection-indicator-color, var(--spectrum-global-color-gray-900));
   }
+
 
   & > .nav-main-separator {
     border-left: 1px solid #ccc;
-    height: $spacing*2;
-    margin: 0 $spacing*2;
+    height: 16px;
+    margin: 0 $spacing*4 !important;
   }
 
 
@@ -85,14 +67,6 @@
 
   }// mobile view
 
-
-  @media ( max-width: 1380px ) {
-
-    // First level items
-    & > li > a, & > li > span {
-      font-size: .9rem;
-    }
-  }
 
 }//.nav-main
 

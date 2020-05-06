@@ -1,0 +1,8 @@
+{%- if page.last_modified_at -%}
+<button class="page-updated spectrum-ActionButton spectrum-ActionButton--quiet">
+  <img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/time.svg" alt="Updated" />
+  <time class="spectrum-ActionButton-label" id="last-modified-at" itemprop="dateModified" datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">
+    {{ page.last_modified_at | date_to_string: "ordinal", "US" }}
+  </time>
+</button>
+{%- endif -%}

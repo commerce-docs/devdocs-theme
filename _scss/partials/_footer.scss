@@ -1,24 +1,32 @@
 .page-footer {
-  background: $footer-background-color;
-  color: $footer-color;
-  padding: 20px 0;
-  font-size: 13px;
+
+  padding: 20px 40px;
   z-index: 3;
 
-  a, a:visited {
-    color: $footer-link-color;
+  .container {
+    position: relative;
+    display: flex;
+    max-width: 100%;
+    padding: 10px 0 0 0;
 
-    &:hover {
-      color: lighten( $footer-link-color, 10% );
-    }
+    border-top: 2px solid var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200))
+    
   }
 
 
   .copyright-links {
-    text-align: center;
+    flex: 1 0 0;
     padding: 0 0 10px 0;
+
+    a, a:visited, a:active {
+      color: var(--spectrum-body-text-color);
+    }
   }
 
+  .copyright-date {
+    text-align: right;
+    color: var(--spectrum-global-color-gray-600);
+  }
 
   .nav {
     margin: 0;
@@ -27,12 +35,9 @@
 
   .footer-links > li {
     display: inline-block;
-    margin: 0 20px 0 0 ;
+    margin: 0 30px 10px 0 ;
   }
 
-  .copyright-date {
-    text-align: center;
-  }
 
   // For two colum layout, offset the footer to support the fixed sidebar
   .layout-default &, .layout-videos &, .layout-video &, .layout-specification &, .layout-tutorial & {
@@ -49,19 +54,16 @@
 
   @media ( $small-screen ) {
 
-    margin: 0;
-    padding: 10px 0;
+    padding: 10px 20px;
+
+    .container {
+      flex-direction: column;
+    }
 
     .copyright-date {
       text-align: left;
     }
-    .copyright-links {
-      text-align: left;
-    }
-    li {
-      display: block;
-      margin: 10px 0;
-    }
+
   }
 
 

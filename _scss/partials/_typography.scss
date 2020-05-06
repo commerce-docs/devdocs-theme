@@ -1,76 +1,36 @@
-body {
-  color: $body-font-color;
-  font-family: $body-font-family;
-  line-height: 1.6;
-}
-
 h1, h2, h3, h4, h5, h6 {
   position: relative;
   text-rendering: optimizelegibility;
 }
 
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-weight: normal;
-  line-height: 1;
-  color: #999;
-}
-
-h1 {
-  font-size: 2.8em;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  margin: 0 0 20px 0;
-  font-weight: $font-weight-light;
-}
-
-h1.page-subtitle {
-  font-size: 2em;
-  color: #6E6E70;
-  margin: 8px 0 0 0;
-}
 
 h2 {
-  font-size: 1.625em;
-  line-height: 1.3;
-  font-weight: normal;
-  letter-spacing: 0;
-  margin: 1.7em 0 0.5em 0;
-  padding: 0;
-}
-
-.page-intro+h2 {
-  margin-top: 0;
+  @extend .spectrum-Heading2;
+  margin: 2em 0 .7em 0;
 }
 
 h3 {
-  font-size: 1.375em;
-  line-height: 1.3;
-  font-weight: $font-weight-bold;
-  letter-spacing: 0;
-  margin: 1.5em 0 0.5em 0;
-  padding: 0;
+  @extend .spectrum-Heading3;
+  margin: 2em 0 .7em 0;
 }
 
 h4 {
-  font-size: 1em;
-  line-height: 1.3;
-  font-weight: $font-weight-bold;
-  margin: 1.5em 0 0.5em 0;
+  @extend .spectrum-Heading4;
 }
 
-h5,.h5 {
-  font-size: 1em;
+h4 {
+  @extend .spectrum-Heading5;
 }
 
-h6 {
-  font-size: 14px;
-  font-weight: $font-weight-bold;
-  letter-spacing: 0.04em;
-  margin: 0;
-  text-transform: uppercase;
+h4 {
+  @extend .spectrum-Heading6;
 }
 
 
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-weight: normal;
+  line-height: 1;
+}
 
 h1 small {
   font-size: 24.5px;
@@ -86,26 +46,15 @@ h4 small {
 }
 
 
-p {
-  margin: 0 0 1.3em;
+.content p, .content li, .content dl {
+  @extend .spectrum-Body2 !optional;
+  margin: 0 0 1em 0;
 }
-
 
 a {
-  color: $link-color;
-  text-decoration: none;
+  @extend .spectrum-Link !optional;
 }
-a:visited {
-  color: $link-visited-color;
-}
-a:hover {
-  color: $link-hover-color;
-  text-decoration: underline;
-}
-a:active {
-  color: $link-active-color;
-  text-decoration: none;
-}
+
 
 // Style the external URL (only in content area)
 .content-wrap a[href^='http://']:not([href*='magento.com']),
@@ -122,27 +71,17 @@ a:active {
     background-size: contain;
   }
 
-  &:hover:after {
-    filter: hue-rotate(160deg);
-  }
-
 }
 
+// Remove top margin for first heading in content 
 .main-container h2:first-child {
   margin-top: 0;
 }
 
 
 
-
-
-
-
 .lead {
-  margin-bottom: 20px;
-  font-size: 21px;
-  font-weight: 200;
-  line-height: 30px;
+  font-size: var(--spectrum-global-dimension-size-225);
 }
 
 small {
@@ -162,6 +101,7 @@ cite {
   font-style: normal;
 }
 
+
 .text-left {
   text-align: left;
 }
@@ -174,11 +114,9 @@ cite {
 
 
 
-
-
 ul, ol {
   padding: 0;
-  margin: 0 0 1.3em 2.5em;
+  margin: 0 0 1.3em 2em;
 
   // decrease the margin before paragraph
   p+& {
@@ -199,10 +137,12 @@ ul.unstyled, ol.unstyled {
   margin-left: 0;
   list-style: none;
 }
+
 ul.inline, ol.inline {
   margin-left: 0;
   list-style: none;
 }
+
 ul.inline>li, ol.inline>li {
   display: inline-block;
   padding-left: .31em; //5px
@@ -244,15 +184,11 @@ abbr.initialism {
   text-transform: uppercase;
 }
 
-
-
 blockquote cite {
   display: block;
   font-style: italic;
   margin: 0.5em 0 0 0;
 }
-
-
 
 blockquote {
   padding: 0 0 0 1.25em;
@@ -265,23 +201,20 @@ blockquote small {
   display: block;
   color: #999999;
 }
+
 blockquote small:before {
   content: '\2014 \00A0'
 }
 
-
 q:before, q:after, blockquote:before, blockquote:after {
   content: ""
 }
+
 address {
   display: block;
   margin-bottom: 1.25em;
   font-style: normal;
 }
-
-
-
-
 
 
 
@@ -295,18 +228,7 @@ p.q {
 }
 
 
-
-@media ( $small-screen ) {
-  h1 {
-    font-size: 1.875em;
-  }
-  h2 {
-    font-size: 1.5em;
-  }
-}
-
 /* Status Colors - Used in Component Status Page */
-
 .status{
   padding: 2px;
 
@@ -325,8 +247,40 @@ p.q {
   }
 }
 
+.page-title {
+  @extend .spectrum-Heading1;
+  @extend .spectrum-Heading--XXL;
+  
+  margin: 0 0 20px 0;
+}
+
+.page-subtitle {
+  @extend .spectrum-Heading2--quiet;
+  margin: -.5em 0 0 0;
+}
+
+// Reset the first heading on the page to have no margin
+main h2:first-child,
+main h3:first-child,
+main h4:first-child {
+  margin-top: 0;
+}
+
+@media ( $small-screen ) {
+  h1 {
+    font-size: 1.875em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+}
+
+
+
+
 /* Paragraph that represents a beginning of a procedure - should have an ordered list of steps following */
 .procedure {
   font-weight: bold;
   margin-left: 1.0em;
 }
+

@@ -54,7 +54,7 @@ var Dropdown = function ($) {
 
   var ClassName = {
     DISABLED: 'disabled',
-    SHOW: 'show',
+    SHOW: 'is-open',
     DROPUP: 'dropup',
     MENURIGHT: 'dropdown-menu-right',
     MENULEFT: 'dropdown-menu-left'

@@ -1,9 +1,29 @@
-<div class="search-form">
-  <form class="input-group" action="{% link search.md %}" method="get">
-    <input type="search" name="query" placeholder="Looking for something specific?" class="form-control search-field" />
-    <i class="search-icon"></i>
-    <div class="input-group-btn">
-      <button type="submit" class="btn btn-primary btn-large search-submit">Search</button>
-    </div>
-  </form>
-</div>
+<form
+  class="spectrum-Search search-form"
+  action="{% link search.md %}"
+>
+  <input
+    type="search"
+    placeholder="Looking for something specific?"
+    name="query"
+    value=""
+    class="spectrum-Textfield-input spectrum-Search-input search-field form-control"
+    autocomplete="off"
+  />
+  <svg
+    class="spectrum-Icon spectrum-UIIcon-Magnifier spectrum-Search-icon"
+    focusable="false"
+    aria-hidden="true"
+  >
+    <use xlink:href="#spectrum-css-icon-Magnifier" />
+  </svg>
+  <button type="reset" class="search-clear spectrum-ClearButton spectrum-SearchClearButton">
+    <svg
+      class="spectrum-Icon spectrum-UIIcon-CrossSmall"
+      focusable="false"
+      aria-hidden="true"
+    >
+      <use xlink:href="#spectrum-css-icon-CrossSmall" />
+    </svg>
+  </button>
+</form>

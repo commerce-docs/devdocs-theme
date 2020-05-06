@@ -1,0 +1,14 @@
+.page-intro {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.page-intro h1 {
+  flex: 1 0 auto;
+  max-width: 100%;
+}
+
+.page-subtitle {
+  flex-basis: 100%;
+}

@@ -1,6 +1,10 @@
 ---
 title: Guide Home Page
 menu_title: Overview
+ee_only: true
+last_modified_at: 2020-03-03
+contributor_name: GitHub
+contributor_link: https://www.gitgub.com/
 menu_order: 0
 ---
 
@@ -17,9 +21,11 @@ The purpose of this page is to provide you with a pre-formatted template and use
 
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
-## Callouts
+{: .ee-only } 
+## Callouts 
 
 {: .bs-callout-info }
+*Info Alert Header*{: .spectrum-Alert-header }
 This is a note callout. You can use these to provide important information on a topic.
 You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 compliant</a> structure when building a module.
 
@@ -32,6 +38,8 @@ This is a tip callout. These can be used to provide useful tips or interesting f
 {: .bs-callout-tutorial }
 This is a tutorial callout. Use it to provide links to a tutorials.
 
+{: .bs-callout }
+This is a generic callout. Used as a generic container for information box.
 
 ## Collapsibles
 
@@ -56,11 +64,11 @@ This is a tutorial callout. Use it to provide links to a tutorials.
 
 ## Lists
 
-### Ordered
+### Ordered 
 
 This is the example of an ordered list in our documentation.
 
-1. Ordered list item. This can be really long line of text that spans multiple lines. List item will look like it's separated from other items.
+1. {: .ee-only } Ordered list item. This can be really long line of text that spans multiple lines. List item will look like it's separated from other items.
 2. Another list item
 3. Yet another list item
 

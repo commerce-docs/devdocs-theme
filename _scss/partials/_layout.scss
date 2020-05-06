@@ -3,7 +3,6 @@ html,body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background: $light-gray-color; // this is needed for spring scrolling to not show the white border
 }
 
 body {
@@ -20,12 +19,6 @@ body {
 
 .main-container {
   min-height: 100%;
-}
-
-
-
-.content-container {
-
 }
 
 .content {
@@ -47,17 +40,6 @@ body {
   flex: 1 1 auto;
   max-width: $container-width-large;
   min-width: 360px;
-}
-
-.page-header {
-  background: $light-gray-color;
-
-  .breadcrumbs {
-    padding-left: 30px;
-  }
-  .page-heading {
-    padding-left: 30px;
-  }
 }
 
 
@@ -150,3 +132,30 @@ body {
 #markdown-toc {
   display: none;
 }
+
+
+/* TODO: remove this
+.sidebar {
+  position: fixed;
+  width: $sidebar-width;
+  height: 100%;
+  z-index: 2;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #fff;
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border: none;
+  }
+
+  .sidebar-wrapper {
+    padding: 0 0 $spacing*4;
+    padding-bottom: 120px; // magic number is needed to allow visibility of the long sidebars
+  }
+
+  .toc-toggler {
+    display: none;
+  }
+
+}*/

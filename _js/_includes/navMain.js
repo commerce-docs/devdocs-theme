@@ -7,9 +7,9 @@
 
 	var pluginName = 'mainNavigation',
 		defaults = {
-			menuActiveClass: 'active',
+			menuActiveClass: 'is-open',
 			menuCurrentClass: 'current',
-			mobileTreshold: 1024,
+			mobileTreshold: 1184,
 			offcanvasClass: 'offcanvas-active',
 			sectionSelector: '.nav-section',
 			popupSelector: '.nav-popup',
@@ -70,12 +70,14 @@
 			}
 
 			menuItem.addClass( plugin.options.menuActiveClass );
+			popup.addClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'false');
 		}
 
 		this.hidePopup = function ( menuItem ) {
 			var popup = menuItem.find( plugin.options.popupSelector );
 			menuItem.removeClass( plugin.options.menuActiveClass );
+			popup.removeClass( plugin.options.menuActiveClass );
 			popup.attr('aria-hidden', 'true');
 		}
 
@@ -118,6 +120,10 @@
 
 			$(document).on('touchstart', plugin.handleClickOutside);
 
+			$('.nav-main').addClass('desktop-view');
+			$('.nav-main').removeClass('spectrum-Tabs--vertical').addClass('spectrum-Tabs--horizontal');
+			$('.nav-popup').addClass('spectrum-Popover');
+
 			plugin.$popups.each(function () {
 				var popup = $(this);
 
@@ -130,6 +136,10 @@
 		// Switch to the Mobile view
 		this.desktopViewOff = function () {
 			plugin._desktopMode = false;
+
+			$('.nav-main').addClass('mobile-view');
+			$('.nav-main').removeClass('spectrum-Tabs--horizontal').addClass('spectrum-Tabs--vertical');
+			$('.nav-popup').removeClass('spectrum-Popover');
 
 			plugin.topLevelItems
 				.off('mouseenter', plugin.handleMenuItemMouseEnter)

@@ -1,21 +1,12 @@
 .version-switcher  {
   position: relative;
-  z-index: 2;
-  float: left;
-  margin-top: 14px;
-  margin-right: 20px;
-
-  .btn {
-    white-space: nowrap;
-    background: transparent;
-    border: 1px solid darken( $light-gray-color, 15% );
-  }
+  width: 120px;
+  top: 7px;
+  right: 8px;
 
   @media ( $medium-screen ) {
 
     z-index: 999;
-    float: none;
-    margin: 15px;
 
     .dropdown-menu {
     	max-width: 100%;
@@ -25,8 +16,5 @@
   	}
 
   }
-
-  @media ( $medium-to-large-screen ) {
-    margin-right: 10px;
-  }
+  
 }
