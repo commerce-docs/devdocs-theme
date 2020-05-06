@@ -9,7 +9,7 @@
 		defaults = {
 			menuActiveClass: 'is-open',
 			menuCurrentClass: 'current',
-			mobileTreshold: 1024,
+			mobileTreshold: 1184,
 			offcanvasClass: 'offcanvas-active',
 			sectionSelector: '.nav-section',
 			popupSelector: '.nav-popup',

@@ -78,7 +78,7 @@
     }
   }
 
-  @media ($medium-screen) {
+  @media ($mobile-threshold) {
     .site-nav {
       background: #fff;
     }
