@@ -96,7 +96,7 @@
 				isDesktop = false;
 			}
 
-			console.log(isDesktop);
+			//console.log(isDesktop);
 
 			return isDesktop;
 		}
@@ -123,7 +123,7 @@
 		// Switch to the Desktop view
 		this.desktopViewOn = function () {
 			plugin._desktopMode = true;
-			console.log('on');
+			//console.log('on');
 
 			plugin.topLevelItems
 				.on('mouseenter', plugin.handleMenuItemMouseEnter)
@@ -132,6 +132,8 @@
 				.on('focusout', plugin.handleMenuItemFocusOut);
 
 			$(document).on('touchstart', plugin.handleClickOutside);
+
+			$('.nav-actions').prepend( $('.nav-main-wrap .version-switcher') );
 
 			$('.nav-main').addClass('desktop-view');
 			$('.nav-main').removeClass('spectrum-Tabs--vertical').addClass('spectrum-Tabs--horizontal');
@@ -149,7 +151,9 @@
 		// Switch to the Mobile view
 		this.desktopViewOff = function () {
 			plugin._desktopMode = false;
-			console.log('off');
+			//console.log('off');
+
+			$('.nav-main-wrap').prepend( 	$('.nav-actions .version-switcher') );
 
 			$('.nav-main').addClass('mobile-view');
 			$('.nav-main').removeClass('spectrum-Tabs--horizontal').addClass('spectrum-Tabs--vertical');

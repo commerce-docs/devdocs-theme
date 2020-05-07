@@ -4,16 +4,12 @@
   top: 7px;
   right: 8px;
 
-  @media ( $medium-screen ) {
+  @media ( $mobile-threshold ) {
 
     z-index: 999;
-
-    .dropdown-menu {
-    	max-width: 100%;
-    	min-width: 100%;
-    	left: 0;
-    	right: auto;
-  	}
+    top: 0;
+    width: 300px;
+    margin: 20px 0 20px 70px;
 
   }
   
