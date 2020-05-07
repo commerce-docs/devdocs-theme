@@ -81,7 +81,7 @@ $nav-main-section-width: 300px;
   }
 
   // Popup Mobile view: always visible
-  @media ($medium-screen) {
+  @media ($mobile-threshold) {
     position: relative;
     top: 0;
     left: 0;
@@ -98,7 +98,6 @@ $nav-main-section-width: 300px;
 
 
 @media ($mobile-threshold) {
-
 
   .nav-main {
     padding: 0 20px 0 54px;

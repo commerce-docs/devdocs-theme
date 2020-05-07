@@ -25,13 +25,12 @@
 		this.$popups = this.$element.find( this.options.popupSelector )
 		this._defaults = defaults;
 		this._name = pluginName;
-		this._desktopMode = false;
+		this._desktopMode;
 
 		this.handleMenuItemMouseEnter = function ( event ) {
 			event.stopPropagation();
 			event.preventDefault();
 			var currentItem = $(this);
-
 			plugin.showPopup( currentItem );
 		}
 
@@ -89,9 +88,22 @@
 			popup.focus();
 		}
 
+		this.isDesktopView = function () {
+			var isDesktop;
+			if ( $(window).width() >= plugin.options.mobileTreshold ) {
+				isDesktop = true;
+			} else {
+				isDesktop = false;
+			}
+
+			console.log(isDesktop);
+
+			return isDesktop;
+		}
+
 		// Determine if the browser is in mobile view or not
 		this.handleWindowResize = function () {
-			if ( $(window).width() >= plugin.options.mobileTreshold ) {
+			if ( plugin.isDesktopView() ) {
 				if ( !plugin._desktopMode ) {
 					plugin.desktopViewOn();
 				}
@@ -111,6 +123,7 @@
 		// Switch to the Desktop view
 		this.desktopViewOn = function () {
 			plugin._desktopMode = true;
+			console.log('on');
 
 			plugin.topLevelItems
 				.on('mouseenter', plugin.handleMenuItemMouseEnter)
@@ -136,6 +149,7 @@
 		// Switch to the Mobile view
 		this.desktopViewOff = function () {
 			plugin._desktopMode = false;
+			console.log('off');
 
 			$('.nav-main').addClass('mobile-view');
 			$('.nav-main').removeClass('spectrum-Tabs--horizontal').addClass('spectrum-Tabs--vertical');
@@ -172,7 +186,13 @@
 
 		// Assign Events
 		$(window).on('resize', plugin.handleWindowResize);
-		plugin.handleWindowResize();
+
+		// Initialize plugin mode 
+		if ( plugin.isDesktopView() ) {
+			plugin.desktopViewOn();
+		} else {
+			plugin.desktopViewOff();
+		}
 
 		// Assign attributes to popups
 		var popupN = 0;

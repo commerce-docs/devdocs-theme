@@ -63,12 +63,12 @@ function editionMarkers() {
     Array.from(items).forEach(function (element) {
       var edition;
       defaults.editionClassNames.map( function (editionClass) {
-        console.log(editionClass);
+        //console.log(editionClass);
         if (element.classList.contains(editionClass)) {
           edition = editionClass;
         }
       });
-      console.log(edition)
+      //console.log(edition)
       var marker = createIconMarker(edition);
       // Append marker to element
       element.appendChild(marker);
@@ -149,7 +149,7 @@ function editionMarkers() {
   var handleMarkerMouseOver = function (event) {
     // Decide which tooltip to show:
     var edition = event.target.getAttribute('data-edition');
-    console.log(edition)
+    //console.log(edition)
     currentTooltip = document.getElementById('edition-tooltip-' + edition);
     // Position tooltip to the top center of marker:
     var markerOffset = event.target.getBoundingClientRect();
