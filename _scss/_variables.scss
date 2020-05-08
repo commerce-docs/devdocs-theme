@@ -31,7 +31,9 @@ $small-screen: 'max-width: 768px';
 $medium-screen: 'max-width: 1023px';
 $medium-to-large-screen: 'max-width: 1200px';
 $large-screen: 'min-width: 1500px';
-$mobile-threshold: 'max-width: 1184px';
+
+$compact-threshold: 'max-width: 1136px';
+$mobile-threshold: 'max-width: 1023px';
 
 
 // Colors

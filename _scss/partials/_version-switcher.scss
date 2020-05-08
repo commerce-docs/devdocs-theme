@@ -2,14 +2,13 @@
   position: relative;
   width: 120px;
   top: 7px;
-  right: 8px;
 
   @media ( $mobile-threshold ) {
 
     z-index: 999;
     top: 0;
-    width: 300px;
-    margin: 20px 0 20px 70px;
+    width: 320px;
+    margin: 20px 0 20px 40px;
 
   }
   

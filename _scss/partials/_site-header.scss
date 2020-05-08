@@ -5,6 +5,16 @@
   width: 100%;
   transform: translateZ(0); // to force nav rendering to GPU
   z-index: $zindex-appbar;
+
+  // recreate spectrum tabs bottom border
+
+  border-bottom: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick)) solid;
+  border-bottom-color: var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200));
+ 
+}
+
+.site-nav .spectrum-Tabs {
+  border-bottom: none;
 }
 
 .site-header {
@@ -15,6 +25,8 @@
     position: relative;
     display: flex;
     padding: 0;
+    min-height: $header-height;
+    //margin-bottom: -2px; // border and the current item align
   }
 
   .nav-main-wrap {
@@ -112,8 +124,22 @@
 
       z-index: $zindex-appbar - 1;
     }
-  } // medium-screen
+  } // mobile menu
 }
+
+@media ($medium-to-large-screen) {
+  .site-nav {
+    //background: #fff;
+  }
+  .nav-main {
+    padding-left: 20px;
+  }
+  .site-header .nav-actions {
+    right: 0;
+  }
+}
+
+
 
 .logo {
   display: flex;
@@ -185,12 +211,25 @@ body.offcanvas-active {
 .layout-redoc .nav-container,
 .layout-search .nav-container {
   background: #fff;
-  border-bottom: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick)) solid;
-  border-bottom-color: var(--spectrum-tabs-rule-color, var(--spectrum-global-color-gray-200));
+}
 
-  .spectrum-Tabs {
-    border-bottom-color: transparent !important;
-    border-bottom: none;
+
+@media ($compact-threshold) {
+  .site-nav {
+    background: #fff;
+  }
+
+  .logo {
+    width: auto;
+    padding-right: 20px;
+  }
+  .logo-text {
+    display: none;
   }
 }
 
+@media ($mobile-threshold) {
+  .logo-text {
+    display: inline-block;
+  }
+}
