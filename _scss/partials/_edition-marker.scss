@@ -12,11 +12,27 @@
 
 .edition-marker-tag {
   font-weight: 300;
+  font-style: normal;
   margin: 0 .2em;
 
   .edition-marker-icon-image {
     vertical-align: middle;
   }
+}
+
+
+
+li > .edition-marker {
+  position: absolute;
+  left: 2px;
+  top: 4px;
+}
+
+li.ee-only,
+li.b2b-only,
+li.ce-only {
+  padding-left: 28px;
+  position: relative;
 }
 
 // Logo
