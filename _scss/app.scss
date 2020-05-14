@@ -31,45 +31,45 @@
 
 
 // Custom components
-//@import 'partials/buttons';
+@import 'partials/adjaced-pages';
 @import 'partials/alert';
+@import 'partials/app-switcher';
+@import 'partials/card';
 @import 'partials/code';
+@import 'partials/column';
 @import 'partials/collapsible';
 @import 'partials/dropdown';
+@import 'partials/edition-marker';
+@import 'partials/embed';
+@import 'partials/faux-button';
 @import 'partials/footer';
 @import 'partials/form';
 @import 'partials/github-links';
 @import 'partials/highlight';
 @import 'partials/home';
+@import 'partials/images';
 @import 'partials/layout';
-@import 'partials/section';
+@import 'partials/list-icons';
 @import 'partials/menu';
 @import 'partials/modal';
 @import 'partials/nav-main';
 @import 'partials/nav-main-dropdown';
 @import 'partials/page-info';
-@import 'partials/search-form';
+@import 'partials/page-intro';
+@import 'partials/popover';
+@import 'partials/progress-bar';
 @import 'partials/quick-search';
+@import 'partials/search-form';
+@import 'partials/section';
 @import 'partials/sidebar';
 @import 'partials/site-header';
 @import 'partials/table';
 @import 'partials/typography';
-@import 'partials/version-switcher';
 @import 'partials/tabs';
 @import 'partials/toc';
-@import 'partials/videos';
-@import 'partials/progress-bar';
 @import 'partials/tooltip';
-@import 'partials/popover';
-@import 'partials/edition-marker';
-@import 'partials/list-icons';
-@import 'partials/card';
-@import 'partials/column';
-@import 'partials/images';
-@import 'partials/adjaced-pages';
-@import 'partials/embed';
-@import 'partials/app-switcher';
-@import 'partials/page-intro';
+@import 'partials/version-switcher';
+@import 'partials/videos';
 
 // Form Components
 @import 'partials/checkbox';
