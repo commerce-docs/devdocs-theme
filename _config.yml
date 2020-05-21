@@ -89,7 +89,7 @@ app_switcher:
       children:
 
       - label: Commerce User Guide
-        url: https://docs.magento.com/m2/ee/user_guide/
+        url: https://docs.magento.com/user-guide/
 
       - label: Order Management
         url: https://omsdocs.magento.com/en/userguides/
