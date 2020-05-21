@@ -24,6 +24,10 @@
   z-index: 1;
 }
 
+.search-active .site-nav {
+  border-bottom-color: transparent;
+}
+
 .search-active .site-header .nav-actions {
   position: absolute;
   right: 0;
