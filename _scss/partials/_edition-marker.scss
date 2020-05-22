@@ -78,3 +78,12 @@ strong.ce-only,
 strong.b2b-only {
   font-weight: normal; 
 }
+
+// Make space for marker in side nav:
+.spectrum-SideNav-itemLink.ee-only,
+.spectrum-SideNav-itemLink.ce-only,
+.spectrum-SideNav-itemLink.b2b-only,
+{
+  padding-right: 28px;
+
+}
