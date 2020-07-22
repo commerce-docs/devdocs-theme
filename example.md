@@ -80,6 +80,7 @@ This is the example of an ordered list in our documentation.
 
 ### With Icons
 
+* {:.flag} This is a flag icon
 * {:.new} This list item is a new feature
 * {:.fix} This is a bugfix
 * {:.bug} This is a known bug
