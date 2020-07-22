@@ -16,6 +16,7 @@ li.bug {
     height: 18px;
     top: .2em;
     left: -1.5em;
+    background-repeat: no-repeat;
   }
 }
 
@@ -33,6 +34,5 @@ li.bug::before {
 
 li.flag::before {
   background: url(../i/icons/flag.svg);
-  background-repeat: no-repeat;
   left: -1.3em;
 }
