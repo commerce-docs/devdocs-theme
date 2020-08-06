@@ -1,22 +1,39 @@
-// Version switcher retains query "search" parameter to allow switching and retain the search query.
+// Version switcher retains query "search" parameter.
 
-var versionSwitcher = {
-  init: function ( ) {
-    
-    if ("URLSearchParams" in window) { // check if URLSearchParams is supported (for IE)
-      var params = new URLSearchParams(window.location.search);
-      var search = params.get('search');
-      console.log(search);
+var versionSwitcherQuery = {
+  // Defaults
+  config : {
+    searchParam: 'search',
+    versionSwitcherSelector: '.version-switcher a'
+  },
 
-      if (search) {
-        var versionSwitcherLinks = document.querySelectorAll('.version-switcher a');
-        console.log(versionSwitcherLinks)
+  init: function () {
+
+    // Check if URLSearchParams is supported (for IE)
+    if ('URLSearchParams' in window) { 
+
+      // Get search query from URL
+      var urlParams = new URLSearchParams(window.location.search);
+      var searchQuery = urlParams.get(versionSwitcherQuery.config.searchParam);
+
+      // If it exists, add it to version switcher links
+      if (searchQuery) {
+        var versionSwitcherLinks = document.querySelectorAll(versionSwitcherQuery.config.versionSwitcherSelector);
+
         versionSwitcherLinks.forEach( function (link) {
-          link.href = link.href + '?search=' + search;
+
+          // Construct a url and parameters of a version link
+          var versionUrl = new URL(link.href);
+          console.log(versionUrl.URLSearchParams);
+          var versionUrlParams = new URLSearchParams(versionUrl.search);
+          versionUrlParams.set(versionSwitcherQuery.config.searchParam, searchQuery);
+          versionUrl.search = versionUrlParams.toString();
+
+          link.href = versionUrl.href;
         });
       }
     }
   }
 }
 
-versionSwitcher.init();
+versionSwitcherQuery.init();
