@@ -83,7 +83,7 @@ app_switcher:
         url: http://pwastudio.io/
 
       - label: Order Management
-        url: https://omsdocs.magento.com/en/
+        url: https://omsdocs.magento.com/
 
     - label: Merchant
       children:
@@ -92,7 +92,7 @@ app_switcher:
         url: https://docs.magento.com/user-guide/
 
       - label: Order Management
-        url: https://omsdocs.magento.com/en/userguides/
+        url: https://omsdocs.magento.com/userguides/
 
       - label: Business Intelligence
         url: https://docs.magento.com/mbi/
