@@ -15,6 +15,4 @@ Gem::Specification.new do |spec|
   spec.files = Dir['assets/**/*', '_includes/**/*', '_layouts/**/*', 'manifest.json', 'README.md']
 
   spec.add_runtime_dependency 'jekyll', '>= 4.0'
-  spec.add_development_dependency 'bundler', '>= 1.12'
-  spec.required_ruby_version = '>= 2.6'
 end
