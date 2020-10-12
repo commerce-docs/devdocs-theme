@@ -18,6 +18,10 @@ on:
   pull_request:
     branches:
       - master
+    paths-ignore:
+      - '**.md'
+      - '**.html'
+      - '**.xml'
 
 ###############
 # Set the Job #
@@ -49,4 +53,5 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           DEFAULT_BRANCH: master
           VALIDATE_HTML: false
-          VALIDATE_MD: false
+          VALIDATE_MARKDOWN: false
+          VALIDATE_XML: false
