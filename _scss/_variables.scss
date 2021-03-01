@@ -1,9 +1,14 @@
 $body-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
 /* These monospace typefaces provide the best distinction
-between code words and regular words in the text. Important
-for developers to more easily scan the text for class,
-function, variable, or file names they want to find.
+between code words and regular words within paragraphs.
+Courier is for browsers on macOS. Consolas is to force
+all Windows browsers to use it instead of Courier New,
+which is rendered far too thin and light for accessibility.
+Limiting the monospace fonts to these two helps developers
+to more easily scan the text for various classes, functions,
+variables, and file names they want to quickly find.
+See https://www.granneman.com/webdev/coding/css/fonts-and-formatting/web-browser-font-defaults
 */
 $code-font-family: Courier, Consolas, monospace;
 
