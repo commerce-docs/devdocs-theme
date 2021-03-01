@@ -1,5 +1,5 @@
 {% if page.ee_only == true %}
-<div class="bs-callout spectrum-Alert-edition">
+<div class="bs-callout spectrum-Alert-edition edition-callout ee-only">
   <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
   <h4 class="spectrum-Alert-header-edition">{{site.data.var.ee}} only</h4>
   <div class="spectrum-Alert-content-edition">
@@ -8,19 +8,19 @@
   </div>
 </div>
 {% endif %} {% if page.b2b_only == true %}
-<div class="bs-callout spectrum-Alert edition-marker">
+<div class="bs-callout spectrum-Alert-edition edition-callout b2b-only">
   <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
-  <h4 class="spectrum-Alert-header">{{site.data.var.b2b}} only</h4>
-  <div class="spectrum-Alert-content">
+  <h4 class="spectrum-Alert-header-edition">{{site.data.var.b2b}} only</h4>
+  <div class="spectrum-Alert-content-edition">
     The content on this page is for {{site.data.var.b2b}} only.
     <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
   </div>
 </div>
 {% endif %} {% if page.ce_only == true %}
-<div class="bs-callout spectrum-Alert edition-marker">
+<div class="bs-callout spectrum-Alert-edition edition-callout ce-only">
   <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
-  <h4 class="spectrum-Alert-header">{{site.data.var.ce}} only</h4>
-  <div class="spectrum-Alert-content">
+  <h4 class="spectrum-Alert-header-edition">{{site.data.var.ce}} only</h4>
+  <div class="spectrum-Alert-content-edition">
     The content on this page is for {{site.data.var.ce}} only.
     <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
   </div>
