@@ -29,13 +29,13 @@ $callout-padding: 15px 20px 17px 52px;
 .bs-callout-warning,
 .bs-callout-tip,
 .bs-callout-tutorial {
-  position: relative;
-  margin: 20px 0 20px 0;
-  padding-right: 50px;
+  @extend .spectrum-Alert;
   width: 100%;
   min-width: auto;
-
-  @extend .spectrum-Alert;
+  padding-right: 50px;
+  padding-top: var(--spectrum-global-dimension-static-size-200);
+  padding-bottom: var(--spectrum-global-dimension-static-size-200);
+  padding-left: var(--spectrum-global-dimension-static-size-200);
 
   &:before {
     display: block;

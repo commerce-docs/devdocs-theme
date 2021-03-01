@@ -52,21 +52,12 @@ main>p:first-child {
   color: $secondary-text-color;
   margin: 0 0 1.5rem 0;
   line-height: $line-height-intro;
-  font-style: italic;
 }
 
 // Common paragraphs and callouts in content section
 .content p {
   @extend .spectrum-Body2 !optional;
   margin: 0 0 1em 0;
-
-  &.bs-callout,
-  &.bs-callout-info,
-  &.bs-callout-warning,
-  &.bs-callout-tip,
-  &.bs-callout-tutorial {
-    margin: 0 0 1.5em 0;
-  }
 }
 
 // Paragraphs created in lists when there's
