@@ -14,19 +14,20 @@ Introductory text that gives an overview of the topic you will be writing about.
 
 ### Testing h3
 
+
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
 
 > Blockquotes are very handy in email to emulate reply text.
 > This line is part of the same quote.
 
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
 
 #### Testing h4
 
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
 
-{: .ee-only } 
-## Callouts 
+{: .ee-only }
+## Callouts
 
 {: .bs-callout-info }
 *Info Alert Header*{: .spectrum-Alert-header }
@@ -55,20 +56,19 @@ This is a generic callout. Used as a generic container for information box.
   Markdown content goes in this area.
 {% endcollapsibleh2 %}
 
-
 ## Table
 
-| Section | Description | Link |
-|------- -|-------------|------|
-| Dashboard | Visual display of the most important information consolidated on a single screen so it can be monitored at a glance: quick search, last activity and summaries. | [See Dashboard user guides](subpage/) |
-| Sales | Operations that users can initiate from the admin panel and Live Reports. | [See Sales user guides](subpage/)  |
-| Products | The Catalogue and Inventory management let users to  and track items and stock movements. | [See Catalogue user guide](subpage/) |
-| Customer Service | Section where all customer service agents and supervisors will be working. | [See Customer Service user guides](subpage/) |
+| Section          | Description                                                                                                                                                     | Link                                         |
+|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| Dashboard        | Visual display of the most important information consolidated on a single screen so it can be monitored at a glance: quick search, last activity and summaries. | [See Dashboard user guides](subpage/)        |
+| Sales            | Operations that users can initiate from the admin panel and Live Reports.                                                                                       | [See Sales user guides](subpage/)            |
+| Products         | The Catalogue and Inventory management let users to  and track items and stock movements.                                                                       | [See Catalogue user guide](subpage/)         |
+| Customer Service | Section where all customer service agents and supervisors will be working.                                                                                      | [See Customer Service user guides](subpage/) |
 
 
 ## Lists
 
-### Ordered 
+### Ordered
 
 This is the example of an ordered list in our documentation.
 
@@ -99,10 +99,10 @@ Another definition term
 ### Procedures
 
 Blah blah about projects and such and blah.
- 
+
 {:.procedure}
 To upgrade a project:
- 
+
 1. Update composer.
 1. Update metapackage.
 1. Modify configuration.

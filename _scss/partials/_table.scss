@@ -16,6 +16,7 @@ table.fixed {
 
 tbody {
   @extend .spectrum-Table-body !optional;
+  font-size: $font-size-base;
 }
 
 th {
@@ -26,6 +27,15 @@ tbody tr {
   @extend .spectrum-Table-row !optional;
 }
 
+tbody td {
+  @extend .spectrum-Table-cell !optional;
+  font-size: 1.1rem;
+}
+
 td {
   @extend .spectrum-Table-cell !optional;
+
+  td:last-child {
+    font-size: $font-size-base;
+  }
 }

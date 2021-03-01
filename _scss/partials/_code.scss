@@ -3,11 +3,22 @@ code, pre {
 }
 
 // Inline code
-code {
-  font-size: 90%;
-  color: lighten($body-font-color, 20%);
+
+:not(pre)>code {
+  padding: 3px 3px;
+  border-radius: 3px;
+  border: 1px solid rgba(51, 51, 51, .1);
+  background: $code-background-color;
+  color: #3a3a3a;
   word-wrap: break-word;
+  font-size: 90%;
 }
+
+// code {
+//   font-size: 90%;
+//   color: lighten($body-font-color, 20%);
+//   word-wrap: break-word;
+// }
 
 // Code format in headers
 h1 code, h2 code, h3 code, h4 code, h5 code {
@@ -18,7 +29,7 @@ a code {
   color: inherit;
 }
 
-// Bloks of code
+// Blocks of code
 pre {
   display: block;
   word-break: break-all;
@@ -27,7 +38,7 @@ pre {
   overflow: auto;
   margin: 0;
   padding: 0;
-  
+
   code {
     font-size: $font-size-sm;
     white-space: pre;
@@ -88,14 +99,15 @@ pre {
   position: relative;
   background-color: $code-background-color;
   border-radius: 4px;
-  color: $body-font-color; 
+  color: $body-font-color;
   margin: 0 0 $spacing * 4;
   overflow: auto;
   max-height: 700px;
+  border: 1px solid rgba(51, 51, 51, .1);
 }
 
 // TODO: Get rid of this hack
-figure.highlight pre { // fix for spacing in liquid highliht tags
+figure.highlight pre { // fix for spacing in liquid highlight tags
   padding: $spacing * 2;
   .rouge-table {
     margin: - $spacing * 2;
@@ -112,7 +124,7 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
   }
 
   &.language-bash {
-    
+
     code:before {
       display: none;
     }
@@ -120,7 +132,7 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
       display: none;
     }
     .rouge-code {
-      position: relative;  
+      position: relative;
       pre:before {
         display: inline;
         content: '$';
@@ -154,10 +166,11 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
     background: none;
     cursor: default;
   }
-  
+
   .rouge-code, .code {
     pre {
       padding: $spacing * 2;
+      font-size: 1rem;
     }
   }
 
@@ -189,6 +202,8 @@ figure.highlight pre { // fix for spacing in liquid highliht tags
 .language-xml,
 .language-js,
 .language-javascript,
+.language-scss,
+.language-css,
 .language-yaml {
   .rouge-table {
     .gl {

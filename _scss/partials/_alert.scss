@@ -1,8 +1,28 @@
 $callout-padding: 15px 20px 17px 52px;
 
+
+// Spectrum overrides
+
 .spectrum-Alert-header {
   display: block;
 }
+
+.spectrum-Alert-edition {
+  @extend .spectrum-Alert !optional;
+  display: flex;
+}
+
+.spectrum-Alert-header-edition {
+  @extend .spectrum-Alert-header !optional;
+  padding-right: 20px;
+  line-height: revert;
+}
+
+.spectrum-Alert-content-edition {
+  @extend .spectrum-Alert-content !optional;
+  margin: revert;
+}
+
 
 .bs-callout,
 .bs-callout-info,
@@ -55,7 +75,7 @@ $callout-padding: 15px 20px 17px 52px;
 }
 
 .bs-callout-tip {
-  
+
   @extend .spectrum-Alert--success;
 
   &:before {
@@ -82,6 +102,6 @@ $callout-padding: 15px 20px 17px 52px;
 .page-intro .bs-callout-info,
 .page-intro .bs-callout-warning,
 .page-intro .bs-callout-tutorial,
-.page-intro .bs-callout-tip, {
+.page-intro .bs-callout-tip {
   flex-basis: 100%;
 }
