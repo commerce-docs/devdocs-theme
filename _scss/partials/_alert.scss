@@ -4,7 +4,9 @@ $callout-padding: 15px 20px 17px 52px;
 // Spectrum overrides
 
 .spectrum-Alert-header {
+  @extend .spectrum-Body2 !optional;
   display: block;
+  font-weight: 700;
 }
 
 .spectrum-Alert-edition {
@@ -12,9 +14,16 @@ $callout-padding: 15px 20px 17px 52px;
   display: flex;
 }
 
+[dir="ltr"] .spectrum-Alert-header-edition {
+  padding-right: 20px;
+}
+
+[dir="rtl"] .spectrum-Alert-header-edition {
+  padding-left: 20px;
+}
+
 .spectrum-Alert-header-edition {
   @extend .spectrum-Alert-header !optional;
-  padding-right: 20px;
   line-height: revert;
 }
 
