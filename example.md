@@ -12,8 +12,24 @@ The purpose of [this section](https://www.google.com) is to provide a **manual i
 
 Introductory text that gives an overview of the topic you will be writing about.
 
-### Testing h3
+{:.bs-callout-info}
+The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
 
+The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
+
+{:.bs-callout-info}
+The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
+## Testing h2
+
+{:.bs-callout-info}
+The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
+
+The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
+
+
+{:.bs-callout-info}
+The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
+### Testing h3
 
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
 
@@ -73,20 +89,23 @@ This is a generic callout. Used as a generic container for information box.
 This is the example of an ordered list in our documentation.
 
 1. {: .ee-only } Ordered list item. This can be really long line of text that spans multiple lines. List item will look like it's separated from other items.
-2. Another list item
-3. Yet another list item
+1. Another list item
+
+1. Yet another list item
 
 ### Unordered
 
-* Unordered list example item
-* Another unordered list item
-* Yet another list item
+*  Unordered list example item
+*  Another unordered list item
+
+*  Yet another list item
+   *  test
 
 ### With Icons
 
-* {:.new} This list item is a new feature
-* {:.fix} This is a bugfix
-* {:.bug} This is a known bug
+*  {:.new} This list item is a new feature
+*  {:.fix} This is a bugfix
+*  {:.bug} This is a known bug
 
 ### Definition List
 
@@ -107,7 +126,6 @@ To upgrade a project:
 1. Update metapackage.
 1. Modify configuration.
 1. Add, commit, and push changes.
-
 
 ## Images
 

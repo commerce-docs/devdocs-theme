@@ -1,27 +1,28 @@
-code, pre {
+code,
+pre {
   font-family: $code-font-family;
 }
 
 // Inline code
 
-:not(pre)>code {
-  padding: 3px 3px;
+:not(pre) > code {
+  padding: 3px 3px 3px 3px;
   border-radius: 3px;
-  border: 1px solid rgba(51, 51, 51, .1);
+  border: 1px solid rgba(51, 51, 51, 0.1);
+  // background: $code-background-color;
   background: $code-background-color;
-  color: #3a3a3a;
+  color: lighten($body-font-color, 20%);
   word-wrap: break-word;
   font-size: 90%;
+  // vertical-align: text-top;
 }
 
-// code {
-//   font-size: 90%;
-//   color: lighten($body-font-color, 20%);
-//   word-wrap: break-word;
-// }
-
 // Code format in headers
-h1 code, h2 code, h3 code, h4 code, h5 code {
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code {
   white-space: nowrap;
 }
 
@@ -51,16 +52,18 @@ pre {
   position: relative;
 
   &:hover {
-    .btn-copy, .btn-no-copy  {
+    .btn-copy,
+    .btn-no-copy {
       visibility: visible;
       opacity: 1;
     }
   }
 
-  .btn-copy, .btn-no-copy {
+  .btn-copy,
+  .btn-no-copy {
     visibility: hidden;
     opacity: 0;
-    transition: .3s;
+    transition: 0.3s;
     font-family: $body-font-family;
     font-size: 12px;
     user-select: none;
@@ -78,7 +81,8 @@ pre {
     cursor: default;
     outline: none;
     background: darken($light-gray-color, 5%);
-    &:active, &:hover {
+    &:active,
+    &:hover {
       background: darken($light-gray-color, 5%);
     }
   }
@@ -103,14 +107,15 @@ pre {
   margin: 0 0 $spacing * 4;
   overflow: auto;
   max-height: 700px;
-  border: 1px solid rgba(51, 51, 51, .1);
+  border: 1px solid rgba(51, 51, 51, 0.1);
 }
 
 // TODO: Get rid of this hack
-figure.highlight pre { // fix for spacing in liquid highlight tags
+figure.highlight pre {
+  // fix for spacing in liquid highlight tags
   padding: $spacing * 2;
   .rouge-table {
-    margin: - $spacing * 2;
+    margin: -$spacing * 2;
   }
 }
 
@@ -120,11 +125,10 @@ figure.highlight pre { // fix for spacing in liquid highlight tags
   }
 
   .rouge-table {
-    margin: - $spacing * 2;
+    margin: -$spacing * 2;
   }
 
   &.language-bash {
-
     code:before {
       display: none;
     }
@@ -167,7 +171,8 @@ figure.highlight pre { // fix for spacing in liquid highlight tags
     cursor: default;
   }
 
-  .rouge-code, .code {
+  .rouge-code,
+  .code {
     pre {
       padding: $spacing * 2;
       font-size: 1rem;
@@ -184,8 +189,8 @@ figure.highlight pre { // fix for spacing in liquid highlight tags
     width: 100%;
     min-width: 35px;
     text-align: center;
-    opacity: .4;
-    padding: $spacing*2 0;
+    opacity: 0.4;
+    padding: $spacing * 2 0;
     user-select: none;
   }
 }
