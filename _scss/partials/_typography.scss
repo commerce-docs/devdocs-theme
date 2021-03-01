@@ -56,11 +56,10 @@ main>p:first-child {
 }
 
 // Common paragraphs and callouts in content section
-p {
+.content p {
+  @extend .spectrum-Body2 !optional;
   margin: 0 0 1em 0;
-}
 
-p {
   &.bs-callout,
   &.bs-callout-info,
   &.bs-callout-warning,
@@ -68,6 +67,18 @@ p {
   &.bs-callout-tutorial {
     margin: 0 0 1.5em 0;
   }
+}
+
+// Paragraphs created in lists when there's
+// a space added in the markdown below the list item.
+.content li p {
+  @extend .spectrum-Body2 !optional;
+  margin: 0 0 0.7rem 0;
+}
+
+.content li, .content dl {
+  @extend .spectrum-Body2 !optional;
+  margin: 0 0 .7rem 0;
 }
 
 // Links
@@ -129,18 +140,6 @@ cite {
 // Lists
 
 .content {
-  @extend .spectrum-Body2 !optional;
-
-  // Paragraphs created in lists when there's
-  // a space added in the markdown below the list item.
-  li p {
-    margin: 0 0 0.7rem 0;
-  }
-
-  li, dl {
-    margin: 0 0 .7rem 0;
-  }
-
   ul li {
     margin: 0 0 .7rem 0;
   }
@@ -155,7 +154,6 @@ cite {
   ol li ol li {
     margin: 0 0 .5rem 0;
   }
-
 }
 
 ul ul,
@@ -321,6 +319,5 @@ main h4:first-child {
 /* Paragraph that represents a beginning of a procedure - should have an ordered list of steps following */
 .content .procedure {
   font-weight: bold;
-  margin-left: 0.85rem;
-  margin-top: 2rem;
+  margin-left: .85rem;
 }

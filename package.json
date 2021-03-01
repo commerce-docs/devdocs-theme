@@ -8,7 +8,7 @@
     "scss": "node-sass --source-map=0 --omit-source-map-url -o assets/css _scss --output-style=compressed",
     "autoprefixer": "postcss -u autoprefixer -r assets/css/*.css --map=0",
     "jekyll": "bundle exec jekyll build",
-    "serve": "browser-sync start --server '_site' --startPath '/example/subpage/introduction' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
+    "serve": "browser-sync start --server '_site' --startPath '/example/subpage/overview' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
     "build:js": "uglifyjs _js/editions.js -o assets/js/editions.min.js && uglifyjs _js/page-updated.js -o assets/js/page-updated.min.js && uglifyjs _js/search.js -o assets/js/search.min.js && uglifyjs _js/_vendor/*.js _js/_includes/*.js _js/app.js -o assets/js/app.min.js",
     "build:css": "npm run scss && npm run autoprefixer",
     "build:html": "npm run jekyll",
