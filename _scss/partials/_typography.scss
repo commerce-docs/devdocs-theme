@@ -56,22 +56,6 @@ h4 small {
 
 /*-- Paragraph Styles --*/
 
-/*
-EXPERIMENTAL:
-This selector creates introductory-styled text from the first
-paragraph in the topic. The first paragraph should present a summary
-of the topic's content. The styling is meant to help readers start
-reading the topic in a non-committal way. Friendly, easy access.
-*/
-.content main > p:first-child {
-  @extend .spectrum-Body1 !optional;
-  font-size: 1.5rem;
-  color: #8f8f8f; //experimenting
-  margin: 0 0 1.5rem 0;
-  line-height: 1.7;
-  // font-style: italic;
-}
-
 /* Most paragraphs in content section */
 .content p {
   @extend .spectrum-Body2 !optional;
@@ -352,4 +336,20 @@ main h4:first-child {
 .content .procedure {
   font-weight: bold;
   margin-left: 0.75rem;
+}
+
+/*
+EXPERIMENTAL:
+Provides introductory-styled text for the first paragraph in a topic.
+For use when you want your topic's first paragraph to provide an
+inviting way to pull readers into a topic in a non-committal way.
+It provides big, easy to read text for quick engagement. In theory.
+*/
+.content .topic-intro {
+  @extend .spectrum-Body1 !optional;
+  font-size: 1.5rem;
+  color: #8f8f8f;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.7;
+  font-style: italic;
 }
