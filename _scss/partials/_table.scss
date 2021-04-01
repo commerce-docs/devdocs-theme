@@ -30,6 +30,11 @@ tbody tr {
 tbody td {
   @extend .spectrum-Table-cell !optional;
   font-size: 1.1rem;
+
+  &.whatsnew {
+    width: 600px;
+    padding-right: 40px;
+  }
 }
 
 td {
@@ -39,3 +44,9 @@ td {
     font-size: $font-size-base;
   }
 }
+
+// tbody td.whatsnew {
+//   @extend .spectrum-Table-cell !optional;
+//   width: 600px;
+//   padding-right: 40px;
+// }
