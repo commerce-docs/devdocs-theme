@@ -5,9 +5,9 @@ ee_only: false
 menu_order: 0
 ---
 
-## Configure the Magento application {#configuration}
+## Configure the Adobe Commerce application {#configuration}
 
-You can configure the Magento application in any of the following ways:
+You can configure the Adobe Commerce application in any of the following ways:
 
 *  General configuration
 
@@ -18,14 +18,14 @@ You can configure the Magento application in any of the following ways:
 
    *  [Set up Varnish]({{page.baseurl}}/config-guide/varnish/config-varnish.html)
    *  [Set up caching]({{page.baseurl}}/config-guide/cache.html)
-   *  [Use Redis for the Magento page and default cache]({{ page.baseurl}}/config-guide/redis/redis-pg-cache.html)
+   *  [Use Redis for the Commerce page and default cache]({{ page.baseurl}}/config-guide/redis/redis-pg-cache.html)
    *  [Use Redis for session storage]({{ page.baseurl }}/config-guide/redis/redis-session.html)
    *  [Set up database caching]({{ page.baseurl }}/extension-dev-guide/cache/partial-caching/database-caching.html)
 
-*  Magento in production
+*  Adobe Commerce in production
 
    *  [pipeline deployment]({{page.baseurl}}/config-guide/deployment/pipeline/)
-   *  [Magento ownership and permissions in development and production]({{page.baseurl}}/config-guide/prod/prod_file-sys-perms.html)
+   *  [Adobe Commerce ownership and permissions in development and production]({{page.baseurl}}/config-guide/prod/prod_file-sys-perms.html)
    *  [Single machine deployment]({{ page.baseurl }}/config-guide/deployment/single-machine.html)
 
 *  Session storage

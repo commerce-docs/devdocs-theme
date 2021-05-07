@@ -4,7 +4,7 @@ function editionMarkers() {
   var defaults = {
     editionClassNames: ['ee-only', 'ce-only', 'b2b-only'],
     editions: {
-      'ee-only': 'Magento Commerce only',
+      'ee-only': 'Adobe Commerce only',
       'ce-only': 'Magento Open Source only',
       'b2b-only': 'B2B feature'
     },

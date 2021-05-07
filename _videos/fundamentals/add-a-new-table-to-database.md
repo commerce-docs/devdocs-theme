@@ -1,20 +1,20 @@
 ---
 youtube_id: GMOtt5mai5A
 duration: "6:11"
-group: "Fundamentals of Magento 2 Development"
+group: "Fundamentals of Adobe Commerce Development"
 title: "How to Add a New Table to a Database"
 thumbnail: "fundamentals/thumbs/add-table.png"
 menu_order: 0
 github_link:
 ---
 
-Magento 2 has a special mechanism which allows you to create database tables, modify existing ones,and even add some data into them(like setup data, which has to be added when a module is installed).
+Adobe Commerce has a special mechanism which allows you to create database tables, modify existing ones,and even add some data into them(like setup data, which has to be added when a module is installed).
 This mechanism allows those changes to be transferable between different installations.
 
 The key concept is that,instead of doing manual SQL operations that you have to do again and again when reinstalling the system, developers create an install (or upgrade) script that contains the data.
 The script will be executed every time a module is installed.
 
-Magento 2 has four types of such scripts: InstallSchema, InstallData, UpgradeSchema and UpgradeData.
+Adobe Commerce has four types of such scripts: InstallSchema, InstallData, UpgradeSchema and UpgradeData.
 The install scripts are executed only once, while the upgrade scripts are executed every time the module's version get changed.
 
 To look at all four script types, we’ll complete the following greeting page tasks:
@@ -55,7 +55,7 @@ Now create two files:
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /**
-* Copyright © 2016 Magento. All rights reserved.
+* Copyright © 2016 Adobe. All rights reserved.
 * See COPYING.txt for license details.
 */
 
@@ -76,7 +76,7 @@ Now create two files:
 <?xml version="1.0"?>
 <!--
 /**
-* Copyright © 2016 Magento. All rights reserved.
+* Copyright © 2016 Adobe. All rights reserved.
 * * See COPYING.txt for license details.
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -101,7 +101,7 @@ Now create the file `Setup/InstallSchema.php`
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /**
-* Copyright © 2016 Magento. All rights reserved.
+* Copyright © 2016 Adobe. All rights reserved.
 * See COPYING.txt for license details.
 */
 
@@ -154,8 +154,8 @@ This is a key parameter, because it gives access to the `Connection()` object th
 
 The connection is an instance of `Magento\Framework\DB\Adapter\Pdo\Mysql` class.
 
-Magento uses DDL (Data Definition Language) to manipulate the database.
-You can find various examples of DDL in the Magento 2 core code.
+Adobe Commerce uses DDL (Data Definition Language) to manipulate the database.
+You can find various examples of DDL in the Adobe Commerce core code.
 
 ## Step 3: Create an InstallData script
 
@@ -164,7 +164,7 @@ Now let’s create the `Setup/InstallData.php` file:
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -240,9 +240,9 @@ SELECT * FROM greeting_message;
 ### Check that the table and data are there
 
 How does this work?
-When you create a new module and run the `bin/magento setup:upgrade` script, Magento checks the codebase to see if there are modules that were not installed.
+When you create a new module and run the `bin/magento setup:upgrade` script, Adobe checks the codebase to see if there are modules that were not installed.
 If it finds any, it checks whether there are any install scripts and if so, runs them.
-After that, Magento updates the table setup_module and puts information about the module and its version there:
+After that, Adobe Commerce updates the table setup_module and puts information about the module and its version there:
 
 ```
 SELECT * FROM setup_module WHERE module='Learning_GreetingMessage';
@@ -276,7 +276,7 @@ Then create the file `Setup/UpgradeSchema.php`:
 {% highlight php startinline=true %}
 
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -328,7 +328,7 @@ Now we’ll create the file `Setup/UpgradeData.php`:
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -396,5 +396,5 @@ In this how-to video we practiced how to create a new table, add setup data, and
 
 It is very important to understand that the data is added only once, and should be installed when the module is created.
 
-Magento 2 uses multiple tools to manipulate the database from the code – Model/Resource models and collections, which are beyond the scope of this video.
+Adobe Commerce uses multiple tools to manipulate the database from the code – Model/Resource models and collections, which are beyond the scope of this video.
 So if you need an interface which saves or fetches data from the database, you will use a `Model/Resource/Collection` for that, not an UpgradeData script.

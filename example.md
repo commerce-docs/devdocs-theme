@@ -8,7 +8,7 @@ contributor_link: https://www.gitgub.com/
 menu_order: 0
 ---
 
-The purpose of [this section](https://www.google.com) is to provide a **manual intended** to give assistance to people using Magento Admin. These guides contain both a written guide and the associated images. Their content include.
+The purpose of [this section](https://www.google.com) is to provide a **manual intended** to give assistance to people using Commerce Admin. These guides contain both a written guide and the associated images. Their content include.
 
 Introductory text that gives an overview of the topic you will be writing about.
 
