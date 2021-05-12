@@ -9,25 +9,25 @@
 # Enterprise Cloud Edition (ECE)  ---> Commerce Cloud
 # Enterprise Edition for B2B      ---> Commerce for B2B
 
-#NOTE: The new product name variables use the old product name abbreviations (e.g., ce, ee, ece, b2b). 
+#NOTE: The new product name variables use the old product name abbreviations (e.g., ce, ee, ece, b2b).
 
 # Product Name variables
 
 ce: Magento Open Source
 ee: Adobe Commerce
-b2b: Adobe Commerce for B2B
-mbi: Adobe Commerce Reporting
+b2b: B2B for Adobe Commerce
+mbi: Reporting for Commerce
 
 # Cloud product name variables
 
 ece: Adobe Commerce
 csuite: Adobe Commerce Suite
 ct: ece-tools
-mcp-prod: Adobe Commerce Patches
+mcp-prod: Cloud Patches for Adobe Commerce
 mcp: adobe-commerce-patches
 mcd: adobe-commerce-docker
-mcd-prod: Adobe Commerce Docker
-mcc-prod: Adobe Commerce Components
+mcd-prod: Docker for Adobe Commerce
+mcc-prod: Cloud Components for Adobe Commerce
 mcc: adobe-commerce-components
 
 # TIP: Use the following syntax to use a variable in the documentation source: {{site.data.var.xx}} where xx
