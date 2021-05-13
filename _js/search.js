@@ -43,8 +43,8 @@ window.onload = function() {
     // Create a custom Search Client to handle empty queries:
     var searchClient = {
       search: function(requests) {
-        
-        if (requests.every(isEmptyQuery)) { 
+
+        if (requests.every(isEmptyQuery)) {
           return Promise.resolve({
             results: requests.map(function() {
               return {
@@ -53,16 +53,16 @@ window.onload = function() {
                 processingTimeMS: 0,
                 facets: []
               };
-            }) 
+            })
           });
         }
-        
+
         return algoliaClient.search(requests);
       }
     };
     var isEmptyQuery = function(request) {
       return !request.params.query;
-    }; 
+    };
 
     // Inisialize all the search indices
     var init = function() {
@@ -132,7 +132,7 @@ window.onload = function() {
     };
 
     var moveSelectionIndicator = function (currentItem) {
-      // Move the selection indicator 
+      // Move the selection indicator
       selectionIndicator.style.transform = 'translateX(' + currentItem.offsetLeft + 'px)';
       selectionIndicator.style.width = currentItem.offsetWidth + 'px';
 
@@ -141,7 +141,7 @@ window.onload = function() {
     var handleIndexClick = function(event, indexName) {
       // Get all the tab content items and hide them
       var tabcontent = document.getElementsByClassName(defaults.resultsClassName);
-      
+
       // First hide all the tab content
       for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].classList.add(defaults.hiddenClassName);
@@ -223,7 +223,7 @@ window.onload = function() {
               if (typeof item._highlightResult.content !== "undefined") {
                 content = item._highlightResult.content.value;
               }
-              
+
               // Generate tracker part of the URL
               var tracker = '?itm_source=' + encodeURIComponent(algolia.index) + '&itm_medium=search_page&itm_campaign=federated_search&itm_term=' + encodeURIComponent(query);
 
@@ -239,7 +239,7 @@ window.onload = function() {
               return (
                 '<div class="hit"><h2 class="hit-name">' +
                 link +
-                '</h2><div class="hit-url">' + 
+                '</h2><div class="hit-url">' +
                 hitUrl +
                 '</div><div class="hit-content">' +
                 content +
@@ -284,11 +284,11 @@ window.onload = function() {
             },
             cssClasses: {
               header: [
-                'spectrum-Detail'
+                'spectrum-Detail--sizeS spectrum-Detail--light'
               ]
             }
           })(instantsearch.widgets.refinementList);
-          
+
           searchIndex.addWidget(
             refinementListWithPanel({
               container: container,
@@ -318,7 +318,7 @@ window.onload = function() {
         );
 
         container.id = searchIndices[i].indexName;
-        
+
         // Create additional containers for the index
         var statsContainer = document.createElement("div");
         var hitsContainer = document.createElement("div");
@@ -333,8 +333,8 @@ window.onload = function() {
         container.appendChild(hitsContainer);
         container.appendChild(refinementsContainer);
         container.appendChild(paginationContainer);
-        
-        // Hide all but the first containers 
+
+        // Hide all but the first containers
         if (i) {
           container.classList.add(defaults.hiddenClassName);
         }
@@ -347,7 +347,7 @@ window.onload = function() {
 
         document.getElementById("hits").appendChild(container);
       }
-      
+
       // Search Box
       mainIndex.addWidget(
         instantsearch.widgets.searchBox({

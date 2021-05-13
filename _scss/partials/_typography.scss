@@ -58,7 +58,8 @@ h4 small {
 
 /* Most paragraphs in content section */
 .content p {
-  @extend .spectrum-Body2 !optional;
+  @extend .spectrum-Body;
+  @extend .spectrum-Body--sizeL !optional;
   margin: 0 0 1em 0;
 }
 
@@ -89,19 +90,21 @@ content in a <p> element when that content has a space below
 and is not the last item in the list.
 */
 .content li p {
-  @extend .spectrum-Body2 !optional;
+  @extend .spectrum-Body;
+  @extend .spectrum-Body--sizeL !optional;
   margin: 0 0 0.7rem 0;
 }
 
 /* Bottom margins for list content without <p> elements.*/
 .content li,
 .content dl {
-  @extend .spectrum-Body2 !optional;
+  @extend .spectrum-Body;
+  @extend .spectrum-Body--sizeL !optional;
   margin: 0 0 0.7rem 0;
 }
 
 a {
-  @extend .spectrum-Link !optional;
+  @extend .spectrum-Link--quiet !optional;
 }
 
 // Style the external URL (only in content area)
@@ -121,7 +124,7 @@ a {
 }
 
 .lead {
-  font-size: var(--spectrum-global-dimension-size-225);
+  font-size: var(--spectrum-global-dimension-static-size-225);
 }
 
 small {
@@ -347,7 +350,8 @@ inviting way to pull readers into a topic in a non-committal way.
 It provides big, easy to read text for quick engagement. In theory.
 */
 .content .topic-intro {
-  @extend .spectrum-Body1 !optional;
+  @extend .spectrum-Body;
+  @extend .spectrum-Body--sizeL !optional;
   font-size: 1.5rem;
   color: #8f8f8f;
   margin: 0 0 1.5rem 0;

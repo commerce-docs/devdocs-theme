@@ -24,7 +24,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-  
+
 
   h1 {
     color: #fff;
@@ -43,10 +43,10 @@
 
   .search-field {
     font-size: var(--spectrum-global-dimension-font-size-200);
-    padding-bottom: var(--spectrum-global-dimension-size-150);
-    padding-top: var(--spectrum-global-dimension-size-150);
+    padding-bottom: var(--spectrum-global-dimension-static-size-150);
+    padding-top: var(--spectrum-global-dimension-static-size-150);
     padding-left: 50px;
-    height: var(--spectrum-global-dimension-size-550);
+    height: var(--spectrum-global-dimension-static-size-550);
   }
 
   .spectrum-Search-icon {
@@ -68,7 +68,7 @@
 .home-features {
 
   padding: 20px 0;
-  
+
   .container {
     display: grid;
     grid-template-columns: 33% 33% 33%;
@@ -91,8 +91,8 @@
     font-size: 20px;
     margin: 0 0 .5em 0;
     padding: 0 0 .3em 0;
-    border-bottom: var(--spectrum-card-footer-border-top-size, var(--spectrum-global-dimension-size-10)) solid;
-    border-color: var(--spectrum-card-border-color, var(--spectrum-global-color-gray-200));
+    border-bottom: var(--spectrum-card-footer-border-top-size, var(--spectrum-global-dimension-static-size-10)) solid;
+    border-color: var(--spectrum-card-border-color, var(--spectrum-global-color-static-gray-200));
   }
 
   ul,

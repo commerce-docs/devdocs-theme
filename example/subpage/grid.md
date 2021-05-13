@@ -2,7 +2,7 @@
 title: Grid
 menu_title: Grid
 menu_order: 9
-sections: 
+sections:
  - title: Products
    content: Learn how to create products from simple to complex with multiple options ...
    url: /catalog/product-types.html
@@ -15,15 +15,14 @@ sections:
 
 {% include grid.html sections=page.sections %}
 
-
 ## How to use
 
-Use grid.html include file to render the cards that link to other pages: 
+Use grid.html include file to render the cards that link to other pages:
 
 ```markdown
 ---
 title: Catalog
-sections: 
+sections:
  - title: Products
    content: Learn how to create products from simple to complex with multiple options ...
    url: /catalog/product-types.html

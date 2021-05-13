@@ -3,7 +3,7 @@
 .search-results-header {
   padding: 20px 0;
   background: $light-gray-color;
-  border-bottom: 1px solid var(--spectrum-rule-small-background-color, var(--spectrum-global-color-gray-300));
+  border-bottom: 1px solid var(--spectrum-rule-small-background-color, var(--spectrum-global-static-color-gray-300));
 }
 
 .search-results-header-inner {
@@ -266,6 +266,6 @@
   // Conter the button vertically:
   position: absolute;
   right: 10px;
-  top: 50%; 
+  top: 50%;
   transform: translateY(-50%);
 }

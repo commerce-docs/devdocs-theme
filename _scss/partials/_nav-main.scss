@@ -36,7 +36,7 @@
     bottom: 0;
     width: 100%;
     height: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick));
-    background: var(--spectrum-tabs-selection-indicator-color, var(--spectrum-global-color-gray-900));
+    background: var(--spectrum-tabs-selection-indicator-color, var(--spectrum-global-color-static-gray-900));
   }
 
 

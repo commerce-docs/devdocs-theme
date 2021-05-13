@@ -2,14 +2,14 @@
 // Uses algolia.js and autocomplete.jquery.js
 
 $(function() {
-  
+
   quickSearch();
 
   function quickSearch () {
 
     // Do nothing if no indices defined
     if (typeof indices === "undefined") return false;
-    
+
     var $quickSearchInput = $(".quick-search input");
 
     // Initialize the Algola search autocomplete
@@ -48,7 +48,7 @@ $(function() {
 
             return '<a href="' + baseUrl + url + tracker + '">' + title + "</a>";
           },
-          header: '<div class="suggestion-category spectrum-Detail">' + item.label + "</div>"
+          header: '<div class="suggestion-category spectrum-Detail--sizeS spectrum-Detail--light">' + item.label + "</div>"
         }
       };
     });
@@ -72,12 +72,12 @@ $(function() {
         if (context.selectionMethod === 'click') {
           return;
         }
-        
+
         if ( typeof suggestion.url != "undefined" ) {
           var suggestionIndex = searchObjects.find( function(searchObject) {
             return searchObject.name === dataset;
           });
-          
+
           if ( typeof suggestionIndex.baseUrl != 'undefined' ) {
             var tracker = getUrlParameters(quickSearchQuery);
             window.location.href = suggestionIndex.baseUrl + suggestion.url + tracker;

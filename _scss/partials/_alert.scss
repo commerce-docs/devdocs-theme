@@ -1,7 +1,8 @@
 // Spectrum overrides
 
 .spectrum-Alert-header {
-  // @extend .spectrum-Body2 !optional;
+  @extend .spectrum-Body;
+  @extend .spectrum-Body--sizeL !optional;
   display: block;
   font-weight: 700
 }
