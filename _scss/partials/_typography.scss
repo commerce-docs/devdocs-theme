@@ -9,17 +9,17 @@ h6 {
 }
 
 h2 {
-  @extend .spectrum-Heading2;
+  @extend .spectrum-Heading--sizeL;
   margin: 1.5em 0 0.6rem 0;
 }
 
 h3 {
-  @extend .spectrum-Heading3;
+  @extend .spectrum-Heading--sizeM;
   margin: 1.5em 0 0.6rem 0;
 }
 
 h4 {
-  @extend .spectrum-Heading4;
+  @extend .spectrum-Heading--sizeS;
   margin: 1.5em 0 0.6rem 0;
 }
 
@@ -305,13 +305,14 @@ p.q {
 }
 
 .page-title {
-  @extend .spectrum-Heading1;
-  @extend .spectrum-Heading--XXL;
+  @extend .spectrum-Heading;
+  @extend .spectrum-Heading--sizeXL;
   margin: 0 0 10px 0;
 }
 
 .page-subtitle {
-  @extend .spectrum-Heading2--quiet;
+  @extend .spectrum-Heading--sizeL;
+  @extend .spectrum-Heading--light;
   margin: -1rem 0 0.75rem 0;
 }
 

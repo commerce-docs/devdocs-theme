@@ -4,12 +4,12 @@ $toggle-width: 32px;
   position: fixed;
   width: $sidebar-width;
   height: 100vh;
-  
+
   z-index: 2;
   background: $light-gray-color;
 
   // Move sidebar up to provide the background for the logo
-  
+
   top: 0;
   padding-top: $header-height;
 
@@ -29,7 +29,7 @@ $toggle-width: 32px;
 
   .guide-title {
     position: relative;
-    @extend .spectrum-Heading4;
+    @extend .spectrum-Heading--sizeS;
     padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
     margin: 0;
     z-index: 1;
@@ -73,11 +73,11 @@ $toggle-width: 32px;
 
   }
 
- 
+
 
   /*
   // second level links
- 
+
 
 
   // Third level
@@ -245,7 +245,7 @@ $toggle-width: 32px;
         height: 18px;
         background: url('../i/icons/chevron-right.svg') no-repeat center;
         opacity: .6;
-        
+
         border-color: $body-font-color transparent transparent transparent;
         transition: all $transition-duration;
       }
