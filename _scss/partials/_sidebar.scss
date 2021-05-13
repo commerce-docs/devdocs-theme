@@ -29,6 +29,7 @@ $toggle-width: 32px;
 
   .guide-title {
     position: relative;
+    @extend .spectrum-Heading;
     @extend .spectrum-Heading--sizeS;
     padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
     margin: 0;

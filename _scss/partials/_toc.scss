@@ -22,6 +22,7 @@
   &:before {
     display: block;
     content: "On this page";
+    @extend .spectrum-Menu;
     @extend .spectrum-Menu-sectionHeading;
   }
 
