@@ -9,18 +9,21 @@ h6 {
 }
 
 h2 {
+  @extend .spectrum-Heading;
   @extend .spectrum-Heading--sizeL;
-  margin: 1.5em 0 0.6rem 0;
+  // margin: 1.5em 0 0.6rem 0;
 }
 
 h3 {
+  @extend .spectrum-Heading;
   @extend .spectrum-Heading--sizeM;
-  margin: 1.5em 0 0.6rem 0;
+  // margin: 1.5em 0 0.6rem 0;
 }
 
 h4 {
+  @extend .spectrum-Heading;
   @extend .spectrum-Heading--sizeS;
-  margin: 1.5em 0 0.6rem 0;
+  // margin: 1.5em 0 0.6rem 0;
 }
 
 // Remove top margin for first heading in content
@@ -60,7 +63,7 @@ h4 small {
 .content p {
   @extend .spectrum-Body;
   @extend .spectrum-Body--sizeL !optional;
-  margin: 0 0 1em 0;
+  // margin: 0 0 1em 0;
 }
 
 /*
@@ -92,7 +95,7 @@ and is not the last item in the list.
 .content li p {
   @extend .spectrum-Body;
   @extend .spectrum-Body--sizeL !optional;
-  margin: 0 0 0.7rem 0;
+  // margin: 0 0 0.7rem 0;
 }
 
 /* Bottom margins for list content without <p> elements.*/
@@ -100,7 +103,7 @@ and is not the last item in the list.
 .content dl {
   @extend .spectrum-Body;
   @extend .spectrum-Body--sizeL !optional;
-  margin: 0 0 0.7rem 0;
+  // margin: 0 0 0.7rem 0;
 }
 
 a {
@@ -310,13 +313,14 @@ p.q {
 .page-title {
   @extend .spectrum-Heading;
   @extend .spectrum-Heading--sizeXL;
-  margin: 0 0 10px 0;
+  // margin: 0 0 10px 0;
 }
 
 .page-subtitle {
+  @extend .spectrum-Heading;
   @extend .spectrum-Heading--sizeL;
   @extend .spectrum-Heading--light;
-  margin: -1rem 0 0.75rem 0;
+  // margin: -1rem 0 0.75rem 0;
 }
 
 // Reset the first heading on the page to have no margin
