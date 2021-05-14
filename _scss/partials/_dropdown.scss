@@ -20,7 +20,6 @@
     width: 0;
     height: 0;
     margin-right: .5rem;
-    vertical-align: middle;
     content: "";
     border-top: $caret-width solid;
     border-right: $caret-width solid transparent;
@@ -35,6 +34,7 @@
   }*/
 
 }
+
 
 .spectrum-Picker-icon {
   background: url(../i/icons/chevron-down.svg);
@@ -180,4 +180,8 @@
 .pull-right > .dropdown-menu {
   right: 0;
   left: auto;
+}
+
+[dir="ltr"] .spectrum-Picker {
+    padding-right: 0;
 }
