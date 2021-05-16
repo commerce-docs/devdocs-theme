@@ -22,7 +22,8 @@
     position: relative;
     user-select: none;
     white-space: nowrap;
-    font-size: var(--spectrum-body-4-text-size, var(--spectrum-global-dimension-font-size-200));
+    font-size: var(--spectrum-body-m-text-size, var(--spectrum-global-dimension-font-size-200));
+
   }
 
   & > li > span {
@@ -35,8 +36,8 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick));
-    background: var(--spectrum-tabs-selection-indicator-color, var(--spectrum-global-color-static-gray-900));
+    height: var(--spectrum-tabs-m-rule-size, var(--spectrum-alias-border-size-thick));
+    background: var(---spectrum-tabs-m-selection-indicator-color, var(--spectrum-global-color-gray-900));
   }
 
 

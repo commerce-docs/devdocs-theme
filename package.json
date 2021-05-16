@@ -5,7 +5,7 @@
     "url": "git+https://github.com/magento-devdocs/devdocs-theme.git"
   },
   "scripts": {
-    "scss": "rm -rf assets/css/**.* && sass --update --style compressed _scss/app.scss:assets/css/app.css _scss/print.scss:assets/css/print.css _scss/search.scss:assets/css/search.css",
+    "scss": "rm -rf assets/css/**.* && sass --update --style compressed --embed-source-map _scss/app.scss:assets/css/app.css _scss/print.scss:assets/css/print.css _scss/search.scss:assets/css/search.css",
     "autoprefixer": "postcss -u autoprefixer -r assets/css/*.css --map=1",
     "jekyll": "bundle exec jekyll build",
     "serve": "browser-sync start --server '_site' --files '_site/assets/css/*.css, _site/assets/js/*.js'",
@@ -55,7 +55,6 @@
     "@spectrum-css/tags": "^3.0.3",
     "@spectrum-css/textfield": "^3.0.2",
     "@spectrum-css/tooltip": "^3.0.3",
-    "@spectrum-css/typography": "^3.0.2",
     "@spectrum-css/underlay": "^2.0.10",
     "@spectrum-css/vars": "^3.0.2"
   },

@@ -5,6 +5,7 @@ ee_only: true
 menu_order: 0
 ---
 
+{:.topic-intro}
 What's a viewport? It's a window in a spacecraft. But that's not important right now. For development, we know a viewport refers to the size of the window (or device) used to view content. But in Page Builder, the term has more specific meanings.
 
 Page Builder viewports refer to the buttons and their related device widths shown on the stage. So when we say things like viewport buttons, viewport widths, and viewport configuration data, we're usually talking about the UI elements and settings for the stage.

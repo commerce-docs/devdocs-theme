@@ -62,7 +62,7 @@ $nav-main-section-width: 300px;
   visibility: hidden;
   opacity: 0;
   min-width: $nav-main-section-width;
-  transform: translateX(-$spacing * 4);
+  transform: translateX(- $spacing * 4);
 
   transition-property: opacity, visibility;
   transition-duration: $transition-duration;
@@ -73,6 +73,12 @@ $nav-main-section-width: 300px;
     width: 100%;
     margin: 0;
     padding: 0;
+
+    li {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+    }
   }
 
   .nav-section {

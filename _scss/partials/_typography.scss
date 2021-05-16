@@ -9,21 +9,20 @@ h6 {
 }
 
 h2 {
-  @extend .spectrum-Heading;
-  @extend .spectrum-Heading--sizeL;
-  margin: 1.5em 0 0.6rem 0;
+  @extend .spectrum-Heading, .spectrum-Heading--sizeL;
+  margin-bottom:.5rem;
+
+  // margin: 1.5em 0 0.6rem 0;
 }
 
 h3 {
-  @extend .spectrum-Heading;
-  @extend .spectrum-Heading--sizeM;
-  margin: 1.5em 0 0.6rem 0;
+  @extend .spectrum-Heading, .spectrum-Heading--sizeM;
+  // margin: 1.5em 0 0.6rem 0;
 }
 
 h4 {
-  @extend .spectrum-Heading;
-  @extend .spectrum-Heading--sizeS;
-  margin: 1.5em 0 0.6rem 0;
+  @extend .spectrum-Heading, .spectrum-Heading--sizeS;
+  // margin: 1.5em 0 0.6rem 0;
 }
 
 // Remove top margin for first heading in content
@@ -61,9 +60,8 @@ h4 small {
 
 /* Most paragraphs in content section */
 .content p {
-  @extend .spectrum-Body;
-  @extend .spectrum-Body--sizeL !optional;
-  margin: 0 0 1em 0;
+  @extend .spectrum-Body, .spectrum-Body--sizeL;
+  margin-top:0;
 }
 
 /*
@@ -93,22 +91,19 @@ content in a <p> element when that content has a space below
 and is not the last item in the list.
 */
 .content li p {
-  @extend .spectrum-Body;
-  @extend .spectrum-Body--sizeL !optional;
-  margin: 0 0 0.7rem 0;
+  @extend .spectrum-Body, .spectrum-Body--sizeL;
+  // margin: 0 0 0.7rem 0;
 }
 
 /* Bottom margins for list content without <p> elements.*/
 .content li,
 .content dl {
-  @extend .spectrum-Body;
-  @extend .spectrum-Body--sizeL !optional;
-  margin: 0 0 0.7rem 0;
+  @extend .spectrum-Body, .spectrum-Body--sizeL;
+  // margin: 0 0 0.7rem 0;
 }
 
 a {
-  @extend .spectrum-Link;
-  @extend .spectrum-Link--quiet !optional;
+  @extend .spectrum-Link, .spectrum-Link--quiet;
 }
 
 // Style the external URL (only in content area)
@@ -117,7 +112,7 @@ a {
 {
   &:after {
     content: '';
-    margin: -2px 2px 0 3px;
+    // margin: -2px 2px 0 3px;
     display: inline-block;
     vertical-align: middle;
     width: 10px;
@@ -312,23 +307,20 @@ p.q {
 }
 
 .page-title {
-  @extend .spectrum-Heading;
-  @extend .spectrum-Heading--sizeXL;
-  margin: 0 0 10px 0;
+  @extend .spectrum-Heading, .spectrum-Heading--sizeXL;
+  // margin: 0 0 10px 0;
 }
 
 .page-subtitle {
-  @extend .spectrum-Heading;
-  @extend .spectrum-Heading--sizeL;
-  @extend .spectrum-Heading--light;
-  margin: -1rem 0 0.75rem 0;
+  @extend .spectrum-Heading, .spectrum-Heading--sizeL, .spectrum-Heading--light;
+  // margin: -1rem 0 0.75rem 0;
 }
 
 // Reset the first heading on the page to have no margin
 main h2:first-child,
 main h3:first-child,
 main h4:first-child {
-  margin-top: 0;
+  // margin-top: 0;
 }
 
 @media ($small-screen) {
@@ -355,9 +347,7 @@ inviting way to pull readers into a topic in a non-committal way.
 It provides big, easy to read text for quick engagement. In theory.
 */
 .content .topic-intro {
-  @extend .spectrum-Body;
-  @extend .spectrum-Body--sizeL !optional;
-  font-size: 1.5rem;
+  @extend .spectrum-Body, .spectrum-Body--sizeXL;
   color: #8f8f8f;
   margin: 0 0 1.5rem 0;
   line-height: 1.7;

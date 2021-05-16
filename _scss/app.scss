@@ -18,7 +18,6 @@
 @import './../node_modules/@spectrum-css/picker/dist/index-vars';
 @import './../node_modules/@spectrum-css/icon/dist/index-vars';
 @import './../node_modules/@spectrum-css/link/dist/index-vars';
-@import './../node_modules/@spectrum-css/menu/dist/index-vars';
 @import './../node_modules/@spectrum-css/page/dist/index-vars';
 @import './../node_modules/@spectrum-css/popover/dist/index-vars';
 @import './../node_modules/@spectrum-css/search/dist/index-vars';
@@ -28,10 +27,12 @@
 @import './../node_modules/@spectrum-css/tags/dist/index-vars';
 @import './../node_modules/@spectrum-css/textfield/dist/index-vars';
 @import './../node_modules/@spectrum-css/tooltip/dist/index-vars';
-@import './../node_modules/@spectrum-css/typography/dist/index-vars';
+// @import './../node_modules/@spectrum-css/typography/dist/index-vars';
+@import './../node_modules/@spectrum-css/menu/dist/index-vars';
 
 
 // Custom components
+@import 'partials/spectrum-typography-fixes';
 @import 'partials/adjaced-pages';
 @import 'partials/alert';
 @import 'partials/app-switcher';
@@ -51,10 +52,7 @@
 @import 'partials/images';
 @import 'partials/layout';
 @import 'partials/list-icons';
-@import 'partials/menu';
 @import 'partials/modal';
-@import 'partials/nav-main';
-@import 'partials/nav-main-dropdown';
 @import 'partials/page-info';
 @import 'partials/page-intro';
 @import 'partials/popover';
@@ -71,6 +69,9 @@
 @import 'partials/tooltip';
 @import 'partials/version-switcher';
 @import 'partials/videos';
+@import 'partials/nav-main';
+@import 'partials/nav-main-dropdown';
+@import 'partials/menu';
 
 // Form Components
 @import 'partials/checkbox';

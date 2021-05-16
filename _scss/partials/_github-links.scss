@@ -1,12 +1,11 @@
 .github-links {
   min-width: 272px;
-  flex: 1 0 50px;
-  padding: 0 0 1.5em 0;
+  padding: 0 0 .5em 0;
   flex-wrap: nowrap;
   justify-content: flex-end;
 }
 
-// Hide external link icon 
+// Hide external link icon
 .github-links a:after {
   display: none !important;
 }
