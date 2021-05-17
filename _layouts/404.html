@@ -1,29 +1,31 @@
 {% include layout/header.html %}
 
 <div class="content-container">
-	<section>
-		<div class="content-wrap text-center">
+  <section>
+    <div class="content-wrap text-center">
 
       {% include layout/page-header.html %}
       {{ content }}
 
-		</div>
-	</section>
-<!-- /main content -->
+    </div>
+  </section>
+  <!-- /main content -->
 </div> <!-- container -->
 
 <style>
-.global-wrapper {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  background: transparent;
-}
-.main-container {
-  flex: none;
-}
+  .global-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    background: transparent;
+  }
+
+  .main-container {
+    flex: none;
+  }
+
 </style>
 
 {% include layout/footer.html %}

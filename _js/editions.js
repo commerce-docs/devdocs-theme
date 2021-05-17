@@ -97,8 +97,9 @@ function editionMarkers() {
   // Icon with the tooltip
   var createIconMarker = function (edition) {
     var marker = document.createElement('div');
-    marker.className = defaults.markerClassName;
+    marker.className = defaults.markerIconClassName;
     marker.setAttribute('data-edition', edition);
+    marker.classList.add(defaults.markerClassName);
     marker.innerHTML = '<i class="' + defaults.iconClassName +'"></i>';
 
     // Attach events
