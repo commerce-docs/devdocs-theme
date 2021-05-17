@@ -76,7 +76,7 @@ app_switcher:
     - label: Developer
       children:
 
-      - label: Commerce Developer Documentation
+      - label: Commerce Developer Guide
         url: https://devdocs.magento.com/
 
       - label: PWA Studio
