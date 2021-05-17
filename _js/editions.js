@@ -11,7 +11,7 @@ function editionMarkers() {
     markerClassName: 'edition-marker',
     markerTagClassName: 'edition-Tags edition-Tags-item',
     labelClassName: 'edition-Label',
-    iconClassName: 'spectrum-StatusLight spectrum-StatusLight--sizeXL',
+    iconClassName: 'edition-marker-icon-image spectrum-Icon spectrum-Icon--sizeS',
     iconSrc: '../assets/i/a-logo.svg',
     tooltipClassName: 'spectrum-Tooltip spectrum-Tooltip--top edition-tooltip',
     tooltipVisibleClassName: 'is-open',
@@ -97,8 +97,9 @@ function editionMarkers() {
   // Icon with the tooltip
   var createIconMarker = function (edition) {
     var marker = document.createElement('div');
-    marker.className = defaults.iconClassName;
+    marker.className = defaults.markerClassName;
     marker.setAttribute('data-edition', edition);
+    marker.innerHTML = '<i class="' + defaults.iconClassName +'"></i>';
 
     // Attach events
     marker.addEventListener('mouseover', handleMarkerMouseOver);
@@ -117,7 +118,7 @@ function editionMarkers() {
     return label;
   }
 
-  // TODO: Discuss and remove as needed.
+  // TODO: Discuss and modify as needed.
   //
   // Tag with Icon -- Against Branding Guidelines
   //
