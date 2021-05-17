@@ -26,9 +26,10 @@ The purpose of this page is to provide you with a pre-formatted template and use
 
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
 
-
 {:.bs-callout-info}
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
+
+{: .ce-only }
 ### Testing h3
 
 The purpose of this page is to provide you with a pre-formatted template and useful {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %} references to help you get started writing docs.
@@ -38,6 +39,7 @@ The purpose of this page is to provide you with a pre-formatted template and use
 
 > This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
 
+{: .b2b-only }
 #### Testing h4
 
 You can start off by editing the local version of this file using markdown language (and {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.
@@ -62,6 +64,7 @@ This is a tutorial callout. Use it to provide links to a tutorials.
 {: .bs-callout }
 This is a generic callout. Used as a generic container for information box.
 
+{: .b2b-only }
 ## Collapsibles
 
 {% collapsible This is the collapsible title %}
@@ -75,7 +78,7 @@ This is a generic callout. Used as a generic container for information box.
 ## Table
 
 | Section          | Description                                                                                                                                                     | Link                                         |
-|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------|
+| ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------- |
 | Dashboard        | Visual display of the most important information consolidated on a single screen so it can be monitored at a glance: quick search, last activity and summaries. | [See Dashboard user guides](subpage/)        |
 | Sales            | Operations that users can initiate from the admin panel and Live Reports.                                                                                       | [See Sales user guides](subpage/)            |
 | Products         | The Catalogue and Inventory management let users to  and track items and stock movements.                                                                       | [See Catalogue user guide](subpage/)         |

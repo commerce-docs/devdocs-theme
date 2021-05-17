@@ -1,13 +1,29 @@
 .page-intro {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .page-intro h1 {
-  flex: 1 0 auto;
+  flex: 1 0 0%;
   max-width: 100%;
-  margin-top: 0;
+}
+
+.page-title {
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeXXL;
+  margin: 0 0 1rem 0;
+}
+
+.page-subtitle {
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeL,
+  .spectrum-Heading--light;
+  // margin: -1rem 0 0.75rem 0;
+}
+
+.page-intro .edition-Label {
+  margin-left: 0;
 }
 
 .page-subtitle {

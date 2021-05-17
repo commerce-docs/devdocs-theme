@@ -1,8 +1,8 @@
 ---
 title: Introduction to viewports
-menu_title: Viewports
+menu_title: Page Builder
 ee_only: true
-menu_order: 0
+menu_order: 5
 ---
 
 {:.topic-intro}

@@ -1,7 +1,7 @@
 ---
 title: Grid
 menu_title: Grid
-menu_order: 9
+menu_order: 4
 sections:
  - title: Products
    content: Learn how to create products from simple to complex with multiple options ...

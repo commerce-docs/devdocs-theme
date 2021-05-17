@@ -1,14 +1,14 @@
 <!-- page-header -->
 <section class="page-intro">
-	
+
+	{% include layout/edition-callout.html %}
+
 	<h1 class="page-title">{{ page.title }}</h1>
 
 	{% if page.subtitle %}
-  <h2 class="page-subtitle no_toc">{{ page.subtitle }}</h2>
+	<h2 class="page-subtitle no_toc">{{ page.subtitle }}</h2>
 	{% endif %}
-	
-	{% include layout/github-links.html %}
 
-  {% include layout/edition-callout.html %}
+	{% include layout/github-links.html %}
 
 </section>

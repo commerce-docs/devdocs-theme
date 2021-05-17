@@ -1,15 +1,3 @@
-.github-links {
-  min-width: 272px;
-  padding: 0 0 .5em 0;
-  flex-wrap: nowrap;
-  justify-content: flex-end;
-}
-
-// Hide external link icon
-.github-links a:after {
-  display: none !important;
-}
-
 .layout-404 .github-links {
   display: none;
 }

@@ -1,26 +1,23 @@
-
 table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 2em 0 2em 0;
   @extend .spectrum-Table !optional;
-}
-
-.content table p, .content table li, .content table dl {
-  font-size: inherit;
 }
 
 table.fixed {
   table-layout: fixed;
 }
 
-tbody {
-  @extend .spectrum-Table-body !optional;
-  font-size: $font-size-base;
+.content table p,
+.content table li,
+.content table dl {
+  font-size: inherit;
 }
 
 th {
   @extend .spectrum-Table-headCell !optional;
+}
+
+tbody {
+  @extend .spectrum-Table-body !optional;
 }
 
 tbody tr {
@@ -29,24 +26,9 @@ tbody tr {
 
 tbody td {
   @extend .spectrum-Table-cell !optional;
-  font-size: 1.1rem;
 
   &.whatsnew {
     width: 600px;
     padding-right: 40px;
   }
 }
-
-td {
-  @extend .spectrum-Table-cell !optional;
-
-  td:last-child {
-    font-size: $font-size-base;
-  }
-}
-
-// tbody td.whatsnew {
-//   @extend .spectrum-Table-cell !optional;
-//   width: 600px;
-//   padding-right: 40px;
-// }

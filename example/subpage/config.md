@@ -2,7 +2,7 @@
 title: Configuration Guide
 menu_title: Configuration
 ee_only: false
-menu_order: 0
+menu_order: 2
 ---
 
 ## Configure the Adobe Commerce application {#configuration}

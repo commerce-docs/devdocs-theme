@@ -1,7 +1,7 @@
 ---
 title: Code Examples
 menu_title: Code
-menu_order: 9
+menu_order: 1
 ---
 
 ## Inline `code` example
@@ -20,7 +20,7 @@ this block is not for copy (add a {:.no-copy} class after the code block)
 
 ## Blocks of `code` examples
 
-### Backslash syntax 
+### Backslash syntax
 
 ```html
 <div class="dropdown">

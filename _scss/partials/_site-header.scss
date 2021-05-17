@@ -95,9 +95,11 @@
     .site-nav {
       background: #fff;
     }
+
     .menu-btn {
       display: block;
     }
+
     .nav-actions {
       right: 10px;
     }
@@ -125,16 +127,20 @@
 
       z-index: $zindex-appbar - 1;
     }
-  } // mobile menu
+  }
+
+  // mobile menu
 }
 
 @media ($medium-to-large-screen) {
   .site-nav {
-    //background: #fff;
+    background: #fff;
   }
+
   .nav-main {
     padding-left: 20px;
   }
+
   .site-header .nav-actions {
     right: 0;
   }
@@ -166,7 +172,7 @@
     font-weight: 700;
     font-size: 16px;
     margin-left: 7px;
-    color: rgb(255, 15, 0);
+    color: #EB1000;
   }
 
   // Name of the website
@@ -224,6 +230,7 @@ body.offcanvas-active {
     width: auto;
     padding-right: 20px;
   }
+
   .logo-text {
     display: none;
   }

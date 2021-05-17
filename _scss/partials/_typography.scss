@@ -9,20 +9,21 @@ h6 {
 }
 
 h2 {
-  @extend .spectrum-Heading, .spectrum-Heading--sizeL;
-  margin-bottom:.5rem;
-
-  // margin: 1.5em 0 0.6rem 0;
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeL;
+  margin-bottom: .5rem;
 }
 
 h3 {
-  @extend .spectrum-Heading, .spectrum-Heading--sizeM;
-  // margin: 1.5em 0 0.6rem 0;
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeM;
+  margin-bottom: .25rem;
 }
 
 h4 {
-  @extend .spectrum-Heading, .spectrum-Heading--sizeS;
-  // margin: 1.5em 0 0.6rem 0;
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeS;
+  margin-bottom: 0;
 }
 
 // Remove top margin for first heading in content
@@ -60,8 +61,9 @@ h4 small {
 
 /* Most paragraphs in content section */
 .content p {
-  @extend .spectrum-Body, .spectrum-Body--sizeL;
-  margin-top:0;
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeL;
+  margin-top: 0;
 }
 
 /*
@@ -70,14 +72,16 @@ matches the space between paragraphs and the next heading.
 Otherwise, the space between callout and heading is excessive.
 */
 .content p {
+
   &.bs-callout,
   &.bs-callout-info,
   &.bs-callout-warning,
   &.bs-callout-tip,
   &.bs-callout-tutorial {
-    & + h2,
-    & + h3,
-    & + h4 {
+
+    &+h2,
+    &+h3,
+    &+h4 {
       margin-top: 1rem;
     }
   }
@@ -91,25 +95,27 @@ content in a <p> element when that content has a space below
 and is not the last item in the list.
 */
 .content li p {
-  @extend .spectrum-Body, .spectrum-Body--sizeL;
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeL;
   // margin: 0 0 0.7rem 0;
 }
 
 /* Bottom margins for list content without <p> elements.*/
 .content li,
 .content dl {
-  @extend .spectrum-Body, .spectrum-Body--sizeL;
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeL;
   // margin: 0 0 0.7rem 0;
 }
 
 a {
-  @extend .spectrum-Link, .spectrum-Link--quiet;
+  @extend .spectrum-Link,
+  .spectrum-Link--quiet;
 }
 
 // Style the external URL (only in content area)
 .content-wrap a[href^='http://']:not([href*='magento.com']),
-.content-wrap a[href^='https://']:not([href*='magento.com'])
-{
+.content-wrap a[href^='https://']:not([href*='magento.com']) {
   &:after {
     content: '';
     // margin: -2px 2px 0 3px;
@@ -184,7 +190,7 @@ ol {
   margin: 0 0 1.3rem 2rem;
 
   //decrease the margin before paragraph
-  p + & {
+  p+& {
     margin-top: -0.5rem;
   }
 }
@@ -201,8 +207,8 @@ ol.inline {
   list-style: none;
 }
 
-ul.inline > li,
-ol.inline > li {
+ul.inline>li,
+ol.inline>li {
   display: inline-block;
   padding-left: 0.31rem; //5px
   padding-right: 0.31rem;
@@ -306,16 +312,6 @@ p.q {
   }
 }
 
-.page-title {
-  @extend .spectrum-Heading, .spectrum-Heading--sizeXL;
-  // margin: 0 0 10px 0;
-}
-
-.page-subtitle {
-  @extend .spectrum-Heading, .spectrum-Heading--sizeL, .spectrum-Heading--light;
-  // margin: -1rem 0 0.75rem 0;
-}
-
 // Reset the first heading on the page to have no margin
 main h2:first-child,
 main h3:first-child,
@@ -347,7 +343,8 @@ inviting way to pull readers into a topic in a non-committal way.
 It provides big, easy to read text for quick engagement. In theory.
 */
 .content .topic-intro {
-  @extend .spectrum-Body, .spectrum-Body--sizeXL;
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeXL;
   color: #8f8f8f;
   margin: 0 0 1.5rem 0;
   line-height: 1.7;
