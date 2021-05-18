@@ -17,7 +17,7 @@
     display: block;
     position: absolute;
     left: 12px;
-    top: calc(var(--spectrum-textfield-m-height, var(--spectrum-alias-item-height-m)) / 2 - var(--spectrum-icon-magnifier-width, var(--spectrum-global-dimension-static-size-200)) / 2);
+    top: calc(var(--spectrum-textfield-m-height, var(spectrum-alias-single-line-height)) / 2 - var(--spectrum-icon-magnifier-width, var(--spectrum-global-dimension-static-size-200)) / 2);
     pointer-events: none;
   }
 

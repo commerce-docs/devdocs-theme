@@ -6,7 +6,7 @@
       aria-labelledby="app-switcher-trigger" role="menu">
       <div class="app-switcher-content">
         {% for group in site.app_switcher.apps %}
-        <div class="app-switcher-group">
+        <div class="spectrum-Menu app-switcher-group">
           <span class="spectrum-Menu-sectionHeading"
             id="app-switcher-category-{{ forloop.index }}">{{ group.label }}</span>
           <ul class="spectrum-Menu" role="group" aria-labelledby="app-switcher-category-{{ forloop.index }}">
