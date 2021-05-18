@@ -1,58 +1,30 @@
+.edition-marker {}
+
 // Icon markder
-.edition-Tags {
-  @extend .spectrum-Tags;
-  margin-left: 1rem;
-}
-
-.edition-Tags-item {
-  @extend .spectrum-Tags-item;
-  display: inline-flex;
-  vertical-align: middle;
-  border-width: 0;
-
-  &.ee-only,
-  &.b2b-only,
-  &.ce-only {
-    color: #000;
-  }
-}
-
-.break {
-  display: block;
-  flex-basis: 100%;
-}
-
-.edition-Label {
-  @extend .spectrum-Label;
-  margin-left: 1rem;
-  vertical-align: middle;
-
-  &.ee-only {
-    @extend .spectrum-Label--red;
-  }
-
-  &.b2b-only {
-    @extend .spectrum-Label--seafoam;
-  }
-
-  &.ce-only {
-    @extend .spectrum-Label--orange;
-  }
-
-  a.spectrum-Link {
-    color: inherit;
-  }
+.edition-marker-icon {
+  width: 20px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: sub;
+  margin: 0 .2em 0 0;
 }
 
 .edition-marker-tag {
-  font-size: var(--spectrum-tag-l-text-size, var(--spectrum-alias-item-text-size-l));
   font-weight: 300;
   font-style: normal;
+  margin: 0 .2em;
+
+  .edition-marker-icon-image {
+    vertical-align: middle;
+  }
 }
+
+
 
 li>.edition-marker {
   position: absolute;
-  left: 3px;
+  left: 2px;
+  top: 4px;
 }
 
 li.ee-only,
@@ -62,13 +34,12 @@ li.ce-only {
   position: relative;
 }
 
-// Adobe Logo
+// Logo
 .edition-marker-icon-image {
   display: inline-block;
-  background: url(../i/a-logo.svg) no-repeat center;
+  background: url("../i/a-logo.svg") no-repeat center;
   background-size: contain;
-  margin-left: 0;
-  vertical-align: middle;
+  vertical-align: text-top;
 }
 
 .b2b-only .edition-marker-icon-image {
@@ -91,7 +62,7 @@ li.ce-only {
   position: absolute;
   margin: 0;
   right: 4px;
-  top: 10px;
+  top: 8px;
 }
 
 // Prevent edition marker from wrapping the text inside table
@@ -113,8 +84,5 @@ strong.b2b-only {
 .spectrum-SideNav-itemLink.ee-only,
 .spectrum-SideNav-itemLink.ce-only,
 .spectrum-SideNav-itemLink.b2b-only {
-
-  display: flex;
-  justify-content: space-between;
-
+  padding-right: 28px;
 }

@@ -9,10 +9,11 @@ function editionMarkers() {
       'b2b-only': 'B2B feature'
     },
     markerClassName: 'edition-marker',
+    markerIconClassName: 'edition-marker-icon',
     markerTagClassName: 'edition-Tags edition-Tags-item',
     labelClassName: 'edition-Label',
     iconClassName: 'edition-marker-icon-image spectrum-Icon spectrum-Icon--sizeS',
-    iconSrc: '../assets/i/a-logo.svg',
+    // iconSrc: '../assets/i/a-logo.svg',
     tooltipClassName: 'spectrum-Tooltip spectrum-Tooltip--top edition-tooltip',
     tooltipVisibleClassName: 'is-open',
     tooltipLabelClassName: 'spectrum-Tooltip-label',
@@ -97,8 +98,9 @@ function editionMarkers() {
   // Icon with the tooltip
   var createIconMarker = function (edition) {
     var marker = document.createElement('div');
-    marker.className = defaults.markerClassName;
+    marker.className = defaults.markerIconClassName;
     marker.setAttribute('data-edition', edition);
+    marker.classList.add(defaults.markerClassName);
     marker.innerHTML = '<i class="' + defaults.iconClassName +'"></i>';
 
     // Attach events
