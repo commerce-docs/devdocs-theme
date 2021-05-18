@@ -24,12 +24,17 @@
   background-repeat: no-repeat;
   background-size: cover;
   color: #fff;
-
+  line-height: 1.5;
 
   h1 {
+    @extend .spectrum-Heading,
+    .spectrum-Heading--sizeXXL;
+    margin-top: 0;
+    margin-bottom: 0;
     color: #fff;
     text-shadow: 2px 2px 8px #000;
   }
+
 
   .lead {
     margin: 1em 0 2em 0;

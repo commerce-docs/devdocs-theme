@@ -8,6 +8,11 @@ h6 {
   text-rendering: optimizelegibility;
 }
 
+h1 {
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeXL;
+}
+
 h2 {
   @extend .spectrum-Heading,
   .spectrum-Heading--sizeL;
