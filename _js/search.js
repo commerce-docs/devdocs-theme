@@ -284,7 +284,7 @@ window.onload = function() {
             },
             cssClasses: {
               header: [
-                'spectrum-Detail--sizeS spectrum-Detail--light'
+                'spectrum-Detail spectrum-Detail--sizeS spectrum-Detail--light'
               ]
             }
           })(instantsearch.widgets.refinementList);
