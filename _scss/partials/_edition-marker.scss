@@ -1,30 +1,58 @@
-.edition-marker {}
-
 // Icon markder
-.edition-marker-icon {
-  width: 20px;
-  height: 18px;
-  display: inline-block;
-  vertical-align: sub;
-  margin: 0 .2em 0 0;
+.edition-Tags {
+  @extend .spectrum-Tags;
+  margin-left: 1rem;
 }
 
-.edition-marker-tag {
-  font-weight: 300;
-  font-style: normal;
-  margin: 0 .2em;
+.edition-Tags-item {
+  @extend .spectrum-Tags-item;
+  display: inline-flex;
+  vertical-align: middle;
+  border-width: 0;
 
-  .edition-marker-icon-image {
-    vertical-align: middle;
+  &.ee-only,
+  &.b2b-only,
+  &.ce-only {
+    color: #000;
   }
 }
 
+.break {
+  display: block;
+  flex-basis: 100%;
+}
 
+.edition-Label {
+  @extend .spectrum-Label;
+  margin-left: 1rem;
+  vertical-align: middle;
+
+  &.ee-only {
+    @extend .spectrum-Label--red;
+  }
+
+  &.b2b-only {
+    @extend .spectrum-Label--seafoam;
+  }
+
+  &.ce-only {
+    @extend .spectrum-Label--orange;
+  }
+
+  a.spectrum-Link {
+    color: inherit;
+  }
+}
+
+.edition-marker-tag {
+  font-size: var(--spectrum-tag-l-text-size, var(--spectrum-alias-item-text-size-l));
+  font-weight: 300;
+  font-style: normal;
+}
 
 li>.edition-marker {
   position: absolute;
-  left: 2px;
-  top: 4px;
+  left: 3px;
 }
 
 li.ee-only,
@@ -34,12 +62,13 @@ li.ce-only {
   position: relative;
 }
 
-// Logo
+// Adobe Logo
 .edition-marker-icon-image {
   display: inline-block;
-  background: url("../i/a-logo.svg") no-repeat center;
+  background: url(../i/a-logo.svg) no-repeat center;
   background-size: contain;
-  vertical-align: text-top;
+  margin-left: 0;
+  vertical-align: middle;
 }
 
 .b2b-only .edition-marker-icon-image {
@@ -84,5 +113,9 @@ strong.b2b-only {
 .spectrum-SideNav-itemLink.ee-only,
 .spectrum-SideNav-itemLink.ce-only,
 .spectrum-SideNav-itemLink.b2b-only {
-  padding-right: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  vertical-align: text-top;
+
 }
