@@ -64,7 +64,7 @@ window.onload = function() {
       return !request.params.query;
     };
 
-    // Inisialize all the search indices
+    // Initialize all the search indices
     var init = function() {
       // Sub indices
       for (var i = 1; i < indices.length; i++) {
@@ -361,6 +361,7 @@ window.onload = function() {
               'spectrum-Search'
             ],
             input: [
+              'spectrum-Textfield',
               'spectrum-Textfield-input',
               'spectrum-Search-input'
             ],

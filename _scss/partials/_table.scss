@@ -2,6 +2,12 @@ table {
   @extend .spectrum-Table !optional;
 }
 
+.content table p,
+.content table li,
+.content table dl {
+  font-size: inherit;
+}
+
 table.fixed {
   table-layout: fixed;
 }

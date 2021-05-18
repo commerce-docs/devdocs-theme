@@ -8,8 +8,8 @@
 
   // recreate spectrum tabs bottom border
 
-  border-bottom: var(--spectrum-tabs-rule-height, var(--spectrum-alias-border-size-thick)) solid;
-  border-bottom-color: var(--spectrum-tabs-rule-color, var(--spectrum-global-color-static-gray-200));
+  border-bottom: var(--spectrum-tabs-m-rule-size, var(--spectrum-alias-border-size-thick)) solid;
+  border-bottom-color: var(--spectrum-tabs-m-rule-color, var(--spectrum-alias-border-color-light));
 
 }
 
