@@ -1,6 +1,6 @@
 {% if page.ee_only == true %}
 <div class="break">
-  <span class="edition-Label spectrum-Label--large ee-only">{{site.data.var.ee}} only.
+  <span class="edition-Label ee-only">{{site.data.var.ee}} only.
     <a class="spectrum-Link" href="https://docs.magento.com/user-guide/getting-started.html#product-editions">
       Learn more.</a>
   </span>
@@ -8,7 +8,7 @@
 {% endif %}
 {% if page.b2b_only == true %}
 <div class="break">
-  <span class="edition-Label spectrum-Label--large b2b-only">{{site.data.var.b2b}} only.
+  <span class="edition-Label b2b-only">{{site.data.var.b2b}} only.
     <a class="spectrum-Link" href="https://docs.magento.com/user-guide/getting-started.html#product-editions">
       Learn more.</a>
   </span>
@@ -16,9 +16,45 @@
 {% endif %}
 {% if page.ce_only == true %}
 <div class="break">
-  <span class="edition-Label spectrum-Label--large ce-only">{{site.data.var.ce}} only.
+  <span class="edition-Label ce-only">{{site.data.var.ce}} only.
     <a class="spectrum-Link" href="https://docs.magento.com/user-guide/getting-started.html#product-editions">
       Learn more.</a>
   </span>
 </div>
 {% endif %}
+
+<!-- {% if page.ee_only == true %}
+<div class="bs-callout spectrum-Alert-edition edition-callout ee-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header-edition">{{site.data.var.ee}} only</h4>
+  <div class="spectrum-Alert-content-edition">
+    The content on this page is for {{site.data.var.ee}} only.
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+{% endif %} {% if page.b2b_only == true %}
+<div class="bs-callout spectrum-Alert-edition edition-callout b2b-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header-edition">{{site.data.var.b2b}} only</h4>
+  <div class="spectrum-Alert-content-edition">
+    The content on this page is for {{site.data.var.b2b}} only.
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+{% endif %} {% if page.ce_only == true %}
+<div class="bs-callout spectrum-Alert-edition edition-callout ce-only">
+  <i class="edition-marker-icon-image spectrum-Icon spectrum-UIIcon-InfoMedium spectrum-Alert-icon"></i>
+  <h4 class="spectrum-Alert-header-edition">{{site.data.var.ce}} only</h4>
+  <div class="spectrum-Alert-content-edition">
+    The content on this page is for {{site.data.var.ce}} only.
+    <a href="https://docs.magento.com/user-guide/getting-started.html#product-editions">Learn more</a>
+  </div>
+</div>
+{% endif %}
+
+<div class="spectrum-Tags" role="list" aria-label="Tags">
+  <div class="spectrum-Tags-item" role="listitem" tabindex="0">
+    <img class="spectrum-Avatar" src="img/example-ava.jpg" alt="Avatar">
+    <span class="spectrum-Tags-itemLabel">Shantanu</span>
+  </div>
+</div> -->

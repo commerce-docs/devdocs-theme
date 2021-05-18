@@ -13,7 +13,7 @@ function editionMarkers() {
     markerTagClassName: 'edition-Tags edition-Tags-item',
     labelClassName: 'edition-Label',
     iconClassName: 'edition-marker-icon-image spectrum-Icon spectrum-Icon--sizeS',
-    // iconSrc: '../assets/i/a-logo.svg',
+    iconSrc: '../assets/i/a-logo.svg',
     tooltipClassName: 'spectrum-Tooltip spectrum-Tooltip--top edition-tooltip',
     tooltipVisibleClassName: 'is-open',
     tooltipLabelClassName: 'spectrum-Tooltip-label',
@@ -112,30 +112,44 @@ function editionMarkers() {
   // ---- Inline Label Markers ---- //
 
   // Label - No Icon
-  var createTagMarker = function (text, editionClassName) {
-    var label = document.createElement('span');
-    label.className = defaults.labelClassName;
-    label.classList.add(editionClassName);
-    label.innerHTML = text;
-    return label;
-  }
+  // var createTagMarker = function (text, editionClassName) {
+  //   var label = document.createElement('span');
+  //   label.className = defaults.labelClassName;
+  //   label.classList.add(editionClassName);
+  //   label.innerHTML = text;
+  //   return label;
+  // }
+
+  // <div class="spectrum-Tags-item" role="listitem">
+  //   <span class="spectrum-Tags-itemLabel">Tag 1</span>
+  // </div>
 
   // TODO: Discuss and modify as needed.
   //
   // Tag with Icon -- Against Branding Guidelines
   //
-  // var createTagMarker = function (text, editionClassName) {
-  //   var tag = document.createElement('div');
-  //   tag.className = defaults.markerTagClassName;
-  //   tag.classList.add(editionClassName);
+  var createTagMarker = function (text, edition) {
+  console.log("🚀 ~ createTagMarker ~ text", text);
+    var tag = document.createElement('div');
+    var item = document.createElement('div');
+    var icon = document.createElement('img');
+    var content = document.createElement('span');
 
-  //   tag.innerHTML =
-  //     '<img class="spectrum-Icon spectrum-Icon--sizeM" src="' + defaults.iconSrc + '" alt="Commerce Edition">' +
-  //     '<span class="' + defaults.tagLabelClassName + '">' + text + '</span>';
+    tag.appendChild(item);
+    item.appendChild(icon);
+    item.appendChild(content);
 
-  //   return tag;
-  // }
+    tag.className = 'spectrum-Tags';
+    tag.classList.add(edition);
+    item.className = 'spectrum-Tags-item';
+    icon.className = 'spectrum-Icon';
+    content.className = 'spectrum-Tags-itemLabel';
 
+    icon.setAttribute('src', './../assets/i/' + edition + '.svg');
+    content.innerText = '' + text + '';
+
+    return tag;
+  }
 
   var createTooltip = function (text, className) {
     var tooltip = document.createElement("div");

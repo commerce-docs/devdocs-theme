@@ -1,5 +1,9 @@
 table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2em 0 2em 0;
   @extend .spectrum-Table !optional;
+
 }
 
 .content table p,
@@ -19,19 +23,19 @@ table.fixed {
 }
 
 th {
-  @extend .spectrum-Table-headCell !optional;
+  @extend .spectrum-Table-headCell;
 }
 
 tbody {
-  @extend .spectrum-Table-body !optional;
+  @extend .spectrum-Table-body;
 }
 
-tbody tr {
-  @extend .spectrum-Table-row !optional;
+tr {
+  @extend .spectrum-Table-row;
 }
 
-tbody td {
-  @extend .spectrum-Table-cell !optional;
+td {
+  @extend .spectrum-Table-cell;
 
   &.whatsnew {
     width: 600px;
