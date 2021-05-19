@@ -94,5 +94,5 @@ app_switcher:
       - label: Order Management
         url: https://omsdocs.magento.com/userguides/
 
-      - label: Business Intelligence
+      - label: Commerce Reporting
         url: https://docs.magento.com/mbi/
