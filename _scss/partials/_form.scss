@@ -1,12 +1,13 @@
-
 form {
   margin: 0 0 20px;
 }
+
 fieldset {
   padding: 0;
   margin: 0;
   border: 0;
 }
+
 legend {
   display: block;
   width: 100%;
@@ -18,22 +19,32 @@ legend {
   border: 0;
   border-bottom: 1px solid #e5e5e5;
 }
+
 legend small {
   font-size: 15px;
   color: #999999;
 }
-label, input, button, select, textarea {
+
+label,
+input,
+button,
+select,
+textarea {
   font-size: 14px;
   font-weight: normal;
   line-height: 20px;
 }
+
 label {
   display: block;
   margin-bottom: 5px;
 }
 
-input, textarea, keygen, select, button {
-  font-family: $body-font-family;
+input,
+textarea,
+keygen,
+select,
+button {
   border: 1px solid #AEAFB1;
   border-radius: 2px;
 }
@@ -105,6 +116,7 @@ input, textarea, keygen, select, button {
     border-radius: 0;
   }
 }
+
 // Addon and addon wrapper for buttons
 .input-group-addon,
 .input-group-btn {
@@ -119,11 +131,13 @@ input, textarea, keygen, select, button {
 
   // Negative margin for spacing, position for bringing hovered/focused/actived
   // element above the siblings.
-  > .btn {
+  >.btn {
     position: relative;
-    + .btn {
+
+    +.btn {
       margin-left: -1px;
     }
+
     // Bring the "active" button to the front
     &:hover,
     &:focus,
@@ -134,14 +148,17 @@ input, textarea, keygen, select, button {
 
   // Negative margin to only have a 1px border between the two
   &:first-child {
-    > .btn,
-    > .btn-group {
+
+    >.btn,
+    >.btn-group {
       margin-right: -1px;
     }
   }
+
   &:last-child {
-    > .btn,
-    > .btn-group {
+
+    >.btn,
+    >.btn-group {
       z-index: 2;
       margin-left: -1px;
     }

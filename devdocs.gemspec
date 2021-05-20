@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |spec|
   spec.name          = 'devdocs'
-  spec.version       = '14'
+  spec.version       = '15'
   spec.authors       = ['Eugene Bannykh']
   spec.email         = ['ybannykh@adobe.com']
 
-  spec.summary       = 'A theme for Magento documentation websites.'
+  spec.summary       = 'A theme for Adobe Commerce documentation websites.'
   spec.homepage      = 'https://github.com/magento-devdocs/devdocs-theme'
   spec.license       = 'MIT'
 

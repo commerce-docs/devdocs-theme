@@ -1,14 +1,14 @@
 ---
 youtube_id: cM_9RkWFqqM
 duration: "7:36"
-group: "Fundamentals of Magento 2 Development"
+group: "Fundamentals of Adobe Commerce Development"
 title: "How to Add a New Product Attribute"
 thumbnail: "fundamentals/thumbs/add-attribute.png"
 menu_order: 1
 github_link:
 ---
 
-Adding a product attribute is one of the most popular operations in both Magento 1 and Magento 2.
+Adding a product attribute is one of the most popular operations in both Adobe Commerce 1 and Commerce 2.
 Attributes are a powerful way to solve many practical tasks related to a product.
 
 This is quite a broad topic, but in this video we will discuss the simple process of adding a dropdown-type attribute to a product.
@@ -32,7 +32,7 @@ Let’s go through each step.
 
 ## Step 1: Create a new module
 
-As Magento is modular based, we start the process by creating a new module called `Learning_ClothingMaterial`.
+As Adobe Commerce is modular based, we start the process by creating a new module called `Learning_ClothingMaterial`.
 
 ```
 $ cd <magento2_root>/app/code
@@ -49,7 +49,7 @@ Now, create two files:
 <?xml version="1.0"?>
 <!--
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 -->
@@ -68,7 +68,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 \Magento\Framework\Component\ComponentRegistrar::register(
@@ -91,7 +91,7 @@ Create the file `app/code/Learning/ClothingMaterial/Setup/InstallData.php`:
 {% highlight php startinline=true %}
 
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -163,7 +163,7 @@ Let’s take a minute to look at the code.
 
 First of all, we need to use a special setup object, not the one that comes as a parameter.
 This is because Catalog is an EAV entity, so to add an attribute, we have to use eavSetup rather than standard one.
-This holds true for any EAV entity in Magento 2 (category, product, customer, and so on).
+This holds true for any EAV entity in Adobe Commerce (category, product, customer, and so on).
 
 This is why we added eavSetupFactory in a constructor.
 
@@ -198,7 +198,7 @@ Next, we need to create the source model:
 {% highlight php startinline=true %}
 
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 
@@ -243,7 +243,7 @@ Now we will create a backend model:
 {% highlight php startinline=true %}
 
 /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 

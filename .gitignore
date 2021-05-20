@@ -12,6 +12,10 @@ xsdvi.log
 npm-debug.log
 CNAME
 _config.local.yml
+app.css.map
+print.css.map
+search.css.map
+.vscode/
 
 # OS generated files #
 ######################

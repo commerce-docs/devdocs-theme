@@ -1,19 +1,19 @@
 ---
 youtube_id: 4q43-auwAbU
 duration: "4:20"
-group: "Fundamentals of Magento 2 Development"
+group: "Fundamentals of Adobe Commerce Development"
 title: "How to Add a JavaScript Module"
 thumbnail: "fundamentals/thumbs/add-js-module.png"
 menu_order: 1
 github_link:
 ---
 
-Magento 2 uses requireJS as a tool to define the module structure.
-However, in addition to requireJS, Magento 2 also has its own unique way to execute JavaScript code.
+Adobe Commerce uses requireJS as a tool to define the module structure.
+However, in addition to requireJS, Adobe Commerce also has its own unique way to execute JavaScript code.
 You’ll see this in the example we’re using.
 
 We will develop a very simple JavaScript module that only provides the greeting “HELLO WORLD!”.
-It will illustrate how Magento 2 works with JavaScript files, executing the code and passing parameters inside a script.
+It will illustrate how Adobe Commerce works with JavaScript files, executing the code and passing parameters inside a script.
 The steps we’ll need to take are:
 
 1. Create a new module.
@@ -159,14 +159,14 @@ In the templates directory, add the file `app/code/Learning/Js/view/frontend/tem
 
 This code enables our module.
 It may look a little strange to those who have used requirejs before.
-As mentioned earlier, Magento 2 has its own unique process for executing JavaScript code.
+As mentioned earlier, Adobe Commerce has its own unique process for executing JavaScript code.
 
 One way is to use the `data-mage-initattribute`,which takes a JSON object as a parameter (as can be seen in this example).
 Each key of that object corresponds to the module and the value is a config.
 In this case, the JavaScript module should return a function with two parameters: config and element.
 (Again, this can be seen in our example.)
 
-Other popular options for executing JavaScript code in Magento 2 include applying the same configuration to multiple DOM elements, or, when the JavaScript is not related to any DOM nodes, using an asterisk(*) instead of a CSS selector.
+Other popular options for executing JavaScript code in Adobe Commerce include applying the same configuration to multiple DOM elements, or, when the JavaScript is not related to any DOM nodes, using an asterisk(*) instead of a CSS selector.
 
 ## Step 5: Add a module and test it
 

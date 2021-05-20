@@ -2,3 +2,7 @@ a.spectrum-Menu-itemLabel {
   color: inherit;
   text-decoration: none;
 }
+
+li.spectrum-Menu-itemLabel {
+  font-size: var(--spectrum-alias-item-text-size-l);
+}

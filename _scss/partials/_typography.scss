@@ -1,26 +1,47 @@
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   position: relative;
   text-rendering: optimizelegibility;
 }
 
+h1 {
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeXL;
+}
 
 h2 {
-  @extend .spectrum-Heading2;
-  margin: 2em 0 .7em 0;
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeL;
+  margin-bottom: .5rem;
 }
 
 h3 {
-  @extend .spectrum-Heading3;
-  margin: 2em 0 .7em 0;
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeM;
+  margin-bottom: .25rem;
 }
 
 h4 {
-  @extend .spectrum-Heading4;
-  margin: 2em 0 .7em 0;
+  @extend .spectrum-Heading,
+  .spectrum-Heading--sizeS;
+  margin-bottom: 0;
 }
 
+// Remove top margin for first heading in content
+.main-container h2:first-child {
+  margin-top: 0;
+}
 
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+h1 small,
+h2 small,
+h3 small,
+h4 small,
+h5 small,
+h6 small {
   font-weight: normal;
   line-height: 1;
 }
@@ -28,34 +49,81 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
 h1 small {
   font-size: 24.5px;
 }
+
 h2 small {
   font-size: 17.5px;
 }
+
 h3 small {
   font-size: 14px;
 }
+
 h4 small {
   font-size: 14px;
 }
 
+/*-- Paragraph Styles --*/
 
-.content p, .content li, .content dl {
-  @extend .spectrum-Body2 !optional;
-  margin: 0 0 1em 0;
+/* Most paragraphs in content section */
+.content p {
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeL;
+  margin-top: 0;
+}
+
+/*
+Ensures that the space between callouts and the next heading
+matches the space between paragraphs and the next heading.
+Otherwise, the space between callout and heading is excessive.
+*/
+.content p {
+
+  &.bs-callout,
+  &.bs-callout-info,
+  &.bs-callout-warning,
+  &.bs-callout-tip,
+  &.bs-callout-tutorial {
+
+    &+h2,
+    &+h3,
+    &+h4 {
+      margin-top: 1rem;
+    }
+  }
+}
+
+/*
+This selector ensures that <p>content</p> in lists has the
+same margin-bottom as <li>content</li> in those lists.
+Necessary because the parser wraps the bulleted or numbered
+content in a <p> element when that content has a space below
+and is not the last item in the list.
+*/
+.content li p {
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeL;
+  // margin: 0 0 0.7rem 0;
+}
+
+/* Bottom margins for list content without <p> elements.*/
+.content li,
+.content dl {
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeL;
+  // margin: 0 0 0.7rem 0;
 }
 
 a {
-  @extend .spectrum-Link !optional;
+  @extend .spectrum-Link,
+  .spectrum-Link--quiet;
 }
-
 
 // Style the external URL (only in content area)
 .content-wrap a[href^='http://']:not([href*='magento.com']),
-.content-wrap a[href^='https://']:not([href*='magento.com']){
-
+.content-wrap a[href^='https://']:not([href*='magento.com']) {
   &:after {
     content: '';
-    margin: -2px 2px 0 3px;
+    // margin: -2px 2px 0 3px;
     display: inline-block;
     vertical-align: middle;
     width: 10px;
@@ -63,18 +131,10 @@ a {
     background: url(../i/icons/external.svg) no-repeat center;
     background-size: contain;
   }
-
 }
-
-// Remove top margin for first heading in content 
-.main-container h2:first-child {
-  margin-top: 0;
-}
-
-
 
 .lead {
-  font-size: var(--spectrum-global-dimension-size-225);
+  font-size: var(--spectrum-global-dimension-static-size-225);
 }
 
 small {
@@ -94,71 +154,87 @@ cite {
   font-style: normal;
 }
 
-
 .text-left {
   text-align: left;
 }
+
 .text-right {
   text-align: right;
 }
+
 .text-center {
   text-align: center;
 }
 
+ul li {
+  margin: 0 0 0.7rem 0;
+}
 
+ol li {
+  margin: 0 0 1rem 0;
+}
 
-ul, ol {
+ul li ul li,
+ul li ol li,
+ol li ul li,
+ol li ol li {
+  margin: 0 0 0.5rem 0;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-bottom: 1rem;
+  margin-top: 0.2rem;
+}
+
+ul,
+ol {
   padding: 0;
-  margin: 0 0 1.3em 2em;
+  margin: 0 0 1.3rem 2rem;
 
-  // decrease the margin before paragraph
+  //decrease the margin before paragraph
   p+& {
-    margin-top: -0.5em;
+    margin-top: -0.5rem;
   }
 }
 
-ul ul, ul ol, ol ol, ol ul {
-  margin-bottom: 0;
-}
-
-li {
-  padding-left: .1em;
-  margin-bottom: .7em;
-}
-
-ul.unstyled, ol.unstyled {
+ul.unstyled,
+ol.unstyled {
   margin-left: 0;
   list-style: none;
 }
 
-ul.inline, ol.inline {
+ul.inline,
+ol.inline {
   margin-left: 0;
   list-style: none;
 }
 
-ul.inline>li, ol.inline>li {
+ul.inline>li,
+ol.inline>li {
   display: inline-block;
-  padding-left: .31em; //5px
-  padding-right: .31em;
+  padding-left: 0.31rem; //5px
+  padding-right: 0.31rem;
 }
 
 dl {
-  font-size: 1em;
-  margin-bottom: 1.3em;
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
 }
 
 dl dt {
   font-weight: 700;
-  margin: 1em 0 0.5em 0;
+  margin: 1em 0 0.5rem 0;
 }
 
 dl dd {
-  margin: 0 0 0 1.2em;
+  margin: 0 0 0 1.2rem;
 }
 
-
 hr {
-  margin: 1.3em 0;
+  margin: 1.3rem 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;
@@ -168,10 +244,12 @@ abbr {
   text-decoration: none;
 }
 
-abbr[title], abbr[data-original-title] {
+abbr[title],
+abbr[data-original-title] {
   cursor: help;
   border-bottom: 1px dotted #999999;
 }
+
 abbr.initialism {
   font-size: 90%;
   text-transform: uppercase;
@@ -184,10 +262,10 @@ blockquote cite {
 }
 
 blockquote {
-  padding: 0 0 0 1.25em;
-  margin: 0 0 1.25em;
+  padding: 0 0 0 1.25rem;
+  margin: 0 0 1.25rem;
   border-left: 5px solid #eeeeee;
-  margin: 2em 0 1em 0;
+  margin: 2em 0 1rem 0;
 }
 
 blockquote small {
@@ -196,33 +274,32 @@ blockquote small {
 }
 
 blockquote small:before {
-  content: '\2014 \00A0'
+  content: '\2014 \00A0';
 }
 
-q:before, q:after, blockquote:before, blockquote:after {
-  content: ""
+q:before,
+q:after,
+blockquote:before,
+blockquote:after {
+  content: '';
 }
 
 address {
   display: block;
-  margin-bottom: 1.25em;
+  margin-bottom: 1.25rem;
   font-style: normal;
 }
-
-
-
 
 /* SRJ - reviewer question */
 
 p.q {
-	font-size: 1em;
-	color: red;
-	/* display: none; */
+  font-size: 1rem;
+  color: red;
+  /* display: none; */
 }
 
-
 /* Status Colors - Used in Component Status Page */
-.status{
+.status {
   padding: 2px;
 
   &.red {
@@ -240,18 +317,6 @@ p.q {
   }
 }
 
-.page-title {
-  @extend .spectrum-Heading1;
-  @extend .spectrum-Heading--XXL;
-  
-  margin: 0 0 20px 0;
-}
-
-.page-subtitle {
-  @extend .spectrum-Heading2--quiet;
-  margin: -.5em 0 0 0;
-}
-
 // Reset the first heading on the page to have no margin
 main h2:first-child,
 main h3:first-child,
@@ -259,21 +324,34 @@ main h4:first-child {
   margin-top: 0;
 }
 
-@media ( $small-screen ) {
+@media ($small-screen) {
   h1 {
-    font-size: 1.875em;
+    font-size: 1.875rem;
   }
+
   h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
   }
 }
-
-
-
 
 /* Paragraph that represents a beginning of a procedure - should have an ordered list of steps following */
 .content .procedure {
   font-weight: bold;
-  margin-left: 1.5em;
+  margin-left: 0.75rem;
 }
 
+/*
+EXPERIMENTAL:
+Provides introductory-styled text for the first paragraph in a topic.
+For use when you want your topic's first paragraph to provide an
+inviting way to pull readers into a topic in a non-committal way.
+It provides big, easy to read text for quick engagement. In theory.
+*/
+.content .topic-intro {
+  @extend .spectrum-Body,
+  .spectrum-Body--sizeXL;
+  color: #8f8f8f;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.7;
+  font-style: italic;
+}

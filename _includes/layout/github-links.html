@@ -1,18 +1,19 @@
-<div class="github-links spectrum-ButtonGroup">
-{%- if page.github_link == true -%}
-  <div class="github-link spectrum-ButtonGroup-item">
-    <a class="improve-page spectrum-ActionButton spectrum-ActionButton--quiet" href="{{ page.github_files }}{{ page.github_path }}" target="_blank">
-      <img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/edit.svg" alt="" />
-      <span class="spectrum-ActionButton-label">Edit on GitHub</span> 
-    </a>
-  </div>
-{%- endif -%}
-{%- if page.feedback_link == true -%}
-  <div class="new-issue spectrum-ButtonGroup-item">
-    <a class="spectrum-ActionButton spectrum-ActionButton--quiet" href="{{ page.github_repo }}issues/new?title=Feedback on page: {{ page.url }}" target="_blank">
-      <img class="spectrum-Icon spectrum-Icon--sizeS"  src="{{ site.baseurl }}/assets/i/icons/bug.svg" alt="" />
-      <span class="spectrum-ActionButton-label">Log an Issue</span>
-    </a>
-  </div>
-{%- endif -%}
+<div class="github-links spectrum-ActionGroup--compact ActionGroup--justified">
+  {%- if page.github_link == true -%}
+  <button
+    class="spectrum-ActionButton spectrum-ActionButton--quiet spectrum-ActionButton--sizeM spectrum-ActionGroup-item"
+    onclick="window.location.href='{{ page.github_files }}{{ page.github_path }}';" target="_blank">
+    <img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/edit.svg" alt="" />
+    <span class="spectrum-ActionButton-label">Edit on GitHub</span>
+  </button>
+  {%- endif -%}
+  {%- if page.feedback_link == true -%}
+  <button
+    class="spectrum-ActionButton spectrum-ActionButton--quiet spectrum-ActionButton--sizeM spectrum-ActionGroup-item"
+    onclick="window.location.href='{{ page.github_repo }}issues/new?title=Feedback on page: {{ page.url }}';"
+    target="_blank">
+    <img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/bug.svg" alt="" />
+    <span class="spectrum-ActionButton-label">Log an Issue</span>
+  </button>
+  {%- endif -%}
 </div>

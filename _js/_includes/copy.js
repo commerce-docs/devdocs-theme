@@ -5,7 +5,7 @@ $(function() {
   var $highlightBtn = $('<button class="spectrum-ActionButton spectrum-ActionButton--quiet btn-copy"><span class="spectrum-ActionButton-label">Copy<span></button>');
   var $noCopyBtn = $('<button class="spectrum-ActionButton spectrum-ActionButton--quiet btn-no-copy" disabled><span class="spectrum-ActionButton-label">Not for copy</span></button>');
   // Get all pre tags
-  var $preTags = $('.highlight');
+  var $preTags = $('.highlight:not(:has(.highlight))');
 
   // Iterate each pre tag
   $preTags.each( function () {
@@ -34,7 +34,7 @@ $(function() {
         var timerId = setTimeout( function () { e.trigger.innerText='Copy'; }, 3000);
       });
       clipboard.on('error', function(e) {
-        
+
       });
       $this.data('clipboard', clipboard);
 
