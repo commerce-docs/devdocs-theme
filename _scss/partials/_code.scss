@@ -223,6 +223,19 @@ figure.highlight pre {
 }
 
 // Language terminal fix
-#main-content .language-terminal {
-  margin-bottom: 2rem;
+#html-body .language-terminal {
+  margin-bottom: 1.5rem;
+}
+
+#html-body ul li .language-terminal {
+  margin-top: 1rem;
+}
+
+#html-body {
+
+  div.pre-wrap div.highlight,
+  div.pre-wrap div.highlight div.pre-wrap,
+  div.pre-wrap div.highlight div.pre-wrap pre.highlight {
+    margin: 0;
+  }
 }
