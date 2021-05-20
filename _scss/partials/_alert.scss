@@ -57,13 +57,13 @@
     background-size: contain;
   }
 
-  p {
-    margin-bottom: 0;
-  }
+  // p {
+  //   margin-bottom: 0;
+  // }
 
-  p:last-child {
-    margin-bottom: 0;
-  }
+  // p:last-child {
+  //   margin-bottom: 0;
+  // }
 }
 
 .bs-callout-info {
@@ -106,8 +106,7 @@
 }
 
 .page-intro .message-banner,
-.page-intro .bs-callout
-.page-intro .bs-callout-info,
+.page-intro .bs-callout .page-intro .bs-callout-info,
 .page-intro .bs-callout-warning,
 .page-intro .bs-callout-tutorial,
 .page-intro .bs-callout-tip {

@@ -8,13 +8,11 @@ pre {
 :not(pre)>code {
   padding: 3px 3px 3px 3px;
   border-radius: 3px;
-  border: 1px solid rgba(51, 51, 51, 0.1);
-  // background: $code-background-color;
+  border: 1px solid #3333331a;
   background: $code-background-color;
   color: lighten($body-font-color, 20%);
   word-wrap: break-word;
-  font-size: 90%;
-  // vertical-align: text-top;
+  font-size: 91%;
 }
 
 // Code format in headers
@@ -220,23 +218,5 @@ figure.highlight pre {
     .gl {
       display: table-cell;
     }
-  }
-}
-
-// Language terminal fix
-#html-body .language-terminal {
-  margin-bottom: 1.5rem;
-}
-
-#html-body ul li .language-terminal {
-  margin-top: 1rem;
-}
-
-#html-body {
-
-  div.pre-wrap div.highlight,
-  div.pre-wrap div.highlight div.pre-wrap,
-  div.pre-wrap div.highlight div.pre-wrap pre.highlight {
-    margin: 0;
   }
 }
