@@ -1,13 +1,13 @@
 <div class="github-links spectrum-ActionGroup--compact ActionGroup--justified">
   {%- if page.github_link == true -%}
-  <button class="spectrum-ActionButton spectrum-ActionButton--sizeM spectrum-ActionGroup-item"
+  <button class="spectrum-ActionButton--quiet spectrum-ActionButton--sizeM spectrum-ActionGroup-item"
     onclick="window.location.href='{{ page.github_files }}{{ page.github_path }}';" target="_blank">
     <img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/edit.svg" alt="" />
     <span class="spectrum-ActionButton-label">Edit on GitHub</span>
   </button>
   {%- endif -%}
   {%- if page.feedback_link == true -%}
-  <button class="spectrum-ActionButton spectrum-ActionButton--sizeM spectrum-ActionGroup-item"
+  <button class="spectrum-ActionButton--quiet spectrum-ActionButton--sizeM spectrum-ActionGroup-item"
     onclick="window.location.href='{{ page.github_repo }}issues/new?title=Feedback on page: {{ page.url }}';"
     target="_blank">
     <img class="spectrum-Icon spectrum-Icon--sizeS" src="{{ site.baseurl }}/assets/i/icons/bug.svg" alt="" />
