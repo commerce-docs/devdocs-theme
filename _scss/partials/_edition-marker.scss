@@ -64,20 +64,38 @@ li.ce-only {
 }
 
 // Adobe Logo
-.edition-marker-icon-image {
+.ee-only .edition-marker-icon-image {
   display: inline-block;
-  background: url(../i/ee-only.svg) no-repeat center;
+  background: url(./../i/ee-only.svg) no-repeat center;
   background-size: contain;
   margin-left: 0;
+  margin-right: 7px;
+  margin-top: -3px;
   vertical-align: middle;
 }
 
 .b2b-only .edition-marker-icon-image {
-  background-image: url("../i/b2b-only.svg");
+  display: inline-block;
+  background-image: url("./../i/b2b-only.svg");
+  background-size: contain;
+  margin-left: 0;
+  margin-right: 7px;
+  margin-top: -3px;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
 }
 
 .ce-only .edition-marker-icon-image {
-  background-image: url("../i/ce-only.svg");
+  display: inline-block;
+  background-image: url("./../i/ce-only.svg");
+  background-size: contain;
+  margin-left: 0;
+  margin-right: 7px;
+  margin-top: -3px;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
 }
 
 //
@@ -93,6 +111,12 @@ li.ce-only {
   margin: 0;
   right: 4px;
   top: 8px;
+}
+
+#html-body span.ee-only {
+  white-space: nowrap;
+  display: inline-flex;
+
 }
 
 // Prevent edition marker from wrapping the text inside table

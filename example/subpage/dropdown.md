@@ -4,10 +4,6 @@ menu_title: Dropdown
 menu_order: 3
 ---
 
-
-
-
-
 ```html
 <div class="spectrum-Dropdown">
   <button id="dropdown" class="spectrum-FieldButton spectrum-Dropdown-trigger" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,6 +20,7 @@ menu_order: 3
 </div>
 ```
 
+```html
 <div class="version-switcher">
   <button id="dropdown" class="spectrum-Picker spectrum-Picker--sizeM" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="spectrum-Picker-label">Picker Label</span>
@@ -37,3 +34,17 @@ menu_order: 3
     </ul>
   </div>
 </div>
+```
+
+| Control     | Description                                                                                                                                                                                                                                                           |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Add Product | Initiates the process to create a new simple product. To choose a specific product type, click the down arrow. Options: [config.html](https://google.com) / [Downloadable Product](https://google.com) / <span class="ee-only">[Gift Card](https://google.com)</span> |
+
+{: .b2b-only }
+## Google Analytics
+
+![Alt text](http://via.placeholder.com/1000x500){: .zoom}
+
+{: .b2b-only }
+
+[Google Analytics](https://google.com)
