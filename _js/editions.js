@@ -13,7 +13,7 @@ function editionMarkers() {
     markerTagClassName: 'edition-Tags edition-Tags-item',
     labelClassName: 'edition-Label',
     iconClassName: 'edition-marker-icon-image spectrum-Icon spectrum-Icon--sizeS',
-    iconSrc: '../assets/i/a-logo.svg',
+    iconSrc: '../i/a-logo.svg',
     tooltipClassName: 'spectrum-Tooltip spectrum-Tooltip--top edition-tooltip',
     tooltipVisibleClassName: 'is-open',
     tooltipLabelClassName: 'spectrum-Tooltip-label',
@@ -145,7 +145,7 @@ function editionMarkers() {
     icon.className = 'spectrum-Icon';
     content.className = 'spectrum-Tags-itemLabel';
 
-    icon.setAttribute('src', './../assets/i/' + edition + '.svg');
+    icon.setAttribute('src', '../assets/i/' + edition + '.svg');
     content.innerText = '' + text + '';
 
     return tag;

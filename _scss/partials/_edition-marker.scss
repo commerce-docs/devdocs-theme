@@ -54,6 +54,7 @@
 li>.edition-marker {
   position: absolute;
   left: 3px;
+  top: -2px;
 }
 
 li.ee-only,
@@ -66,7 +67,7 @@ li.ce-only {
 // Adobe Logo
 .edition-marker-icon-image {
   display: inline-block;
-  background: url(../i/ee-only.svg) no-repeat center;
+  background: url("../i/ee-only.svg") no-repeat center;
   background-size: contain;
   margin-left: 0;
   vertical-align: middle;
