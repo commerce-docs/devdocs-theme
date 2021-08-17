@@ -51,6 +51,11 @@
   font-style: normal;
 }
 
+.edition-marker-icon.edition-marker {
+  display: inline-block;
+  margin-right: 7px;
+}
+
 li>.edition-marker {
   position: absolute;
   left: 3px;
