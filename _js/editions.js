@@ -100,6 +100,7 @@ function editionMarkers() {
     var marker = document.createElement('div');
     marker.className = defaults.markerIconClassName;
     marker.setAttribute('data-edition', edition);
+    marker.id = 'edition-table-marker';
     marker.classList.add(defaults.markerClassName);
     marker.innerHTML = '<i class="' + defaults.iconClassName +'"></i>';
 
