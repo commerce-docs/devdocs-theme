@@ -53,10 +53,15 @@
 
 .edition-marker-icon.edition-marker {
   display: inline-block;
-  margin-right: 7px;
-  margin-left: -23px;
-  td:first-child & {
-    margin-left: 0;
+  margin-right: 4px;
+  td:first-child &, li & {
+      margin-left: 0;
+  }
+  td & {
+      margin-left: -23px;
+  }
+  td & + a {
+      margin-left: 3px;
   }
 }
 
