@@ -98,8 +98,6 @@ function editionMarkers() {
   // Icon with the tooltip
   var createIconMarker = function (edition) {
     var marker = document.createElement('div');
-    marker.style.display = 'inline-block';
-    marker.style.marginRight = '7px';
     marker.className = defaults.markerIconClassName;
     marker.setAttribute('data-edition', edition);
     marker.classList.add(defaults.markerClassName);

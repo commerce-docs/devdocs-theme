@@ -19,6 +19,19 @@ Magento provides a wealth of business and technical resources, self-help tools, 
 [Expert consulting services][13]{:target="_blank"}|Our Expert Consulting Group (ECG) helps Magento merchants and Solution Partners maximize their success. Our experts offer comprehensive analysis and best practice recommendations, from architecture planning through post-deployment.|
 {: .name-table }
 
+
+Access to the following resources can be assigned to a custom role. See the linked page to learn more about the capabilities that are associated with each role.
+
+|--- |--- |--- |
+||||
+|<span class="ee-only">[Sales]()|[Operations]()||
+||<span class="b2b-only">[Quotes]()</span><br/>[Orders]()<br/>[Invoices]()<br/>[Shipments]()<br/>[Credit Memos]()<br/>[Billing Agreements]()<br/><span class="ee-only">[Returns]()</span><br/>[Transactions]()|
+||<span class="ee-only">[Archive]()</span>||
+||[Shopping Cart Management]()||
+|[Catalog]()|<span class="ee-only">[Category Permissions]()||
+|[Global Search]()|||
+
+
 [1]: https://magento.com/technical-resources
 [2]: http://devdocs.magento.com/
 [3]: https://magento.com/resources

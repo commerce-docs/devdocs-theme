@@ -51,9 +51,13 @@
   font-style: normal;
 }
 
-#edition-table-marker.edition-marker-icon.edition-marker {
+.edition-marker-icon.edition-marker {
   display: inline-block;
   margin-right: 7px;
+  margin-left: -23px;
+  td:first-child & {
+    margin-left: 0;
+  }
 }
 
 li>.edition-marker {
