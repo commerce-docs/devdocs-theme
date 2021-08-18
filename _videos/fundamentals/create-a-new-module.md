@@ -1,14 +1,14 @@
 ---
 youtube_id: 682p52tFcmY
 duration: "5:18"
-group: "Fundamentals of Magento 2 Development"
+group: "Fundamentals of Adobe Commerce Development"
 title: "Create a New Module"
 thumbnail: "fundamentals/thumbs/create-new-module.png"
 menu_order: 1
 github_link:
 ---
 
-Module is a structural element of Magento 2 – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
+Module is a structural element of Adobe Commerce – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
 
 To create a module, you need to complete the following high-level steps:
 
@@ -22,9 +22,9 @@ Let’s go through each of these steps in detail.
 
 ## Create the module folder
 
-#### There are two possible locations for modules in Magento 2: the app/code folder and the vendor folder
+#### There are two possible locations for modules in Adobe Commerce: the app/code folder and the vendor folder
 
-Depending on how Magento 2 has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning github).
+Depending on how Adobe Commerce has been installed, core modules can either be located in the `vendor/magento/magento-*`folders (for composer installation) or in the `app/code/Magento/` folder (for cloning github).
 
 #### Which of these locations should you choose for your new module?
 
@@ -32,7 +32,7 @@ If you build a module for a specific project, it is best to choose the app/code 
 
 If you build an extension to be reused, it is better to use composer to create it, and put your module in the `vendor/<YOUR_VENDOR>/module-something` folder.
 
-Each module name in Magento 2 consists of two parts – the vendor and the module itself. In other words, modules are grouped into vendors, so you need to define the vendor and module names. For this example, let’s name the vendor “Learning” and the module “FirstUnit”.
+Each module name in Adobe Commerce consists of two parts – the vendor and the module itself. In other words, modules are grouped into vendors, so you need to define the vendor and module names. For this example, let’s name the vendor “Learning” and the module “FirstUnit”.
 
 Let’s create the folder app/code/Learning and inside this folder place another folder: FirstUnit. If you're using the command line, the code would be:
 
@@ -51,9 +51,9 @@ This file contains the following information:
 * Module version
 * Dependencies
 
-Module name is defined by the folders we just created, because in Magento 2, class names must follow the folder structure. Because we created the folders `Learning/FirstUnit`, our module name will be `Learning_FirstUnit` and all classes that belong to this module will begin with `Learning\FirstUnit` – for example: `Learning\FirstUnit\Observer\Test`.
+Module name is defined by the folders we just created, because in Adobe Commerce, class names must follow the folder structure. Because we created the folders `Learning/FirstUnit`, our module name will be `Learning_FirstUnit` and all classes that belong to this module will begin with `Learning\FirstUnit` – for example: `Learning\FirstUnit\Observer\Test`.
 
-Module version indicates the current version of the database schema and data, and is used in upgrading. For example, assume you decide to modify a table's schema in your module. How can you be sure that this change will happen on all instances where the code is deployed? Altering the database by direct SQL queries won't work. Instead, Magento 2 has install and upgrade scripts in every module (optionally). These scripts contain commands to modify the database schema or data. To track whether to execute a script or not, Magento 2 uses module versions. Every time you implement a new database change, you implement a new version of a module and change the corresponding `module.xml`. Magento saves the current module's version in a database, and if the database value and the one in the `module.xml` do not match, it will execute the upgrade code.
+Module version indicates the current version of the database schema and data, and is used in upgrading. For example, assume you decide to modify a table's schema in your module. How can you be sure that this change will happen on all instances where the code is deployed? Altering the database by direct SQL queries won't work. Instead, Adobe Commerce has install and upgrade scripts in every module (optionally). These scripts contain commands to modify the database schema or data. To track whether to execute a script or not, Adobe Commerce uses module versions. Every time you implement a new database change, you implement a new version of a module and change the corresponding `module.xml`. Magento saves the current module's version in a database, and if the database value and the one in the `module.xml` do not match, it will execute the upgrade code.
 
 Dependencies. If one module depends on another, the `module.xml` file will have a special declaration that defines a list of modules that the current module depends on. For this example, we will make our module dependent on Magento_Catalog.
 
@@ -101,7 +101,7 @@ The only thing that varies is the module name, which in our case is `Learning_Fi
 
 ## Run the “setup:upgrade” command
 
-Running this command makes your new module active, notifying Magento of its presence.
+Running this command makes your new module active, notifying Adobe Commerce of its presence.
 
 ```
 php bin/magento setup:upgrade
@@ -118,4 +118,4 @@ Never change this list manually!
 cat app/etc/env.php | grep Learning_FirstUnit
 ```
 
-Employing these steps, you can successfully create a new module in Magento 2.
+Employing these steps, you can successfully create a new module in Adobe Commerce.

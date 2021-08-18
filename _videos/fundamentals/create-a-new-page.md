@@ -1,7 +1,7 @@
 ---
 youtube_id: l33T2-YC4tk
 duration: "4:02"
-group: "Fundamentals of Magento 2 Development"
+group: "Fundamentals of Adobe Commerce Development"
 title: "Create a New Page"
 thumbnail: "fundamentals/thumbs/create-new-page.png"
 menu_order: 1
@@ -9,7 +9,7 @@ github_link:
 ---
 In this video on how to create a new page, we’ll create a page which returns JSON with one parameter: the message “HELLO WORLD!”
 
-To add a new page in Magento 2, you need to create a new controller. In Magento 2, a controller is a file located at a specific place which responds to a specific route. A route in Magento 2 is a standard URL that consists of three parts:
+To add a new page in Adobe Commerce, you need to create a new controller. In Adobe Commerce, a controller is a file located at a specific place which responds to a specific route. A route in Adobe Commerce is a standard URL that consists of three parts:
 
 * frontName
 * controllerName
@@ -51,7 +51,7 @@ Learning/HelloPage/etc/module.xml
 #### registration.php
 {% highlight php %}
 <?php /**
-* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
+* Copyright © 2016 Adobe. All rights reserved. * See COPYING.txt for license details.
 */
 \Magento\Framework\Component\ComponentRegistrar::register( \Magento\Framework\Component\ComponentRegistrar::MODULE, 'Learning_HelloPage',
 __DIR__
@@ -63,7 +63,7 @@ __DIR__
 <?xml version="1.0"?>
 <!--
 /**
-* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
+* Copyright © 2016 Adobe. All rights reserved. * See COPYING.txt for license details.
 */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
@@ -73,7 +73,7 @@ __DIR__
 {% endhighlight %}
 
 ## Add a routes.xml file
-Before we create the file, let’s take a brief look at how routing works in Magento 2. Each area (in our case, frontend and adminhtml) has a corresponding merged `routes.xml` file, which is merged from the `etc/&lt;area&gt;/routes.xml` file from every module. That `routes.xml` file contains information about all registered routes and frontNames. Recall that a frontName is the first part of a route.
+Before we create the file, let’s take a brief look at how routing works in Adobe Commerce. Each area (in our case, frontend and adminhtml) has a corresponding merged `routes.xml` file, which is merged from the `etc/&lt;area&gt;/routes.xml` file from every module. That `routes.xml` file contains information about all registered routes and frontNames. Recall that a frontName is the first part of a route.
 
 So, we should register it in the `routes.xml` file and associate it with a module. It is possible to have multiple modules associated with one route, so we can create pages under the catalog `frontName`.
 
@@ -83,7 +83,7 @@ Now, since we’re working in the frontend area, we’ll add the `etc/frontend/r
 <?xml version="1.0"?>
 <!--
 /**
-* Copyright © 2016 Magento. All rights reserved. * See COPYING.txt for license details.
+* Copyright © 2016 Adobe. All rights reserved. * See COPYING.txt for license details.
 */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
@@ -96,7 +96,7 @@ Now, since we’re working in the frontend area, we’ll add the `etc/frontend/r
 {% endhighlight %}
 
 We added a new route here called “learning” (note it does not have to match the module name) and a new `frontName`. Often the route and `frontName` are the same – for example, “catalog” – but it is not required.
-When Magento 2 sees a URL like `test/chunk2/chunk3`, it will check whether our module `Learning_HelloPage` has a folder, `Controller/Chunk2`, and an action file, `Chunk3.php`.
+When Adobe Commerce sees a URL like `test/chunk2/chunk3`, it will check whether our module `Learning_HelloPage` has a folder, `Controller/Chunk2`, and an action file, `Chunk3.php`.
 
 Our route will be `test/page/view`.
 
@@ -113,7 +113,7 @@ Let’s create an action file `Controller/Page/View.php`:
 
 {% highlight php %}
 <?php /**
- * Copyright © 2016 Magento. All rights reserved.
+ * Copyright © 2016 Adobe. All rights reserved.
  * See COPYING.txt for license details.
  */
 namespace Learning\HelloPage\Controller\Page;
@@ -148,7 +148,7 @@ return $result->setData($data);
 } }
 {% endhighlight %}
 
-Note we created a JSON-type page. This can be seen in the results factory that we specify in our constructor. In order to activate our module and our page we should run the Magento setup upgrade:
+Note we created a JSON-type page. This can be seen in the results factory that we specify in our constructor. In order to activate our module and our page we should run the Commerce setup upgrade:
 
 ```
 $ cd <magento2_root>
@@ -161,6 +161,6 @@ Now we need to verify that `Learning_HelloPage` is present in the output. If you
 {"message":"Hello world!"}
 ```
 
-This is because we returned a `ResultJson` object. Magento 2 has different result objects for different cases – ResultPage for a regular page, Forward result, and so on.
+This is because we returned a `ResultJson` object. Adobe Commerce has different result objects for different cases – ResultPage for a regular page, Forward result, and so on.
 
 We used a JSON result here because the goal was to illustrate how to create a new page, not to dig into the view layer, which would require activation to use the Page result object.

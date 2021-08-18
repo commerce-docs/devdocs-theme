@@ -1,12 +1,14 @@
-
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 2em 0 2em 0;
   @extend .spectrum-Table !optional;
+
 }
 
-.content table p, .content table li, .content table dl {
+.content table p,
+.content table li,
+.content table dl {
   font-size: inherit;
 }
 
@@ -14,18 +16,29 @@ table.fixed {
   table-layout: fixed;
 }
 
-tbody {
-  @extend .spectrum-Table-body !optional;
+.content table p,
+.content table li,
+.content table dl {
+  font-size: inherit;
 }
 
 th {
-  @extend .spectrum-Table-headCell !optional;
+  @extend .spectrum-Table-headCell;
 }
 
-tbody tr {
-  @extend .spectrum-Table-row !optional;
+tbody {
+  @extend .spectrum-Table-body;
+}
+
+tr {
+  @extend .spectrum-Table-row;
 }
 
 td {
-  @extend .spectrum-Table-cell !optional;
+  @extend .spectrum-Table-cell;
+
+  &.whatsnew {
+    width: 600px;
+    padding-right: 40px;
+  }
 }

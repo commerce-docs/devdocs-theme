@@ -3,7 +3,7 @@
   var algolia = {
     id : "{{ site.algolia.application_id}}",
     index: "{{ site.algolia.index_name}}",
-    key: "{{ site.algolia.api_key}}"
+    key: "{{ site.algolia.search_only_key }}"
   };
 
   var indices = [
@@ -41,10 +41,3 @@
     }
   ];
 </script>
-
-
-{% if site.environment == "public" %}
-
-<script src="//assets.adobedtm.com/d4d114c60e50/1b207a2557f7/launch-2c640a8acec9-development.min.js" async></script>
-
-{% endif %}

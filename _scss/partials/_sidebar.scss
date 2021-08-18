@@ -4,12 +4,12 @@ $toggle-width: 32px;
   position: fixed;
   width: $sidebar-width;
   height: 100vh;
-  
+
   z-index: 2;
   background: $light-gray-color;
 
   // Move sidebar up to provide the background for the logo
-  
+
   top: 0;
   padding-top: $header-height;
 
@@ -29,7 +29,8 @@ $toggle-width: 32px;
 
   .guide-title {
     position: relative;
-    @extend .spectrum-Heading4;
+    @extend .spectrum-Heading,
+    .spectrum-Heading--sizeS;
     padding: $spacing*4 $spacing*3 $spacing*4 $spacing*3;
     margin: 0;
     z-index: 1;
@@ -50,7 +51,8 @@ $toggle-width: 32px;
     }
 
     // indents
-    a, span {
+    a,
+    span {
       text-decoration: none;
       padding-left: 30px;
     }
@@ -73,11 +75,11 @@ $toggle-width: 32px;
 
   }
 
- 
+
 
   /*
   // second level links
- 
+
 
 
   // Third level
@@ -116,9 +118,11 @@ $toggle-width: 32px;
   li li .toggle {
     left: 13px;
   }
+
   li li li .toggle {
     left: 26px;
   }
+
   .toggle {
     background: transparent;
     border: 2px solid transparent;
@@ -132,7 +136,7 @@ $toggle-width: 32px;
     padding: 0;
     margin: 0;
 
-    top:0;
+    top: 0;
     left: 0;
     cursor: pointer;
 
@@ -158,11 +162,11 @@ $toggle-width: 32px;
   }
 
   .item-toggle {
-    & > .toggle {
+    &>.toggle {
       pointer-events: none;
     }
 
-    & > span:hover {
+    &>span:hover {
       cursor: pointer;
     }
   }
@@ -175,7 +179,7 @@ $toggle-width: 32px;
     display: inline-flex;
   }*/
 
-  .open > .toggle:after {
+  .open>.toggle:after {
     transform: rotate(90deg);
   }
 
@@ -192,7 +196,9 @@ $toggle-width: 32px;
     color: $secondary-text-color;
     z-index: 2;
 
-    &:active, &:focus, &:hover {
+    &:active,
+    &:focus,
+    &:hover {
       color: $body-font-color;
     }
   }
@@ -201,7 +207,7 @@ $toggle-width: 32px;
 
 
 
-@media ( $medium-screen ) {
+@media ($medium-screen) {
 
   .sidebar {
 
@@ -227,11 +233,13 @@ $toggle-width: 32px;
       background: $light-gray-color;
       padding: 10px 20px 10px 40px;
 
-      &, &:visited {
+      &,
+      &:visited {
         color: $body-font-color;
       }
 
-      &:active, &:hover {
+      &:active,
+      &:hover {
         text-decoration: none;
       }
 
@@ -239,13 +247,13 @@ $toggle-width: 32px;
         display: block;
         content: '';
         position: absolute;
-        top:10px;
+        top: 10px;
         left: 14px;
         width: 18px;
         height: 18px;
         background: url('../i/icons/chevron-right.svg') no-repeat center;
         opacity: .6;
-        
+
         border-color: $body-font-color transparent transparent transparent;
         transition: all $transition-duration;
       }

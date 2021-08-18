@@ -6,25 +6,25 @@ $nav-main-section-width: 300px;
   position: relative;
   outline: 0;
 
-  & > a,
-  & > span {
+  &>a,
+  &>span {
     //outline: 0;
     z-index: 2;
     -webkit-user-drag: none;
   }
 
-  & > span {
+  &>span {
     -webkit-tap-highlight-color: transparent;
   }
 
-  &.is-open > a,
-  &.is-open > span {
+  &.is-open>a,
+  &.is-open>span {
     transition-delay: 0.05s; // small delay needed to synchronise JS appearance event
   }
 
   // Increase the width of the hover area by 40px to help with the dropdown
-  &.is-open > a::after,
-  &.is-open > span::after {
+  &.is-open>a::after,
+  &.is-open>span::after {
     content: '';
     height: 100%;
     background: transparent;
@@ -62,7 +62,7 @@ $nav-main-section-width: 300px;
   visibility: hidden;
   opacity: 0;
   min-width: $nav-main-section-width;
-  transform: translateX(-$spacing * 4);
+  transform: translateX(- $spacing * 4);
 
   transition-property: opacity, visibility;
   transition-duration: $transition-duration;
@@ -73,11 +73,22 @@ $nav-main-section-width: 300px;
     width: 100%;
     margin: 0;
     padding: 0;
+
+    li {
+      padding-top: 0;
+      padding-bottom: 0;
+      margin: 0;
+    }
   }
 
-  .nav-section {
+  &>.nav-section {
     min-width: $nav-main-section-width;
     padding: 0;
+    @extend .spectrum-Menu;
+  }
+
+  &>ul {
+    @extend .spectrum-Menu;
   }
 
   // Popup Mobile view: always visible

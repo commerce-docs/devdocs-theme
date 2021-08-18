@@ -2,18 +2,18 @@ input[type="checkbox"] {
   margin: 0 10px 0 0;
   width: 14px;
   height: 14px;
-  
+
   -webkit-appearance: none;
   position: relative;
 
   border-radius: 2px;
-  border: 2px solid var(--spectrum-checkbox-box-border-color-selected, var(--spectrum-global-color-gray-700));
-  background: var(--spectrum-checkbox-box-background-color, var(--spectrum-global-color-gray-75));
+  border: 2px solid var(--spectrum-checkbox-m-box-border-color-selected, var(--spectrum-global-color-gray-700));
+  background: var(--spectrum-checkbox-box-background-color, var(--spectrum-global-color-static-gray-75));
 
   &:checked {
-    
-    border-color: var(--spectrum-checkbox-box-border-color-selected, var(--spectrum-global-color-gray-700));
-    background: var(--spectrum-checkbox-box-border-color-selected, var(--spectrum-global-color-gray-700));
+
+    border-color: var(--spectrum-checkbox-m-box-border-color-selected, var(--spectrum-global-color-gray-700));
+    background: var(--spectrum-checkbox-m-box-border-color-selected, var(--spectrum-global-color-gray-700));
 
     &:after {
       content: '';
