@@ -8,3 +8,7 @@
 **/*.gif
 **/*.ico
 **/*.html
+**/*.yml
+**/*.yaml
+**/*.json
+**/*.lock
