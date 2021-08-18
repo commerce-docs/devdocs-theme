@@ -22,6 +22,7 @@ on:
       - '**.md'
       - '**.html'
       - '**.xml'
+      - '**.css'
 
 ###############
 # Set the Job #
@@ -55,3 +56,4 @@ jobs:
           VALIDATE_HTML: false
           VALIDATE_MARKDOWN: false
           VALIDATE_XML: false
+          VALIDATE_CSS: false
