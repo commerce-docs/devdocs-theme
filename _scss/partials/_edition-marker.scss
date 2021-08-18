@@ -1,11 +1,13 @@
 // Icon markder
 .edition-Tags {
   @extend .spectrum-Tags;
+
   margin-left: 1rem;
 }
 
 .edition-Tags-item {
   @extend .spectrum-Tags-item;
+
   display: inline-flex;
   vertical-align: middle;
 
@@ -25,6 +27,7 @@
 
 .edition-Label {
   @extend .spectrum-Label;
+
   margin-left: 1rem;
   vertical-align: middle;
 
@@ -54,18 +57,22 @@
 .edition-marker-icon.edition-marker {
   display: inline-block;
   margin-right: 4px;
-  td:first-child &, li & {
-      margin-left: 0;
+
+  td:first-child &,
+  li & {
+    margin-left: 0;
   }
+
   td & {
-      margin-left: -23px;
+    margin-left: -23px;
   }
+
   td & + a {
-      margin-left: 3px;
+    margin-left: 3px;
   }
 }
 
-li>.edition-marker {
+li > .edition-marker {
   position: absolute;
   left: 3px;
   top: -2px;
@@ -129,9 +136,7 @@ strong.b2b-only {
 .spectrum-SideNav-itemLink.ee-only,
 .spectrum-SideNav-itemLink.ce-only,
 .spectrum-SideNav-itemLink.b2b-only {
-
   display: flex;
   justify-content: space-between;
   vertical-align: text-top;
-
 }
