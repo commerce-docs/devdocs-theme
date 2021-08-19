@@ -56,3 +56,5 @@ jobs:
           VALIDATE_MARKDOWN: false
           VALIDATE_XML: false
           CSS_FILE_NAME: .stylelintrc.json
+          FILTER_REGEX_INCLUDE: .*_scss/.*
+          
