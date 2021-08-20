@@ -1,11 +1,37 @@
 // Icon markder
 .edition-Tags {
   @extend .spectrum-Tags;
+
   margin-left: 1rem;
+}
+
+.edition-spectrum-icon {
+  @extend .spectrum-Icon;
+
+  display: inline-block;
+  background-size: contain;
+  margin-left: 0;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+
+  &.ee-only-icon {
+    background: url("../i/ee-only.svg") no-repeat center;
+  }
+
+  &.b2b-only-icon {
+    background: url("../i/b2b-only.svg") no-repeat center;
+  }
+
+  &.ce-only-icon {
+    background: url("../i/ce-only.svg") no-repeat center;
+  }
 }
 
 .edition-Tags-item {
   @extend .spectrum-Tags-item;
+
   display: inline-flex;
   vertical-align: middle;
 
@@ -25,6 +51,7 @@
 
 .edition-Label {
   @extend .spectrum-Label;
+
   margin-left: 1rem;
   vertical-align: middle;
 
@@ -51,9 +78,28 @@
   font-style: normal;
 }
 
-li>.edition-marker {
+.edition-marker-icon.edition-marker {
+  display: inline-block;
+  margin-right: 4px;
+
+  td:first-child &,
+  li & {
+    margin-left: 0;
+  }
+
+  td & {
+    margin-left: -23px;
+  }
+
+  td & + a {
+    margin-left: 3px;
+  }
+}
+
+li > .edition-marker {
   position: absolute;
   left: 3px;
+  top: -2px;
 }
 
 li.ee-only,
@@ -66,7 +112,7 @@ li.ce-only {
 // Adobe Logo
 .edition-marker-icon-image {
   display: inline-block;
-  background: url(../i/ee-only.svg) no-repeat center;
+  background: url("../i/ee-only.svg") no-repeat center;
   background-size: contain;
   margin-left: 0;
   vertical-align: middle;
@@ -114,9 +160,7 @@ strong.b2b-only {
 .spectrum-SideNav-itemLink.ee-only,
 .spectrum-SideNav-itemLink.ce-only,
 .spectrum-SideNav-itemLink.b2b-only {
-
   display: flex;
   justify-content: space-between;
   vertical-align: text-top;
-
 }

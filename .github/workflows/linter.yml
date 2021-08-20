@@ -55,3 +55,4 @@ jobs:
           VALIDATE_HTML: false
           VALIDATE_MARKDOWN: false
           VALIDATE_XML: false
+          FILTER_REGEX_EXCLUDE: .*.css*

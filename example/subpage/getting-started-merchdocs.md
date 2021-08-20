@@ -12,7 +12,7 @@ sections:
     content: Learn about your Adobe account and how you can access information about your Adobe products and services.
     url: /magento/magento-account.html
 
-  - title: Quick Tour
+  - title: <span class="ee-only">Page Builder</span>
     content: Take a high-level tour of an Adobe Commerce store.
     url: /getting-started/quick-tour.html
 
