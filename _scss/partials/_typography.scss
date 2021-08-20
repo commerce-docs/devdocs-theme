@@ -135,6 +135,10 @@ a {
   }
 }
 
+.content-wrap .github-links a[href^='https://']::after {
+  display:none;
+}
+
 .lead {
   font-size: var(--spectrum-global-dimension-static-size-225);
 }
