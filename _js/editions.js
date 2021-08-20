@@ -13,7 +13,6 @@ function editionMarkers() {
     markerTagClassName: 'edition-Tags edition-Tags-item',
     labelClassName: 'edition-Label',
     iconClassName: 'edition-marker-icon-image spectrum-Icon spectrum-Icon--sizeS',
-    iconSrc: '../i/a-logo.svg',
     tooltipClassName: 'spectrum-Tooltip spectrum-Tooltip--top edition-tooltip',
     tooltipVisibleClassName: 'is-open',
     tooltipLabelClassName: 'spectrum-Tooltip-label',
@@ -24,7 +23,6 @@ function editionMarkers() {
   var currentTooltip;
   var tooltips = [];
 
-
   var init = function () {
 
     // Add edition markers to sidebar
@@ -33,7 +31,7 @@ function editionMarkers() {
     });
     var sidenavItems = document.querySelectorAll(sidebarItemsSelector);
     if (sidenavItems.length) {
-      createSidebarMarkers(sidenavItems)
+      createSidebarMarkers(sidenavItems);
     }
 
     // Get all the edition-specific items in content
@@ -43,7 +41,7 @@ function editionMarkers() {
     });
     var contentItems = document.querySelectorAll(contentItemsSelector);
     if (contentItems.length) {
-      createContentMarkers(contentItems)
+      createContentMarkers(contentItems);
     }
 
     // Create tooltips for each edition:
@@ -64,18 +62,18 @@ function editionMarkers() {
           edition = editionClass;
         }
       });
-      console.log(edition)
+      console.log(edition);
       var marker = createIconMarker(edition);
       // Append marker to element
       element.appendChild(marker);
     });
-  }
+  };
 
   var createContentMarkers = function (items) {
     Array.from(items).forEach(function (element) {
       // Get the edition value
       var edition = element.className;
-      var text = defaults.editions[edition];
+      var editionText = defaults.editions[edition];
 
       // Check the parent node of an item:
       var parentNode = element.parentNode.nodeName.toLowerCase();
@@ -86,12 +84,12 @@ function editionMarkers() {
         element.prepend(marker);
       } else {
         // Create marker
-        var marker = createTagMarker(text, edition);
+        var marker = createTagMarker(editionText, edition);
         // Append marker to element
         element.appendChild(marker);
       }
     });
-  }
+  };
 
   // ---- Inline Icon Markers ---- //
 
@@ -103,37 +101,16 @@ function editionMarkers() {
     marker.classList.add(defaults.markerClassName);
     marker.innerHTML = '<i class="' + defaults.iconClassName + '"></i>';
 
-
     // Attach events
     marker.addEventListener('mouseover', handleMarkerMouseOver);
     marker.addEventListener('mouseout', handleMarkerMouseOut);
     return marker;
-  }
+  };
 
-  // ---- Inline Label Markers ---- //
-
-  // Label - No Icon
-  // var createTagMarker = function (text, editionClassName) {
-  //   var label = document.createElement('span');
-  //   label.className = defaults.labelClassName;
-  //   label.classList.add(editionClassName);
-  //   label.innerHTML = text;
-  //   return label;
-  // }
-
-  // <div class="spectrum-Tags-item" role="listitem">
-  //   <span class="spectrum-Tags-itemLabel">Tag 1</span>
-  // </div>
-
-  // TODO: Discuss and modify as needed.
-  //
-  // Tag with Icon -- Against Branding Guidelines
-  //
-  var createTagMarker = function (text, edition) {
-  console.log("🚀 ~ createTagMarker ~ text", text);
+  var createTagMarker = function (editionText, edition) {
     var tag = document.createElement('div');
     var item = document.createElement('div');
-    var icon = document.createElement('img');
+    var icon = document.createElement('i');
     var content = document.createElement('span');
 
     tag.appendChild(item);
@@ -143,23 +120,21 @@ function editionMarkers() {
     tag.className = 'spectrum-Tags';
     tag.classList.add(edition);
     item.className = 'spectrum-Tags-item';
-    icon.className = 'spectrum-Icon';
+    icon.classList.add('edition-spectrum-icon', edition + '-icon');
     content.className = 'spectrum-Tags-itemLabel';
-
-    icon.setAttribute('src', '../assets/i/' + edition + '.svg');
-    content.innerText = '' + text + '';
+    content.innerText = `${editionText}`;
 
     return tag;
-  }
+  };
 
-  var createTooltip = function (text, className) {
+  var createTooltip = function (editionText, className) {
     var tooltip = document.createElement("div");
     tooltip.setAttribute('id', 'edition-tooltip-' + className);
     tooltip.className = defaults.tooltipClassName + ' ' + className;
 
     tooltip.innerHTML =
       '<div class="' + defaults.tooltipLabelClassName + '">' +
-      text +
+      editionText +
       '</div><div class="' + defaults.tooltipTipClassName + '"></div>';
 
     return tooltip;
@@ -177,12 +152,12 @@ function editionMarkers() {
     currentTooltip.style.top = (markerOffset.top - tooltipOffset.height) + 'px';
     currentTooltip.style.left = (markerOffset.left - tooltipOffset.width / 2 + markerOffset.width / 2) + 'px';
     currentTooltip.classList.add(defaults.tooltipVisibleClassName);
-  }
+  };
 
   // Hide tooltip on mouse out
   var handleMarkerMouseOut = function (event) {
     currentTooltip.classList.remove(defaults.tooltipVisibleClassName);
-  }
+  };
 
   init();
 }

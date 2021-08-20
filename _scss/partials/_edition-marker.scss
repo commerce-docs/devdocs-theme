@@ -5,6 +5,30 @@
   margin-left: 1rem;
 }
 
+.edition-spectrum-icon {
+  @extend .spectrum-Icon;
+
+  display: inline-block;
+  background-size: contain;
+  margin-left: 0;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+
+  &.ee-only-icon {
+    background: url("../i/ee-only.svg") no-repeat center;
+  }
+
+  &.b2b-only-icon {
+    background: url("../i/b2b-only.svg") no-repeat center;
+  }
+
+  &.ce-only-icon {
+    background: url("../i/ce-only.svg") no-repeat center;
+  }
+}
+
 .edition-Tags-item {
   @extend .spectrum-Tags-item;
 
