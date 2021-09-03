@@ -1,3 +1,6 @@
+{% assign versions = site.versions %}
+
+{%- if versions.size > 1 -%}
 <div class="version-switcher">
 
 	<button id="version-switcher-button" class="spectrum-Picker spectrum-Picker--sizeM" data-toggle="dropdown"
@@ -17,3 +20,4 @@
 	</div>
 
 </div>
+{%- endif -%}
