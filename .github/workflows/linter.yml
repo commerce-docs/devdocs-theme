@@ -56,4 +56,5 @@ jobs:
           VALIDATE_MARKDOWN: false
           VALIDATE_XML: false
           VALIDATE_JSCPD: false
+          VALIDATE_NATURAL_LANGUAGE: false
           FILTER_REGEX_EXCLUDE: .*.css*
