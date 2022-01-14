@@ -18,7 +18,7 @@ sections:
 
 ## How to use
 
-Use grid.html include file to render the cards that link to other pages:
+Use `grid.html` include file to render the cards that link to other pages:
 
 ```markdown
 ---
