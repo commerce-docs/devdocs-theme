@@ -1,7 +1,7 @@
-//var editionElements = document.getElementsByClassName("ee-only");
+// var editionElements = document.getElementsByClassName("ee-only");
 
-function editionMarkers() {
-  var defaults = {
+function editionMarkers () {
+  const defaults = {
     editionClassNames: ['ee-only', 'ce-only', 'b2b-only', 'pwa-only'],
     editions: {
       'ee-only': 'Adobe Commerce only',
@@ -18,151 +18,149 @@ function editionMarkers() {
     tooltipVisibleClassName: 'is-open',
     tooltipLabelClassName: 'spectrum-Tooltip-label',
     tooltipTipClassName: 'spectrum-Tooltip-tip',
-    tagLabelClassName: 'spectrum-Tags-itemLabel edition-marker-tag',
-  };
+    tagLabelClassName: 'spectrum-Tags-itemLabel edition-marker-tag'
+  }
 
-  var currentTooltip;
-  var tooltips = [];
+  let currentTooltip
+  const tooltips = []
 
-  var init = function () {
-
+  const init = function () {
     // Add edition markers to sidebar
-    var sidebarItemsSelector = Object.entries(defaults.editionClassNames).map(function (edition) {
-      return '.sidebar .' + edition[1];
-    });
-    var sidenavItems = document.querySelectorAll(sidebarItemsSelector);
+    const sidebarItemsSelector = Object.entries(defaults.editionClassNames).map(function (edition) {
+      return '.sidebar .' + edition[1]
+    })
+    const sidenavItems = document.querySelectorAll(sidebarItemsSelector)
     if (sidenavItems.length) {
-      createSidebarMarkers(sidenavItems);
+      createSidebarMarkers(sidenavItems)
     }
 
     // Get all the edition-specific items in content
     // Build a query for multiple editons
-    var contentItemsSelector = Object.entries(defaults.editionClassNames).map(function (edition) {
-      return '.content main .' + edition[1];
-    });
-    var contentItems = document.querySelectorAll(contentItemsSelector);
+    const contentItemsSelector = Object.entries(defaults.editionClassNames).map(function (edition) {
+      return '.content main .' + edition[1]
+    })
+    const contentItems = document.querySelectorAll(contentItemsSelector)
     if (contentItems.length) {
-      createContentMarkers(contentItems);
+      createContentMarkers(contentItems)
     }
 
     // Create tooltips for each edition:
     Object.entries(defaults.editions).map(function (edition) {
-      var editionTooltip = createTooltip(edition[1], edition[0]);
-      tooltips.push(editionTooltip);
-      document.getElementsByTagName('body')[0].appendChild(editionTooltip);
-    });
-  };
-
+      const editionTooltip = createTooltip(edition[1], edition[0])
+      tooltips.push(editionTooltip)
+      document.getElementsByTagName('body')[0].appendChild(editionTooltip)
+    })
+  }
 
   var createSidebarMarkers = function (items) {
     Array.from(items).forEach(function (element) {
-      var edition;
+      let edition
       defaults.editionClassNames.map(function (editionClass) {
-        console.log(editionClass);
+        console.log(editionClass)
         if (element.classList.contains(editionClass)) {
-          edition = editionClass;
+          edition = editionClass
         }
-      });
-      console.log(edition);
-      var marker = createIconMarker(edition);
+      })
+      console.log(edition)
+      const marker = createIconMarker(edition)
       // Append marker to element
-      element.appendChild(marker);
-    });
-  };
+      element.appendChild(marker)
+    })
+  }
 
   var createContentMarkers = function (items) {
     Array.from(items).forEach(function (element) {
       // Get the edition value
-      var edition = element.className;
-      var editionText = defaults.editions[edition];
+      const edition = element.className
+      const editionText = defaults.editions[edition]
 
       // Check the parent node of an item:
-      var parentNode = element.parentNode.nodeName.toLowerCase();
+      const parentNode = element.parentNode.nodeName.toLowerCase()
 
       // Items inside tables and lists get an icon treatment
       if (parentNode === 'td' || parentNode === 'ul' || parentNode === 'ol') {
-        var marker = createIconMarker(edition);
-        element.prepend(marker);
+        var marker = createIconMarker(edition)
+        element.prepend(marker)
       } else {
         // Create marker
-        var marker = createTagMarker(editionText, edition);
+        var marker = createTagMarker(editionText, edition)
         // Append marker to element
-        element.appendChild(marker);
+        element.appendChild(marker)
       }
-    });
-  };
+    })
+  }
 
   // ---- Inline Icon Markers ---- //
 
   // Icon with the tooltip
   var createIconMarker = function (edition) {
-    var marker = document.createElement('div');
-    marker.className = defaults.markerIconClassName;
-    marker.setAttribute('data-edition', edition);
-    marker.classList.add(defaults.markerClassName);
-    marker.innerHTML = '<i class="' + defaults.iconClassName + '"></i>';
+    const marker = document.createElement('div')
+    marker.className = defaults.markerIconClassName
+    marker.setAttribute('data-edition', edition)
+    marker.classList.add(defaults.markerClassName)
+    marker.innerHTML = '<i class="' + defaults.iconClassName + '"></i>'
 
     // Attach events
-    marker.addEventListener('mouseover', handleMarkerMouseOver);
-    marker.addEventListener('mouseout', handleMarkerMouseOut);
-    return marker;
-  };
+    marker.addEventListener('mouseover', handleMarkerMouseOver)
+    marker.addEventListener('mouseout', handleMarkerMouseOut)
+    return marker
+  }
 
   var createTagMarker = function (editionText, edition) {
-    var tag = document.createElement('div');
-    var item = document.createElement('div');
-    var icon = document.createElement('i');
-    var content = document.createElement('span');
+    const tag = document.createElement('div')
+    const item = document.createElement('div')
+    const icon = document.createElement('i')
+    const content = document.createElement('span')
 
-    tag.appendChild(item);
-    item.appendChild(icon);
-    item.appendChild(content);
+    tag.appendChild(item)
+    item.appendChild(icon)
+    item.appendChild(content)
 
-    tag.className = 'spectrum-Tags';
-    tag.classList.add(edition);
-    item.className = 'spectrum-Tags-item';
-    icon.classList.add('edition-spectrum-icon', edition + '-icon');
-    content.className = 'spectrum-Tags-itemLabel';
-    content.innerText = `${editionText}`;
+    tag.className = 'spectrum-Tags'
+    tag.classList.add(edition)
+    item.className = 'spectrum-Tags-item'
+    icon.classList.add('edition-spectrum-icon', edition + '-icon')
+    content.className = 'spectrum-Tags-itemLabel'
+    content.innerText = `${editionText}`
 
-    return tag;
-  };
+    return tag
+  }
 
   var createTooltip = function (editionText, className) {
-    var tooltip = document.createElement("div");
-    tooltip.setAttribute('id', 'edition-tooltip-' + className);
-    tooltip.className = defaults.tooltipClassName + ' ' + className;
+    const tooltip = document.createElement('div')
+    tooltip.setAttribute('id', 'edition-tooltip-' + className)
+    tooltip.className = defaults.tooltipClassName + ' ' + className
 
     tooltip.innerHTML =
       '<div class="' + defaults.tooltipLabelClassName + '">' +
       editionText +
-      '</div><div class="' + defaults.tooltipTipClassName + '"></div>';
+      '</div><div class="' + defaults.tooltipTipClassName + '"></div>'
 
-    return tooltip;
-  };
+    return tooltip
+  }
 
   // Hovering on the marker shows tooltip
   var handleMarkerMouseOver = function (event) {
     // Decide which tooltip to show:
-    var edition = event.target.getAttribute('data-edition');
-    //console.log(edition)
-    currentTooltip = document.getElementById('edition-tooltip-' + edition);
+    const edition = event.target.getAttribute('data-edition')
+    // console.log(edition)
+    currentTooltip = document.getElementById('edition-tooltip-' + edition)
     // Position tooltip to the top center of marker:
-    var markerOffset = event.target.getBoundingClientRect();
-    var tooltipOffset = currentTooltip.getBoundingClientRect();
-    currentTooltip.style.top = (markerOffset.top - tooltipOffset.height) + 'px';
-    currentTooltip.style.left = (markerOffset.left - tooltipOffset.width / 2 + markerOffset.width / 2) + 'px';
-    currentTooltip.classList.add(defaults.tooltipVisibleClassName);
-  };
+    const markerOffset = event.target.getBoundingClientRect()
+    const tooltipOffset = currentTooltip.getBoundingClientRect()
+    currentTooltip.style.top = (markerOffset.top - tooltipOffset.height) + 'px'
+    currentTooltip.style.left = (markerOffset.left - tooltipOffset.width / 2 + markerOffset.width / 2) + 'px'
+    currentTooltip.classList.add(defaults.tooltipVisibleClassName)
+  }
 
   // Hide tooltip on mouse out
   var handleMarkerMouseOut = function (event) {
-    currentTooltip.classList.remove(defaults.tooltipVisibleClassName);
-  };
+    currentTooltip.classList.remove(defaults.tooltipVisibleClassName)
+  }
 
-  init();
+  init()
 }
 
 window.addEventListener('load', function (event) {
-  editionMarkers();
-});
+  editionMarkers()
+})
