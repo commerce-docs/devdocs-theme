@@ -45,22 +45,22 @@ function editionMarkers () {
     }
 
     // Create tooltips for each edition:
-    Object.entries(defaults.editions).map(function (edition) {
+    Object.entries(defaults.editions).map((function (edition) {
       const editionTooltip = createTooltip(edition[1], edition[0])
       tooltips.push(editionTooltip)
       document.getElementsByTagName('body')[0].appendChild(editionTooltip)
-    })
+    }))
   }
 
   const createSidebarMarkers = function (items) {
     Array.from(items).forEach(function (element) {
       let edition
-      defaults.editionClassNames.map(function (editionClass) {
+      defaults.editionClassNames.map((function (editionClass) {
         console.log(editionClass)
         if (element.classList.contains(editionClass)) {
           edition = editionClass
         }
-      })
+      }))
       console.log(edition)
       const marker = createIconMarker(edition)
       // Append marker to element
