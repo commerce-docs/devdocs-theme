@@ -52,7 +52,7 @@ function editionMarkers () {
     })
   }
 
-  var createSidebarMarkers = function (items) {
+  const createSidebarMarkers = function (items) {
     Array.from(items).forEach(function (element) {
       let edition
       defaults.editionClassNames.map(function (editionClass) {
@@ -68,7 +68,7 @@ function editionMarkers () {
     })
   }
 
-  var createContentMarkers = function (items) {
+  const createContentMarkers = function (items) {
     Array.from(items).forEach(function (element) {
       // Get the edition value
       const edition = element.className
@@ -79,11 +79,11 @@ function editionMarkers () {
 
       // Items inside tables and lists get an icon treatment
       if (parentNode === 'td' || parentNode === 'ul' || parentNode === 'ol') {
-        var marker = createIconMarker(edition)
+        const marker = createIconMarker(edition)
         element.prepend(marker)
       } else {
         // Create marker
-        var marker = createTagMarker(editionText, edition)
+        const marker = createTagMarker(editionText, edition)
         // Append marker to element
         element.appendChild(marker)
       }
@@ -93,7 +93,7 @@ function editionMarkers () {
   // ---- Inline Icon Markers ---- //
 
   // Icon with the tooltip
-  var createIconMarker = function (edition) {
+  const createIconMarker = function (edition) {
     const marker = document.createElement('div')
     marker.className = defaults.markerIconClassName
     marker.setAttribute('data-edition', edition)
@@ -106,7 +106,7 @@ function editionMarkers () {
     return marker
   }
 
-  var createTagMarker = function (editionText, edition) {
+  const createTagMarker = function (editionText, edition) {
     const tag = document.createElement('div')
     const item = document.createElement('div')
     const icon = document.createElement('i')
@@ -126,7 +126,7 @@ function editionMarkers () {
     return tag
   }
 
-  var createTooltip = function (editionText, className) {
+  const createTooltip = function (editionText, className) {
     const tooltip = document.createElement('div')
     tooltip.setAttribute('id', 'edition-tooltip-' + className)
     tooltip.className = defaults.tooltipClassName + ' ' + className
@@ -140,7 +140,7 @@ function editionMarkers () {
   }
 
   // Hovering on the marker shows tooltip
-  var handleMarkerMouseOver = function (event) {
+  const handleMarkerMouseOver = function (event) {
     // Decide which tooltip to show:
     const edition = event.target.getAttribute('data-edition')
     // console.log(edition)
@@ -154,7 +154,7 @@ function editionMarkers () {
   }
 
   // Hide tooltip on mouse out
-  var handleMarkerMouseOut = function (event) {
+  const handleMarkerMouseOut = function (event) {
     currentTooltip.classList.remove(defaults.tooltipVisibleClassName)
   }
 
