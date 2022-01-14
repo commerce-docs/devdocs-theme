@@ -1,6 +1,7 @@
 ---
 title: Code Examples
 menu_title: Code
+pwa_only: true
 menu_order: 1
 ---
 

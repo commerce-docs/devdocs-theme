@@ -11,7 +11,7 @@
   display: inline-block;
   background-size: contain;
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 4px;
   width: 14px;
   height: 14px;
   vertical-align: middle;
@@ -65,7 +65,7 @@
   }
 
   &.b2b-only {
-    @extend .spectrum-Label--seafoam;
+    @extend .spectrum-Label--green;
   }
 
   &.ce-only {
@@ -73,7 +73,7 @@
   }
 
   &.pwa-only {
-    @extend .spectrum-Label--fuchsia;
+    @extend .spectrum-Label--blue;
   }
 
   a.spectrum-Link {
@@ -100,12 +100,12 @@
     margin-left: -23px;
   }
 
-  td & + a {
+  td &+a {
     margin-left: 3px;
   }
 }
 
-li > .edition-marker {
+li>.edition-marker {
   position: absolute;
   left: 3px;
   top: -2px;
@@ -123,8 +123,9 @@ li.ce-only {
 .edition-marker-icon-image {
   display: inline-block;
   background: url("../i/ee-only.svg") no-repeat center;
-  background-size: contain;
+  background-size: 14px 14px;
   margin-left: 0;
+  margin-top: -1px;
   vertical-align: middle;
 }
 
