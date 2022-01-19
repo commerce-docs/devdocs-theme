@@ -11,7 +11,7 @@
   display: inline-block;
   background-size: contain;
   margin-left: 0;
-  margin-right: 5px;
+  margin-right: 4px;
   width: 14px;
   height: 14px;
   vertical-align: middle;
@@ -27,6 +27,10 @@
   &.ce-only-icon {
     background: url("../i/ce-only.svg") no-repeat center;
   }
+
+  &.pwa-only-icon {
+    background: url("../i/pwa-only.svg") no-repeat center;
+  }
 }
 
 .edition-Tags-item {
@@ -39,6 +43,7 @@
 
   &.ee-only,
   &.b2b-only,
+  &.pwa-only,
   &.ce-only {
     color: #000;
   }
@@ -60,11 +65,15 @@
   }
 
   &.b2b-only {
-    @extend .spectrum-Label--seafoam;
+    @extend .spectrum-Label--green;
   }
 
   &.ce-only {
     @extend .spectrum-Label--orange;
+  }
+
+  &.pwa-only {
+    @extend .spectrum-Label--blue;
   }
 
   a.spectrum-Link {
@@ -91,12 +100,12 @@
     margin-left: -23px;
   }
 
-  td & + a {
+  td &+a {
     margin-left: 3px;
   }
 }
 
-li > .edition-marker {
+li>.edition-marker {
   position: absolute;
   left: 3px;
   top: -2px;
@@ -104,6 +113,7 @@ li > .edition-marker {
 
 li.ee-only,
 li.b2b-only,
+li.pwa-only,
 li.ce-only {
   padding-left: 28px;
   position: relative;
@@ -113,8 +123,9 @@ li.ce-only {
 .edition-marker-icon-image {
   display: inline-block;
   background: url("../i/ee-only.svg") no-repeat center;
-  background-size: contain;
+  background-size: 14px 14px;
   margin-left: 0;
+  margin-top: -1px;
   vertical-align: middle;
 }
 
@@ -124,6 +135,10 @@ li.ce-only {
 
 .ce-only .edition-marker-icon-image {
   background-image: url("../i/ce-only.svg");
+}
+
+.pwa-only .edition-marker-icon-image {
+  background-image: url("../i/pwa-only.svg");
 }
 
 //
@@ -145,6 +160,7 @@ li.ce-only {
 // TODO: refactror this
 table strong.ee-only,
 table strong.ce-only,
+table strong.pwa-only,
 table strong.b2b-only {
   white-space: nowrap;
 }
@@ -152,6 +168,7 @@ table strong.b2b-only {
 // Reset the font weight of the marker in case it's applied to strong
 strong.ee-only,
 strong.ce-only,
+strong.pwa-only,
 strong.b2b-only {
   font-weight: normal;
 }
@@ -159,6 +176,7 @@ strong.b2b-only {
 // Make space for marker in side nav:
 .spectrum-SideNav-itemLink.ee-only,
 .spectrum-SideNav-itemLink.ce-only,
+.spectrum-SideNav-itemLink.pwa-only,
 .spectrum-SideNav-itemLink.b2b-only {
   display: flex;
   justify-content: space-between;

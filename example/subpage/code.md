@@ -1,12 +1,13 @@
 ---
 title: Code Examples
 menu_title: Code
+pwa_only: true
 menu_order: 1
 ---
 
 ## Inline `code` example
 
-This is `inline code example`. The inline code can be inserted in any html element. Here's the example of the code inside the link: [Link with the `code inside`](/).
+This is `inline code example`. The inline code can be inserted in any HTML element. Here's the example of the code inside the link: [Link with the `code inside`](/).
 
 ### H3 with the `code line` in it
 

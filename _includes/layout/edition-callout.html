@@ -22,6 +22,14 @@
   </span>
 </div>
 {% endif %}
+{% if page.pwa_only == true %}
+<div class="break">
+  <span class="edition-Label pwa-only">{{site.data.var.pwa}} only.
+    <a class="spectrum-Link" href="https://docs.magento.com/user-guide/getting-started.html#product-editions">
+      Learn more.</a>
+  </span>
+</div>
+{% endif %}
 
 <!-- {% if page.ee_only == true %}
 <div class="bs-callout spectrum-Alert-edition edition-callout ee-only">
