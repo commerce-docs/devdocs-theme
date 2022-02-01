@@ -21,7 +21,7 @@ theme: devdocs
 ## Developing the theme
 
 Do a `npm install` and then `bundle install`.
-Then run `npm run watch:all`.
+Then run `npm start`.
 
 ## Using theme locally
 
