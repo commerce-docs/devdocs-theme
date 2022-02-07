@@ -3,7 +3,7 @@ table {
   border-collapse: collapse;
   margin: 2em 0 2em 0;
   @extend .spectrum-Table !optional;
-
+  @extend .spectrum-Table--sizeM;
 }
 
 .content table p,

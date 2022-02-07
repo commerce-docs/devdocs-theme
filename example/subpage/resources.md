@@ -22,6 +22,7 @@ Magento provides a wealth of business and technical resources, self-help tools, 
 
 Access to the following resources can be assigned to a custom role. See the linked page to learn more about the capabilities that are associated with each role.
 
+|Heading 1| Heading 2| heading 3|
 |--- |--- |--- |
 ||||
 |<span class="ee-only">[Sales]()|[Operations]()||
