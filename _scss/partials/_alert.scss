@@ -1,32 +1,32 @@
 // Spectrum overrides
 
-.spectrum-Alert-header {
+.spectrum-InLineAlert-header {
   @extend .spectrum-Body;
   @extend .spectrum-Body--sizeL !optional;
   display: block;
   font-weight: 700
 }
 
-.spectrum-Alert-edition {
-  @extend .spectrum-Alert !optional;
+.spectrum-InLineAlert-edition {
+  @extend .spectrum-InLineAlert !optional;
   display: flex;
 }
 
-[dir="ltr"] .spectrum-Alert-header-edition {
+[dir="ltr"] .spectrum-InLineAlert-header-edition {
   padding-right: 20px;
 }
 
-[dir="rtl"] .spectrum-Alert-header-edition {
+[dir="rtl"] .spectrum-InLineAlert-header-edition {
   padding-left: 20px;
 }
 
-.spectrum-Alert-header-edition {
-  @extend .spectrum-Alert-header !optional;
+.spectrum-InLineAlert-header-edition {
+  @extend .spectrum-InLineAlert-header !optional;
   line-height: revert;
 }
 
-.spectrum-Alert-content-edition {
-  @extend .spectrum-Alert-content !optional;
+.spectrum-InLineAlert-content-edition {
+  @extend .spectrum-InLineAlert-content !optional;
   margin: revert;
 }
 
@@ -36,7 +36,7 @@
 .bs-callout-warning,
 .bs-callout-tip,
 .bs-callout-tutorial {
-  @extend .spectrum-Alert;
+  @extend .spectrum-InLineAlert;
   width: 100%;
   min-width: auto;
   padding-right: 50px;
@@ -67,7 +67,7 @@
 }
 
 .bs-callout-info {
-  @extend .spectrum-Alert--info;
+  @extend .spectrum-InLineAlert--info;
 
   &:before {
     background-image: url(../i/icons/help.svg);
@@ -75,7 +75,7 @@
 }
 
 .bs-callout-warning {
-  @extend .spectrum-Alert--warning;
+  @extend .spectrum-InLineAlert--negative;
 
   &:before {
     background-image: url(../i/icons/warning.svg);
@@ -84,7 +84,7 @@
 
 .bs-callout-tip {
 
-  @extend .spectrum-Alert--success;
+  @extend .spectrum-InLineAlert--success;
 
   &:before {
     background-image: url(../i/icons/checkmark.svg);
