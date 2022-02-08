@@ -26,7 +26,7 @@
             {% assign next_i = index %}
             {% assign prev_i = index | minus: 2 %}
             
-            <a href="{{ site.baseurl }}{{ steps[prev_i].url }}" class="spectrum-Button spectrum-Button--sizeM spectrum-Button--fill spectrum-Button--primary">Previous</a>
+            <a href="{{ site.baseurl }}{{ steps[prev_i].url }}" class="spectrum-Button spectrum-Button--sizeM spectrum-Button--primary">Previous</a>
             {% if index != steps_size %}
             <a href="{{ site.baseurl }}{{ steps[next_i].url }}" class="spectrum-Button spectrum-Button--sizeM spectrum-Button--fill spectrum-Button--secondary">Next</a>
             {% endif %}
