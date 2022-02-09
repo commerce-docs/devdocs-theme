@@ -57,7 +57,7 @@ window.onload = function () {
         return algoliaClient.search(requests)
       }
     }
-    var isEmptyQuery = function (request) {
+    const isEmptyQuery = function (request) {
       return !request.params.query
     }
 
@@ -128,23 +128,23 @@ window.onload = function () {
       moveSelectionIndicator(navItems[0])
     }
 
-    var moveSelectionIndicator = function (currentItem) {
+    const moveSelectionIndicator = function (currentItem) {
       // Move the selection indicator
       selectionIndicator.style.transform = 'translateX(' + currentItem.offsetLeft + 'px)'
       selectionIndicator.style.width = currentItem.offsetWidth + 'px'
     }
 
-    var handleIndexClick = function (event, indexName) {
+    const handleIndexClick = function (event, indexName) {
       // Get all the tab content items and hide them
       const tabcontent = document.getElementsByClassName(defaults.resultsClassName)
 
       // First hide all the tab content
-      for (i = 0; i < tabcontent.length; i++) {
+      for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].classList.add(defaults.hiddenClassName)
       }
 
       // Remove the active class
-      for (i = 0; i < navItems.length; i++) {
+      for (let i = 0; i < navItems.length; i++) {
         navItems[i].setAttribute('aria-selected', false)
         navItems[i].classList.remove(defaults.navItemClassNameSelected)
       }
@@ -159,7 +159,7 @@ window.onload = function () {
       event.currentTarget.classList.add(defaults.navItemClassNameSelected)
     }
 
-    var initSearchIndex = function (indexConfig, searchClient, searchFunction, routing) {
+    const initSearchIndex = function (indexConfig, searchClient, searchFunction, routing) {
       const searchIndex = instantsearch({
         indexName: indexConfig.name,
         searchClient: searchClient,
@@ -200,17 +200,17 @@ window.onload = function () {
           },
           templates: {
             item: function (item) {
-              const title_highlighted = item._highlightResult.title
-              const title_plain = item.title
+              const titleHighlighted = item._highlightResult.title
+              const titlePlain = item.title
               let title = ''
               const baseUrl = searchIndex.baseUrl
               const url = item.url
               let content = ''
               // Check if we can show title, if not - at least show URL
-              if (typeof title_highlighted !== 'undefined') {
-                title = title_highlighted.value
-              } else if (typeof title_plain !== 'undefined') {
-                title = title_plain
+              if (typeof titleHighlighted !== 'undefined') {
+                title = titleHighlighted.value
+              } else if (typeof titlePlain !== 'undefined') {
+                title = titlePlain
               } else {
                 title = url
               }
@@ -302,7 +302,7 @@ window.onload = function () {
       buildNav()
 
       // Create containers for each index
-      for (var i = 0; i < searchIndices.length; i++) {
+      for (let i = 0; i < searchIndices.length; i++) {
         // Create main container for index
         const container = document.createElement('div')
         container.classList.add(defaults.resultsClassName)
@@ -370,7 +370,7 @@ window.onload = function () {
       addSearchWidgets(mainIndex)
 
       // Sub indexes
-      for (var i = 1; i < searchIndices.length; i++) {
+      for (let i = 1; i < searchIndices.length; i++) {
         const search = searchIndices[i]
         addSearchWidgets(search)
         search.start()
