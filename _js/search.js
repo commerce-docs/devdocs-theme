@@ -25,7 +25,7 @@ window.onload = function() {
       paginationClassName: "search-results-pagination",
       refinementsClassName: "search-results-refinements",
       navContainerId: "index-navigation",
-      navListClassName: "spectrum-Tabs spectrum-Tabs--horizontal",
+      navListClassName: "spectrum-Tabs spectrum-Tabs--sizeM spectrum-Tabs--horizontal",
       navItemClassName: "spectrum-Tabs-item",
       navItemLabelClassName: "spectrum-Tabs-itemLabel",
       navItemClassNameSelected: "is-selected"
