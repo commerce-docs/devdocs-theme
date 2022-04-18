@@ -28,8 +28,8 @@
     background: url("../i/ce-only.svg") no-repeat center;
   }
 
-  &.pwa-only-icon {
-    background: url("../i/pwa-only.svg") no-repeat center;
+  &.graphql-only-icon {
+    background: url("../i/graphql-only.svg") no-repeat center;
   }
 }
 
@@ -43,7 +43,7 @@
 
   &.ee-only,
   &.b2b-only,
-  &.pwa-only,
+  &.graphql-only,
   &.ce-only {
     color: #000;
   }
@@ -72,7 +72,7 @@
     @extend .spectrum-Label--orange;
   }
 
-  &.pwa-only {
+  &.graphql-only {
     @extend .spectrum-Label--blue;
   }
 
@@ -113,7 +113,7 @@ li>.edition-marker {
 
 li.ee-only,
 li.b2b-only,
-li.pwa-only,
+li.graphql-only,
 li.ce-only {
   padding-left: 28px;
   position: relative;
@@ -137,8 +137,8 @@ li.ce-only {
   background-image: url("../i/ce-only.svg");
 }
 
-.pwa-only .edition-marker-icon-image {
-  background-image: url("../i/pwa-only.svg");
+.graphql-only .edition-marker-icon-image {
+  background-image: url("../i/graphql-only.svg");
 }
 
 //
@@ -160,7 +160,7 @@ li.ce-only {
 // TODO: refactror this
 table strong.ee-only,
 table strong.ce-only,
-table strong.pwa-only,
+table strong.graphql-only,
 table strong.b2b-only {
   white-space: nowrap;
 }
@@ -168,7 +168,7 @@ table strong.b2b-only {
 // Reset the font weight of the marker in case it's applied to strong
 strong.ee-only,
 strong.ce-only,
-strong.pwa-only,
+strong.graphql-only,
 strong.b2b-only {
   font-weight: normal;
 }
@@ -176,7 +176,7 @@ strong.b2b-only {
 // Make space for marker in side nav:
 .spectrum-SideNav-itemLink.ee-only,
 .spectrum-SideNav-itemLink.ce-only,
-.spectrum-SideNav-itemLink.pwa-only,
+.spectrum-SideNav-itemLink.graphql-only,
 .spectrum-SideNav-itemLink.b2b-only {
   display: flex;
   justify-content: space-between;

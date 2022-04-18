@@ -2,11 +2,11 @@
 
 function editionMarkers () {
   const defaults = {
-    editionClassNames: ['ee-only', 'ce-only', 'b2b-only', 'pwa-only'],
+    editionClassNames: ['ee-only', 'ce-only', 'b2b-only', 'graphql-only'],
     editions: {
       'ee-only': 'Adobe Commerce only',
       'ce-only': 'Magento Open Source only',
-      'pwa-only': 'PWA Studio only',
+      'graphql-only': 'GraphQL metapackage only',
       'b2b-only': 'B2B feature'
     },
     markerClassName: 'edition-marker',
