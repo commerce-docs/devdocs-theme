@@ -32,18 +32,38 @@ theme: devdocs
 
 ## Developing the theme
 
-Install node packages and ruby gems:
+1. Install node packages and ruby gems:
 
-```shell
-npm install
-bundle install
-```
+   ```shell
+   npm install
+   bundle install
+   ```
 
-Build and watch the changes:
+1. Build and watch the changes:
 
-```shell
-npm start
-```
+   ```shell
+   npm start
+   ```
+
+1. Modify theme assets.
+
+1. Manually increment the theme version number by one in the following files:
+
+   - `devdocs.gemspec`
+   - `_includes/layout/footer.html`
+   - `_includes/layout/header.html`
+   - `_layouts/search.html`
+
+1. Compile assets:
+
+   ```shell
+   npm run build:css
+   npm run build:js
+   ```
+  
+1. Test your changes [locally](#how-to-apply-the-theme-to-your-project).
+
+1. Create a pull request.
 
 ### Prerequisites
 
