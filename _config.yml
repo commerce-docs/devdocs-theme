@@ -84,7 +84,7 @@ app_switcher:
         url: https://devdocs.magento.com/
 
       - label: PWA Studio
-        url: http://pwastudio.io/
+        url: https://developer.adobe.com/commerce/pwa-studio/
 
       - label: Order Management
         url: https://omsdocs.magento.com/
