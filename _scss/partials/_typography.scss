@@ -121,16 +121,11 @@ a {
 }
 
 // Style the external URL
-.content-wrap a[href^='http://']:not([href*='docs.magento.com']),
-.content-wrap a[href^='https://']:not([href*='docs.magento.com']),
-.feature a[href^='http://']:not([href*='docs.magento.com']),
-.feature a[href^='https://']:not([href*='docs.magento.com']),
-.nav-main-wrap a[href^='http://']:not([href*='docs.magento.com']),
-.nav-main-wrap a[href^='https://']:not([href*='docs.magento.com']),
-.sidebar-wrapper a[href^='http://']:not([href*='docs.magento.com']),
-.sidebar-wrapper a[href^='https://']:not([href*='docs.magento.com']),
-.page-footer a[href^='http://']:not([href*='docs.magento.com']),
-.page-footer a[href^='https://']:not([href*='docs.magento.com']) {
+.content-wrap a[href^='https://'],
+.feature a[href^='https://'],
+.nav-main-wrap a[href^='https://'],
+.sidebar-wrapper a[href^='https://'],
+.page-footer a[href^='https://'] {
   &::after {
     content: '';
     margin: -2px 2px 0 3px;
