@@ -125,10 +125,12 @@ a {
 .content-wrap a[href^='https://']:not([href*='devdocs.magento.com']),
 .feature a[href^='http://']:not([href*='devdocs.magento.com']),
 .feature a[href^='https://']:not([href*='devdocs.magento.com']),
-.spectrum-Menu-itemLabel a[href^='http://']:not([href*='devdocs.magento.com']),
-.spectrum-Menu-itemLabel a[href^='https://']:not([href*='devdocs.magento.com']),
-.spectrum-SideNav-itemLink a[href^='http://']:not([href*='devdocs.magento.com']),
-.spectrum-SideNav-itemLink a[href^='https://']:not([href*='devdocs.magento.com']) {
+.nav-section a[href^='http://']:not([href*='devdocs.magento.com']),
+.nav-section a[href^='https://']:not([href*='devdocs.magento.com']),
+.sidebar-wrapper a[href^='http://']:not([href*='devdocs.magento.com']),
+.sidebar-wrapper a[href^='https://']:not([href*='devdocs.magento.com']),
+.page-footer a[href^='http://']:not([href*='devdocs.magento.com']),
+.page-footer a[href^='https://']:not([href*='devdocs.magento.com']) {
   &::after {
     content: '';
     margin: -2px 2px 0 3px;
