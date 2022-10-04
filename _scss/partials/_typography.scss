@@ -121,18 +121,16 @@ a {
 }
 
 // Style the external URL
-.content-wrap a[href^='http://']:not([href*='devdocs.magento.com']),
-.content-wrap a[href^='https://']:not([href*='devdocs.magento.com']),
-.feature a[href^='http://']:not([href*='devdocs.magento.com']),
-.feature a[href^='https://']:not([href*='devdocs.magento.com']),
-.nav-main-wrap a[href^='http://']:not([href*='devdocs.magento.com']),
-.nav-main-wrap a[href^='https://']:not([href*='devdocs.magento.com']),
-.sidebar-wrapper a[href^='http://']:not([href*='devdocs.magento.com']),
-.sidebar-wrapper a[href^='https://']:not([href*='devdocs.magento.com']),
-.page-footer a[href^='http://']:not([href*='devdocs.magento.com']),
-.page-footer a[href^='https://']:not([href*='devdocs.magento.com']),
-.app-switcher-content a[href^='http://']:not([href*='devdocs.magento.com']),
-.app-switcher-content a[href^='https://']:not([href*='devdocs.magento.com']) {
+.content-wrap a[href^='http://']:not([href*='docs.magento.com']),
+.content-wrap a[href^='https://']:not([href*='docs.magento.com']),
+.feature a[href^='http://']:not([href*='docs.magento.com']),
+.feature a[href^='https://']:not([href*='docs.magento.com']),
+.nav-main-wrap a[href^='http://']:not([href*='docs.magento.com']),
+.nav-main-wrap a[href^='https://']:not([href*='docs.magento.com']),
+.sidebar-wrapper a[href^='http://']:not([href*='docs.magento.com']),
+.sidebar-wrapper a[href^='https://']:not([href*='docs.magento.com']),
+.page-footer a[href^='http://']:not([href*='docs.magento.com']),
+.page-footer a[href^='https://']:not([href*='docs.magento.com']) {
   &::after {
     content: '';
     margin: -2px 2px 0 3px;
