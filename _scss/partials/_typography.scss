@@ -130,7 +130,9 @@ a {
 .sidebar-wrapper a[href^='http://']:not([href*='devdocs.magento.com']),
 .sidebar-wrapper a[href^='https://']:not([href*='devdocs.magento.com']),
 .page-footer a[href^='http://']:not([href*='devdocs.magento.com']),
-.page-footer a[href^='https://']:not([href*='devdocs.magento.com']) {
+.page-footer a[href^='https://']:not([href*='devdocs.magento.com']),
+.app-switcher-content a[href^='http://']:not([href*='devdocs.magento.com']),
+.app-switcher-content a[href^='https://']:not([href*='devdocs.magento.com']) {
   &::after {
     content: '';
     margin: -2px 2px 0 3px;
