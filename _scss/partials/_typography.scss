@@ -120,9 +120,12 @@ a {
     .spectrum-Link--quiet;
 }
 
-// Style the external URL (only in content area)
-.content-wrap a[href^='http://']:not([href*='magento.com']),
-.content-wrap a[href^='https://']:not([href*='magento.com']) {
+// Style the external URL
+.content-wrap a[href^='https://'],
+.feature a[href^='https://'],
+.nav-main-wrap a[href^='https://'],
+.sidebar-wrapper a[href^='https://'],
+.page-footer a[href^='https://'] {
   &::after {
     content: '';
     margin: -2px 2px 0 3px;
