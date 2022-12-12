@@ -35,14 +35,14 @@ theme: devdocs
 Install node packages and ruby gems:
 
 ```shell
-npm install
+yarn
 bundle install
 ```
 
 Build and watch the changes:
 
 ```shell
-npm start
+yarn start
 ```
 
 ### Prerequisites
@@ -56,10 +56,10 @@ Use version managers that support `.nvmrc` and `.ruby-version` files such as [nv
 Install `browser-sync` globally in your system if you want to run the `serve` and `watch:all` npm tasks.
 
 ```
-npm install -g browser-sync
+yarn global add browser-sync
 ```
 
-We do not add it to devDependencies because the current version (2.27.1) contains a high severity vulnerability.
+We do not add it to devDependencies because the current version (2.27.10) contains a high severity vulnerability.
 
 
 ## Running the theme locally
