@@ -45,7 +45,7 @@ defaults:
       type: videos
     values:
       layout: video
-      guide_version: "2.1"
+      guide_version: "2.3"
 
 
 algolia:
@@ -55,7 +55,7 @@ algolia:
   # It is safe to use in production front-end code.
   # Used at src/_includes/layout/header-scripts.html
   # For more details, refer to: https://www.algolia.com/doc/guides/security/api-keys/#search-only-api-key
-  search_only_key: 'd2d0f33ab73e291ef8d88d8b565e754c'
+  search_only_key: 'd2d0f33ab73e291ef8d88d8b565e754c' #gitleaks:allow
   lazy_update: true
   excluded_files:
     - vagrant
@@ -99,4 +99,4 @@ app_switcher:
         url: https://omsdocs.magento.com/userguides/
 
       - label: Commerce Reporting
-        url: https://docs.magento.com/mbi/
+        url: https://experienceleague.adobe.com/docs/commerce-business-intelligence/mbi/getting-started.html

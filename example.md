@@ -4,7 +4,7 @@ menu_title: Overview
 ee_only: true
 last_modified_at: 2020-03-03
 contributor_name: GitHub
-contributor_link: https://www.gitgub.com/
+contributor_link: https://www.github.com/
 menu_order: 0
 ---
 
