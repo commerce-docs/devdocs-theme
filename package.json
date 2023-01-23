@@ -62,7 +62,8 @@
     "@spectrum-css/tooltip": "^3.1.7",
     "@spectrum-css/typography": "^4.0.10",
     "@spectrum-css/underlay": "^2.0.21",
-    "@spectrum-css/vars": "^6.1.0"
+    "@spectrum-css/vars": "^6.1.0",
+    "browser-sync": "^2.27.11"
   },
   "private": true
 }

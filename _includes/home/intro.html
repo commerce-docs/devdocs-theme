@@ -3,7 +3,9 @@
     <h1 class="spectrum-Heading spectrum-Heading--sizeXXL">{{ site.title }}</h1>
     <p class="lead">{{ site.description }}</p>
 
-    {% include layout/search-form.html %}
+    {% if page.guide_version != "2.4" %}
+      {% include layout/search-form.html %}
+    {% endif %}
 
   </div>
 </section>

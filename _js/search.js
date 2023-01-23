@@ -8,7 +8,7 @@ window.onload = function () {
     indexName: algolia.index
   })
 
-  function searchApp (opts) {
+  function searchApp(opts) {
     if (typeof (indices) === 'undefined') return false
 
     const defaults = {
