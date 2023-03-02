@@ -2,7 +2,7 @@
   "name": "devdocs-theme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/magento-devdocs/devdocs-theme.git"
+    "url": "git+https://github.com/commerce-docs/devdocs-theme.git"
   },
   "scripts": {
     "scss": "rm -rf assets/css/**.* && sass --update --style compressed --embed-source-map --source-map-urls absolute _scss/app.scss:assets/css/app.css _scss/print.scss:assets/css/print.css _scss/search.scss:assets/css/search.css",
@@ -63,7 +63,7 @@
     "@spectrum-css/typography": "^4.0.10",
     "@spectrum-css/underlay": "^2.0.21",
     "@spectrum-css/vars": "^6.1.0",
-    "browser-sync": "^2.27.11"
+    "browser-sync": "^2.28.1"
   },
   "private": true
 }

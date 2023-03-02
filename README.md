@@ -7,19 +7,19 @@ A [Jekyll theme](https://jekyllrb.com/docs/themes/) for Adobe Commerce documenta
 1. In your project `Gemfile`, add this:
 
    ```ruby
-   gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git'
+   gem 'devdocs', git: 'https://github.com/commerce-docs/devdocs-theme.git'
    ```
 
    - if you need to specify a branch:
 
      ```ruby
-     gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', branch: 'master'
+     gem 'devdocs', git: 'https://github.com/commerce-docs/devdocs-theme.git', branch: 'master'
      ```
 
    - if you need to specify a commit:
      
      ```ruby
-     gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', ref: 'dfsdfs'
+     gem 'devdocs', git: 'https://github.com/commerce-docs/devdocs-theme.git', ref: 'dfsdfs'
      ```
 
 1. Then, in your Jekyll `_config.yml` file, add this:
@@ -73,7 +73,7 @@ bundle config local.devdocs /path/to/theme/git/repository
 1. Now you can build your project locally, and it will look for the latest theme gem in your filesystem instead of GitHub. Just make sure that your project requires the same branch as your local theme branch:
 
 ```ruby
-gem 'devdocs', git: 'https://github.com/magento-devdocs/devdocs-theme.git', branch: "your_branch_name"
+gem 'devdocs', git: 'https://github.com/commerce-docs/devdocs-theme.git', branch: "your_branch_name"
 ```
 
 1. Run `rake update:theme` in your doc-site project to get the latest theme from local filesystem.
