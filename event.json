@@ -1,7 +1,7 @@
 {
     "push": {
         "GITHUB_ORG": {
-            "value": "magento-devdocs"
+            "value": "commerce-docs"
         }
     }
 }

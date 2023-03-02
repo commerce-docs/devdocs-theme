@@ -36,8 +36,8 @@ defaults:
       lang: "en"
       github_link: true
       feedback_link: true
-      github_files: https://github.com/magento-devdocs/devdocs-theme/blob/
-      github_repo: https://github.com/magento-devdocs/devdocs-theme/
+      github_files: https://github.com/commerce-docs/devdocs-theme/blob/
+      github_repo: https://github.com/commerce-docs/devdocs-theme/
 
   -
     scope:
